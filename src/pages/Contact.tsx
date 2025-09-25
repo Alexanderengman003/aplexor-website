@@ -124,7 +124,7 @@ const Contact = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Let's Talk
             </h1>
-            <p className="font-body text-xl text-muted-foreground">
+            <p className="font-body text-xl text-muted-foreground mb-8">
               Ready to accelerate your hardware sales? Get in touch with our team to discuss how we can help bring your products to market.
             </p>
           </div>

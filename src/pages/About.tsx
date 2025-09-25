@@ -63,7 +63,7 @@ const About = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               About Aplexor
             </h1>
-            <p className="font-body text-xl text-muted-foreground">
+            <p className="font-body text-xl text-muted-foreground mb-8">
               We're passionate about helping innovative hardware companies succeed in competitive markets through expert sales representation and strategic partnerships.
             </p>
           </div>
