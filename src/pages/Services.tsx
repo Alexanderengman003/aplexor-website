@@ -6,53 +6,63 @@ import { Handshake, Target, Globe, Zap, CheckCircle } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Services = () => {
-  const services = [
+  const serviceCategories = [
     {
-      icon: <Handshake className="w-12 h-12 text-primary" />,
-      title: "Sales Representation",
-      description: "Professional representation of your hardware products to key buyers and decision makers across various industries and markets.",
-      features: [
-        "Direct sales to enterprise customers",
-        "Relationship management with key accounts",
-        "Product demonstrations and technical presentations",
-        "Contract negotiation and closing",
-        "Ongoing customer support and relationship building"
+      title: "Strategic Services",
+      subtitle: "Where to go and how to win",
+      services: [
+        {
+          icon: <Target className="w-12 h-12 text-primary" />,
+          title: "Go-to-Market Strategy",
+          description: "Define positioning, pricing, and market entry strategies that win customers and drive sustainable growth."
+        },
+        {
+          icon: <Globe className="w-12 h-12 text-primary" />,
+          title: "Market Research & Insights",
+          description: "Identify opportunities, competitors, and customer needs to make informed strategic decisions."
+        },
+        {
+          icon: <Zap className="w-12 h-12 text-primary" />,
+          title: "Nordic Market Entry",
+          description: "Tailored expertise for entering and scaling in the Nordic region with local market knowledge."
+        }
       ]
     },
     {
-      icon: <Target className="w-12 h-12 text-primary" />,
-      title: "Lead Generation",
-      description: "Targeted prospecting and qualification of high-value leads using proven methodologies and industry-specific approaches.",
-      features: [
-        "Market research and customer identification",
-        "Multi-channel outreach campaigns",
-        "Lead qualification and scoring",
-        "CRM integration and management",
-        "Performance tracking and optimization"
+      title: "Execution Services",
+      subtitle: "Direct sales activity and growth",
+      services: [
+        {
+          icon: <Target className="w-12 h-12 text-primary" />,
+          title: "Lead Generation",
+          description: "Build and qualify your sales pipeline with targeted prospecting and proven methodologies."
+        },
+        {
+          icon: <Handshake className="w-12 h-12 text-primary" />,
+          title: "Matchmaking",
+          description: "Connect with the right partners, distributors, and customers for optimal market penetration."
+        },
+        {
+          icon: <Handshake className="w-12 h-12 text-primary" />,
+          title: "Sales Representation",
+          description: "Act as your outsourced sales force with professional representation to key buyers and decision makers."
+        },
+        {
+          icon: <Globe className="w-12 h-12 text-primary" />,
+          title: "Channel Development & Management",
+          description: "Establish and manage reseller/distributor networks, including long-term partner and customer relationship building."
+        }
       ]
     },
     {
-      icon: <Globe className="w-12 h-12 text-primary" />,
-      title: "Distributor Matchmaking",
-      description: "Strategic partnerships with the right distributors for optimal market penetration and sustainable growth.",
-      features: [
-        "Distributor network evaluation",
-        "Partnership negotiation and structuring",
-        "Channel conflict resolution",
-        "Performance monitoring and optimization",
-        "Ongoing relationship management"
-      ]
-    },
-    {
-      icon: <Zap className="w-12 h-12 text-primary" />,
-      title: "Market Entry Consulting",
-      description: "Expert guidance on market strategy, positioning, and go-to-market execution for hardware startups entering new markets.",
-      features: [
-        "Market analysis and opportunity assessment",
-        "Competitive landscape evaluation",
-        "Go-to-market strategy development",
-        "Pricing and positioning recommendations",
-        "Launch planning and execution support"
+      title: "Supporting Services",
+      subtitle: "Tools and materials that close deals",
+      services: [
+        {
+          icon: <Zap className="w-12 h-12 text-primary" />,
+          title: "Sales Enablement",
+          description: "Create compelling sales decks, datasheets, and messaging that win customers and accelerate deal closure."
+        }
       ]
     }
   ];
@@ -84,36 +94,38 @@ const Services = () => {
 
       {/* Services Grid */}
       <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="text-center pb-4">
-                  <div className="flex justify-center mb-4">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="font-heading text-2xl font-bold text-foreground">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-body text-muted-foreground mb-6">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
-                        <span className="font-body text-sm text-foreground">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        <div className="container mx-auto px-4 space-y-16">
+          {serviceCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex}>
+              <div className="text-center mb-8">
+                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-2">
+                  {category.title}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground">
+                  {category.subtitle}
+                </p>
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {category.services.map((service, serviceIndex) => (
+                  <Card key={serviceIndex} className="hover:shadow-lg transition-shadow duration-300">
+                    <CardHeader className="text-center pb-4">
+                      <div className="flex justify-center mb-4">
+                        {service.icon}
+                      </div>
+                      <CardTitle className="font-heading text-2xl font-bold text-foreground">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="font-body text-muted-foreground">
+                        {service.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
