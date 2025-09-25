@@ -69,7 +69,7 @@ const Discovery = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Discovery Services
+              Discovery
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
               Identify opportunities, qualify prospects, and understand the landscape before strategic planning. Our discovery services provide the foundation for successful market entry and growth.
