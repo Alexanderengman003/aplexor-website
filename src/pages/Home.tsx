@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
-import { Users, Target, TrendingUp, Handshake, Zap, Globe } from "lucide-react";
+import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
@@ -21,6 +21,39 @@ const Home = () => {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: "Results",
       description: "Measurable outcomes through strategic partnerships and data-driven sales approaches."
+    }
+  ];
+
+  const problems = [
+    {
+      icon: <XCircle className="w-8 h-8 text-primary" />,
+      title: "No Market Validation",
+      description: "Many products are innovative but not yet proven. Without product–market fit, it's hard to win investors, customers, or sales partners."
+    },
+    {
+      icon: <Settings className="w-8 h-8 text-primary" />,
+      title: "Immature Products & Low Volumes",
+      description: "Startups often lack certifications, scalability, and volume. Distributors want high-volume, low-risk products — leaving startups out."
+    },
+    {
+      icon: <UserMinus className="w-8 h-8 text-primary" />,
+      title: "Limited Sales Resources",
+      description: "Sales often falls on the CEO or founders. With small teams, opportunities are missed and growth slows."
+    },
+    {
+      icon: <BarChart3 className="w-8 h-8 text-primary" />,
+      title: "Missing Sales Expertise",
+      description: "Technical founders rarely have B2B sales experience. Hardware sales require trust, negotiation, and long cycles — skills that take years to build."
+    },
+    {
+      icon: <MapPin className="w-8 h-8 text-primary" />,
+      title: "Nordic Business Culture",
+      description: "Success in the Nordics relies on trust, relationships, and consensus. Startups without local sales know-how struggle to adapt."
+    },
+    {
+      icon: <Clock className="w-8 h-8 text-primary" />,
+      title: "Long Sales Cycles & Expansion Barriers",
+      description: "Hardware deals take months of testing and negotiations. Expanding abroad requires networks and presence that startups rarely have."
     }
   ];
 
@@ -94,95 +127,21 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="text-2xl mb-3">🚫</div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  No Market Validation
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-2">
-                  Many products are innovative but not yet proven.
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  💡 Without product–market fit, it's hard to win investors, customers, or sales partners.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="text-2xl mb-3">⚙️</div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  Immature Products & Low Volumes
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-2">
-                  Startups often lack certifications, scalability, and volume.
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  📦 Distributors want high-volume, low-risk products — leaving startups out.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="text-2xl mb-3">👥</div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  Limited Sales Resources
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-2">
-                  Sales often falls on the CEO or founders.
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  ⏳ With small teams, opportunities are missed and growth slows.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="text-2xl mb-3">📊</div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  Missing Sales Expertise
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-2">
-                  Technical founders rarely have B2B sales experience.
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  🔑 Hardware sales require trust, negotiation, and long cycles — skills that take years to build.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="text-2xl mb-3">🌍</div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  Nordic Business Culture
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-2">
-                  Success in the Nordics relies on trust, relationships, and consensus.
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  🤝 Startups without local sales know-how struggle to adapt.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="text-2xl mb-3">⏱</div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  Long Sales Cycles & Expansion Barriers
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mb-2">
-                  Hardware deals take months of testing and negotiations.
-                </p>
-                <p className="font-body text-sm text-muted-foreground">
-                  Expanding abroad requires networks and presence that startups rarely have.
-                </p>
-              </CardContent>
-            </Card>
+            {problems.map((problem, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="p-8">
+                  <div className="flex justify-center mb-4">
+                    {problem.icon}
+                  </div>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                    {problem.title}
+                  </h3>
+                  <p className="font-body text-muted-foreground">
+                    {problem.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
