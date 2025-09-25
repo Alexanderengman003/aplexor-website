@@ -161,7 +161,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {serviceCategories.map((category, categoryIndex) => (
               <Card key={categoryIndex} className="p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2">
                 <CardHeader className="pb-6">
@@ -172,22 +172,24 @@ const Services = () => {
                     {category.subtitle}
                   </p>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  {category.services.map((service, serviceIndex) => (
-                    <div key={serviceIndex} className="flex items-start gap-4 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200">
-                      <div className="flex-shrink-0 mt-1">
-                        {service.icon}
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {category.services.map((service, serviceIndex) => (
+                      <div key={serviceIndex} className="flex items-start gap-4 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200">
+                        <div className="flex-shrink-0 mt-1">
+                          {service.icon}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                            {service.title}
+                          </h3>
+                          <p className="font-body text-sm text-muted-foreground">
+                            {service.description}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
-                          {service.title}
-                        </h3>
-                        <p className="font-body text-sm text-muted-foreground">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
