@@ -197,6 +197,77 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Markets Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Markets We Support
+            </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our expertise spans across key industries where hardware innovation drives growth and transformation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Shield className="w-12 h-12 text-primary" />,
+                title: "Medical",
+                description: "Healthcare devices and medical technology"
+              },
+              {
+                icon: <Zap className="w-12 h-12 text-primary" />,
+                title: "Electronics",
+                description: "Consumer and industrial electronic products"
+              },
+              {
+                icon: <Network className="w-12 h-12 text-primary" />,
+                title: "IoT & Connectivity",
+                description: "Smart devices and connected solutions"
+              },
+              {
+                icon: <Globe className="w-12 h-12 text-primary" />,
+                title: "Industrial",
+                description: "Manufacturing and automation equipment"
+              },
+              {
+                icon: <Users className="w-12 h-12 text-primary" />,
+                title: "Consumer",
+                description: "Consumer electronics and lifestyle products"
+              },
+              {
+                icon: <Database className="w-12 h-12 text-primary" />,
+                title: "Enterprise",
+                description: "B2B hardware and enterprise solutions"
+              },
+              {
+                icon: <TrendingUp className="w-12 h-12 text-primary" />,
+                title: "Cleantech",
+                description: "Environmental and sustainability technology"
+              },
+              {
+                icon: <Target className="w-12 h-12 text-primary" />,
+                title: "Defense & Security",
+                description: "Security systems and defense technology"
+              }
+            ].map((market, index) => (
+              <div key={index} className="text-center p-6 rounded-lg bg-card border hover:shadow-lg transition-all duration-300">
+                <div className="flex justify-center mb-4">
+                  {market.icon}
+                </div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                  {market.title}
+                </h3>
+                <p className="font-body text-sm text-muted-foreground">
+                  {market.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
