@@ -262,12 +262,15 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-muted">
+      <section className="py-20 bg-gradient-to-br from-muted to-muted/80 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Frequently Asked Questions
             </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+              Find answers to common questions about our hardware sales services and process.
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
