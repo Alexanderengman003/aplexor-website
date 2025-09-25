@@ -27,7 +27,7 @@ const Home = () => {
   const problems = [
     {
       icon: <XCircle className="w-8 h-8 text-primary" />,
-      title: "No Market Validation",
+      title: "NoMarket Validation",
       description: "Many products are innovative but not yet proven. Without product–market fit, it's hard to win investors, customers, or sales partners."
     },
     {
