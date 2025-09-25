@@ -32,18 +32,6 @@ const About = () => {
       email: "alexander.engman@aplexor.com",
       description: "15+ years in hardware sales and business development. Former VP of Sales at leading tech hardware companies.",
       image: alexanderEngman
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "VP of Business Development",
-      description: "Expert in distributor relationships and channel partnerships. 12 years of experience in global hardware markets.",
-      image: "/api/placeholder/300/300"
-    },
-    {
-      name: "Jennifer Liu",
-      role: "Senior Sales Manager",
-      description: "Specialist in enterprise sales and customer relationship management. Track record with Fortune 500 clients.",
-      image: "/api/placeholder/300/300"
     }
   ];
 
@@ -120,43 +108,35 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+          <div className="flex justify-center">
+            <div className="max-w-sm">
+              <Card className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-8">
-                  {typeof member.image === 'string' && member.image.includes('/api/placeholder') ? (
-                    <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-6 flex items-center justify-center">
-                      <Users className="w-16 h-16 text-muted-foreground" />
-                    </div>
-                  ) : (
-                    <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
-                      <img 
-                        src={member.image as string}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
+                  <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                    <img 
+                      src={team[0].image as string}
+                      alt={team[0].name}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                   <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
-                    {member.name}
+                    {team[0].name}
                   </h3>
                   <p className="font-body text-primary font-medium mb-2">
-                    {member.role}
+                    {team[0].role}
                   </p>
-                  {member.email && (
-                    <p className="font-body text-sm text-muted-foreground mb-4">
-                      <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">
-                        {member.email}
-                      </a>
-                    </p>
-                  )}
+                  <p className="font-body text-sm text-muted-foreground mb-4">
+                    <a href={`mailto:${team[0].email}`} className="hover:text-primary transition-colors">
+                      {team[0].email}
+                    </a>
+                  </p>
                   <p className="font-body text-sm text-muted-foreground">
-                    {member.description}
+                    {team[0].description}
                   </p>
                 </CardContent>
               </Card>
-            ))}
+            </div>
           </div>
         </div>
       </section>

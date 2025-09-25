@@ -88,8 +88,14 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <Button asChild variant="default" className="ml-4">
-              <a href="https://calendly.com/alexander-engman-aplexor/30min" target="_blank" rel="noopener noreferrer">Appointment</a>
+            <Button 
+              variant="default" 
+              className="ml-4"
+              onClick={() => {
+                (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/alexander-engman-aplexor/30min'});
+              }}
+            >
+              Appointment
             </Button>
           </div>
 
@@ -155,10 +161,15 @@ const Navigation = () => {
                 </Link>
               ))}
               
-              <Button asChild variant="default" className="w-fit">
-                <a href="https://calendly.com/alexander-engman-aplexor/30min" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
-                  Appointment
-                </a>
+              <Button 
+                variant="default" 
+                className="w-fit"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/alexander-engman-aplexor/30min'});
+                }}
+              >
+                Appointment
               </Button>
             </div>
           </div>
