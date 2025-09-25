@@ -163,34 +163,36 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8">
             {serviceCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2">
-                <CardHeader className="pb-6">
-                  <CardTitle className="font-heading text-2xl font-bold text-foreground mb-2">
-                    {category.title}
-                  </CardTitle>
-                  <p className="font-body text-muted-foreground">
-                    {category.subtitle}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {category.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="flex items-start gap-4 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200">
-                        <div className="flex-shrink-0 mt-1">
-                          {service.icon}
+              <Card key={categoryIndex} className="p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer">
+                <Link to={`/services/${category.title.toLowerCase().split(' ')[0]}`} className="block">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="font-heading text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {category.title}
+                    </CardTitle>
+                    <p className="font-body text-muted-foreground">
+                      {category.subtitle}
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {category.services.map((service, serviceIndex) => (
+                        <div key={serviceIndex} className="flex items-start gap-4 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200">
+                          <div className="flex-shrink-0 mt-1">
+                            {service.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                              {service.title}
+                            </h3>
+                            <p className="font-body text-sm text-muted-foreground">
+                              {service.description}
+                            </p>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
-                            {service.title}
-                          </h3>
-                          <p className="font-body text-sm text-muted-foreground">
-                            {service.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Link>
               </Card>
             ))}
           </div>
@@ -306,9 +308,11 @@ const Services = () => {
               ].map((step, index) => (
                 <div key={index} className="flex items-center">
                   <div className="text-center max-w-xs">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4">
-                      {step.step}
-                    </div>
+                    <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                        {step.step}
+                      </div>
+                    </Link>
                     <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
                       {step.title}
                     </h3>

@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, ChevronDown } from "lucide-react";
 import aplexorLogo from "@/assets/aplexor-logo.png";
 
 const Navigation = () => {
@@ -12,9 +18,15 @@ const Navigation = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
+  ];
+
+  const serviceLinks = [
+    { href: "/services/discovery", label: "Discovery Services" },
+    { href: "/services/strategic", label: "Strategic Services" },
+    { href: "/services/execution", label: "Execution Services" },
+    { href: "/services/supporting", label: "Supporting Services" },
   ];
 
   return (
@@ -43,6 +55,31 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`font-body text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+              }`}>
+                Services
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 bg-background border border-border shadow-lg">
+                <DropdownMenuItem asChild>
+                  <Link to="/services" className="w-full px-3 py-2 text-sm hover:bg-muted transition-colors">
+                    All Services
+                  </Link>
+                </DropdownMenuItem>
+                {serviceLinks.map((service) => (
+                  <DropdownMenuItem key={service.href} asChild>
+                    <Link to={service.href} className="w-full px-3 py-2 text-sm hover:bg-muted transition-colors">
+                      {service.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button asChild variant="default" className="ml-4">
               <Link to="/contact">Get Started</Link>
             </Button>
@@ -74,6 +111,32 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Mobile Services Links */}
+              <div className="space-y-2 pl-4">
+                <Link
+                  to="/services"
+                  className={`font-body text-sm font-medium transition-colors hover:text-primary block ${
+                    isActive("/services") ? "text-primary" : "text-foreground"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  All Services
+                </Link>
+                {serviceLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    to={service.href}
+                    className={`font-body text-xs text-muted-foreground transition-colors hover:text-primary block ${
+                      isActive(service.href) ? "text-primary" : ""
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+              
               <Button asChild variant="default" className="w-fit">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                   Get Started
