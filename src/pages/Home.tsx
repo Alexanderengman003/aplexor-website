@@ -81,6 +81,112 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Problems We Solve Section */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              The Hardware Sales Challenge
+            </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hardware startups face unique barriers that traditional sales approaches can't overcome.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="text-2xl mb-3">🚫</div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  No Market Validation
+                </h3>
+                <p className="font-body text-sm text-muted-foreground mb-2">
+                  Many products are innovative but not yet proven.
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  💡 Without product–market fit, it's hard to win investors, customers, or sales partners.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="text-2xl mb-3">⚙️</div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Immature Products & Low Volumes
+                </h3>
+                <p className="font-body text-sm text-muted-foreground mb-2">
+                  Startups often lack certifications, scalability, and volume.
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  📦 Distributors want high-volume, low-risk products — leaving startups out.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="text-2xl mb-3">👥</div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Limited Sales Resources
+                </h3>
+                <p className="font-body text-sm text-muted-foreground mb-2">
+                  Sales often falls on the CEO or founders.
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  ⏳ With small teams, opportunities are missed and growth slows.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="text-2xl mb-3">📊</div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Missing Sales Expertise
+                </h3>
+                <p className="font-body text-sm text-muted-foreground mb-2">
+                  Technical founders rarely have B2B sales experience.
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  🔑 Hardware sales require trust, negotiation, and long cycles — skills that take years to build.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="text-2xl mb-3">🌍</div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Nordic Business Culture
+                </h3>
+                <p className="font-body text-sm text-muted-foreground mb-2">
+                  Success in the Nordics relies on trust, relationships, and consensus.
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  🤝 Startups without local sales know-how struggle to adapt.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="p-6">
+                <div className="text-2xl mb-3">⏱</div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Long Sales Cycles & Expansion Barriers
+                </h3>
+                <p className="font-body text-sm text-muted-foreground mb-2">
+                  Hardware deals take months of testing and negotiations.
+                </p>
+                <p className="font-body text-sm text-muted-foreground">
+                  Expanding abroad requires networks and presence that startups rarely have.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Why Aplexor Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
