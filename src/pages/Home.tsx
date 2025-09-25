@@ -28,22 +28,22 @@ const Home = () => {
     {
       icon: <XCircle className="w-8 h-8 text-primary" />,
       title: "No Market Validation",
-      description: "Many products are innovative but not yet proven. Without product–market fit, it's hard to win investors, customers, or sales partners."
-    },
+      description: "Many products are innovative but not yet mature. Without product–market fit, it is challenging to convince investors, customers, or sales partners."
+    } 
     {
       icon: <Settings className="w-8 h-8 text-primary" />,
       title: "Immature Products & Low Volumes",
-      description: "Startups often lack certifications, scalability, and volume. Distributors want high-volume, low-risk products — leaving startups out."
+      description: "Startups often lack certifications, scalability, and volume. Distributors often want high-volume, low-risk products, out of reach for many businesses."
     },
     {
       icon: <UserMinus className="w-8 h-8 text-primary" />,
       title: "Limited Sales Resources",
-      description: "Sales often falls on the CEO or founders. With small teams, opportunities are missed and growth slows."
+      description: "Sales often falls on the CEO or founders. With small teams, opportunities are missed, resources are blocked and growth slows."
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-primary" />,
       title: "Missing Sales Expertise",
-      description: "Technical founders rarely have B2B sales experience. Hardware sales require trust, negotiation, and long cycles — skills that take years to build."
+      description: "Technical founders rarely have B2B sales experience, and often want to focus on core technology development."
     },
     {
       icon: <MapPin className="w-8 h-8 text-primary" />,
@@ -53,7 +53,7 @@ const Home = () => {
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
       title: "Long Sales Cycles & Expansion Barriers",
-      description: "Hardware deals take months of testing and negotiations. Expanding abroad requires networks and presence that startups rarely have."
+      description: "Expanding into the Nordics requires networks and presence that startups rarely have, and struggle to build."
     }
   ];
 
