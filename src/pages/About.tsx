@@ -124,16 +124,17 @@ const About = () => {
             {team.map((member, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-8">
-                  {typeof member.image === 'string' && member.image.startsWith('/') ? (
+                  {typeof member.image === 'string' && member.image.includes('/api/placeholder') ? (
                     <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-6 flex items-center justify-center">
                       <Users className="w-16 h-16 text-muted-foreground" />
                     </div>
                   ) : (
                     <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
                       <img 
-                        src={member.image} 
+                        src={member.image as string}
                         alt={member.name}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                   )}

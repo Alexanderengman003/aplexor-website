@@ -89,7 +89,7 @@ const Navigation = () => {
             ))}
 
             <Button asChild variant="default" className="ml-4">
-              <Link to="/contact">Get Started</Link>
+              <a href="https://calendly.com/alexander-engman-aplexor/30min" target="_blank" rel="noopener noreferrer">Appointment</a>
             </Button>
           </div>
 
@@ -156,9 +156,9 @@ const Navigation = () => {
               ))}
               
               <Button asChild variant="default" className="w-fit">
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
-                </Link>
+                <a href="https://calendly.com/alexander-engman-aplexor/30min" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                  Appointment
+                </a>
               </Button>
             </div>
           </div>
