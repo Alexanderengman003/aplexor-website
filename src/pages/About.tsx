@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Users, Target, Shield, Lightbulb } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import alexanderEngman from "@/assets/alexander-engman.jpg";
 
 const About = () => {
   const values = [
@@ -26,10 +27,11 @@ const About = () => {
 
   const team = [
     {
-      name: "Sarah Chen",
+      name: "Alexander Engman",
       role: "Founder & CEO",
+      email: "alexander.engman@aplexor.com",
       description: "15+ years in hardware sales and business development. Former VP of Sales at leading tech hardware companies.",
-      image: "/api/placeholder/300/300"
+      image: alexanderEngman
     },
     {
       name: "Michael Rodriguez",
@@ -122,15 +124,32 @@ const About = () => {
             {team.map((member, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-8">
-                  <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <Users className="w-16 h-16 text-muted-foreground" />
-                  </div>
+                  {member.image && typeof member.image === 'string' && member.image.startsWith('/') ? (
+                    <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-6 flex items-center justify-center">
+                      <Users className="w-16 h-16 text-muted-foreground" />
+                    </div>
+                  ) : (
+                    <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                   <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
                     {member.name}
                   </h3>
-                  <p className="font-body text-primary font-medium mb-4">
+                  <p className="font-body text-primary font-medium mb-2">
                     {member.role}
                   </p>
+                  {member.email && (
+                    <p className="font-body text-sm text-muted-foreground mb-4">
+                      <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">
+                        {member.email}
+                      </a>
+                    </p>
+                  )}
                   <p className="font-body text-sm text-muted-foreground">
                     {member.description}
                   </p>

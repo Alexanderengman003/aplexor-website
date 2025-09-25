@@ -83,8 +83,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6 text-primary" />,
       label: "Email",
-      value: "hello@aplexor.com",
-      link: "mailto:hello@aplexor.com"
+      value: "info@aplexor.com",
+      link: "mailto:info@aplexor.com"
     },
     {
       icon: <Phone className="w-6 h-6 text-primary" />,
