@@ -52,8 +52,8 @@ const Home = () => {
     },
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
-      title: "Long Sales Cycles & Expansion Barriers",
-      description: "Expanding into the Nordics requires networks and presence that startups rarely have, and struggle to build."
+      title: "Expansion Barriers",
+      description: "Expanding into the Nordics requires networks and presence that startups struggle to build, and complex regulatory considerations are demanding."
     }
   ];
 
