@@ -331,19 +331,17 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Ready to accelerate your hardware sales?
-            </h2>
-            <p className="font-body text-lg text-muted-foreground mb-8">
-              Submit your product information and let's discuss how we can help you reach your Nordic sales goals.
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+            Ready to work with us?
+          </h2>
+            <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
+              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
             </p>
-            <Button asChild size="lg" className="font-heading font-semibold">
-              <Link to="/contact">Submit Your Product</Link>
-            </Button>
-          </div>
+          <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
+            <Link to="/contact">Get In Touch</Link>
+          </Button>
         </div>
       </section>
     </Layout>
