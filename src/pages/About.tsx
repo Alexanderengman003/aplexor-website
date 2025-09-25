@@ -124,7 +124,7 @@ const About = () => {
             {team.map((member, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-8">
-                  {member.image && typeof member.image === 'string' && member.image.startsWith('/') ? (
+                  {typeof member.image === 'string' && member.image.startsWith('/') ? (
                     <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-6 flex items-center justify-center">
                       <Users className="w-16 h-16 text-muted-foreground" />
                     </div>
