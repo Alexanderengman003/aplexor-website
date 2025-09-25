@@ -100,7 +100,7 @@ const Home = () => {
               <span className="text-primary">Hardware Startups</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              We help innovative hardware companies accelerate growth through expert sales representation, strategic partnerships, and proven market entry strategies.
+              We help innovative hardware companies in the Nordics accelerate growth through expert sales representation, strategic partnerships, and proven market entry strategies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold">
@@ -119,7 +119,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              The Hardware Sales Challenge
+              The Challenge
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
               Hardware startups face unique barriers that traditional sales approaches can't overcome.
