@@ -10,7 +10,7 @@ const Home = () => {
     {
       icon: <Users className="w-8 h-8 text-primary" />,
       title: "Expertise",
-      description: "Deep industry knowledge and proven track record in hardware sales and market entry strategies."
+      description: "Deep industry knowledge and track record in hardware sales and market entry strategies."
     },
     {
       icon: <Globe className="w-8 h-8 text-primary" />,
@@ -27,13 +27,13 @@ const Home = () => {
   const problems = [
     {
       icon: <XCircle className="w-8 h-8 text-primary" />,
-      title: "No Market Validation",
+      title: "Market Validation",
       description: "Many products are innovative but not yet mature. Without product–market fit, it is challenging to convince investors, customers, or sales partners."
     }, 
     {
       icon: <Settings className="w-8 h-8 text-primary" />,
-      title: "Immature Products & Low Volumes",
-      description: "Startups often lack certifications, scalability, and volume. Distributors often want high-volume, low-risk products, out of reach for many businesses."
+      title: "Sales Volume",
+      description: "Startups often lack certifications, scale, and volume. Distributors often want high-volume, low-risk products, out of reach for many businesses."
     },
     {
       icon: <UserMinus className="w-8 h-8 text-primary" />,
@@ -154,7 +154,7 @@ const Home = () => {
               Why Choose Aplexor?
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We combine deep industry expertise with a proven network to deliver exceptional results for hardware startups.
+              We combine industry expertise with a wide network to deliver exceptional results for hardware startups. We can digest the fine details of your hardware solution, and find the partners you need for business growth.
             </p>
           </div>
           
@@ -186,7 +186,7 @@ const Home = () => {
               Our Services
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive sales solutions tailored specifically for hardware startups entering and scaling in the Nordic markets (Sweden, Norway, Denmark, Finland, Iceland).
+              Comprehensive sales solutions tailored specifically for hardware startups entering and scaling in the Nordic markets.
             </p>
           </div>
           
