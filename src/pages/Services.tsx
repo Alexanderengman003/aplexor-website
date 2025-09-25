@@ -10,6 +10,7 @@ import {
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Services = () => {
+  // Clean minimalistic services page
   const serviceCategories = [
     {
       title: "Discovery",
