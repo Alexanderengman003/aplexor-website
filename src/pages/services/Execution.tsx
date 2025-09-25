@@ -55,15 +55,6 @@ const Execution = () => {
 
   return (
     <Layout>
-      {/* Breadcrumb */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Link to="/services" className="hover:text-primary transition-colors">Services</Link>
-          <span>/</span>
-          <span>Execution Services</span>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <section 
         className="relative py-16 lg:py-24 overflow-hidden"
@@ -124,29 +115,20 @@ const Execution = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-muted">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Ready to execute your growth strategy?
-            </h2>
-            <p className="font-body text-lg text-muted-foreground mb-8">
-              Let our experienced team handle the execution while you focus on product development and business growth.
+          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+            Ready to work with us?
+          </h2>
+            <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
+              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="font-heading font-semibold">
-                <Link to="/contact">Get Started</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="font-heading font-semibold">
-                <Link to="/services">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Services
-                </Link>
-              </Button>
-            </div>
-          </div>
+          <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
+            <Link to="/contact">Get In Touch</Link>
+          </Button>
         </div>
       </section>
+
     </Layout>
   );
 };

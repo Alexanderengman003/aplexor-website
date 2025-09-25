@@ -44,6 +44,39 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link
+              to="/"
+              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/") ? "text-primary" : "text-foreground"
+              }`}
+            >
+              Home
+            </Link>
+            
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <button className={`font-body text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+              }`}>
+                Services
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <div className="absolute top-full left-0 mt-1 w-56 bg-background border border-border shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link to="/services" className="block px-4 py-3 text-sm hover:bg-muted transition-colors cursor-pointer border-b border-border">
+                  All Services
+                </Link>
+                {serviceLinks.map((service) => (
+                  <Link 
+                    key={service.href} 
+                    to={service.href} 
+                    className="block px-4 py-3 text-sm hover:bg-muted transition-colors cursor-pointer"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -55,30 +88,6 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
-            
-            {/* Services Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className={`font-body text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
-                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
-              }`}>
-                Services
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-background border border-border shadow-lg">
-                <DropdownMenuItem asChild>
-                  <Link to="/services" className="w-full px-3 py-2 text-sm hover:bg-muted transition-colors">
-                    All Services
-                  </Link>
-                </DropdownMenuItem>
-                {serviceLinks.map((service) => (
-                  <DropdownMenuItem key={service.href} asChild>
-                    <Link to={service.href} className="w-full px-3 py-2 text-sm hover:bg-muted transition-colors">
-                      {service.label}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
 
             <Button asChild variant="default" className="ml-4">
               <Link to="/contact">Get Started</Link>
@@ -99,18 +108,15 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(link.href) ? "text-primary" : "text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <Link
+                to="/"
+                className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                  isActive("/") ? "text-primary" : "text-foreground"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
               
               {/* Mobile Services Links */}
               <div className="space-y-2 pl-4">
@@ -136,6 +142,19 @@ const Navigation = () => {
                   </Link>
                 ))}
               </div>
+
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(link.href) ? "text-primary" : "text-foreground"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
               
               <Button asChild variant="default" className="w-fit">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
