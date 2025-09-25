@@ -16,12 +16,42 @@ import {
   FileText, 
   TrendingUp, 
   Database, 
-  Calculator 
+  Calculator,
+  Search,
+  UserSearch,
+  Layers,
+  Eye
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Services = () => {
   const serviceCategories = [
+    {
+      title: "Discovery Services",
+      subtitle: "Identify opportunities, qualify prospects, and understand the landscape before strategic planning",
+      services: [
+        {
+          icon: <UserSearch className="w-12 h-12 text-primary" />,
+          title: "Customer Needs Mapping",
+          description: "Conduct structured interviews and surveys to uncover unmet customer needs and pain points."
+        },
+        {
+          icon: <Layers className="w-12 h-12 text-primary" />,
+          title: "Market Segmentation & Prioritization",
+          description: "Categorize target markets and segments to focus sales efforts where they matter most."
+        },
+        {
+          icon: <Search className="w-12 h-12 text-primary" />,
+          title: "Opportunity Scouting & Lead Qualification",
+          description: "Identify high-potential partners, distributors, and leads, and rank them for follow-up."
+        },
+        {
+          icon: <Eye className="w-12 h-12 text-primary" />,
+          title: "Early Engagement Analysis",
+          description: "Evaluate initial interest and responsiveness from prospects to refine sales approach."
+        }
+      ]
+    },
     {
       title: "Strategic Services",
       subtitle: "Where to go and how to win",
@@ -29,22 +59,22 @@ const Services = () => {
         {
           icon: <Target className="w-12 h-12 text-primary" />,
           title: "Go-to-Market Strategy",
-          description: "Define positioning, pricing, and market entry strategies that win customers and drive sustainable growth."
+          description: "Define positioning, pricing, and market entry."
         },
         {
           icon: <BarChart3 className="w-12 h-12 text-primary" />,
           title: "Market Research & Insights",
-          description: "Identify opportunities, competitors, and customer needs to make informed strategic decisions."
+          description: "Identify opportunities, competitors, and customer needs to inform strategic decisions."
         },
         {
           icon: <Globe className="w-12 h-12 text-primary" />,
           title: "Nordic Market Entry",
-          description: "Tailored expertise for entering and scaling in the Nordic region with local market knowledge."
+          description: "Tailored expertise for entering and scaling in the Nordic region."
         },
         {
           icon: <Shield className="w-12 h-12 text-primary" />,
           title: "Commercial Readiness Assessment",
-          description: "Evaluate certifications, scalability, and sales readiness before engaging partners to ensure market success."
+          description: "Evaluate certifications, scalability, and sales readiness before engaging partners."
         }
       ]
     },
@@ -55,48 +85,48 @@ const Services = () => {
         {
           icon: <Users className="w-12 h-12 text-primary" />,
           title: "Lead Generation",
-          description: "Build and qualify your sales pipeline with targeted prospecting and proven methodologies."
+          description: "Build and qualify your sales pipeline."
         },
         {
           icon: <Handshake className="w-12 h-12 text-primary" />,
           title: "Matchmaking",
-          description: "Connect with the right partners, distributors, and customers for optimal market penetration."
+          description: "Connect with partners, distributors, and customers."
         },
         {
           icon: <User className="w-12 h-12 text-primary" />,
           title: "Sales Representation",
-          description: "Act as your outsourced sales force with professional representation to key buyers and decision makers."
+          description: "Act as your outsourced sales force."
         },
         {
           icon: <Network className="w-12 h-12 text-primary" />,
           title: "Channel Development & Business Development",
-          description: "Establish and manage distributor/reseller networks and nurture long-term relationships for sustained growth."
+          description: "Establish and manage distributor/reseller networks and nurture long-term relationships."
         }
       ]
     },
     {
       title: "Supporting Services",
-      subtitle: "Tools and materials that close deals",
+      subtitle: "Tools, processes, and materials that close deals",
       services: [
         {
           icon: <FileText className="w-12 h-12 text-primary" />,
           title: "Sales Enablement",
-          description: "Create compelling sales decks, datasheets, and messaging that win customers and accelerate deal closure."
+          description: "Create sales decks, datasheets, and messaging that win customers."
         },
         {
           icon: <TrendingUp className="w-12 h-12 text-primary" />,
           title: "Investor & Pitch Support",
-          description: "Tailor presentations and materials to secure funding and partnerships with compelling storytelling."
+          description: "Tailor presentations and materials to secure funding and partnerships."
         },
         {
           icon: <Database className="w-12 h-12 text-primary" />,
           title: "CRM & Sales Process Setup",
-          description: "Implement tools and workflows to keep sales organized and maximize conversion rates."
+          description: "Implement tools and workflows to keep sales organized."
         },
         {
           icon: <Calculator className="w-12 h-12 text-primary" />,
           title: "Pricing & Packaging Advisory",
-          description: "Define pricing models, bundles, and offers that fit the market and maximize profitability."
+          description: "Define pricing models, bundles, and offers that fit the market."
         }
       ]
     }

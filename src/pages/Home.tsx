@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
-import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock } from "lucide-react";
+import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
@@ -59,24 +59,24 @@ const Home = () => {
 
   const services = [
     {
-      icon: <Handshake className="w-6 h-6 text-primary" />,
-      title: "Sales Representation",
-      description: "Professional representation of your hardware products to key buyers and decision makers."
+      icon: <Search className="w-6 h-6 text-primary" />,
+      title: "Discovery",
+      description: "Identify opportunities, qualify prospects, and understand the landscape before strategic planning."
     },
     {
       icon: <Target className="w-6 h-6 text-primary" />,
-      title: "Lead Generation",
-      description: "Targeted prospecting and qualification of high-value leads for your hardware solutions."
-    },
-    {
-      icon: <Globe className="w-6 h-6 text-primary" />,
-      title: "Distributor Matchmaking",
-      description: "Strategic partnerships with the right distributors for optimal market penetration."
+      title: "Strategic",
+      description: "Where to go and how to win with comprehensive go-to-market strategies."
     },
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
-      title: "Market Entry Consulting",
-      description: "Expert guidance on market strategy, positioning, and go-to-market execution."
+      title: "Execution",
+      description: "Direct sales activity and growth through lead generation, matchmaking, and representation."
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6 text-primary" />,
+      title: "Supporting",
+      description: "Tools, processes, and materials that close deals and accelerate growth."
     }
   ];
 
