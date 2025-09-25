@@ -261,51 +261,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-muted to-muted/80 border-t border-border">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common questions about our hardware sales services and process.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                question: "What types of hardware products do you work with?",
-                answer: "We work with a wide range of hardware products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
-              },
-              {
-                question: "How do you charge for your services?",
-                answer: "Our pricing structure varies depending on the scope of work and client needs. We offer both commission-based and retainer-based models. Contact us to discuss the best approach for your specific situation."
-              },
-              {
-                question: "How quickly can you start working on my project?",
-                answer: "We can typically begin initial discovery and strategy development within 1-2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
-              },
-              {
-                question: "Do you work with international markets?",
-                answer: "Yes, we have experience helping clients enter both domestic and international markets. Our network includes partners and distributors across North America, Europe, and Asia-Pacific regions."
-              }
-            ].map((faq, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="font-body text-muted-foreground">
-                    {faq.answer}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
