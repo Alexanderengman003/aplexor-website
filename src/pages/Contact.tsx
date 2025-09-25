@@ -125,7 +125,7 @@ const Contact = () => {
               Let's Talk
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Ready to accelerate your hardware sales in the Nordic region? Get in touch with our team to discuss how we can help bring your products to Nordic markets.
+              Ready to accelerate your hardware sales in the Nordics? Get in touch with our team to discuss how we can help bring your products to Nordic markets.
             </p>
           </div>
         </div>

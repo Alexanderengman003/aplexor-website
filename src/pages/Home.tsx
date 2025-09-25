@@ -100,7 +100,7 @@ const Home = () => {
               <span className="text-primary">Hardware Startups</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              We help innovative hardware companies accelerate growth in the Nordic region through expert sales representation, strategic partnerships, and proven market entry strategies specifically tailored for Nordic markets.
+              We help innovative hardware companies accelerate growth in the Nordics through expert sales representation, strategic partnerships, and proven market entry strategies specifically tailored for Nordic markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold">
@@ -186,7 +186,7 @@ const Home = () => {
               Our Services
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive sales solutions tailored specifically for hardware startups entering and scaling in the Nordic markets (Sweden, Norway, Denmark, Finland, Iceland).
+              Comprehensive sales solutions tailored specifically for hardware startups entering and scaling in the Nordics.
             </p>
           </div>
           
@@ -223,7 +223,7 @@ const Home = () => {
             Ready to bring your hardware to market?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can accelerate your growth and connect you with the right partners and customers in the Nordic region.
+              Let's discuss how we can accelerate your growth and connect you with the right partners and customers in the Nordics.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Let's Talk</Link>

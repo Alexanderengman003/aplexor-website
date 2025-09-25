@@ -20,7 +20,8 @@ import {
   Search,
   UserSearch,
   Layers,
-  Eye
+  Eye,
+  ArrowRight
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -151,45 +152,49 @@ const Services = () => {
               Our Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comprehensive sales solutions designed specifically for hardware startups entering and scaling in the Nordic markets (Sweden, Norway, Denmark, Finland, Iceland). We provide the expertise, network, and strategic guidance you need to succeed in these markets.
+              Comprehensive sales solutions designed specifically for hardware startups entering and scaling in the Nordics. We provide the expertise, network, and strategic guidance you need to succeed in these markets.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-8">
-        <div className="container mx-auto px-4 space-y-16">
+      <section className="py-16">
+        <div className="container mx-auto px-4 space-y-12">
           {serviceCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex}>
-              <div className="text-center mb-8">
-                <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-2">
+            <Card key={categoryIndex} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <CardHeader className="bg-muted/50 text-center pb-6">
+                <CardTitle className="font-heading text-3xl font-bold text-foreground mb-2">
                   {category.title}
-                </h2>
+                </CardTitle>
                 <p className="font-body text-lg text-muted-foreground">
                   {category.subtitle}
                 </p>
-              </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {category.services.map((service, serviceIndex) => (
-                  <Card key={serviceIndex} className="hover:shadow-lg transition-shadow duration-300">
-                    <CardHeader className="text-center pb-4">
-                      <div className="flex justify-center mb-4">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="font-heading text-2xl font-bold text-foreground">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="font-body text-muted-foreground">
-                        {service.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
+              </CardHeader>
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {category.services.map((service, serviceIndex) => (
+                    <Card key={serviceIndex} className="border-2 hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                      <CardContent className="p-6">
+                        <div className="flex items-start space-x-4">
+                          <div className="flex-shrink-0">
+                            {service.icon}
+                          </div>
+                          <div>
+                            <h4 className="font-heading text-xl font-semibold text-foreground mb-2">
+                              {service.title}
+                            </h4>
+                            <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                              {service.description}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
@@ -202,11 +207,11 @@ const Services = () => {
               Our Process
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We follow a proven methodology to ensure successful outcomes for every hardware startup entering Nordic markets.
+              We follow a proven methodology to ensure successful outcomes for every hardware startup entering the Nordics.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="flex items-center justify-center space-x-4 md:space-x-8">
             {[
               {
                 step: "01",
@@ -229,16 +234,21 @@ const Services = () => {
                 description: "Continuously monitor, analyze, and refine our approach for maximum results."
               }
             ].map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4">
-                  {step.step}
+              <div key={index} className="flex items-center">
+                <div className="text-center max-w-xs">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4">
+                    {step.step}
+                  </div>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="font-body text-muted-foreground text-sm">
+                    {step.description}
+                  </p>
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="font-body text-muted-foreground">
-                  {step.description}
-                </p>
+                {index < 3 && (
+                  <ArrowRight className="w-6 h-6 text-primary mx-4 hidden md:block" />
+                )}
               </div>
             ))}
           </div>
