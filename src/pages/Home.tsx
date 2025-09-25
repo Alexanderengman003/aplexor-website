@@ -29,7 +29,7 @@ const Home = () => {
       icon: <XCircle className="w-8 h-8 text-primary" />,
       title: "No Market Validation",
       description: "Many products are innovative but not yet mature. Without product–market fit, it is challenging to convince investors, customers, or sales partners."
-    } 
+    }, 
     {
       icon: <Settings className="w-8 h-8 text-primary" />,
       title: "Immature Products & Low Volumes",
