@@ -87,18 +87,18 @@ const Footer = () => {
               © {new Date().getFullYear()} Aplexor. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a 
-                href="/privacy" 
+              <Link 
+                to="/privacy-policy" 
                 className="font-body text-muted-foreground hover:text-primary transition-colors text-sm"
               >
                 Privacy Policy
-              </a>
-              <a 
-                href="/terms" 
+              </Link>
+              <Link 
+                to="/terms-of-service" 
                 className="font-body text-muted-foreground hover:text-primary transition-colors text-sm"
               >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
