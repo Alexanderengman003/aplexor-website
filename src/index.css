@@ -9,29 +9,29 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Aplexor Brand Colors */
-    --primary: 115 58% 76%;           /* #A8E6A1 - Soft pastel green */
+    --primary: 86 44% 63%;            /* #A0C878 - Dark green */
     --primary-foreground: 0 0% 100%;  /* White text on green */
-    --primary-hover: 145 34% 61%;     /* #74C69D - Calm mint green for hover */
+    --primary-hover: 73 69% 76%;      /* #DDEB9D - Light green for hover */
     
-    --secondary: 145 34% 61%;         /* #74C69D - Calm mint green */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 73 69% 76%;          /* #DDEB9D - Light green */
+    --secondary-foreground: 0 0% 18%; /* Dark text on light green */
     
     /* Base Colors */
-    --background: 0 0% 100%;          /* #FFFFFF - Pure white */
+    --background: 50 100% 98%;        /* #FFFDF6 - Very light cream */
     --foreground: 0 0% 18%;           /* #2E2E2E - Dark grey for text */
     
-    --card: 0 0% 100%;                /* White cards */
+    --card: 50 100% 98%;              /* Very light cream cards */
     --card-foreground: 0 0% 18%;      /* Dark text on cards */
     
-    --muted: 0 0% 96%;                /* #F6F6F6 - Light grey backgrounds */
+    --muted: 48 67% 94%;              /* #FAF6E9 - Light cream backgrounds */
     --muted-foreground: 0 0% 45%;     /* Medium grey for subtle text */
     
-    --accent: 115 58% 76%;            /* Same as primary for consistency */
-    --accent-foreground: 0 0% 100%;
+    --accent: 73 69% 76%;             /* #DDEB9D - Light green accent */
+    --accent-foreground: 0 0% 18%;    /* Dark text on light green */
     
-    --border: 0 0% 90%;               /* Light borders */
-    --input: 0 0% 96%;                /* Light input backgrounds */
-    --ring: 115 58% 76%;              /* Green focus rings */
+    --border: 48 67% 88%;             /* Light cream borders */
+    --input: 48 67% 94%;              /* Light cream input backgrounds */
+    --ring: 86 44% 63%;               /* Dark green focus rings */
     
     /* Shadows and Effects */
     --shadow-card: 0px 4px 12px rgba(0, 0, 0, 0.05);
@@ -41,7 +41,7 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     
-    --popover: 0 0% 100%;
+    --popover: 50 100% 98%;           /* Very light cream popover */
     --popover-foreground: 0 0% 18%;
 
     --radius: 0.75rem;
@@ -65,34 +65,34 @@ All colors MUST be HSL.
 
   .dark {
     /* Aplexor maintains light theme for professional appearance */
-    --background: 0 0% 100%;
+    --background: 50 100% 98%;
     --foreground: 0 0% 18%;
 
-    --card: 0 0% 100%;
+    --card: 50 100% 98%;
     --card-foreground: 0 0% 18%;
 
-    --popover: 0 0% 100%;
+    --popover: 50 100% 98%;
     --popover-foreground: 0 0% 18%;
 
-    --primary: 115 58% 76%;
+    --primary: 86 44% 63%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 145 34% 61%;
+    --primary-hover: 73 69% 76%;
 
-    --secondary: 145 34% 61%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 73 69% 76%;
+    --secondary-foreground: 0 0% 18%;
 
-    --muted: 0 0% 96%;
+    --muted: 48 67% 94%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 115 58% 76%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 73 69% 76%;
+    --accent-foreground: 0 0% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --ring: 115 58% 76%;
+    --border: 48 67% 88%;
+    --input: 48 67% 94%;
+    --ring: 86 44% 63%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
