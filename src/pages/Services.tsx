@@ -151,7 +151,7 @@ const Services = () => {
               Our Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comprehensive sales solutions designed specifically for hardware startups and growing companies. We provide the expertise, network, and strategic guidance you need to succeed.
+              Comprehensive sales solutions designed specifically for hardware startups entering and scaling in the Nordic markets (Sweden, Norway, Denmark, Finland, Iceland). We provide the expertise, network, and strategic guidance you need to succeed in these markets.
             </p>
           </div>
         </div>
@@ -202,7 +202,7 @@ const Services = () => {
               Our Process
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We follow a proven methodology to ensure successful outcomes for every hardware startup we partner with.
+              We follow a proven methodology to ensure successful outcomes for every hardware startup entering Nordic markets.
             </p>
           </div>
           
@@ -253,7 +253,7 @@ const Services = () => {
               Ready to accelerate your hardware sales?
             </h2>
             <p className="font-body text-lg text-muted-foreground mb-8">
-              Submit your product information and let's discuss how we can help you reach your sales goals.
+              Submit your product information and let's discuss how we can help you reach your Nordic market sales goals.
             </p>
             <Button asChild size="lg" className="font-heading font-semibold">
               <Link to="/contact">Submit Your Product</Link>

@@ -12,7 +12,7 @@ const Footer = () => {
               Aplexor
             </h3>
             <p className="font-body text-muted-foreground mb-4 max-w-md">
-              Your trusted sales partner for hardware startups. We help bring innovative hardware products to market through expert representation and strategic partnerships.
+              Your trusted Nordic sales partner for hardware startups. We help bring innovative hardware products to Nordic markets through expert representation and strategic partnerships across Sweden, Norway, Denmark, Finland, and Iceland.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -73,10 +73,10 @@ const Footer = () => {
               Services
             </h4>
             <ul className="space-y-2 font-body text-muted-foreground">
-              <li>Sales Representation</li>
-              <li>Lead Generation</li>
-              <li>Distributor Matchmaking</li>
-              <li>Market Entry Consulting</li>
+              <li>Nordic Sales Representation</li>
+              <li>Nordic Lead Generation</li>
+              <li>Nordic Distributor Matchmaking</li>
+              <li>Nordic Market Entry</li>
             </ul>
           </div>
         </div>

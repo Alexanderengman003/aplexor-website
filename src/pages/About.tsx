@@ -64,7 +64,7 @@ const About = () => {
               About Aplexor
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              We're passionate about helping innovative hardware companies succeed in competitive markets through expert sales representation and strategic partnerships.
+              We're passionate about helping innovative hardware companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ const About = () => {
               Our Mission
             </h2>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              To bridge the gap between innovative hardware startups and market success by providing expert sales representation, strategic guidance, and access to established distribution networks. We believe that great technology deserves great market execution.
+              To bridge the gap between innovative hardware startups and Nordic market success by providing expert sales representation, strategic guidance, and access to established distribution networks across Sweden, Norway, Denmark, Finland, and Iceland. We believe that great technology deserves great market execution in the Nordic region.
             </p>
           </div>
         </div>
@@ -96,10 +96,10 @@ const About = () => {
                 Aplexor was founded in 2019 with a simple observation: too many brilliant hardware innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges.
               </p>
               <p>
-                Our founders, having witnessed this pattern repeatedly across various hardware sectors, decided to create a specialized agency that could bridge this critical gap. We combine deep technical understanding with proven sales expertise to help hardware startups navigate complex B2B sales processes and build sustainable growth.
+                Our founders, having witnessed this pattern repeatedly across various hardware sectors, decided to create a specialized agency that could bridge this critical gap specifically for the Nordic markets. We combine deep technical understanding with proven Nordic sales expertise to help hardware startups navigate complex B2B sales processes and build sustainable growth in Sweden, Norway, Denmark, Finland, and Iceland.
               </p>
               <p>
-                Today, we've helped dozens of hardware companies successfully enter new markets, establish key partnerships, and achieve significant revenue growth. Our approach remains focused on building long-term relationships and delivering measurable results for every client we serve.
+                Today, we've helped dozens of hardware companies successfully enter Nordic markets, establish key regional partnerships, and achieve significant revenue growth across the Nordic region. Our approach remains focused on building long-term relationships and delivering measurable results for every client we serve in these markets.
               </p>
             </div>
           </div>
@@ -199,10 +199,10 @@ const About = () => {
                 question: "How quickly can you start working on my project?",
                 answer: "We can typically begin initial discovery and strategy development within 1-2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
               },
-              {
-                question: "Do you work with international markets?",
-                answer: "Yes, we have experience helping clients enter both domestic and international markets. Our network includes partners and distributors across North America, Europe, and Asia-Pacific regions."
-              }
+                {
+                  question: "Do you work with international markets?",
+                  answer: "We specialize exclusively in Nordic markets (Sweden, Norway, Denmark, Finland, and Iceland). Our deep understanding of Nordic business culture, regulations, and distribution networks allows us to provide highly effective, localized support for hardware companies entering these markets."
+                }
             ].map((faq, index) => (
               <Card key={index}>
                 <CardContent className="p-6">
@@ -225,9 +225,9 @@ const About = () => {
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
             Ready to work with us?
           </h2>
-          <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-            Let's discuss how our team can help accelerate your hardware company's growth and market success.
-          </p>
+            <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
+              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+            </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>
           </Button>
