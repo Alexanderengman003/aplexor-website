@@ -74,9 +74,6 @@ const Discovery = () => {
             <p className="font-body text-xl text-muted-foreground mb-8">
               Identify opportunities, qualify prospects, and understand the landscape before strategic planning. Our discovery services provide the foundation for successful market entry and growth.
             </p>
-            <Button asChild size="lg" className="font-heading font-semibold">
-              <Link to="/contact">Start Your Discovery</Link>
-            </Button>
           </div>
         </div>
       </section>

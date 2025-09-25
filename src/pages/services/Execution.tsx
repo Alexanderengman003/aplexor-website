@@ -74,9 +74,6 @@ const Execution = () => {
             <p className="font-body text-xl text-muted-foreground mb-8">
               Direct sales activity and growth execution. Turn your strategy into results with our hands-on execution services designed to drive immediate and sustainable growth.
             </p>
-            <Button asChild size="lg" className="font-heading font-semibold">
-              <Link to="/contact">Start Executing</Link>
-            </Button>
           </div>
         </div>
       </section>

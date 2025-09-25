@@ -17,7 +17,6 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const navLinks = [
-    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];

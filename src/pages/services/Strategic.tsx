@@ -74,9 +74,6 @@ const Strategic = () => {
             <p className="font-body text-xl text-muted-foreground mb-8">
               Define where to go and how to win. Our strategic services help you develop comprehensive plans for successful market entry and sustainable growth in Nordic markets.
             </p>
-            <Button asChild size="lg" className="font-heading font-semibold">
-              <Link to="/contact">Develop Your Strategy</Link>
-            </Button>
           </div>
         </div>
       </section>
