@@ -64,7 +64,7 @@ const About = () => {
               About Aplexor
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              We're passionate about helping innovative hardware companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
+              Were passionate about helping innovative hardware companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
             </p>
           </div>
         </div>
