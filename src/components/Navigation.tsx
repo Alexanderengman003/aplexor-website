@@ -87,16 +87,6 @@ const Navigation = () => {
                 {link.label}
               </Link>
             ))}
-
-            <Button 
-              variant="default" 
-              className="ml-4"
-              onClick={() => {
-                (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/alexander-engman-aplexor/30min'});
-              }}
-            >
-              Appointment
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -160,17 +150,6 @@ const Navigation = () => {
                   {link.label}
                 </Link>
               ))}
-              
-              <Button 
-                variant="default" 
-                className="w-fit"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  (window as any).Calendly?.initPopupWidget({url: 'https://calendly.com/alexander-engman-aplexor/30min'});
-                }}
-              >
-                Appointment
-              </Button>
             </div>
           </div>
         )}

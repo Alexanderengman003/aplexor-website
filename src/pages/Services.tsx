@@ -28,7 +28,7 @@ import heroBackground from "@/assets/hero-background.jpg";
 const Services = () => {
   const serviceCategories = [
     {
-      title: "Discovery Services",
+      title: "Discovery",
       subtitle: "Identify opportunities, qualify prospects, and understand the landscape before strategic planning",
       services: [
         {
@@ -54,7 +54,7 @@ const Services = () => {
       ]
     },
     {
-      title: "Strategic Services",
+      title: "Strategic",
       subtitle: "Where to go and how to win",
       services: [
         {
@@ -80,7 +80,7 @@ const Services = () => {
       ]
     },
     {
-      title: "Execution Services",
+      title: "Execution",
       subtitle: "Direct sales activity and growth",
       services: [
         {
@@ -106,7 +106,7 @@ const Services = () => {
       ]
     },
     {
-      title: "Supporting Services",
+      title: "Supporting",
       subtitle: "Tools, processes, and materials that close deals",
       services: [
         {

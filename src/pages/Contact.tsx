@@ -87,12 +87,6 @@ const Contact = () => {
       link: "mailto:info@aplexor.com"
     },
     {
-      icon: <Phone className="w-6 h-6 text-primary" />,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
-    },
-    {
       icon: <Linkedin className="w-6 h-6 text-primary" />,
       label: "LinkedIn",
       value: "linkedin.com/company/aplexor",
