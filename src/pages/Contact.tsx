@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Linkedin, Phone, MapPin } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -108,8 +109,17 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
+      <section 
+        className="relative py-16 lg:py-24 overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-background/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Let's Talk
