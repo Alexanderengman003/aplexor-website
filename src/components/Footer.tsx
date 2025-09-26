@@ -79,7 +79,7 @@ const Footer = () => {
                   to="/services/discovery" 
                   className="font-body text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Discovery Services
+                  Discovery
                 </Link>
               </li>
               <li>
@@ -87,7 +87,7 @@ const Footer = () => {
                   to="/services/strategic" 
                   className="font-body text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Strategic Services
+                  Strategic
                 </Link>
               </li>
               <li>
@@ -95,7 +95,7 @@ const Footer = () => {
                   to="/services/execution" 
                   className="font-body text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Execution Services
+                  Execution
                 </Link>
               </li>
               <li>
@@ -103,7 +103,7 @@ const Footer = () => {
                   to="/services/supporting" 
                   className="font-body text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Supporting Services
+                  Supporting
                 </Link>
               </li>
             </ul>
