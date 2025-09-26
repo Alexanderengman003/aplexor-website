@@ -21,7 +21,8 @@ import {
   UserSearch,
   Layers,
   Eye,
-  ChevronRight
+  ChevronRight,
+  ChevronDown
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -322,8 +323,8 @@ const Services = () => {
                   </div>
                   {index < 3 && (
                     <>
-                      <ChevronRight className="w-8 h-8 text-primary mx-4 hidden lg:block" />
-                      <div className="w-px h-8 bg-primary/30 lg:hidden" />
+                      <ChevronRight className="w-12 h-12 text-primary mx-4 hidden lg:block" />
+                      <ChevronDown className="w-12 h-12 text-primary my-4 lg:hidden" />
                     </>
                   )}
                 </div>
