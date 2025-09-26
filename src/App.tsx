@@ -16,9 +16,15 @@ import Supporting from "./pages/services/Supporting";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Portal from "./pages/Portal";
+import { Dashboard } from "./pages/crm/Dashboard";
 import Contacts from "./pages/crm/Contacts";
 import Accounts from "./pages/crm/Accounts";
+import { Pipeline } from "./pages/crm/Pipeline";
+import { Activities } from "./pages/crm/Activities";
 import Products from "./pages/crm/Products";
+import { Support } from "./pages/crm/Support";
+import { Analytics } from "./pages/crm/Analytics";
+import { Settings } from "./pages/crm/Settings";
 
 const queryClient = new QueryClient();
 

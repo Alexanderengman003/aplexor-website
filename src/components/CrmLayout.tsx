@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
 import { 
   Users, 
   Building2, 
@@ -8,17 +12,26 @@ import {
   Settings, 
   LogOut,
   Menu,
-  X
+  X,
+  GitBranch,
+  Activity,
+  Headphones,
+  TrendingUp,
+  Zap,
+  FileText
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 const sidebarItems = [
+  { title: "Dashboard", url: "/portal/dashboard", icon: BarChart3 },
   { title: "Contacts", url: "/portal/contacts", icon: Users },
   { title: "Accounts", url: "/portal/accounts", icon: Building2 },
+  { title: "Pipeline", url: "/portal/pipeline", icon: GitBranch },
+  { title: "Activities", url: "/portal/activities", icon: Activity },
   { title: "Products", url: "/portal/products", icon: Package },
-  { title: "Analytics", url: "/portal/analytics", icon: BarChart3 },
+  { title: "Support", url: "/portal/support", icon: Headphones },
+  { title: "Analytics", url: "/portal/analytics", icon: TrendingUp },
+  { title: "Automation", url: "/portal/automation", icon: Zap },
+  { title: "Reports", url: "/portal/reports", icon: FileText },
   { title: "Settings", url: "/portal/settings", icon: Settings },
 ];
 
