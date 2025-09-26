@@ -21,6 +21,8 @@ import Contacts from "./pages/crm/Contacts";
 import Accounts from "./pages/crm/Accounts";
 import { Pipeline } from "./pages/crm/Pipeline";
 import { Activities } from "./pages/crm/Activities";
+import { Quotes } from "./pages/crm/Quotes";
+import { Orders } from "./pages/crm/Orders";
 import Products from "./pages/crm/Products";
 import { Support } from "./pages/crm/Support";
 import { Analytics } from "./pages/crm/Analytics";

@@ -12,6 +12,14 @@ import heroBackground from "@/assets/hero-background.jpg";
 import Contacts from "./crm/Contacts";
 import Accounts from "./crm/Accounts";
 import Products from "./crm/Products";
+import { Dashboard } from "./crm/Dashboard";
+import { Pipeline } from "./crm/Pipeline";
+import { Activities } from "./crm/Activities";
+import { Quotes } from "./crm/Quotes";
+import { Orders } from "./crm/Orders";
+import { Support } from "./crm/Support";
+import { Analytics } from "./crm/Analytics";
+import { Settings } from "./crm/Settings";
 
 type AuthMode = "login" | "signup" | "forgot";
 
@@ -71,12 +79,18 @@ const Portal = () => {
         userName={userName}
       >
         <Routes>
-          <Route path="/" element={<Navigate to="/portal/contacts" replace />} />
+          <Route path="/" element={<Navigate to="/portal/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/accounts" element={<Accounts />} />
+          <Route path="/pipeline" element={<Pipeline />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/quotes" element={<Quotes />} />
+          <Route path="/orders" element={<Orders />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/analytics" element={<div className="p-8 text-center text-muted-foreground">Analytics dashboard coming soon...</div>} />
-          <Route path="/settings" element={<div className="p-8 text-center text-muted-foreground">Settings page coming soon...</div>} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </CrmLayout>
     );

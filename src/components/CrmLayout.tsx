@@ -27,11 +27,11 @@ const sidebarItems = [
   { title: "Accounts", url: "/portal/accounts", icon: Building2 },
   { title: "Pipeline", url: "/portal/pipeline", icon: GitBranch },
   { title: "Activities", url: "/portal/activities", icon: Activity },
+  { title: "Quotes", url: "/portal/quotes", icon: FileText },
+  { title: "Orders", url: "/portal/orders", icon: Package },
   { title: "Products", url: "/portal/products", icon: Package },
   { title: "Support", url: "/portal/support", icon: Headphones },
   { title: "Analytics", url: "/portal/analytics", icon: TrendingUp },
-  { title: "Automation", url: "/portal/automation", icon: Zap },
-  { title: "Reports", url: "/portal/reports", icon: FileText },
   { title: "Settings", url: "/portal/settings", icon: Settings },
 ];
 
