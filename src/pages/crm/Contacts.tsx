@@ -48,6 +48,13 @@ export default function Contacts() {
 
   useEffect(() => {
     fetchContacts();
+    
+    // Check for company filter in URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const companyFilter = urlParams.get('company');
+    if (companyFilter) {
+      setSearchTerm(companyFilter);
+    }
   }, []);
 
   const fetchContacts = async () => {
@@ -596,9 +603,16 @@ export default function Contacts() {
                     <Trash2 className="mr-2 h-4 w-4" />
                     Delete Contact
                   </Button>
-                  <Button variant="outline" size="sm" className="w-full">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Send Email
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full"
+                    asChild
+                  >
+                    <a href={`mailto:${selectedContact.email}`}>
+                      <Mail className="mr-2 h-4 w-4" />
+                      Send Email
+                    </a>
                   </Button>
                   <Button variant="outline" size="sm" className="w-full">
                     <Phone className="mr-2 h-4 w-4" />
