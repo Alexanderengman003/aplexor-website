@@ -323,7 +323,7 @@ const Services = () => {
                   </div>
                   {index < 3 && (
                     <>
-                      <ChevronRight className="w-12 h-12 text-primary mx-4 hidden lg:block" />
+                      <ChevronRight className="w-20 h-20 text-primary mx-4 hidden lg:block" />
                       <ChevronDown className="w-12 h-12 text-primary my-4 lg:hidden" />
                     </>
                   )}
