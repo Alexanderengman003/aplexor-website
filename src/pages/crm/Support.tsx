@@ -322,12 +322,12 @@ export function Support() {
           />
         </div>
         
-        <Select value={filterStatus || ""} onValueChange={(value) => setFilterStatus(value || null)}>
+        <Select value={filterStatus || "all"} onValueChange={(value) => setFilterStatus(value === "all" ? null : value)}>
           <SelectTrigger className="w-40">
             <SelectValue placeholder="All Statuses" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Statuses</SelectItem>
+            <SelectItem value="all">All Statuses</SelectItem>
             {ticketStatuses.map((status) => (
               <SelectItem key={status.status} value={status.status}>
                 {status.label}
@@ -336,12 +336,12 @@ export function Support() {
           </SelectContent>
         </Select>
         
-        <Select value={filterPriority || ""} onValueChange={(value) => setFilterPriority(value || null)}>
+        <Select value={filterPriority || "all"} onValueChange={(value) => setFilterPriority(value === "all" ? null : value)}>
           <SelectTrigger className="w-40">
             <SelectValue placeholder="All Priorities" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Priorities</SelectItem>
+            <SelectItem value="all">All Priorities</SelectItem>
             {priorities.map((priority) => (
               <SelectItem key={priority.value} value={priority.value}>
                 <span className={priority.color}>{priority.label}</span>
