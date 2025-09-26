@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation, Outlet } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { 
   Users, 
   Building2, 
@@ -26,9 +26,10 @@ interface CrmLayoutProps {
   onLogout: () => void;
   userType: "admin" | "customer" | "supplier";
   userName: string;
+  children: React.ReactNode;
 }
 
-export function CrmLayout({ onLogout, userType, userName }: CrmLayoutProps) {
+export function CrmLayout({ onLogout, userType, userName, children }: CrmLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
 
@@ -132,7 +133,7 @@ export function CrmLayout({ onLogout, userType, userName }: CrmLayoutProps) {
 
         {/* Page content */}
         <main className="flex-1 p-4 lg:p-6">
-          <Outlet />
+          {children}
         </main>
       </div>
     </div>
