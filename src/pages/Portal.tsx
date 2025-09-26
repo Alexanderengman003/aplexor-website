@@ -52,7 +52,7 @@ const Portal = () => {
     setIsSubmitting(true);
 
     // Check for hardcoded admin credentials
-    if (formData.email === "alexander@aplexor.com" && formData.password === "Alexander1234") {
+    if (formData.email === "alexander.engman@aplexor.com" && formData.password === "Alexander1234") {
       setIsAuthenticated(true);
       setUserType("admin");
       setUserName("Alexander");
@@ -63,7 +63,7 @@ const Portal = () => {
     } else {
       toast({
         title: "Invalid credentials",
-        description: "Use alexander@aplexor.com / Alexander1234",
+        description: "Use alexander.engman@aplexor.com / Alexander1234",
         variant: "destructive"
       });
     }
@@ -145,7 +145,7 @@ const Portal = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="mt-1"
-                      placeholder="alexander@aplexor.com"
+                      placeholder="alexander.engman@aplexor.com"
                       required
                     />
                   </div>

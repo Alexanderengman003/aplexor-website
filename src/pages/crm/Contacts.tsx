@@ -1,80 +1,140 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, Plus, Mail, Phone, Building2 } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Search, Plus, Mail, Phone, Building2, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
-// Mock data
-const mockContacts = [
-  {
-    id: 1,
-    name: "Erik Larsson",
-    email: "erik.larsson@techflow.se",
-    phone: "+46 8 123 4567",
-    company: "TechFlow AB",
-    position: "CTO",
-    status: "active",
-    lastContact: "2024-01-15",
-    tags: ["Premium", "Tech Partner"]
-  },
-  {
-    id: 2,
-    name: "Maria Andersson",
-    email: "maria.andersson@nordicdata.no",
-    phone: "+47 22 345 678",
-    company: "Nordic Data Solutions",
-    position: "Procurement Manager",
-    status: "active",
-    lastContact: "2024-01-12",
-    tags: ["Enterprise", "Norway"]
-  },
-  {
-    id: 3,
-    name: "Hans Nielsen",
-    email: "hans.nielsen@danishtech.dk",
-    phone: "+45 33 456 789",
-    company: "Danish Tech Group",
-    position: "Head of IT",
-    status: "prospect",
-    lastContact: "2024-01-10",
-    tags: ["Prospect", "Denmark"]
-  },
-  {
-    id: 4,
-    name: "Anna Virtanen",
-    email: "anna.virtanen@finnishsystems.fi",
-    phone: "+358 9 567 890",
-    company: "Finnish Systems Oy",
-    position: "Technical Director",
-    status: "active",
-    lastContact: "2024-01-08",
-    tags: ["Partner", "Finland"]
-  },
-  {
-    id: 5,
-    name: "Olaf Johannsson",
-    email: "olaf.johannsson@icetech.is",
-    phone: "+354 555 1234",
-    company: "IceTech Solutions",
-    position: "CEO",
-    status: "inactive",
-    lastContact: "2023-12-20",
-    tags: ["Inactive", "Iceland"]
-  }
-];
+interface Contact {
+  id: string;
+  first_name: string | null;
+  last_name: string | null;
+  email: string | null;
+  phone: string | null;
+  company: string | null;
+  position: string | null;
+  status: string | null;
+  tags: string[] | null;
+  last_contact_date: string | null;
+  created_at: string;
+  updated_at: string;
+}
 
 export default function Contacts() {
+  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedContact, setSelectedContact] = useState<typeof mockContacts[0] | null>(null);
+  const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [newContact, setNewContact] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    company: "",
+    position: "",
+    status: "prospect",
+    tags: [] as string[]
+  });
+  const { toast } = useToast();
 
-  const filteredContacts = mockContacts.filter(contact =>
-    contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    contact.company.toLowerCase().includes(searchTerm.toLowerCase())
+  useEffect(() => {
+    fetchContacts();
+  }, []);
+
+  const fetchContacts = async () => {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('contacts')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setContacts(data || []);
+    } catch (error) {
+      toast({
+        title: "Error fetching contacts",
+        description: "Could not load contacts from the database",
+        variant: "destructive"
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const createContact = async () => {
+    if (!newContact.first_name || !newContact.email) {
+      toast({
+        title: "Missing required fields",
+        description: "First name and email are required",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from('contacts')
+        .insert([{
+          first_name: newContact.first_name,
+          last_name: newContact.last_name,
+          email: newContact.email,
+          phone: newContact.phone,
+          company: newContact.company,
+          position: newContact.position,
+          status: newContact.status,
+          tags: newContact.tags
+        }])
+        .select();
+
+      if (error) throw error;
+
+      if (data) {
+        setContacts(prev => [data[0], ...prev]);
+        toast({
+          title: "Contact created",
+          description: `${newContact.first_name} ${newContact.last_name} has been added`
+        });
+        
+        setNewContact({
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone: "",
+          company: "",
+          position: "",
+          status: "prospect",
+          tags: []
+        });
+        setIsDialogOpen(false);
+      }
+    } catch (error) {
+      toast({
+        title: "Error creating contact",
+        description: "Could not create the contact",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const getFullName = (contact: Contact) => {
+    return `${contact.first_name || ""} ${contact.last_name || ""}`.trim() || "Unnamed Contact";
+  };
+
+  const filteredContacts = contacts.filter(contact =>
+    getFullName(contact).toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (contact.email || "").toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (contact.company || "").toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status: string | null) => {
     switch (status) {
       case "active": return "bg-green-100 text-green-800 border-green-200";
       case "prospect": return "bg-blue-100 text-blue-800 border-blue-200";
@@ -83,6 +143,14 @@ export default function Contacts() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -90,10 +158,98 @@ export default function Contacts() {
           <h1 className="font-heading text-3xl font-bold text-foreground">Contacts</h1>
           <p className="text-muted-foreground">Manage your customer and partner contacts</p>
         </div>
-        <Button>
-          <Plus className="mr-2 h-4 w-4" />
-          Add Contact
-        </Button>
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogTrigger asChild>
+            <Button>
+              <Plus className="mr-2 h-4 w-4" />
+              Add Contact
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Create New Contact</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="first_name">First Name *</Label>
+                  <Input
+                    id="first_name"
+                    value={newContact.first_name}
+                    onChange={(e) => setNewContact(prev => ({ ...prev, first_name: e.target.value }))}
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="last_name">Last Name</Label>
+                  <Input
+                    id="last_name"
+                    value={newContact.last_name}
+                    onChange={(e) => setNewContact(prev => ({ ...prev, last_name: e.target.value }))}
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="email">Email *</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={newContact.email}
+                  onChange={(e) => setNewContact(prev => ({ ...prev, email: e.target.value }))}
+                  placeholder="john.doe@example.com"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="phone">Phone</Label>
+                  <Input
+                    id="phone"
+                    value={newContact.phone}
+                    onChange={(e) => setNewContact(prev => ({ ...prev, phone: e.target.value }))}
+                    placeholder="+47 123 45 678"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="company">Company</Label>
+                  <Input
+                    id="company"
+                    value={newContact.company}
+                    onChange={(e) => setNewContact(prev => ({ ...prev, company: e.target.value }))}
+                    placeholder="Acme Inc"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="position">Position</Label>
+                  <Input
+                    id="position"
+                    value={newContact.position}
+                    onChange={(e) => setNewContact(prev => ({ ...prev, position: e.target.value }))}
+                    placeholder="CEO"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="status">Status</Label>
+                  <Select value={newContact.status} onValueChange={(value) => setNewContact(prev => ({ ...prev, status: value }))}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="active">Active</SelectItem>
+                      <SelectItem value="prospect">Prospect</SelectItem>
+                      <SelectItem value="inactive">Inactive</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <Button onClick={createContact} className="w-full">
+                Create Contact
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
 
       <div className="flex gap-6">
@@ -115,43 +271,57 @@ export default function Contacts() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {filteredContacts.map((contact) => (
-                  <div
-                    key={contact.id}
-                    className={`p-4 rounded-lg border cursor-pointer transition-colors ${
-                      selectedContact?.id === contact.id
-                        ? "border-primary bg-primary/5"
-                        : "border-border hover:bg-muted/50"
-                    }`}
-                    onClick={() => setSelectedContact(contact)}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="space-y-1">
-                        <h3 className="font-medium text-foreground">{contact.name}</h3>
-                        <p className="text-sm text-muted-foreground">{contact.position}</p>
-                        <div className="flex items-center space-x-2">
-                          <Building2 className="h-3 w-3 text-muted-foreground" />
-                          <span className="text-sm text-muted-foreground">{contact.company}</span>
+                {filteredContacts.length === 0 ? (
+                  <div className="text-center py-8">
+                    <p className="text-muted-foreground">No contacts found</p>
+                  </div>
+                ) : (
+                  filteredContacts.map((contact) => (
+                    <div
+                      key={contact.id}
+                      className={`p-4 rounded-lg border cursor-pointer transition-colors ${
+                        selectedContact?.id === contact.id
+                          ? "border-primary bg-primary/5"
+                          : "border-border hover:bg-muted/50"
+                      }`}
+                      onClick={() => setSelectedContact(contact)}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div className="space-y-1">
+                          <h3 className="font-medium text-foreground">{getFullName(contact)}</h3>
+                          {contact.position && (
+                            <p className="text-sm text-muted-foreground">{contact.position}</p>
+                          )}
+                          {contact.company && (
+                            <div className="flex items-center space-x-2">
+                              <Building2 className="h-3 w-3 text-muted-foreground" />
+                              <span className="text-sm text-muted-foreground">{contact.company}</span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex flex-col items-end space-y-2">
+                          <Badge className={getStatusColor(contact.status)}>
+                            {contact.status || 'unknown'}
+                          </Badge>
+                          {contact.last_contact_date && (
+                            <span className="text-xs text-muted-foreground">
+                              Last: {new Date(contact.last_contact_date).toLocaleDateString()}
+                            </span>
+                          )}
                         </div>
                       </div>
-                      <div className="flex flex-col items-end space-y-2">
-                        <Badge className={getStatusColor(contact.status)}>
-                          {contact.status}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">
-                          Last: {contact.lastContact}
-                        </span>
-                      </div>
+                      {contact.tags && contact.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-3">
+                          {contact.tags.map((tag) => (
+                            <Badge key={tag} variant="outline" className="text-xs">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <div className="flex flex-wrap gap-1 mt-3">
-                      {contact.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </CardContent>
           </Card>
@@ -166,57 +336,71 @@ export default function Contacts() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-lg">{selectedContact.name}</h3>
-                  <p className="text-sm text-muted-foreground">{selectedContact.position}</p>
+                  <h3 className="font-medium text-lg">{getFullName(selectedContact)}</h3>
+                  {selectedContact.position && (
+                    <p className="text-sm text-muted-foreground">{selectedContact.position}</p>
+                  )}
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="h-4 w-4 text-muted-foreground" />
-                    <a 
-                      href={`mailto:${selectedContact.email}`}
-                      className="text-sm text-primary hover:underline"
-                    >
-                      {selectedContact.email}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-4 w-4 text-muted-foreground" />
-                    <a 
-                      href={`tel:${selectedContact.phone}`}
-                      className="text-sm text-primary hover:underline"
-                    >
-                      {selectedContact.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Building2 className="h-4 w-4 text-muted-foreground" />
-                    <span className="text-sm">{selectedContact.company}</span>
-                  </div>
+                  {selectedContact.email && (
+                    <div className="flex items-center space-x-3">
+                      <Mail className="h-4 w-4 text-muted-foreground" />
+                      <a 
+                        href={`mailto:${selectedContact.email}`}
+                        className="text-sm text-primary hover:underline"
+                      >
+                        {selectedContact.email}
+                      </a>
+                    </div>
+                  )}
+                  {selectedContact.phone && (
+                    <div className="flex items-center space-x-3">
+                      <Phone className="h-4 w-4 text-muted-foreground" />
+                      <a 
+                        href={`tel:${selectedContact.phone}`}
+                        className="text-sm text-primary hover:underline"
+                      >
+                        {selectedContact.phone}
+                      </a>
+                    </div>
+                  )}
+                  {selectedContact.company && (
+                    <div className="flex items-center space-x-3">
+                      <Building2 className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{selectedContact.company}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div>
                   <h4 className="font-medium mb-2">Status</h4>
                   <Badge className={getStatusColor(selectedContact.status)}>
-                    {selectedContact.status}
+                    {selectedContact.status || 'unknown'}
                   </Badge>
                 </div>
 
-                <div>
-                  <h4 className="font-medium mb-2">Tags</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {selectedContact.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+                {selectedContact.tags && selectedContact.tags.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2">Tags</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {selectedContact.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
-                <div>
-                  <h4 className="font-medium mb-2">Last Contact</h4>
-                  <p className="text-sm text-muted-foreground">{selectedContact.lastContact}</p>
-                </div>
+                {selectedContact.last_contact_date && (
+                  <div>
+                    <h4 className="font-medium mb-2">Last Contact</h4>
+                    <p className="text-sm text-muted-foreground">
+                      {new Date(selectedContact.last_contact_date).toLocaleDateString()}
+                    </p>
+                  </div>
+                )}
 
                 <div className="pt-4 space-y-2">
                   <Button variant="outline" size="sm" className="w-full">

@@ -131,6 +131,51 @@ export type Database = {
         }
         Relationships: []
       }
+      contacts: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string | null
+          first_name: string | null
+          id: string
+          last_contact_date: string | null
+          last_name: string | null
+          phone: string | null
+          position: string | null
+          status: string | null
+          tags: string[] | null
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          last_contact_date?: string | null
+          last_name?: string | null
+          phone?: string | null
+          position?: string | null
+          status?: string | null
+          tags?: string[] | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string | null
+          first_name?: string | null
+          id?: string
+          last_contact_date?: string | null
+          last_name?: string | null
+          phone?: string | null
+          position?: string | null
+          status?: string | null
+          tags?: string[] | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
