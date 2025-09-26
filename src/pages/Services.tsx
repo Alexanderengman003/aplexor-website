@@ -283,7 +283,7 @@ const Services = () => {
           </div>
           
           <div className="flex items-center justify-center">
-            <div className="flex items-center gap-4 lg:gap-8">
+            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-8">
               {[
                 {
                   step: "01",
@@ -306,8 +306,8 @@ const Services = () => {
                   description: "Continuously monitor, analyze, and refine our approach for maximum results."
                 }
               ].map((step, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-center max-w-xs">
+                <div key={index} className="flex flex-col lg:flex-row items-center">
+                  <div className="text-center max-w-xs px-4">
                     <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
                       <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
                         {step.step}
@@ -316,12 +316,15 @@ const Services = () => {
                     <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
                       {step.title}
                     </h3>
-                    <p className="font-body text-sm text-muted-foreground">
+                    <p className="font-body text-sm text-muted-foreground mb-6 lg:mb-0">
                       {step.description}
                     </p>
                   </div>
                   {index < 3 && (
-                    <ChevronRight className="w-8 h-8 text-primary mx-4 hidden lg:block" />
+                    <>
+                      <ChevronRight className="w-8 h-8 text-primary mx-4 hidden lg:block" />
+                      <div className="w-px h-8 bg-primary/30 lg:hidden" />
+                    </>
                   )}
                 </div>
               ))}
