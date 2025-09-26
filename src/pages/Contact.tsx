@@ -6,8 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Linkedin, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import linkedinIcon from "@/assets/linkedin-icon.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -87,7 +88,7 @@ const Contact = () => {
       link: "mailto:info@aplexor.com"
     },
     {
-      icon: <Linkedin className="w-6 h-6 text-primary" />,
+      icon: <img src={linkedinIcon} alt="LinkedIn" className="w-6 h-6" />,
       label: "LinkedIn",
       value: "linkedin.com/company/aplexor",
       link: "https://linkedin.com/company/aplexor"

@@ -217,7 +217,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary">
+      <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
             Ready to bring your hardware to market?
