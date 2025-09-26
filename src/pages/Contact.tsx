@@ -53,54 +53,23 @@ const Contact = () => {
       return;
     }
 
+    // Simulate form submission
     try {
-      // Split name into firstname and lastname
-      const nameParts = formData.name.trim().split(' ');
-      const firstname = nameParts[0] || '';
-      const lastname = nameParts.slice(1).join(' ') || '';
-
-      // Prepare data for HubSpot API
-      const hubspotData = {
-        firstname,
-        lastname,
-        email: formData.email,
-        company: formData.company,
-        message: formData.message
-      };
-
-      // Send to HubSpot API via our backend endpoint
-      const response = await fetch('/.netlify/functions/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(hubspotData)
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours."
       });
-
-      const result = await response.json();
-
-      if (result.success) {
-        toast({
-          title: "Contact added to HubSpot!",
-          description: "We'll get back to you within 24 hours."
-        });
-        
-        // Reset form
-        setFormData({
-          name: "",
-          company: "",
-          email: "",
-          message: ""
-        });
-      } else {
-        toast({
-          title: "Error submitting form",
-          description: result.error || "Please try again or contact us directly.",
-          variant: "destructive"
-        });
-      }
+      
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        message: ""
+      });
     } catch (error) {
-      console.error('Form submission error:', error);
       toast({
         title: "Failed to send message",
         description: "Please try again or contact us directly.",
