@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Plus, Mail, Phone, Building2, Loader2 } from "lucide-react";
+import { Search, Plus, Mail, Phone, Building2, Loader2, Edit, Trash2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -32,6 +32,8 @@ export default function Contacts() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [editingContact, setEditingContact] = useState<Contact | null>(null);
   const [newContact, setNewContact] = useState({
     first_name: "",
     last_name: "",
@@ -122,6 +124,86 @@ export default function Contacts() {
         variant: "destructive"
       });
     }
+  };
+
+  const updateContact = async () => {
+    if (!editingContact) return;
+
+    try {
+      const { data, error } = await supabase
+        .from('contacts')
+        .update({
+          first_name: editingContact.first_name,
+          last_name: editingContact.last_name,
+          email: editingContact.email,
+          phone: editingContact.phone,
+          company: editingContact.company,
+          position: editingContact.position,
+          status: editingContact.status,
+          tags: editingContact.tags
+        })
+        .eq('id', editingContact.id)
+        .select();
+
+      if (error) throw error;
+
+      if (data) {
+        setContacts(prev => prev.map(contact => 
+          contact.id === editingContact.id ? data[0] : contact
+        ));
+        
+        if (selectedContact?.id === editingContact.id) {
+          setSelectedContact(data[0]);
+        }
+        
+        toast({
+          title: "Contact updated",
+          description: `${editingContact.first_name} ${editingContact.last_name} has been updated`
+        });
+        
+        setEditingContact(null);
+        setIsEditDialogOpen(false);
+      }
+    } catch (error) {
+      toast({
+        title: "Error updating contact",
+        description: "Could not update the contact",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const deleteContact = async (contactId: string) => {
+    try {
+      const { error } = await supabase
+        .from('contacts')
+        .delete()
+        .eq('id', contactId);
+
+      if (error) throw error;
+
+      setContacts(prev => prev.filter(contact => contact.id !== contactId));
+      
+      if (selectedContact?.id === contactId) {
+        setSelectedContact(null);
+      }
+      
+      toast({
+        title: "Contact deleted",
+        description: "The contact has been removed"
+      });
+    } catch (error) {
+      toast({
+        title: "Error deleting contact",
+        description: "Could not delete the contact",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const startEdit = (contact: Contact) => {
+    setEditingContact(contact);
+    setIsEditDialogOpen(true);
   };
 
   const getFullName = (contact: Contact) => {
@@ -248,6 +330,99 @@ export default function Contacts() {
                 Create Contact
               </Button>
             </div>
+          </DialogContent>
+        </Dialog>
+        
+        {/* Edit Contact Dialog */}
+        <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Edit Contact</DialogTitle>
+            </DialogHeader>
+            {editingContact && (
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="edit_first_name">First Name *</Label>
+                    <Input
+                      id="edit_first_name"
+                      value={editingContact.first_name || ""}
+                      onChange={(e) => setEditingContact(prev => prev ? { ...prev, first_name: e.target.value } : null)}
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="edit_last_name">Last Name</Label>
+                    <Input
+                      id="edit_last_name"
+                      value={editingContact.last_name || ""}
+                      onChange={(e) => setEditingContact(prev => prev ? { ...prev, last_name: e.target.value } : null)}
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <Label htmlFor="edit_email">Email *</Label>
+                  <Input
+                    id="edit_email"
+                    type="email"
+                    value={editingContact.email || ""}
+                    onChange={(e) => setEditingContact(prev => prev ? { ...prev, email: e.target.value } : null)}
+                    placeholder="john.doe@example.com"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="edit_phone">Phone</Label>
+                    <Input
+                      id="edit_phone"
+                      value={editingContact.phone || ""}
+                      onChange={(e) => setEditingContact(prev => prev ? { ...prev, phone: e.target.value } : null)}
+                      placeholder="+47 123 45 678"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="edit_company">Company</Label>
+                    <Input
+                      id="edit_company"
+                      value={editingContact.company || ""}
+                      onChange={(e) => setEditingContact(prev => prev ? { ...prev, company: e.target.value } : null)}
+                      placeholder="Acme Inc"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="edit_position">Position</Label>
+                    <Input
+                      id="edit_position"
+                      value={editingContact.position || ""}
+                      onChange={(e) => setEditingContact(prev => prev ? { ...prev, position: e.target.value } : null)}
+                      placeholder="CEO"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="edit_status">Status</Label>
+                    <Select 
+                      value={editingContact.status || "prospect"} 
+                      onValueChange={(value) => setEditingContact(prev => prev ? { ...prev, status: value } : null)}
+                    >
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="active">Active</SelectItem>
+                        <SelectItem value="prospect">Prospect</SelectItem>
+                        <SelectItem value="inactive">Inactive</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <Button onClick={updateContact} className="w-full">
+                  Update Contact
+                </Button>
+              </div>
+            )}
           </DialogContent>
         </Dialog>
       </div>
@@ -403,6 +578,24 @@ export default function Contacts() {
                 )}
 
                 <div className="pt-4 space-y-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => startEdit(selectedContact)}
+                  >
+                    <Edit className="mr-2 h-4 w-4" />
+                    Edit Contact
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => deleteContact(selectedContact.id)}
+                  >
+                    <Trash2 className="mr-2 h-4 w-4" />
+                    Delete Contact
+                  </Button>
                   <Button variant="outline" size="sm" className="w-full">
                     <Mail className="mr-2 h-4 w-4" />
                     Send Email
