@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff, Database, LogOut } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import HubSpotContactsList from "@/components/HubSpotContactsList";
+import MockContactsList from "@/components/MockContactsList";
 
 type AuthMode = "login" | "signup" | "forgot";
 type AppMode = "auth" | "hubspot-crm";
@@ -193,9 +194,27 @@ const Portal = () => {
           title: "Password reset email sent!",
           description: "Check your email for reset instructions."
         });
+      } else if (authMode === "login") {
+        // Check for hardcoded admin credentials
+        if (formData.email === "alexander@aplexor.com" && formData.password === "Alexander1234") {
+          setIsAuthenticated(true);
+          setAppMode("hubspot-crm");
+          toast({
+            title: "Login successful!",
+            description: "Welcome to the Aplexor Portal, Alexander."
+          });
+        } else {
+          toast({
+            title: "Invalid credentials",
+            description: "Please check your email and password.",
+            variant: "destructive"
+          });
+          setIsSubmitting(false);
+          return;
+        }
       } else {
         toast({
-          title: `${authMode === "login" ? "Login" : "Account creation"} successful!`,
+          title: "Account creation successful!",
           description: "Welcome to the Aplexor Portal."
         });
       }
@@ -542,6 +561,21 @@ const Portal = () => {
                     </a>
                   </p>
                 </div>
+              </div>
+            )}
+
+            {/* Mock CRM Dashboard - for authenticated users without HubSpot connection */}
+            {isAuthenticated && appMode === "hubspot-crm" && !hubspotAccessToken && (
+              <div className="max-w-6xl mx-auto">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-3xl font-heading font-bold">CRM Dashboard</h2>
+                  <Button onClick={() => { setIsAuthenticated(false); setAppMode("auth"); }} variant="outline">
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Logout
+                  </Button>
+                </div>
+                
+                <MockContactsList />
               </div>
             )}
 
