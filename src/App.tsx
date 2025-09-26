@@ -16,6 +16,9 @@ import Supporting from "./pages/services/Supporting";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Portal from "./pages/Portal";
+import Contacts from "./pages/crm/Contacts";
+import Accounts from "./pages/crm/Accounts";
+import Products from "./pages/crm/Products";
 
 const queryClient = new QueryClient();
 
@@ -45,7 +48,7 @@ const App = () => (
           <Route path="/services/supporting" element={<Supporting />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/portal" element={<Portal />} />
+          <Route path="/portal/*" element={<Portal />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
