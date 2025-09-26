@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
+import linkedinIcon from "@/assets/linkedin-icon.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-muted mt-16">
+    <footer className="bg-muted">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -29,7 +30,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin size={20} />
+                <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5 rounded" loading="lazy" />
               </a>
             </div>
           </div>
