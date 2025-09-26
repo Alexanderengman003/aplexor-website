@@ -73,11 +73,39 @@ const Footer = () => {
             <h4 className="font-heading font-semibold text-foreground mb-4">
               Services
             </h4>
-            <ul className="space-y-2 font-body text-muted-foreground">
-              <li>Nordic Sales Representation</li>
-              <li>Nordic Lead Generation</li>
-              <li>Nordic Distributor Matchmaking</li>
-              <li>Nordic Market Entry</li>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  to="/services/discovery" 
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Discovery Services
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/strategic" 
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Strategic Services
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/execution" 
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Execution Services
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/services/supporting" 
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Supporting Services
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
