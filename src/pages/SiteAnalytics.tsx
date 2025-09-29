@@ -266,8 +266,33 @@ const SiteAnalytics = () => {
           session.first_visit_at.startsWith(dateStr)
         ).length;
         
+        // Format date based on time range
+        let formattedDate;
+        const timeRangeInt = parseInt(timeRange);
+        
+        if (timeRangeInt <= 7) {
+          // For 1-7 days: show day name + date (e.g., "Mon 12")
+          formattedDate = date.toLocaleDateString('en-US', { 
+            weekday: 'short', 
+            day: 'numeric' 
+          });
+        } else if (timeRangeInt <= 30) {
+          // For 8-30 days: show month + date (e.g., "Dec 12")
+          formattedDate = date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric' 
+          });
+        } else {
+          // For longer periods: show month/day (e.g., "12/15")
+          formattedDate = date.toLocaleDateString('en-US', { 
+            month: 'numeric', 
+            day: 'numeric' 
+          });
+        }
+        
         dailyViews.push({
-          date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+          date: formattedDate,
+          fullDate: dateStr, // Keep full date for potential sorting
           views: dayViews,
           uniqueVisitors: dayVisitors
         });
@@ -580,7 +605,7 @@ const SiteAnalytics = () => {
                   <p className="text-sm text-muted-foreground">Latest visitor activity with detailed information</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                  <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
                     {analyticsData.recentActivity.map((activity, index) => (
                       <div 
                         key={index} 
