@@ -43,9 +43,6 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Button asChild variant="outline" size="sm" className="font-heading font-semibold">
-              <Link to="/portal">Portal</Link>
-            </Button>
             <Link
               to="/"
               className={`font-body text-sm font-medium transition-colors hover:text-primary ${
