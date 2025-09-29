@@ -205,7 +205,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Markets We Support
+              Industries Covered
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
               Our expertise spans across key industries where hardware innovation drives growth and transformation.
