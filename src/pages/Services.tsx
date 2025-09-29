@@ -215,42 +215,42 @@ const Services = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <Shield className="w-12 h-12 text-primary" />,
+                icon: <FirstAid className="w-12 h-12 text-primary" />,
                 title: "Medical",
-                description: "Healthcare devices and medical technology"
+                description: "Medical technology and devices"
               },
               {
-                icon: <Zap className="w-12 h-12 text-primary" />,
+                icon: <Chip className="w-12 h-12 text-primary" />,
                 title: "Electronics",
-                description: "Consumer and industrial electronic products"
+                description: "Consumer and industrial electronics"
               },
               {
-                icon: <Network className="w-12 h-12 text-primary" />,
+                icon: <Wifi className="w-12 h-12 text-primary" />,
                 title: "IoT & Connectivity",
                 description: "Smart devices and connected solutions"
               },
               {
-                icon: <Globe className="w-12 h-12 text-primary" />,
+                icon: <Factory className="w-12 h-12 text-primary" />,
                 title: "Industrial",
                 description: "Manufacturing and automation equipment"
               },
               {
-                icon: <Users className="w-12 h-12 text-primary" />,
+                icon: <Smartphone className="w-12 h-12 text-primary" />,
                 title: "Consumer",
                 description: "Consumer electronics and lifestyle products"
               },
               {
-                icon: <Database className="w-12 h-12 text-primary" />,
+                icon: <BuildingOffice className="w-12 h-12 text-primary" />,
                 title: "Enterprise",
                 description: "B2B Physical Technology and enterprise solutions"
               },
               {
-                icon: <TrendingUp className="w-12 h-12 text-primary" />,
+                icon: <Leaf className="w-12 h-12 text-primary" />,
                 title: "Cleantech",
                 description: "Environmental and sustainability technology"
               },
               {
-                icon: <Target className="w-12 h-12 text-primary" />,
+                icon: <ShieldCheck className="w-12 h-12 text-primary" />,
                 title: "Defense & Security",
                 description: "Security systems and defense technology"
               }
