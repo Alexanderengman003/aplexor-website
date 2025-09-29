@@ -73,7 +73,7 @@ const Discovery = () => {
               Discovery
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comphrehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities.
+              The discovery phase aims to analyze markets, map customers, partners and competitors, and validate the best opportunities.
             </p>
           </div>
         </div>
