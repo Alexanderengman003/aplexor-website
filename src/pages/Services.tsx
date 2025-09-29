@@ -35,22 +35,22 @@ const Services = () => {
         {
           icon: <UserSearch className="w-8 h-8 text-primary" />,
           title: "Customer Needs Mapping",
-          description: "Conduct structured interviews and surveys to uncover unmet customer needs and pain points."
+          description: "Conduct structured interviews and surveys to uncover unmet needs, pain points, and buying behaviors."
         },
         {
           icon: <Layers className="w-8 h-8 text-primary" />,
           title: "Market Segmentation & Prioritization",
-          description: "Categorize target markets and segments to focus sales efforts where they matter most."
+          description: "Categorize target markets and segments to focus efforts where they matter most."
         },
         {
           icon: <Search className="w-8 h-8 text-primary" />,
-          title: "Opportunity Scouting & Lead Qualification",
-          description: "Identify high-potential partners, distributors, and leads, and rank them for follow-up."
+          title: "Opportunity Assessment & Engagement",
+          description: "Identify high-potential partners, distributors, and leads. We rank them for follow-up and evaluate initial responsiveness."
         },
         {
           icon: <Eye className="w-8 h-8 text-primary" />,
-          title: "Early Engagement Analysis",
-          description: "Evaluate initial interest and responsiveness from prospects to refine sales approach."
+          title: "Market & Competition Insights",
+          description: "Analyze competitors, market trends, and ecosystem dynamics to validate opportunity attractiveness and strategic positioning."
         }
       ]
     },
@@ -61,22 +61,22 @@ const Services = () => {
         {
           icon: <Target className="w-8 h-8 text-primary" />,
           title: "Go-to-Market Strategy",
-          description: "Define positioning, pricing, and market entry."
+          description: "Define positioning, pricing, and market approach to achieve competitive advantage."
         },
         {
           icon: <BarChart3 className="w-8 h-8 text-primary" />,
           title: "Market Research & Insights",
-          description: "Identify opportunities, competitors, and customer needs to inform strategic decisions."
+          description: "Identify opportunities, competitors, and customer needs to guide strategic decisions."
         },
         {
           icon: <Globe className="w-8 h-8 text-primary" />,
-          title: "Nordic Market Entry",
-          description: "Tailored expertise for entering and scaling in the Nordics."
+          title: "Market Entry",
+          description: "Tailored expertise for entering and scaling in Sweden, or internationally for Swedish companies."
         },
         {
           icon: <Shield className="w-8 h-8 text-primary" />,
           title: "Commercial Readiness Assessment",
-          description: "Evaluate certifications, scalability, and sales readiness before engaging partners."
+          description: "Evaluate certifications, scalability, and sales readiness to ensure successful partner engagement."
         }
       ]
     },
