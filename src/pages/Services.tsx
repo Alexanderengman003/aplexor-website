@@ -87,22 +87,22 @@ const Services = () => {
         {
           icon: <Users className="w-8 h-8 text-primary" />,
           title: "Lead Generation",
-          description: "Build and qualify your sales pipeline."
+          description: "Generate and qualify leads to accelerate and grow your sales pipeline."
         },
         {
           icon: <Handshake className="w-8 h-8 text-primary" />,
           title: "Matchmaking",
-          description: "Connect with partners, distributors, and customers."
+          description: "Connect with the right partners, distributors, and customers to maximize opportunities. We leverage our technical expertise to understand customer needs."
         },
         {
           icon: <User className="w-8 h-8 text-primary" />,
           title: "Sales Representation",
-          description: "Act as your outsourced sales force."
+          description: "Act as your outsourced sales team to drive growth and close deals."
         },
         {
           icon: <Network className="w-8 h-8 text-primary" />,
-          title: "Channel Development & Business Development",
-          description: "Establish and manage distributor/reseller networks and nurture long-term relationships."
+          title: "Channel & Business Development",
+          description: "Establish and manage distributor/reseller networks while nurturing long-term business relationships."
         }
       ]
     },
@@ -113,22 +113,22 @@ const Services = () => {
         {
           icon: <FileText className="w-8 h-8 text-primary" />,
           title: "Sales Enablement",
-          description: "Create sales decks, datasheets, and messaging that win customers."
+          description: "Develop decks, datasheets, and messaging that help you win more customers"
         },
         {
           icon: <TrendingUp className="w-8 h-8 text-primary" />,
           title: "Investor & Pitch Support",
-          description: "Tailor presentations and materials to secure funding and partnerships."
+          description: "Craft tailored presentations and materials to secure funding and strategic partnerships."
         },
         {
           icon: <Database className="w-8 h-8 text-primary" />,
           title: "CRM & Sales Process Setup",
-          description: "Implement tools and workflows to keep sales organized."
+          description: "Set up CRM tools and workflows to streamline and track your sales process, with data-driven insights. We offer customized CRM solutions for your specific needs."
         },
         {
           icon: <Calculator className="w-8 h-8 text-primary" />,
           title: "Pricing & Packaging Advisory",
-          description: "Define pricing models, bundles, and offers that fit the market."
+          description: "Design pricing models, bundles, and offers that resonate with your target market."
         }
       ]
     }
