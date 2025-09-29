@@ -105,21 +105,40 @@ const getOperatingSystem = (): string => {
 };
 
 const getLocationData = async (): Promise<{country: string, city: string}> => {
+  // Try session cache first to avoid repeated requests/rate limits
   try {
-    // Use ipapi.co for geolocation (free service)
-    const response = await fetch('https://ipapi.co/json/');
+    const cached = sessionStorage.getItem('analytics_geo');
+    if (cached) {
+      return JSON.parse(cached);
+    }
+  } catch (_e) {}
+
+  // Use ipwho.is (CORS-friendly, no auth) with a short timeout
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 2500);
+    const response = await fetch('https://ipwho.is/?fields=country,city,success', {
+      signal: controller.signal,
+      cache: 'no-store'
+    });
+    clearTimeout(timeout);
+
     if (response.ok) {
       const data = await response.json();
-      return {
-        country: data.country_name || 'Unknown',
-        city: data.city || 'Unknown'
+      const result = {
+        country: (data && (data.success === true || data.success === undefined) && data.country) || 'Unknown',
+        city: (data && (data.success === true || data.success === undefined) && data.city) || 'Unknown'
       };
+      try { sessionStorage.setItem('analytics_geo', JSON.stringify(result)); } catch (_e) {}
+      return result;
     }
   } catch (error) {
     console.debug('Geolocation error:', error);
   }
-  
-  return { country: 'Unknown', city: 'Unknown' };
+
+  const fallback = { country: 'Unknown', city: 'Unknown' };
+  try { sessionStorage.setItem('analytics_geo', JSON.stringify(fallback)); } catch (_e) {}
+  return fallback;
 };
 
 export default AnalyticsTracker;
