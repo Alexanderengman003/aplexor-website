@@ -75,49 +75,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-heading font-semibold text-foreground mb-4">
-              Services
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link 
-                  to="/services/discovery" 
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Discovery
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/services/strategic" 
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Strategic
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/services/execution" 
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Execution
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/services/supporting" 
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Supporting
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col md:flex-row items-center gap-4">
