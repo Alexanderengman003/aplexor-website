@@ -20,7 +20,7 @@ const Home = () => {
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: "Results",
-      description: "We provide measurable outcomes through strategic partnerships and data-driven sales approaches. We track important metrics to consistently develop our approach. We do not succeed unless you succeed."
+      description: "We provide measurable outcomes through strategic partnerships and data-driven sales approaches. We track crucial metrics to consistently track that our strategies are delivering real and tangible results. We do not succeed unless you succeed ."
     }
   ];
 
