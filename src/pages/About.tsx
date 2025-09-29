@@ -54,7 +54,7 @@ const About = () => {
               About Aplexor
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              We're passionate about helping innovative Physical Technology companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
+             We are passionate about helping innovative physical technology companies succeed by providing expert sales support and creating strategic partnerships. As engineers at heart, we thrive on the complexity of physical products, from cutting-edge electronics to advanced medical devices. Our deep understanding of the technology behind these products allows us to bridge the gap between engineering and business, translating technical expertise into actionable strategies that drive growth, enhance market reach, and create lasting impact. We are committed to guiding our partners every step of the way, turning their innovation into positive sales results.
             </p>
           </div>
         </div>
