@@ -10,7 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Discovery from "./pages/services/Discovery";
-import Strategic from "./pages/services/Strategic";
+import Strategy from "./pages/services/Strategy";
 import Execution from "./pages/services/Execution";
 import Supporting from "./pages/services/Supporting";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -52,7 +52,7 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/discovery" element={<Discovery />} />
-          <Route path="/services/strategic" element={<Strategic />} />
+          <Route path="/services/strategy" element={<Strategy />} />
           <Route path="/services/execution" element={<Execution />} />
           <Route path="/services/supporting" element={<Supporting />} />
           <Route path="/about" element={<About />} />

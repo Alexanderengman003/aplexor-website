@@ -6,7 +6,7 @@ import ProcessSection from "@/components/ProcessSection";
 import { Target, BarChart3, Globe, Shield, ArrowLeft } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
-const Strategic = () => {
+const Strategy = () => {
   const services = [
     {
       icon: <Target className="w-12 h-12 text-primary" />,
@@ -70,7 +70,7 @@ const Strategic = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Strategic
+              Strategy
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
               Define where to go and how to win. Our strategic services help you develop comprehensive plans for successful market entry and sustainable growth in Nordic markets.
@@ -120,4 +120,4 @@ const Strategic = () => {
   );
 };
 
-export default Strategic;
+export default Strategy;
