@@ -19,9 +19,6 @@ const TermsOfService = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             These terms govern your use of our services. Please read them carefully.
           </p>
-          <p className="text-sm text-muted-foreground mt-4">
-            Last updated: September 25, 2024
-          </p>
         </div>
       </section>
 
@@ -224,6 +221,15 @@ const TermsOfService = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      {/* Last Updated */}
+      <section className="py-8 bg-background border-t">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            Last updated: September 25, 2024
+          </p>
         </div>
       </section>
     </Layout>

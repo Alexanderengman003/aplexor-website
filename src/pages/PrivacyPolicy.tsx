@@ -19,9 +19,6 @@ const PrivacyPolicy = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Your privacy is important to us. This policy explains how we collect, use, and protect your information.
           </p>
-          <p className="text-sm text-muted-foreground mt-4">
-            Last updated: September 25, 2024
-          </p>
         </div>
       </section>
 
@@ -175,6 +172,15 @@ const PrivacyPolicy = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+
+      {/* Last Updated */}
+      <section className="py-8 bg-background border-t">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            Last updated: September 25, 2024
+          </p>
         </div>
       </section>
     </Layout>
