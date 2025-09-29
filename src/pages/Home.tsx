@@ -10,17 +10,17 @@ const Home = () => {
     {
       icon: <Users className="w-8 h-8 text-primary" />,
       title: "Expertise",
-      description: "Deep industry knowledge and track record in hardware sales and market entry strategies."
+      description: "Aplexor is founded by engineers with deep industry knowledge across many engineering domains. We have experience from working in hardware SMEs, and understand the unique challenges and opportunities of trying to grow."
     },
     {
       icon: <Globe className="w-8 h-8 text-primary" />,
       title: "Network",
-      description: "Extensive connections with distributors, retailers, and key decision makers across global markets."
+      description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business."
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
       title: "Results",
-      description: "Measurable outcomes through strategic partnerships and data-driven sales approaches."
+      description: "We provide measurable outcomes through strategic partnerships and data-driven sales approaches. We track important metrics to consistently develop our approach. We do not succeed unless you succeed."
     }
   ];
 
@@ -154,7 +154,7 @@ const Home = () => {
               Why Choose Aplexor?
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We combine industry expertise with a wide network to deliver exceptional results for hardware startups. We can digest the fine details of your hardware solution, and find the partners you need for business growth.
+              We combine technical expertise with a wide network to deliver results and growth for hardware SMEs. We can digest the fine technical details of your products and explain these to customers. We help you find the partners that fit your products and solutions.
             </p>
           </div>
           
