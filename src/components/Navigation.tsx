@@ -37,7 +37,7 @@ const Navigation = () => {
             <img 
               src={aplexorLogo} 
               alt="Aplexor" 
-              className="h-12 w-auto"
+              className="h-8 md:h-12 w-auto"
             />
           </Link>
 
