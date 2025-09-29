@@ -15,7 +15,7 @@ const Home = () => {
     {
       icon: <Globe className="w-8 h-8 text-primary" />,
       title: "Network",
-      description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business. Our established relationships enable us to accelerate market entry, expand reach, and create long-term growth opportunities."
+      description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business. Our established relationships enable us to accelerate market entry and increase sales."
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
