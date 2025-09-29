@@ -64,7 +64,7 @@ const Services = () => {
       ]
     },
     {
-      title: "Strategic",
+      title: "Strategy",
       subtitle: "Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery.",
       services: [
         {
@@ -313,7 +313,7 @@ const Services = () => {
             ].map((step, index) => (
               <div key={index} className="flex flex-col md:flex-col lg:flex-row items-center">
                 <div className="text-center px-2 lg:px-4">
-                  <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
+                  <Link to={`/services/${["discovery", "strategy", "execution", "supporting"][index]}`}>
                     <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-sm lg:text-xl mb-2 lg:mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
                       {step.step}
                     </div>
