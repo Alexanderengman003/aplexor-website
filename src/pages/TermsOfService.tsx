@@ -1,5 +1,11 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const TermsOfService = () => {
   return (
@@ -22,10 +28,12 @@ const TermsOfService = () => {
       {/* Terms of Service Content */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="space-y-8">
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">1. Acceptance of Terms</h2>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                1. Acceptance of Terms
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     By accessing and using Aplexor's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
@@ -34,12 +42,14 @@ const TermsOfService = () => {
                     These Terms of Service constitute a legally binding agreement between you and Aplexor regarding your use of our consulting services, website, and related offerings.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">2. Description of Services</h2>
+            <AccordionItem value="item-2" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                2. Description of Services
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     Aplexor provides business consulting services focused on helping hardware startups expand into Nordic markets. Our services include:
@@ -54,12 +64,14 @@ const TermsOfService = () => {
                     Specific deliverables and timelines will be outlined in individual service agreements or statements of work.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">3. Client Responsibilities</h2>
+            <AccordionItem value="item-3" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                3. Client Responsibilities
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>As a client, you agree to:</p>
                   <ul className="list-disc pl-6 space-y-2">
@@ -70,12 +82,14 @@ const TermsOfService = () => {
                     <li>Use our services in compliance with all applicable laws and regulations</li>
                   </ul>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">4. Payment Terms</h2>
+            <AccordionItem value="item-4" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                4. Payment Terms
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     Payment terms will be specified in individual service agreements. Generally:
@@ -87,12 +101,14 @@ const TermsOfService = () => {
                     <li>All prices are exclusive of applicable taxes unless stated otherwise</li>
                   </ul>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">5. Intellectual Property</h2>
+            <AccordionItem value="item-5" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                5. Intellectual Property
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     <strong>Client IP:</strong> You retain ownership of your existing intellectual property and any IP developed independently during our engagement.
@@ -104,12 +120,14 @@ const TermsOfService = () => {
                     <strong>Work Product:</strong> Deliverables created specifically for your project will be owned by you, subject to Aplexor's right to use general methodologies and learnings for future engagements.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">6. Confidentiality</h2>
+            <AccordionItem value="item-6" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                6. Confidentiality
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     Both parties agree to maintain the confidentiality of proprietary information shared during the course of our engagement. This includes:
@@ -121,12 +139,14 @@ const TermsOfService = () => {
                     <li>Any other information marked as confidential or that would reasonably be considered confidential</li>
                   </ul>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">7. Limitation of Liability</h2>
+            <AccordionItem value="item-7" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                7. Limitation of Liability
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     Aplexor's total liability for any claims arising from our services shall not exceed the total amount paid by the client for the specific services giving rise to the claim.
@@ -135,12 +155,14 @@ const TermsOfService = () => {
                     We shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, business interruption, or loss of data.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">8. Termination</h2>
+            <AccordionItem value="item-8" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                8. Termination
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     Either party may terminate services with written notice as specified in the service agreement. Upon termination:
@@ -152,23 +174,27 @@ const TermsOfService = () => {
                     <li>Surviving provisions (confidentiality, payment obligations, etc.) will remain in effect</li>
                   </ul>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">9. Governing Law</h2>
+            <AccordionItem value="item-9" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                9. Governing Law
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     These terms shall be governed by and construed in accordance with the laws of Sweden. Any disputes arising from these terms or our services shall be resolved through binding arbitration in Stockholm, Sweden, or as otherwise agreed by both parties.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">10. Changes to Terms</h2>
+            <AccordionItem value="item-10" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                10. Changes to Terms
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting on our website. Your continued use of our services after changes are posted constitutes acceptance of the modified terms.
@@ -177,12 +203,14 @@ const TermsOfService = () => {
                     For significant changes, we will make reasonable efforts to notify existing clients via email or other communication methods.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-2xl font-semibold mb-4 text-primary">11. Contact Information</h2>
+            <AccordionItem value="item-11" className="border rounded-lg">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+                11. Contact Information
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     If you have any questions about these Terms of Service, please contact us:
@@ -193,9 +221,9 @@ const TermsOfService = () => {
                     <p>LinkedIn: linkedin.com/in/alexander-engman</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
     </Layout>

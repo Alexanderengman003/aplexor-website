@@ -1,6 +1,12 @@
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Users, Target, Shield, Lightbulb } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import alexanderEngman from "@/assets/alexander-engman.jpg";
@@ -184,36 +190,36 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                question: "What types of Physical Technology products do you work with?",
-                answer: "We work with a wide range of Physical Technology products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
-              },
-              {
-                question: "How do you charge for your services?",
-                answer: "Our pricing structure varies depending on the scope of work and client needs. We offer both commission-based and retainer-based models. Contact us to discuss the best approach for your specific situation."
-              },
-              {
-                question: "How quickly can you start working on my project?",
-                answer: "We can typically begin initial discovery and strategy development within 1-2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
-              },
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: "What types of Physical Technology products do you work with?",
+                  answer: "We work with a wide range of Physical Technology products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
+                },
+                {
+                  question: "How do you charge for your services?",
+                  answer: "Our pricing structure varies depending on the scope of work and client needs. We offer both commission-based and retainer-based models. Contact us to discuss the best approach for your specific situation."
+                },
+                {
+                  question: "How quickly can you start working on my project?",
+                  answer: "We can typically begin initial discovery and strategy development within 1-2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
+                },
                 {
                   question: "Do you work with international markets?",
                   answer: "We specialize exclusively in Nordic markets (Sweden, Norway, Denmark, Finland, and Iceland). Our deep understanding of Nordic business culture, regulations, and distribution networks allows us to provide highly effective, localized support for Physical Technology companies entering these markets."
                 }
-            ].map((faq, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+              ].map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg">
+                  <AccordionTrigger className="px-6 py-4 text-left font-heading text-lg font-semibold text-foreground hover:no-underline">
                     {faq.question}
-                  </h3>
-                  <p className="font-body text-muted-foreground">
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4 font-body text-muted-foreground">
                     {faq.answer}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
