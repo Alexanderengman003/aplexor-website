@@ -54,7 +54,7 @@ const About = () => {
               About Aplexor
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              We're passionate about helping hardware companies bridge the Swedish-global market gap through expert sales representation and strategic partnerships tailored for both Swedish expansion and global market entry.
+              We're passionate about helping innovative hardware companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ const About = () => {
               Our Mission
             </h2>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              To bridge the gap between Swedish companies seeking global expansion and global companies entering Sweden by providing expert sales representation, strategic guidance, and access to established distribution networks. We believe that great technology deserves great market execution, whether expanding from Sweden globally or entering Sweden from international markets.
+              To bridge the gap between innovative hardware startups and Nordic market success by providing expert sales representation, strategic guidance, and access to established distribution networks across Sweden, Norway, Denmark, Finland, and Iceland. We believe that great technology deserves great market execution in the Nordic region.
             </p>
           </div>
         </div>
@@ -83,13 +83,13 @@ const About = () => {
             </h2>
             <div className="space-y-6 font-body text-lg text-muted-foreground leading-relaxed">
               <p>
-                Aplexor was founded in 2019 with a simple observation: too many brilliant hardware innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges in navigating market expansion.
+                Aplexor was founded in 2019 with a simple observation: too many brilliant hardware innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges.
               </p>
               <p>
-                Our founders, having witnessed this pattern repeatedly across various hardware sectors, decided to create a specialized agency that could bridge this critical gap by focusing on the Swedish market as both a launching pad for global expansion and an entry point for international companies. We combine deep technical understanding with proven Swedish sales expertise and global networks to help hardware companies navigate complex B2B sales processes.
+                Our founders, having witnessed this pattern repeatedly across various hardware sectors, decided to create a specialized agency that could bridge this critical gap specifically for the Nordic markets. We combine deep technical understanding with proven Nordic sales expertise to help hardware startups navigate complex B2B sales processes and build sustainable growth in Sweden, Norway, Denmark, Finland, and Iceland.
               </p>
               <p>
-                Today, we've helped dozens of hardware companies successfully expand from Sweden to global markets and enter Sweden from international markets, establishing key partnerships and achieving significant revenue growth. Our approach remains focused on building long-term relationships and delivering measurable results through our unique bidirectional market expertise.
+                Today, we've helped dozens of hardware companies successfully enter Nordic markets, establish key regional partnerships, and achieve significant revenue growth across the Nordic region. Our approach remains focused on building long-term relationships and delivering measurable results for every client we serve in these markets.
               </p>
             </div>
           </div>
@@ -201,7 +201,7 @@ const About = () => {
               },
                 {
                   question: "Do you work with international markets?",
-                  answer: "We specialize in the Swedish market as both an entry point and expansion base. Our deep understanding of Swedish business culture, regulations, and global networks allows us to help Swedish companies expand internationally and global companies enter Sweden effectively."
+                  answer: "We specialize exclusively in Nordic markets (Sweden, Norway, Denmark, Finland, and Iceland). Our deep understanding of Nordic business culture, regulations, and distribution networks allows us to provide highly effective, localized support for hardware companies entering these markets."
                 }
             ].map((faq, index) => (
               <Card key={index}>
@@ -226,7 +226,7 @@ const About = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth through Swedish market expertise and global expansion.
+              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>
