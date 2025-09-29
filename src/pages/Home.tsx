@@ -61,22 +61,22 @@ const Home = () => {
     {
       icon: <Search className="w-6 h-6 text-primary" />,
       title: "Discovery",
-      description: "Identify opportunities, qualify prospects, and understand the landscape before strategic planning."
+      description: "We analyze markets, map customers, partners and competitors, and validate the best opportunities."
     },
     {
       icon: <Target className="w-6 h-6 text-primary" />,
       title: "Strategic",
-      description: "Where to go and how to win with comprehensive go-to-market strategies."
+      description: "Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery."
     },
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
       title: "Execution",
-      description: "Direct sales activity and growth through lead generation, matchmaking, and representation."
+      description: "Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites."
     },
     {
       icon: <CheckCircle className="w-6 h-6 text-primary" />,
       title: "Supporting",
-      description: "Tools, processes, and materials that close deals and accelerate growth."
+      description: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration."
     }
   ];
 
@@ -186,7 +186,7 @@ const Home = () => {
               Our Services
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive sales solutions tailored specifically for hardware startups entering and scaling in the Nordic markets.
+              Comprehensive sales solutions tailored specifically for hardware SMEs that want to enter the Swedish market, or Swedish companies looking to grow abroad.
             </p>
           </div>
           
