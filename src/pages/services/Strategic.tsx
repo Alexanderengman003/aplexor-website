@@ -12,10 +12,10 @@ const Strategic = () => {
       title: "Go-to-Market Strategy",
       description: "Define positioning, pricing, and market entry strategies tailored to Nordic markets.",
       details: [
-        "Market positioning and value proposition development",
-        "Pricing strategy and competitive analysis",
-        "Channel strategy and partner selection",
-        "Launch timeline and milestone planning"
+        "Market positioning and value proposition development tailored to Nordic buyers",
+        "Pricing strategy and competitive analysis to establish a compelling offer",
+        "Channel strategy and partner selection to maximize local reach",
+        "Launch timeline and milestone planning for structured execution"
       ]
     },
     {
@@ -23,10 +23,10 @@ const Strategic = () => {
       title: "Market Research & Insights",
       description: "Identify opportunities, competitors, and customer needs to inform strategic decisions.",
       details: [
-        "Comprehensive market analysis and sizing",
-        "Competitive landscape mapping",
-        "Customer behavior and preference studies",
-        "Trend analysis and future market predictions"
+        "Comprehensive market analysis and sizing to guide investment decisions",
+        "Competitive landscape mapping to identify threats and opportunities",
+        "Customer behavior and preference studies to inform product design and messaging",
+        "Trend analysis and future market predictions to anticipate shifts"
       ]
     },
     {
@@ -34,10 +34,10 @@ const Strategic = () => {
       title: "Nordic Market Entry",
       description: "Tailored expertise for entering and scaling in the Nordic markets.",
       details: [
-        "Regulatory requirements and compliance guidance",
-        "Cultural adaptation and localization strategies",
-        "Local partner identification and evaluation",
-        "Market entry risk assessment and mitigation"
+        "Regulatory requirements and compliance guidance for Nordic markets",
+        "Cultural adaptation and localization strategies to increase adoption",
+        "Local partner identification and evaluation for faster scaling",
+        "Market entry risk assessment and mitigation strategies"
       ]
     },
     {
@@ -45,10 +45,10 @@ const Strategic = () => {
       title: "Commercial Readiness Assessment",
       description: "Evaluate certifications, scalability, and sales readiness before engaging partners.",
       details: [
-        "Product-market fit evaluation",
-        "Sales process optimization",
-        "Certification and compliance audit",
-        "Scalability assessment and recommendations"
+        "Product-market fit evaluation to validate readiness",
+        "Sales process optimization to shorten cycles and improve win rates",
+        "Certification and compliance audit to meet regulatory and partner requirements",
+        "Scalability assessment and recommendations to support sustainable growth"
       ]
     }
   ];

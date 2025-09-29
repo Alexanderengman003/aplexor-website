@@ -12,10 +12,10 @@ const Execution = () => {
       title: "Lead Generation",
       description: "Build and qualify your sales pipeline with targeted prospect identification and outreach.",
       details: [
-        "Targeted prospect identification and research",
-        "Multi-channel outreach campaigns",
-        "Lead qualification and scoring",
-        "Pipeline management and tracking"
+        "Targeted prospect identification and research to build a qualified pipeline",
+        "Multi-channel outreach campaigns (email, LinkedIn, events) to maximize reach",
+        "Lead qualification and scoring to focus on the best opportunities",
+        "Pipeline management and tracking to ensure consistent deal flow"
       ]
     },
     {
@@ -23,10 +23,10 @@ const Execution = () => {
       title: "Matchmaking",
       description: "Connect with the right partners, distributors, and customers for your hardware solutions.",
       details: [
-        "Strategic partner identification",
-        "Distributor network mapping",
-        "Customer-solution matching",
-        "Partnership facilitation and negotiation support"
+        "Strategic partner identification aligned with business goals",
+        "Distributor network mapping to unlock market access",
+        "Customer-solution matching to accelerate adoption",
+        "Partnership facilitation and negotiation support to close deals"
       ]
     },
     {
@@ -34,10 +34,10 @@ const Execution = () => {
       title: "Sales Representation",
       description: "Professional sales representation acting as your dedicated Nordic sales force.",
       details: [
-        "Dedicated sales professional assignment",
-        "Customer relationship development",
-        "Sales process execution and management",
-        "Regular reporting and performance tracking"
+        "Dedicated sales professional assignment for localized execution",
+        "Customer relationship development to build trust and loyalty",
+        "Sales process execution and management to drive conversions",
+        "Regular reporting and performance tracking for transparency"
       ]
     },
     {
@@ -45,10 +45,10 @@ const Execution = () => {
       title: "Channel Development & Business Development",
       description: "Establish and manage distributor/reseller networks and nurture long-term relationships.",
       details: [
-        "Channel partner recruitment and onboarding",
-        "Distributor relationship management",
-        "Channel enablement and training",
-        "Performance monitoring and optimization"
+        "Channel partner recruitment and onboarding to expand market reach",
+        "Distributor relationship management for long-term success",
+        "Channel enablement and training to ensure partner effectiveness",
+        "Performance monitoring and optimization to maximize results"
       ]
     }
   ];
@@ -72,7 +72,7 @@ const Execution = () => {
               Execution
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Direct sales activity and growth execution. Turn your strategy into results with our hands-on execution services designed to drive immediate and sustainable growth.
+              Hands-on execution to convert strategy into immediate and sustainable revenue.
             </p>
           </div>
         </div>

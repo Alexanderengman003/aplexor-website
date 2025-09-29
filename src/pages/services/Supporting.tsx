@@ -12,10 +12,10 @@ const Supporting = () => {
       title: "Sales Enablement",
       description: "Create compelling sales decks, datasheets, and messaging that win customers and close deals.",
       details: [
-        "Sales deck design and messaging optimization",
-        "Product datasheets and technical documentation",
-        "Customer case studies and success stories",
-        "Sales training materials and playbooks"
+        "Sales deck design and messaging optimization to increase win rates",
+        "Product datasheets and technical documentation to support buyer decisions",
+        "Customer case studies and success stories to build credibility",
+        "Sales training materials and playbooks to enable consistent execution"
       ]
     },
     {
@@ -23,10 +23,10 @@ const Supporting = () => {
       title: "Investor & Pitch Support",
       description: "Tailor presentations and materials to secure funding and strategic partnerships.",
       details: [
-        "Investor pitch deck development",
-        "Financial modeling and projections",
-        "Due diligence preparation and support",
-        "Partnership proposal creation"
+        "Investor pitch deck development tailored to funding goals",
+        "Financial modeling and projections to support business case",
+        "Due diligence preparation and support to streamline fundraising",
+        "Partnership proposal creation to secure strategic alliances"
       ]
     },
     {
@@ -34,10 +34,10 @@ const Supporting = () => {
       title: "CRM & Sales Process Setup",
       description: "Implement tools and workflows to keep sales organized and track performance effectively.",
       details: [
-        "CRM system selection and implementation",
-        "Sales pipeline design and automation",
-        "Performance tracking and analytics setup",
-        "Team training and process documentation"
+        "CRM system selection and implementation to fit business needs",
+        "Sales pipeline design and automation for efficiency",
+        "Performance tracking and analytics setup for data-driven insights",
+        "Team training and process documentation for adoption and consistency"
       ]
     },
     {
@@ -45,10 +45,10 @@ const Supporting = () => {
       title: "Pricing & Packaging Advisory",
       description: "Define pricing models, bundles, and offers that fit the market and maximize profitability.",
       details: [
-        "Competitive pricing analysis",
-        "Value-based pricing model development",
-        "Product packaging and bundling strategies",
-        "Revenue optimization recommendations"
+        "Competitive pricing analysis to benchmark positioning",
+        "Value-based pricing model development to capture willingness-to-pay",
+        "Product packaging and bundling strategies to enhance appeal",
+        "Revenue optimization recommendations to improve profitability"
       ]
     }
   ];

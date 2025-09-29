@@ -10,34 +10,34 @@ const Discovery = () => {
     {
       icon: <UserSearch className="w-12 h-12 text-primary" />,
       title: "Customer Needs Mapping",
-      description: "Conduct structured interviews and surveys to uncover unmet customer needs and pain points.",
+      description: "Identify unmet needs that inform product design and go-to-market strategy.",
       details: [
-        "In-depth customer interviews to understand pain points",
-        "Market research surveys and data analysis",
-        "Customer journey mapping and touchpoint analysis",
-        "Competitive needs analysis and gap identification"
+        "In-depth customer interviews to surface pain points and unmet needs",
+        "Quantitative surveys and data analysis to validate and size customer demand",
+        "Customer journey mapping to identify friction points and opportunities for improvement",
+        "Competitive needs analysis to uncover market gaps and differentiation opportunities"
       ]
     },
     {
       icon: <Layers className="w-12 h-12 text-primary" />,
       title: "Market Segmentation & Prioritization",
-      description: "Categorize target markets and segments to focus sales efforts where they matter most.",
+      description: "Prioritize high-value segments to maximize ROI.",
       details: [
-        "Market sizing and potential assessment",
-        "Customer segmentation and profiling",
-        "Priority matrix development for market entry",
-        "Resource allocation recommendations"
+        "Market sizing and potential assessment to quantify opportunities",
+        "Customer segmentation and profiling based on needs, behavior, and value",
+        "Priority matrix development to guide market entry sequencing",
+        "Resource allocation recommendations to focus investments where they deliver highest return"
       ]
     },
     {
       icon: <Search className="w-12 h-12 text-primary" />,
       title: "Opportunity Assessment & Engagement",
-      description: "Identify high-potential partners, distributors, and leads, and rank them for follow-up.",
+      description: "Build a qualified pipeline that accelerates sales.",
       details: [
-        "Prospect identification and database building",
-        "Lead scoring and qualification frameworks",
-        "Partner and distributor evaluation",
-        "Pipeline prioritization and ranking"
+        "Prospect identification and database building of high-value targets",
+        "Lead scoring and qualification frameworks to rank prospects objectively",
+        "Partner and distributor evaluation to ensure strategic alignment",
+        "Pipeline prioritization and ranking for efficient sales focus"
       ]
     },
     {
@@ -45,10 +45,10 @@ const Discovery = () => {
       title: "Market & Competition Insights", 
       description: "Evaluate initial interest and responsiveness from prospects to refine sales approach.",
       details: [
-        "Engagement metrics tracking and analysis",
-        "Response pattern identification",
-        "Sales approach optimization",
-        "Conversion funnel analysis"
+        "Engagement metrics tracking and analysis to measure effectiveness of outreach",
+        "Response pattern identification to understand prospect behavior",
+        "Sales approach optimization based on real-time insights",
+        "Conversion funnel analysis to highlight drop-off points and improvement areas"
       ]
     }
   ];
