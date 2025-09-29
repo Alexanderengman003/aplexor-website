@@ -44,34 +44,137 @@
     <!-- WhatsApp / Telegram -->
     <meta property="og:image:secure_url" content="https://aplexor.com/og-image.jpg" />
     
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="your-google-verification-code" />
+    
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Aplexor",
-      "description": "Swedish Business Partner for Physical Technology SMEs",
+      "description": "Swedish Business Partner for Physical Technology SMEs offering sales representation, lead generation, and market entry consulting services",
       "url": "https://aplexor.com",
-      "logo": "https://aplexor.com/favicon.ico",
+      "logo": "https://aplexor.com/favicon.png",
       "image": "https://aplexor.com/og-image.jpg",
+      "foundingDate": "2019",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Business Development",
-        "email": "alexander.engman@aplexor.com"
+        "email": "alexander.engman@aplexor.com",
+        "telephone": "+46-XXX-XXX-XXX"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Alexander Engman",
+        "jobTitle": "Founder & CEO"
       },
       "sameAs": [
         "https://linkedin.com/company/aplexor"
       ],
-      "areaServed": {
-        "@type": "Place",
-        "name": "Sweden"
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Sweden"
+        },
+        {
+          "@type": "Place", 
+          "name": "Norway"
+        },
+        {
+          "@type": "Place",
+          "name": "Denmark"
+        },
+        {
+          "@type": "Place",
+          "name": "Finland"
+        },
+        {
+          "@type": "Place",
+          "name": "Iceland"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Sweden"
       },
       "serviceType": [
         "Sales Representation",
         "Lead Generation", 
         "Distributor Matchmaking",
-        "Market Entry Consulting"
+        "Market Entry Consulting",
+        "Business Development",
+        "Channel Development",
+        "Sales Enablement",
+        "Go-to-Market Strategy"
+      ],
+      "industry": [
+        "Physical Technology",
+        "B2B Sales",
+        "Business Consulting",
+        "Market Entry Services"
       ]
+    }
+    </script>
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Aplexor - Swedish Business Partner for Physical Technology SMEs",
+      "description": "Specialized sales agency helping Physical Technology companies enter and succeed in Nordic markets through expert sales representation and strategic partnerships",
+      "url": "https://aplexor.com",
+      "logo": "https://aplexor.com/favicon.png",
+      "priceRange": "Contact for pricing",
+      "areaServed": ["Sweden", "Norway", "Denmark", "Finland", "Iceland"],
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "59.3293",
+          "longitude": "18.0686"
+        },
+        "geoRadius": "2000000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Physical Technology Sales Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Discovery Services",
+              "description": "Market analysis, customer mapping, and opportunity assessment"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Strategic Consulting",
+              "description": "Go-to-market strategy and market entry planning"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Execution Services",
+              "description": "Direct sales activity, lead generation, and partnership development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Supporting Services", 
+              "description": "Sales enablement, CRM setup, and ongoing support"
+            }
+          }
+        ]
+      }
     }
     </script>
     
