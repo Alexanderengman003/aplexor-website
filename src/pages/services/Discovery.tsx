@@ -72,7 +72,7 @@ const Discovery = () => {
               Discovery
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Identify opportunities, qualify prospects, and understand the landscape before strategic planning. Our discovery services provide the foundation for successful market entry and growth.
+              Comphrehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities.
             </p>
           </div>
         </div>
