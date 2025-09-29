@@ -250,52 +250,120 @@ const SiteAnalytics = () => {
           time: new Date(view.created_at).toLocaleString()
         }));
 
-      // Daily views for chart
-      const chartDays = parseInt(timeRange) === 0 ? 30 : Math.min(parseInt(timeRange), 30);
+      // Chart data aggregation based on time range
+      const timeRangeInt = parseInt(timeRange);
       const dailyViews = [];
-      for (let i = chartDays - 1; i >= 0; i--) {
-        const date = new Date();
-        date.setDate(date.getDate() - i);
-        const dateStr = date.toISOString().split('T')[0];
-        
-        const dayViews = pageViews.filter(view => 
-          view.created_at.startsWith(dateStr)
-        ).length;
+      
+      if (timeRangeInt <= 7) {
+        // Daily aggregation for 1-7 days
+        const chartDays = timeRangeInt === 0 ? 7 : timeRangeInt;
+        for (let i = chartDays - 1; i >= 0; i--) {
+          const date = new Date();
+          date.setDate(date.getDate() - i);
+          const dateStr = date.toISOString().split('T')[0];
+          
+          const dayViews = pageViews.filter(view => 
+            view.created_at.startsWith(dateStr)
+          ).length;
 
-        const dayVisitors = sessions.filter(session => 
-          session.first_visit_at.startsWith(dateStr)
-        ).length;
-        
-        // Format date based on time range
-        let formattedDate;
-        const timeRangeInt = parseInt(timeRange);
-        
-        if (timeRangeInt <= 7) {
-          // For 1-7 days: show day name + date (e.g., "Mon 12")
-          formattedDate = date.toLocaleDateString('en-US', { 
+          const dayVisitors = sessions.filter(session => 
+            session.first_visit_at.startsWith(dateStr)
+          ).length;
+          
+          const formattedDate = date.toLocaleDateString('en-US', { 
             weekday: 'short', 
             day: 'numeric' 
           });
-        } else if (timeRangeInt <= 30) {
-          // For 8-30 days: show month + date (e.g., "Dec 12")
-          formattedDate = date.toLocaleDateString('en-US', { 
+          
+          dailyViews.push({
+            date: formattedDate,
+            views: dayViews,
+            uniqueVisitors: dayVisitors
+          });
+        }
+      } else if (timeRangeInt <= 30) {
+        // Daily aggregation for 8-30 days
+        for (let i = timeRangeInt - 1; i >= 0; i--) {
+          const date = new Date();
+          date.setDate(date.getDate() - i);
+          const dateStr = date.toISOString().split('T')[0];
+          
+          const dayViews = pageViews.filter(view => 
+            view.created_at.startsWith(dateStr)
+          ).length;
+
+          const dayVisitors = sessions.filter(session => 
+            session.first_visit_at.startsWith(dateStr)
+          ).length;
+          
+          const formattedDate = date.toLocaleDateString('en-US', { 
             month: 'short', 
             day: 'numeric' 
           });
-        } else {
-          // For longer periods: show month/day (e.g., "12/15")
-          formattedDate = date.toLocaleDateString('en-US', { 
-            month: 'numeric', 
-            day: 'numeric' 
+          
+          dailyViews.push({
+            date: formattedDate,
+            views: dayViews,
+            uniqueVisitors: dayVisitors
           });
         }
-        
-        dailyViews.push({
-          date: formattedDate,
-          fullDate: dateStr, // Keep full date for potential sorting
-          views: dayViews,
-          uniqueVisitors: dayVisitors
-        });
+      } else if (timeRangeInt <= 90) {
+        // Weekly aggregation for 31-90 days
+        const weeks = Math.ceil(timeRangeInt / 7);
+        for (let i = weeks - 1; i >= 0; i--) {
+          const endDate = new Date();
+          endDate.setDate(endDate.getDate() - (i * 7));
+          const startDate = new Date(endDate);
+          startDate.setDate(startDate.getDate() - 6);
+          
+          const weekViews = pageViews.filter(view => {
+            const viewDate = new Date(view.created_at);
+            return viewDate >= startDate && viewDate <= endDate;
+          }).length;
+
+          const weekVisitors = sessions.filter(session => {
+            const sessionDate = new Date(session.first_visit_at);
+            return sessionDate >= startDate && sessionDate <= endDate;
+          }).length;
+          
+          const formattedDate = `${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+          
+          dailyViews.push({
+            date: formattedDate,
+            views: weekViews,
+            uniqueVisitors: weekVisitors
+          });
+        }
+      } else {
+        // Monthly aggregation for longer periods
+        const months = Math.min(12, Math.ceil(timeRangeInt / 30));
+        for (let i = months - 1; i >= 0; i--) {
+          const date = new Date();
+          date.setMonth(date.getMonth() - i);
+          const year = date.getFullYear();
+          const month = date.getMonth();
+          
+          const monthViews = pageViews.filter(view => {
+            const viewDate = new Date(view.created_at);
+            return viewDate.getFullYear() === year && viewDate.getMonth() === month;
+          }).length;
+
+          const monthVisitors = sessions.filter(session => {
+            const sessionDate = new Date(session.first_visit_at);
+            return sessionDate.getFullYear() === year && sessionDate.getMonth() === month;
+          }).length;
+          
+          const formattedDate = date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            year: 'numeric' 
+          });
+          
+          dailyViews.push({
+            date: formattedDate,
+            views: monthViews,
+            uniqueVisitors: monthVisitors
+          });
+        }
       }
 
       setAnalyticsData({
@@ -605,7 +673,7 @@ const SiteAnalytics = () => {
                   <p className="text-sm text-muted-foreground">Latest visitor activity with detailed information</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3 max-h-80 overflow-y-auto pr-2">
+                  <div className="space-y-3 max-h-96 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
                     {analyticsData.recentActivity.map((activity, index) => (
                       <div 
                         key={index} 
