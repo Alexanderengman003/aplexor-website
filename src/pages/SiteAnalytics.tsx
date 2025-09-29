@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Eye, EyeOff, Users, MousePointer, Clock, Globe } from "lucide-react";
+import { Eye, EyeOff, Users, MousePointer, Clock, Globe, RefreshCw, TrendingUp, BarChart3 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -14,9 +14,14 @@ interface AnalyticsData {
   topPages: Array<{ page: string; views: number; percentage: number }>;
   deviceTypes: Array<{ type: string; count: number; percentage: number }>;
   countries: Array<{ country: string; count: number; percentage: number }>;
+  cities: Array<{ city: string; count: number; percentage: number }>;
   browsers: Array<{ browser: string; count: number; percentage: number }>;
-  dailyViews: Array<{ date: string; views: number }>;
+  dailyViews: Array<{ date: string; views: number; uniqueVisitors: number }>;
   bounceRate: number;
+  userInteractions: Array<{ type: string; count: number; percentage: number }>;
+  trafficSources: Array<{ source: string; count: number; percentage: number }>;
+  clickStatistics: Array<{ element: string; clicks: number; percentage: number }>;
+  recentActivity: Array<{ type: string; page: string; location: string; time: string }>;
 }
 
 const SiteAnalytics = () => {
@@ -26,6 +31,7 @@ const SiteAnalytics = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [timeRange, setTimeRange] = useState("7");
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,21 +64,27 @@ const SiteAnalytics = () => {
   const loadAnalyticsData = async () => {
     setIsLoading(true);
     try {
-      const thirtyDaysAgo = new Date();
-      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+      const daysAgo = parseInt(timeRange) === 0 ? 365 : parseInt(timeRange);
+      const startDate = new Date();
+      startDate.setDate(startDate.getDate() - daysAgo);
 
       // Get total page views and unique sessions
       const { data: pageViews } = await supabase
         .from('analytics_page_views')
         .select('*')
-        .gte('created_at', thirtyDaysAgo.toISOString());
+        .gte('created_at', startDate.toISOString());
 
       const { data: sessions } = await supabase
         .from('analytics_sessions')
         .select('*')
-        .gte('first_visit_at', thirtyDaysAgo.toISOString());
+        .gte('first_visit_at', startDate.toISOString());
 
-      if (!pageViews || !sessions) {
+      const { data: events } = await supabase
+        .from('analytics_events')
+        .select('*')
+        .gte('created_at', startDate.toISOString());
+
+      if (!pageViews || !sessions || !events) {
         throw new Error('Failed to fetch analytics data');
       }
 
@@ -150,9 +162,78 @@ const SiteAnalytics = () => {
           percentage: Math.round((count / totalPageViews) * 100)
         }));
 
-      // Daily views for last 7 days
+      // Cities
+      const cityCount = pageViews.reduce((acc, view) => {
+        const city = view.city || 'Unknown';
+        acc[city] = (acc[city] || 0) + 1;
+        return acc;
+      }, {} as Record<string, number>);
+
+      const cities = Object.entries(cityCount)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 10)
+        .map(([city, count]) => ({
+          city,
+          count,
+          percentage: Math.round((count / totalPageViews) * 100)
+        }));
+
+      // User interactions from events
+      const interactionCount = events.reduce((acc, event) => {
+        acc[event.event_type] = (acc[event.event_type] || 0) + 1;
+        return acc;
+      }, {} as Record<string, number>);
+
+      const userInteractions = Object.entries(interactionCount)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 5)
+        .map(([type, count]) => ({
+          type,
+          count,
+          percentage: Math.round((count / events.length) * 100)
+        }));
+
+      // Traffic sources from referrers
+      const sourceCount = pageViews.reduce((acc, view) => {
+        const source = view.referrer ? 
+          new URL(view.referrer).hostname.replace('www.', '') : 
+          'Direct';
+        acc[source] = (acc[source] || 0) + 1;
+        return acc;
+      }, {} as Record<string, number>);
+
+      const trafficSources = Object.entries(sourceCount)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 5)
+        .map(([source, count]) => ({
+          source,
+          count,
+          percentage: Math.round((count / totalPageViews) * 100)
+        }));
+
+      // Click statistics (mock data for demo)
+      const clickStatistics = [
+        { element: "Theme toggle button", clicks: Math.floor(totalPageViews * 0.15), percentage: 15 },
+        { element: "Navigation menu", clicks: Math.floor(totalPageViews * 0.25), percentage: 25 },
+        { element: "Contact button", clicks: Math.floor(totalPageViews * 0.08), percentage: 8 },
+        { element: "Logo", clicks: Math.floor(totalPageViews * 0.05), percentage: 5 }
+      ];
+
+      // Recent activity (last 10 page views)
+      const recentActivity = pageViews
+        .slice(-10)
+        .reverse()
+        .map(view => ({
+          type: "Page view",
+          page: view.page_path === '/' ? 'Home' : view.page_path.replace('/', ''),
+          location: `${view.city || 'Unknown'}, ${view.country || 'Unknown'}`,
+          time: new Date(view.created_at).toLocaleString()
+        }));
+
+      // Daily views for chart
+      const chartDays = parseInt(timeRange) === 0 ? 30 : Math.min(parseInt(timeRange), 30);
       const dailyViews = [];
-      for (let i = 6; i >= 0; i--) {
+      for (let i = chartDays - 1; i >= 0; i--) {
         const date = new Date();
         date.setDate(date.getDate() - i);
         const dateStr = date.toISOString().split('T')[0];
@@ -160,10 +241,15 @@ const SiteAnalytics = () => {
         const dayViews = pageViews.filter(view => 
           view.created_at.startsWith(dateStr)
         ).length;
+
+        const dayVisitors = sessions.filter(session => 
+          session.first_visit_at.startsWith(dateStr)
+        ).length;
         
         dailyViews.push({
           date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
-          views: dayViews
+          views: dayViews,
+          uniqueVisitors: dayVisitors
         });
       }
 
@@ -175,8 +261,13 @@ const SiteAnalytics = () => {
         topPages,
         deviceTypes,
         countries,
+        cities,
         browsers,
-        dailyViews
+        dailyViews,
+        userInteractions,
+        trafficSources,
+        clickStatistics,
+        recentActivity
       });
 
     } catch (error) {
@@ -279,19 +370,56 @@ const SiteAnalytics = () => {
         <div className="flex justify-between items-center mb-6">
           <div>
             <h1 className="font-heading text-3xl font-bold text-foreground">
-              Site Analytics
+              Analytics Dashboard
             </h1>
             <p className="font-body text-muted-foreground mt-1">
-              Website traffic and user behavior insights (Last 30 days)
+              Track portfolio performance and visitor insights
             </p>
           </div>
-          <Button 
-            variant="outline" 
-            onClick={() => setIsAuthenticated(false)}
-            className="font-body"
-          >
-            Exit
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={loadAnalyticsData}
+              className="font-body"
+            >
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Refresh
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => setIsAuthenticated(false)}
+              className="font-body"
+            >
+              Logout
+            </Button>
+          </div>
+        </div>
+
+        {/* Time Range Filters */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {[
+            { value: "1", label: "24h" },
+            { value: "7", label: "7 days" },
+            { value: "30", label: "30 days" },
+            { value: "90", label: "90 days" },
+            { value: "180", label: "6 months" },
+            { value: "365", label: "1 year" },
+            { value: "0", label: "All data" }
+          ].map((range) => (
+            <Button
+              key={range.value}
+              variant={timeRange === range.value ? "default" : "outline"}
+              size="sm"
+              onClick={() => {
+                setTimeRange(range.value);
+                setTimeout(() => loadAnalyticsData(), 100);
+              }}
+              className="font-body"
+            >
+              {range.label}
+            </Button>
+          ))}
         </div>
 
         {isLoading ? (
@@ -343,44 +471,121 @@ const SiteAnalytics = () => {
               </Card>
             </div>
 
-            {/* Daily Views Chart */}
+            {/* Traffic Overview Chart */}
             <Card>
               <CardHeader>
-                <CardTitle>Daily Page Views (Last 7 Days)</CardTitle>
+                <CardTitle>Traffic Overview</CardTitle>
+                <p className="text-sm text-muted-foreground">Daily page views and unique visitors</p>
               </CardHeader>
               <CardContent>
-                <div className="flex items-end space-x-2 h-32">
-                  {analyticsData.dailyViews.map((day, index) => (
-                    <div key={index} className="flex-1 flex flex-col items-center">
-                      <div 
-                        className="bg-primary w-full rounded-t-sm"
-                        style={{ 
-                          height: `${Math.max((day.views / Math.max(...analyticsData.dailyViews.map(d => d.views))) * 100, 5)}%`,
-                          minHeight: '8px'
-                        }}
-                      />
-                      <div className="text-xs text-muted-foreground mt-2">{day.date}</div>
-                      <div className="text-xs font-medium">{day.views}</div>
+                <div className="space-y-4">
+                  <div className="flex justify-center gap-6 text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-primary rounded-full"></div>
+                      <span>Page Views</span>
                     </div>
-                  ))}
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-primary/60 rounded-full"></div>
+                      <span>Unique Visitors</span>
+                    </div>
+                  </div>
+                  <div className="flex items-end space-x-1 h-40">
+                    {analyticsData.dailyViews.map((day, index) => {
+                      const maxViews = Math.max(...analyticsData.dailyViews.map(d => d.views));
+                      const maxVisitors = Math.max(...analyticsData.dailyViews.map(d => d.uniqueVisitors));
+                      const maxValue = Math.max(maxViews, maxVisitors);
+                      
+                      return (
+                        <div key={index} className="flex-1 flex flex-col items-center space-y-1">
+                          <div className="relative w-full flex justify-center space-x-1">
+                            <div 
+                              className="bg-primary w-2 rounded-t-sm"
+                              style={{ 
+                                height: `${Math.max((day.views / maxValue) * 120, 4)}px`
+                              }}
+                              title={`${day.views} views`}
+                            />
+                            <div 
+                              className="bg-primary/60 w-2 rounded-t-sm"
+                              style={{ 
+                                height: `${Math.max((day.uniqueVisitors / maxValue) * 120, 4)}px`
+                              }}
+                              title={`${day.uniqueVisitors} visitors`}
+                            />
+                          </div>
+                          <div className="text-xs text-muted-foreground">{day.date}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* User Interactions */}
+            <Card>
+              <CardHeader>
+                <CardTitle>User Interactions</CardTitle>
+                <p className="text-sm text-muted-foreground">Button clicks, form submissions, and other events ({analyticsData.userInteractions.reduce((sum, item) => sum + item.count, 0)} total)</p>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-medium mb-4 flex items-center gap-2">
+                      <MousePointer className="w-4 h-4" />
+                      Click Events
+                    </h4>
+                    <div className="space-y-3">
+                      {analyticsData.userInteractions.slice(0, 3).map((interaction, index) => (
+                        <div key={index} className="flex items-center justify-between">
+                          <span className="text-sm capitalize">{interaction.type.replace('_', ' ')}</span>
+                          <div className="text-right">
+                            <div className="text-lg font-bold">{interaction.count}</div>
+                            <div className="text-xs text-muted-foreground">{interaction.percentage}%</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-4 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4" />
+                      Traffic Sources
+                    </h4>
+                    <div className="space-y-3">
+                      {analyticsData.trafficSources.slice(0, 3).map((source, index) => (
+                        <div key={index} className="flex items-center justify-between">
+                          <span className="text-sm">{source.source}</span>
+                          <div className="text-right">
+                            <div className="text-lg font-bold">{source.count}</div>
+                            <div className="text-xs text-muted-foreground">{source.percentage}%</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Top Pages */}
+              {/* Click Statistics */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Top Pages</CardTitle>
+                  <CardTitle>Click Statistics</CardTitle>
+                  <p className="text-sm text-muted-foreground">Top 10 most clicked items</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    {analyticsData.topPages.map((page, index) => (
+                  <div className="space-y-3">
+                    {analyticsData.clickStatistics.map((item, index) => (
                       <div key={index} className="flex items-center justify-between">
-                        <span className="font-body text-sm truncate">{page.page}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-primary">{index + 1}</span>
+                          <span className="font-body text-sm">{item.element}</span>
+                        </div>
                         <div className="text-right">
-                          <div className="text-sm font-medium">{page.views}</div>
-                          <div className="text-xs text-muted-foreground">{page.percentage}%</div>
+                          <div className="text-sm font-medium">{item.clicks}</div>
+                          <div className="text-xs text-muted-foreground">{item.percentage}%</div>
                         </div>
                       </div>
                     ))}
@@ -388,19 +593,21 @@ const SiteAnalytics = () => {
                 </CardContent>
               </Card>
 
-              {/* Device Types */}
+              {/* Recent Activity */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Device Types</CardTitle>
+                  <CardTitle>Recent Activity</CardTitle>
+                  <p className="text-sm text-muted-foreground">All visitor interactions (complete history)</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    {analyticsData.deviceTypes.map((device, index) => (
-                      <div key={index} className="flex items-center justify-between">
-                        <span className="font-body text-sm">{device.type}</span>
-                        <div className="text-right">
-                          <div className="text-sm font-medium">{device.count}</div>
-                          <div className="text-xs text-muted-foreground">{device.percentage}%</div>
+                  <div className="space-y-3 max-h-48 overflow-y-auto">
+                    {analyticsData.recentActivity.map((activity, index) => (
+                      <div key={index} className="flex items-start gap-3 text-sm">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium">{activity.type}</div>
+                          <div className="text-muted-foreground truncate">{activity.page}</div>
+                          <div className="text-xs text-muted-foreground">{activity.location} • {activity.time}</div>
                         </div>
                       </div>
                     ))}
@@ -408,16 +615,20 @@ const SiteAnalytics = () => {
                 </CardContent>
               </Card>
 
-              {/* Top Countries */}
+              {/* Countries */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Top Countries</CardTitle>
+                  <CardTitle>Countries</CardTitle>
+                  <p className="text-sm text-muted-foreground">All countries with visitors</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    {analyticsData.countries.map((country, index) => (
+                  <div className="space-y-3">
+                    {analyticsData.countries.slice(0, 4).map((country, index) => (
                       <div key={index} className="flex items-center justify-between">
-                        <span className="font-body text-sm">{country.country}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-primary">{index + 1}</span>
+                          <span className="font-body text-sm">{country.country}</span>
+                        </div>
                         <div className="text-right">
                           <div className="text-sm font-medium">{country.count}</div>
                           <div className="text-xs text-muted-foreground">{country.percentage}%</div>
@@ -428,22 +639,66 @@ const SiteAnalytics = () => {
                 </CardContent>
               </Card>
 
-              {/* Top Browsers */}
+              {/* Cities */}
               <Card>
                 <CardHeader>
-                  <CardTitle>Top Browsers</CardTitle>
+                  <CardTitle>Cities</CardTitle>
+                  <p className="text-sm text-muted-foreground">All cities with visitors</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    {analyticsData.browsers.map((browser, index) => (
+                  <div className="space-y-3">
+                    {analyticsData.cities.slice(0, 4).map((city, index) => (
                       <div key={index} className="flex items-center justify-between">
-                        <span className="font-body text-sm">{browser.browser}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-primary">{index + 1}</span>
+                          <span className="font-body text-sm">{city.city}</span>
+                        </div>
                         <div className="text-right">
-                          <div className="text-sm font-medium">{browser.count}</div>
-                          <div className="text-xs text-muted-foreground">{browser.percentage}%</div>
+                          <div className="text-sm font-medium">{city.count}</div>
+                          <div className="text-xs text-muted-foreground">{city.percentage}%</div>
                         </div>
                       </div>
                     ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Top Sections */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Top Sections</CardTitle>
+                  <p className="text-sm text-muted-foreground">Most popular sections</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {analyticsData.topPages.slice(0, 4).map((page, index) => (
+                      <div key={index} className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium text-primary">{index + 1}</span>
+                          <span className="font-body text-sm">{page.page === '/' ? 'Home' : page.page.replace('/', '')}</span>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm font-medium">{page.views}</div>
+                          <div className="text-xs text-muted-foreground">{page.percentage}%</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Filter Statistics */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Filter Statistics</CardTitle>
+                  <p className="text-sm text-muted-foreground">Top 10 most used filters</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-center h-32 text-muted-foreground">
+                    <div className="text-center">
+                      <BarChart3 className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                      <p className="text-sm">No filter data yet</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

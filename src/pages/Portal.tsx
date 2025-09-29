@@ -63,7 +63,7 @@ const Portal = () => {
     } else {
       toast({
         title: "Invalid credentials",
-        description: "Use alexander.engman@aplexor.com / Alexander1234",
+        description: "Please check your email and password",
         variant: "destructive"
       });
     }
@@ -138,16 +138,16 @@ const Portal = () => {
                     <Label htmlFor="email" className="font-body font-medium">
                       Email Address *
                     </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="mt-1"
-                      placeholder="alexander.engman@aplexor.com"
-                      required
-                    />
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="mt-1"
+                        placeholder="Enter email"
+                        required
+                      />
                   </div>
 
                   <div>
@@ -162,7 +162,7 @@ const Portal = () => {
                         value={formData.password}
                         onChange={handleInputChange}
                         className="pr-10"
-                        placeholder="Alexander1234"
+                        placeholder="Enter password"
                         required
                       />
                       <button
