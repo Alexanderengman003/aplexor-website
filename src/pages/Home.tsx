@@ -28,32 +28,32 @@ const Home = () => {
     {
       icon: <XCircle className="w-8 h-8 text-primary" />,
       title: "Market Validation",
-      description: "Many products are innovative but not yet mature. Without product–market fit, it is challenging to convince investors, customers, or sales partners."
+      description: "Many products are innovative but not yet mature. Without an established product–market fit, it is challenging to convince customers, sales partners and distribution networks to accept your innovative solution."
     }, 
     {
       icon: <Settings className="w-8 h-8 text-primary" />,
       title: "Sales Volume",
-      description: "Startups often lack certifications, scale, and volume. Distributors often want high-volume, low-risk products, out of reach for many businesses."
+      description: "Startups often lack certifications, scale, and volume. Distributors often want high-volume, low-risk products, out of reach for many SMEs that release innovative products."
     },
     {
       icon: <UserMinus className="w-8 h-8 text-primary" />,
       title: "Limited Sales Resources",
-      description: "Sales often falls on the CEO or founders. With small teams, opportunities are missed, resources are blocked and growth slows."
+      description: "Sales often falls on the CEO or founders. With small teams and limited bandwidth dedicated to expansion, opportunities are missed, resources are blocked and growth slows."
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-primary" />,
       title: "Missing Sales Expertise",
-      description: "Technical founders rarely have B2B sales experience, and often want to focus on core technology development."
+      description: "Technical founders sometimes lack the B2B sales experience necessary to ensure sucessful sales activites, and often want to focus on core technology development."
     },
     {
       icon: <MapPin className="w-8 h-8 text-primary" />,
-      title: "Nordic Business Culture",
-      description: "Success in the Nordics relies on trust, relationships, and consensus. Startups without local sales know-how struggle to adapt."
+      title: "Swedish Business Culture",
+      description: "Success for business in Sweden and with Swedish companies requires a unique approach to business, based on trust, relationships, and consensus."
     },
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
       title: "Expansion Barriers",
-      description: "Expanding into the Nordics requires networks and presence that startups struggle to build, and complex regulatory considerations are demanding."
+      description: "Expanding into and outside of Sweden requires networks and presence that SMEs struggle to build, and complex regulatory considerations are demanding."
     }
   ];
 
@@ -121,6 +121,9 @@ const Home = () => {
             <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
               The Challenge
             </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hardware SMEs that are on a growth journey face unique challenges that can be lead to wasted time and unnecessary costs.
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
