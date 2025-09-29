@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import linkedinIcon from "@/assets/linkedin-icon.png";
+import aplexorLogo from "@/assets/aplexor-logo-footer.png";
 
 const Footer = () => {
   return (
@@ -11,9 +12,9 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="/favicon.png" 
+                src={aplexorLogo} 
                 alt="Aplexor Logo" 
-                className="w-10 h-10 rounded"
+                className="w-10 h-10"
                 loading="lazy"
               />
               <h3 className="font-heading font-bold text-xl text-foreground">
