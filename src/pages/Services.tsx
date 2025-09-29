@@ -39,7 +39,7 @@ const Services = () => {
   const serviceCategories = [
     {
       title: "Discovery",
-      subtitle: "We analyze markets, map customers, partners and competitors, and validate the best opportunities.",
+      subtitle: "The discovery phase aims to analyze markets, map customers, partners and competitors, and validate the best opportunities.",
       services: [
         {
           icon: <UserSearch className="w-8 h-8 text-primary" />,
