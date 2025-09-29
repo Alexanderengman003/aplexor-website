@@ -6,7 +6,7 @@ interface CtaBannerProps {
 }
 
 const CtaBanner = ({ 
-  description = "Let's discuss how Aplexor can help accelerate your company's growth and market success." 
+  description = "Let's discuss how Aplexor can help accelerate your company's growth and sales activities in Sweden and internationally. We want to hear from you!." 
 }: CtaBannerProps) => {
   return (
     <section className="py-16 bg-primary">
