@@ -30,7 +30,7 @@ const Services = () => {
   const serviceCategories = [
     {
       title: "Discovery",
-      subtitle: "Identify opportunities, qualify prospects, and understand the landscape before strategic planning",
+      subtitle: "We analyze markets, map customers, partners and competitors, and validate the best opportunities.",
       services: [
         {
           icon: <UserSearch className="w-8 h-8 text-primary" />,
@@ -56,7 +56,7 @@ const Services = () => {
     },
     {
       title: "Strategic",
-      subtitle: "Where to go and how to win",
+      subtitle: "Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery.",
       services: [
         {
           icon: <Target className="w-8 h-8 text-primary" />,
@@ -82,7 +82,7 @@ const Services = () => {
     },
     {
       title: "Execution",
-      subtitle: "Direct sales activity and growth",
+      subtitle: "Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites.",
       services: [
         {
           icon: <Users className="w-8 h-8 text-primary" />,
@@ -108,7 +108,7 @@ const Services = () => {
     },
     {
       title: "Supporting",
-      subtitle: "Tools, processes, and materials that close deals",
+      subtitle: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
       services: [
         {
           icon: <FileText className="w-8 h-8 text-primary" />,
@@ -150,10 +150,10 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Our Services
+              All Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comprehensive sales solutions designed specifically for hardware startups entering and scaling in the Nordics. We provide the expertise, network, and strategic guidance you need to succeed.
+              Comprehensive sales solutions developed specifically for hardware SMEs established in Sweden and looking to expand internationally, and companies outside of Sweden who are looking to enter the market. We provide the expertise, network, and results you need to succeed with scaling your business.
             </p>
           </div>
         </div>
