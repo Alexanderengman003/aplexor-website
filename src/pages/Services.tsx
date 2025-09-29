@@ -162,7 +162,7 @@ const Services = () => {
               All Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comprehensive sales solutions developed specifically for Physical Technology SMEs established in Sweden and looking to expand internationally, and companies outside of Sweden who are looking to enter the market. We provide the expertise, network, and results you need to succeed with scaling your business.
+              Comprehensive sales solutions for Physical Technology companies looking to scale and expand internationally. We provide the expertise, network, and results you need to succeed.
             </p>
           </div>
         </div>
