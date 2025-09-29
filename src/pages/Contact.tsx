@@ -60,7 +60,7 @@ const Contact = () => {
       
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours."
+        description: "We will get back to you within 24 hours."
       });
       
       // Reset form
@@ -118,7 +118,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Let's Talk
+              Contact
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
               Ready to accelerate your Physical Technology sales in the Nordic region? Get in touch with our team to discuss how we can help bring your products to Nordic markets.
@@ -200,7 +200,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       className="mt-1 min-h-32"
-                      placeholder="Tell us about your Physical Technology product, target Nordic markets, and how we can help..."
+                      placeholder="Write us a message..."
                       required
                     />
                   </div>
