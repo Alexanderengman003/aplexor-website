@@ -13,7 +13,7 @@ const Footer = () => {
               Aplexor
             </h3>
             <p className="font-body text-muted-foreground mb-4 max-w-md">
-              Your trusted Nordic sales partner for hardware startups. We help bring innovative hardware products to Nordic markets through expert representation and strategic partnerships across Sweden, Norway, Denmark, Finland, and Iceland.
+              Aplexor helps Swedish hardware SMEs expand their business outside of Sweden, and international business to grow into the Swedish market.
             </p>
             <div className="flex space-x-4">
               <a 
