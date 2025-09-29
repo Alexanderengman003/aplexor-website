@@ -10,12 +10,12 @@ const Home = () => {
     {
       icon: <Users className="w-8 h-8 text-primary" />,
       title: "Expertise",
-      description: "Aplexor is founded by engineers with deep industry knowledge across many engineering domains. We have experience from working in hardware SMEs, and understand the unique challenges and opportunities of trying to grow."
+      description: "Aplexor is founded and run exclusively by engineers with deep industry knowledge across many engineering domains. We have experience from working in hardware SMEs, and understand the unique challenges and opportunities of trying to grow."
     },
     {
       icon: <Globe className="w-8 h-8 text-primary" />,
       title: "Network",
-      description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business."
+      description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business. Our established relationships enable us to accelerate market entry, expand reach, and create long-term growth opportunities."
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
