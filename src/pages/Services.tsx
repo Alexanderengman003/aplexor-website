@@ -287,7 +287,7 @@ const Services = () => {
               Our Process
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We follow a proven methodology to ensure successful outcomes for every Physical Technology startup entering Nordic markets.
+              We follow a proven methodology to ensure successful outcomes for our partners. You can choose to let us handle the entire process for you, or we can deliver each step separately as a service.
             </p>
           </div>
           
@@ -297,22 +297,18 @@ const Services = () => {
                 {
                   step: "01",
                   title: "Discovery",
-                  description: "Deep dive into your product, market, and goals to develop a customized strategy."
                 },
                 {
                   step: "02",
                   title: "Strategy",
-                  description: "Create a comprehensive go-to-market plan tailored to your specific needs and objectives."
                 },
                 {
                   step: "03",
                   title: "Execution",
-                  description: "Implement the strategy with precision, leveraging our network and expertise."
                 },
                 {
                   step: "04",
                   title: "Optimization",
-                  description: "Continuously monitor, analyze, and refine our approach for maximum results."
                 }
               ].map((step, index) => (
                 <div key={index} className="flex flex-col lg:flex-row items-center">
@@ -346,13 +342,13 @@ const Services = () => {
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to work with us?
+            Ready to bring your product to market?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your Physical Technology company's growth and market success in the Nordic region.
+              Let's discuss how we can accelerate your growth and connect you with the right partners and customers.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
-            <Link to="/contact">Get In Touch</Link>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </section>
