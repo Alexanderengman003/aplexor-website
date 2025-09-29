@@ -254,10 +254,27 @@ const SiteAnalytics = () => {
       const timeRangeInt = parseInt(timeRange);
       const dailyViews = [];
       
-      if (timeRangeInt <= 7) {
-        // Daily aggregation for 1-7 days
-        const chartDays = timeRangeInt === 0 ? 7 : timeRangeInt;
-        for (let i = chartDays - 1; i >= 0; i--) {
+      if (timeRangeInt === 1) {
+        // 24H - one data point (today's total)
+        const today = new Date();
+        const todayStr = today.toISOString().split('T')[0];
+        
+        const todayViews = pageViews.filter(view => 
+          view.created_at.startsWith(todayStr)
+        ).length;
+
+        const todayVisitors = sessions.filter(session => 
+          session.first_visit_at.startsWith(todayStr)
+        ).length;
+        
+        dailyViews.push({
+          date: "Today",
+          views: todayViews,
+          uniqueVisitors: todayVisitors
+        });
+      } else if (timeRangeInt === 7) {
+        // 7 days - 7 data points, one per day
+        for (let i = 6; i >= 0; i--) {
           const date = new Date();
           date.setDate(date.getDate() - i);
           const dateStr = date.toISOString().split('T')[0];
@@ -281,9 +298,9 @@ const SiteAnalytics = () => {
             uniqueVisitors: dayVisitors
           });
         }
-      } else if (timeRangeInt <= 30) {
-        // Daily aggregation for 8-30 days
-        for (let i = timeRangeInt - 1; i >= 0; i--) {
+      } else if (timeRangeInt === 30) {
+        // 30 days - 30 data points, one per day
+        for (let i = 29; i >= 0; i--) {
           const date = new Date();
           date.setDate(date.getDate() - i);
           const dateStr = date.toISOString().split('T')[0];
@@ -307,10 +324,9 @@ const SiteAnalytics = () => {
             uniqueVisitors: dayVisitors
           });
         }
-      } else if (timeRangeInt <= 90) {
-        // Weekly aggregation for 31-90 days
-        const weeks = Math.ceil(timeRangeInt / 7);
-        for (let i = weeks - 1; i >= 0; i--) {
+      } else if (timeRangeInt === 90) {
+        // 90 days - one point per week (~13 data points)
+        for (let i = 12; i >= 0; i--) {
           const endDate = new Date();
           endDate.setDate(endDate.getDate() - (i * 7));
           const startDate = new Date(endDate);
@@ -326,7 +342,10 @@ const SiteAnalytics = () => {
             return sessionDate >= startDate && sessionDate <= endDate;
           }).length;
           
-          const formattedDate = `${startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+          const formattedDate = startDate.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric' 
+          });
           
           dailyViews.push({
             date: formattedDate,
@@ -334,10 +353,9 @@ const SiteAnalytics = () => {
             uniqueVisitors: weekVisitors
           });
         }
-      } else {
-        // Monthly aggregation for longer periods
-        const months = Math.min(12, Math.ceil(timeRangeInt / 30));
-        for (let i = months - 1; i >= 0; i--) {
+      } else if (timeRangeInt === 180) {
+        // 6 months - one point per month (6 data points)
+        for (let i = 5; i >= 0; i--) {
           const date = new Date();
           date.setMonth(date.getMonth() - i);
           const year = date.getFullYear();
@@ -354,14 +372,87 @@ const SiteAnalytics = () => {
           }).length;
           
           const formattedDate = date.toLocaleDateString('en-US', { 
-            month: 'short', 
-            year: 'numeric' 
+            month: 'short' 
           });
           
           dailyViews.push({
             date: formattedDate,
             views: monthViews,
             uniqueVisitors: monthVisitors
+          });
+        }
+      } else if (timeRangeInt === 365) {
+        // 1 year - 1 point per month (12 data points)
+        for (let i = 11; i >= 0; i--) {
+          const date = new Date();
+          date.setMonth(date.getMonth() - i);
+          const year = date.getFullYear();
+          const month = date.getMonth();
+          
+          const monthViews = pageViews.filter(view => {
+            const viewDate = new Date(view.created_at);
+            return viewDate.getFullYear() === year && viewDate.getMonth() === month;
+          }).length;
+
+          const monthVisitors = sessions.filter(session => {
+            const sessionDate = new Date(session.first_visit_at);
+            return sessionDate.getFullYear() === year && sessionDate.getMonth() === month;
+          }).length;
+          
+          const formattedDate = date.toLocaleDateString('en-US', { 
+            month: 'short',
+            year: '2-digit'
+          });
+          
+          dailyViews.push({
+            date: formattedDate,
+            views: monthViews,
+            uniqueVisitors: monthVisitors
+          });
+        }
+      } else {
+        // All data - 1 point per month
+        // Get the earliest date in our data
+        const earliestView = pageViews.reduce((earliest, view) => {
+          const viewDate = new Date(view.created_at);
+          return !earliest || viewDate < earliest ? viewDate : earliest;
+        }, null as Date | null);
+        
+        if (earliestView) {
+          const startDate = new Date(earliestView.getFullYear(), earliestView.getMonth(), 1);
+          const currentDate = new Date();
+          const monthsToShow = [];
+          
+          let iterDate = new Date(startDate);
+          while (iterDate <= currentDate) {
+            monthsToShow.push(new Date(iterDate));
+            iterDate.setMonth(iterDate.getMonth() + 1);
+          }
+          
+          monthsToShow.forEach(date => {
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            
+            const monthViews = pageViews.filter(view => {
+              const viewDate = new Date(view.created_at);
+              return viewDate.getFullYear() === year && viewDate.getMonth() === month;
+            }).length;
+
+            const monthVisitors = sessions.filter(session => {
+              const sessionDate = new Date(session.first_visit_at);
+              return sessionDate.getFullYear() === year && sessionDate.getMonth() === month;
+            }).length;
+            
+            const formattedDate = date.toLocaleDateString('en-US', { 
+              month: 'short',
+              year: '2-digit'
+            });
+            
+            dailyViews.push({
+              date: formattedDate,
+              views: monthViews,
+              uniqueVisitors: monthVisitors
+            });
           });
         }
       }
