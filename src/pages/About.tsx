@@ -135,6 +135,9 @@ const About = () => {
                       {team[0].email}
                     </a>
                   </p>
+                  <p className="font-body text-sm text-muted-foreground">
+                    {team[0].description}
+                  </p>
                 </CardContent>
               </Card>
             </div>
