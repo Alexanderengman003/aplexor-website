@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import CtaBanner from "@/components/CtaBanner";
 import { 
   Handshake, 
   Target, 
@@ -291,7 +292,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
             {[
               {
                 step: "01",
@@ -310,19 +311,22 @@ const Services = () => {
                 title: "Optimization",
               }
             ].map((step, index) => (
-              <div key={index} className="flex flex-col lg:flex-row items-center">
+              <div key={index} className="flex flex-col md:flex-col lg:flex-row items-center">
                 <div className="text-center px-2 lg:px-4">
                   <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
-                    <div className="inline-flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-sm lg:text-xl mb-2 lg:mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-sm lg:text-xl mb-2 lg:mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
                       {step.step}
                     </div>
                   </Link>
-                  <h3 className="font-heading text-sm lg:text-xl font-semibold text-foreground mb-1 lg:mb-3">
+                  <h3 className="font-heading text-sm md:text-base lg:text-xl font-semibold text-foreground mb-1 lg:mb-3">
                     {step.title}
                   </h3>
                 </div>
                 {index < 3 && (
-                  <ChevronRight className="w-20 h-20 text-primary mx-4 hidden lg:block" />
+                  <>
+                    <ChevronDown className="w-6 h-6 md:w-8 md:h-8 text-primary my-2 md:my-4 lg:hidden" />
+                    <ChevronRight className="w-12 h-12 text-primary mx-4 hidden lg:block" />
+                  </>
                 )}
               </div>
             ))}
@@ -330,20 +334,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to bring your product to market?
-          </h2>
-            <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can accelerate your growth and connect you with the right partners and customers.
-            </p>
-          <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
-            <Link to="/contact">Contact Us</Link>
-          </Button>
-        </div>
-      </section>
+      <CtaBanner />
     </Layout>
   );
 };

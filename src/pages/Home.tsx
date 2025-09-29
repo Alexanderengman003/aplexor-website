@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import CtaBanner from "@/components/CtaBanner";
 import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -216,20 +217,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to bring your product to market?
-          </h2>
-            <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can accelerate your growth and connect you with the right partners and customers.
-            </p>
-          <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
-            <Link to="/contact">Contact Us</Link>
-          </Button>
-        </div>
-      </section>
+      <CtaBanner />
     </Layout>
   );
 };
