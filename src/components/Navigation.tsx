@@ -22,10 +22,10 @@ const Navigation = () => {
   ];
 
   const serviceLinks = [
-    { href: "/services/discovery", label: "Discovery Services" },
-    { href: "/services/strategic", label: "Strategic Services" },
-    { href: "/services/execution", label: "Execution Services" },
-    { href: "/services/supporting", label: "Supporting Services" },
+    { href: "/services/discovery", label: "Discovery" },
+    { href: "/services/strategic", label: "Strategic" },
+    { href: "/services/execution", label: "Execution" },
+    { href: "/services/supporting", label: "Supporting" },
   ];
 
   return (
