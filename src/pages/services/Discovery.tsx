@@ -72,7 +72,7 @@ const Discovery = () => {
               Discovery
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Identify opportunities, qualify prospects, and understand the landscape before strategic planning. Our discovery services provide the foundation for successful market entry and growth.
+              Identify opportunities, qualify prospects, and understand the landscape before strategic planning. Our discovery services provide the foundation for successful Swedish market entry and global expansion.
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Discovery = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+              Let's discuss how our team can help accelerate your hardware company's growth through Swedish market expertise and global expansion.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>

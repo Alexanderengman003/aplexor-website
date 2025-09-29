@@ -118,7 +118,7 @@ const Supporting = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+              Let's discuss how our team can help accelerate your hardware company's growth through Swedish market expertise and global expansion.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>

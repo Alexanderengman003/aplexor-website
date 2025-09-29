@@ -10,7 +10,7 @@ const Strategic = () => {
     {
       icon: <Target className="w-12 h-12 text-primary" />,
       title: "Go-to-Market Strategy",
-      description: "Define positioning, pricing, and market entry strategies tailored to Nordic markets.",
+      description: "Define positioning, pricing, and market entry strategies tailored to Swedish and global markets.",
       details: [
         "Market positioning and value proposition development",
         "Pricing strategy and competitive analysis",
@@ -31,13 +31,13 @@ const Strategic = () => {
     },
     {
       icon: <Globe className="w-12 h-12 text-primary" />,
-      title: "Nordic Market Entry",
-      description: "Tailored expertise for entering and scaling in the Nordic markets.",
+      title: "Swedish Market Entry & Global Expansion",
+      description: "Tailored expertise for Swedish companies expanding globally and global companies entering Sweden.",
       details: [
-        "Regulatory requirements and compliance guidance",
-        "Cultural adaptation and localization strategies",
-        "Local partner identification and evaluation",
-        "Market entry risk assessment and mitigation"
+        "Regulatory requirements and compliance guidance for Swedish and target markets",
+        "Cultural adaptation and localization strategies for both directions",
+        "Partner identification and evaluation in Swedish and global markets",
+        "Market entry and expansion risk assessment and mitigation"
       ]
     },
     {
@@ -72,7 +72,7 @@ const Strategic = () => {
               Strategic
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Define where to go and how to win. Our strategic services help you develop comprehensive plans for successful market entry and sustainable growth in Nordic markets.
+              Define where to go and how to win. Our strategic services help you develop comprehensive plans for Swedish companies expanding globally and global companies entering Sweden.
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Strategic = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+              Let's discuss how our team can help accelerate your hardware company's growth through Swedish market expertise and global expansion.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>

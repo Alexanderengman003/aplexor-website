@@ -15,7 +15,7 @@ const Home = () => {
     {
       icon: <Globe className="w-8 h-8 text-primary" />,
       title: "Network",
-      description: "Extensive connections with distributors, retailers, and key decision makers across global markets."
+      description: "Extensive connections with distributors, retailers, and key decision makers in Swedish and global markets."
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
@@ -47,13 +47,13 @@ const Home = () => {
     },
     {
       icon: <MapPin className="w-8 h-8 text-primary" />,
-      title: "Nordic Business Culture",
-      description: "Success in the Nordics relies on trust, relationships, and consensus. Startups without local sales know-how struggle to adapt."
+      title: "Swedish Business Culture",
+      description: "Success in Sweden relies on trust, relationships, and consensus. Companies without local sales know-how struggle to adapt to Swedish business practices."
     },
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
-      title: "Expansion Barriers",
-      description: "Expanding into the Nordics requires networks and presence that startups struggle to build, and complex regulatory considerations are demanding."
+      title: "Market Entry Barriers",
+      description: "Entering Sweden or expanding globally requires networks and presence that companies struggle to build, along with complex regulatory considerations."
     }
   ];
 
@@ -96,11 +96,11 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Your Nordic Sales Partner for{" "}
-              <span className="text-primary">Hardware Startups</span>
+              Your Swedish Market Bridge for{" "}
+              <span className="text-primary">Hardware Companies</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              We help innovative hardware companies accelerate growth in the Nordic region through expert sales representation, strategic partnerships, and proven market entry strategies specifically tailored for Nordic markets.
+              We help Swedish companies expand globally and global companies succeed in Sweden through expert sales representation, strategic partnerships, and proven market entry strategies tailored for the Swedish market.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold">
@@ -122,7 +122,7 @@ const Home = () => {
               The Challenge
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hardware startups face unique barriers that traditional sales approaches can't overcome.
+              Hardware companies face unique barriers when expanding into new markets that traditional sales approaches can't overcome.
             </p>
           </div>
           
@@ -154,7 +154,7 @@ const Home = () => {
               Why Choose Aplexor?
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We combine industry expertise with a wide network to deliver exceptional results for hardware startups. We can digest the fine details of your hardware solution, and find the partners you need for business growth.
+              We combine industry expertise with a strategic network to deliver exceptional results for hardware companies. We understand the fine details of your hardware solution and connect you with the right partners for business growth in both Swedish and global markets.
             </p>
           </div>
           
@@ -186,7 +186,7 @@ const Home = () => {
               Our Services
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive sales solutions tailored specifically for hardware startups entering and scaling in the Nordic markets.
+              Comprehensive sales solutions for Swedish companies expanding globally and global companies entering the Swedish market.
             </p>
           </div>
           
@@ -223,7 +223,7 @@ const Home = () => {
             Ready to bring your hardware to market?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can accelerate your growth and connect you with the right partners and customers in the Nordic region.
+              Let's discuss how we can accelerate your growth and connect you with the right partners and customers in Swedish and global markets.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Let's Talk</Link>

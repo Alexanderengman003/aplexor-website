@@ -68,11 +68,11 @@ const Services = () => {
           title: "Market Research & Insights",
           description: "Identify opportunities, competitors, and customer needs to inform strategic decisions."
         },
-        {
-          icon: <Globe className="w-8 h-8 text-primary" />,
-          title: "Nordic Market Entry",
-          description: "Tailored expertise for entering and scaling in the Nordics."
-        },
+          {
+            icon: <Globe className="w-8 h-8 text-primary" />,
+            title: "Swedish Market Entry & Global Expansion",
+            description: "Tailored expertise for entering Sweden and expanding to global markets."
+          },
         {
           icon: <Shield className="w-8 h-8 text-primary" />,
           title: "Commercial Readiness Assessment",
@@ -153,7 +153,7 @@ const Services = () => {
               Our Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comprehensive sales solutions designed specifically for hardware startups entering and scaling in the Nordics. We provide the expertise, network, and strategic guidance you need to succeed.
+              Comprehensive sales solutions for Swedish companies expanding globally and global companies entering Sweden. We provide the expertise, network, and strategic guidance you need to succeed in both directions.
             </p>
           </div>
         </div>
@@ -279,7 +279,7 @@ const Services = () => {
               Our Process
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We follow a proven methodology to ensure successful outcomes for every hardware startup entering Nordic markets.
+              We follow a proven methodology to ensure successful outcomes for Swedish companies expanding globally and global companies entering Sweden.
             </p>
           </div>
           
@@ -341,7 +341,7 @@ const Services = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+              Let's discuss how our team can help accelerate your hardware company's growth through Swedish market expertise and global expansion.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>
