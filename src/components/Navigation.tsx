@@ -23,9 +23,9 @@ const Navigation = () => {
 
   const serviceLinks = [
     { href: "/services/discovery", label: "Discovery" },
-    { href: "/services/strategic", label: "Strategic" },
+    { href: "/services/strategy", label: "Strategy" },
     { href: "/services/execution", label: "Execution" },
-    { href: "/services/supporting", label: "Supporting" },
+    { href: "/services/supporting", label: "Support" },
   ];
 
   return (
