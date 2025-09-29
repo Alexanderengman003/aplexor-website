@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
+import ProcessSection from "@/components/ProcessSection";
 import { FileText, TrendingUp, Database, Calculator, ArrowLeft } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -110,6 +111,8 @@ const Supporting = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection currentStep="supporting" />
 
       <CtaBanner />
 

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
+import ProcessSection from "@/components/ProcessSection";
 import { Target, BarChart3, Globe, Shield, ArrowLeft } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -110,6 +111,8 @@ const Strategic = () => {
           </div>
         </div>
       </section>
+
+      <ProcessSection currentStep="strategy" />
 
       <CtaBanner />
 
