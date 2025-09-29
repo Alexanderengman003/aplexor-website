@@ -24,11 +24,14 @@ const AnalyticsTracker = () => {
           sessionStorage.setItem('analytics_session_id', sessionId);
         }
 
+        // Get geolocation data
+        const locationData = await getLocationData();
+
         // Create or update session
         if (isNewSession) {
           await supabase.from('aplexor_sessions').insert({
             session_id: sessionId,
-            country: 'Unknown',
+            country: locationData.country,
             device_type: getDeviceType(),
             browser: getBrowser(),
             referrer: document.referrer || null
@@ -45,8 +48,8 @@ const AnalyticsTracker = () => {
           device_type: getDeviceType(),
           browser: getBrowser(),
           operating_system: getOperatingSystem(),
-          country: 'Unknown',
-          city: 'Unknown'
+          country: locationData.country,
+          city: locationData.city
         });
 
         // Track event
@@ -99,6 +102,24 @@ const getOperatingSystem = (): string => {
   if (userAgent.includes('Android')) return 'Android';
   if (userAgent.includes('iOS')) return 'iOS';
   return 'Unknown';
+};
+
+const getLocationData = async (): Promise<{country: string, city: string}> => {
+  try {
+    // Use ipapi.co for geolocation (free service)
+    const response = await fetch('https://ipapi.co/json/');
+    if (response.ok) {
+      const data = await response.json();
+      return {
+        country: data.country_name || 'Unknown',
+        city: data.city || 'Unknown'
+      };
+    }
+  } catch (error) {
+    console.debug('Geolocation error:', error);
+  }
+  
+  return { country: 'Unknown', city: 'Unknown' };
 };
 
 export default AnalyticsTracker;

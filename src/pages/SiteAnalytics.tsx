@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Eye, EyeOff, Users, MousePointer, Clock, Globe, RefreshCw, LineChart } from "lucide-react";
+import { LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -498,115 +499,51 @@ const SiteAnalytics = () => {
                 <p className="text-sm text-muted-foreground">Daily page views and unique visitors trend</p>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  <div className="flex justify-center gap-6 text-sm">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-primary rounded-full"></div>
-                      <span>Page Views</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-primary/60 rounded-full"></div>
-                      <span>Unique Visitors</span>
-                    </div>
-                  </div>
-                  
-                  <div className="relative h-64 border-l border-b border-border">
-                    <svg className="w-full h-full" viewBox="0 0 600 200">
-                      {/* Grid lines */}
-                      {[0, 1, 2, 3, 4].map(i => (
-                        <line
-                          key={i}
-                          x1="0"
-                          y1={i * 40}
-                          x2="600"
-                          y2={i * 40}
-                          stroke="currentColor"
-                          strokeOpacity="0.1"
-                        />
-                      ))}
-                      
-                      {analyticsData.dailyViews.length > 1 && (() => {
-                        const maxViews = Math.max(...analyticsData.dailyViews.map(d => d.views), 1);
-                        const maxVisitors = Math.max(...analyticsData.dailyViews.map(d => d.uniqueVisitors), 1);
-                        const maxValue = Math.max(maxViews, maxVisitors);
-                        const width = 600;
-                        const stepX = width / (analyticsData.dailyViews.length - 1);
-                        
-                        // Page views line
-                        const viewsPath = analyticsData.dailyViews
-                          .map((day, index) => {
-                            const x = index * stepX;
-                            const y = 180 - (day.views / maxValue) * 160;
-                            return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
-                          })
-                          .join(' ');
-                        
-                        // Unique visitors line
-                        const visitorsPath = analyticsData.dailyViews
-                          .map((day, index) => {
-                            const x = index * stepX;
-                            const y = 180 - (day.uniqueVisitors / maxValue) * 160;
-                            return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
-                          })
-                          .join(' ');
-                        
-                        return (
-                          <>
-                            <path
-                              d={viewsPath}
-                              fill="none"
-                              stroke="hsl(var(--primary))"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            <path
-                              d={visitorsPath}
-                              fill="none"
-                              stroke="hsl(var(--primary))"
-                              strokeOpacity="0.6"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                            {/* Data points */}
-                            {analyticsData.dailyViews.map((day, index) => {
-                              const x = index * stepX;
-                              const viewsY = 180 - (day.views / maxValue) * 160;
-                              const visitorsY = 180 - (day.uniqueVisitors / maxValue) * 160;
-                              
-                              return (
-                                <g key={index}>
-                                  <circle
-                                    cx={x}
-                                    cy={viewsY}
-                                    r="3"
-                                    fill="hsl(var(--primary))"
-                                  />
-                                  <circle
-                                    cx={x}
-                                    cy={visitorsY}
-                                    r="3"
-                                    fill="hsl(var(--primary))"
-                                    fillOpacity="0.6"
-                                  />
-                                </g>
-                              );
-                            })}
-                          </>
-                        );
-                      })()}
-                    </svg>
-                    
-                    {/* X-axis labels */}
-                    <div className="flex justify-between mt-2 px-2">
-                      {analyticsData.dailyViews.map((day, index) => (
-                        <div key={index} className="text-xs text-muted-foreground">
-                          {index % Math.ceil(analyticsData.dailyViews.length / 6) === 0 ? day.date : ''}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                <div className="h-80">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RechartsLineChart 
+                      data={analyticsData.dailyViews}
+                      margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                      <XAxis 
+                        dataKey="date" 
+                        stroke="hsl(var(--muted-foreground))"
+                        fontSize={12}
+                      />
+                      <YAxis 
+                        stroke="hsl(var(--muted-foreground))"
+                        fontSize={12}
+                      />
+                      <Tooltip 
+                        contentStyle={{
+                          backgroundColor: 'hsl(var(--popover))',
+                          border: '1px solid hsl(var(--border))',
+                          borderRadius: '8px',
+                          color: 'hsl(var(--popover-foreground))'
+                        }}
+                      />
+                      <Legend />
+                      <Line 
+                        type="monotone" 
+                        dataKey="views" 
+                        stroke="hsl(var(--primary))" 
+                        strokeWidth={3}
+                        name="Page Views"
+                        dot={{ fill: 'hsl(var(--primary))', strokeWidth: 2, r: 4 }}
+                        activeDot={{ r: 6, stroke: 'hsl(var(--primary))', strokeWidth: 2 }}
+                      />
+                      <Line 
+                        type="monotone" 
+                        dataKey="uniqueVisitors" 
+                        stroke="hsl(var(--secondary))" 
+                        strokeWidth={3}
+                        name="Unique Visitors"
+                        dot={{ fill: 'hsl(var(--secondary))', strokeWidth: 2, r: 4 }}
+                        activeDot={{ r: 6, stroke: 'hsl(var(--secondary))', strokeWidth: 2 }}
+                      />
+                    </RechartsLineChart>
+                  </ResponsiveContainer>
                 </div>
               </CardContent>
             </Card>
