@@ -291,49 +291,41 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="flex items-center justify-center">
-            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-8">
-              {[
-                {
-                  step: "01",
-                  title: "Discovery",
-                },
-                {
-                  step: "02",
-                  title: "Strategy",
-                },
-                {
-                  step: "03",
-                  title: "Execution",
-                },
-                {
-                  step: "04",
-                  title: "Optimization",
-                }
-              ].map((step, index) => (
-                <div key={index} className="flex flex-col lg:flex-row items-center">
-                  <div className="text-center max-w-xs px-4">
-                    <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                        {step.step}
-                      </div>
-                    </Link>
-                    <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
-                      {step.title}
-                    </h3>
-                    <p className="font-body text-sm text-muted-foreground mb-6 lg:mb-0">
-                      {step.description}
-                    </p>
-                  </div>
-                  {index < 3 && (
-                    <>
-                      <ChevronRight className="w-20 h-20 text-primary mx-4 hidden lg:block" />
-                      <ChevronDown className="w-12 h-12 text-primary my-4 lg:hidden" />
-                    </>
-                  )}
+          <div className="grid grid-cols-2 lg:flex lg:items-center lg:justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                step: "01",
+                title: "Discovery",
+              },
+              {
+                step: "02",
+                title: "Strategy",
+              },
+              {
+                step: "03",
+                title: "Execution",
+              },
+              {
+                step: "04",
+                title: "Optimization",
+              }
+            ].map((step, index) => (
+              <div key={index} className="flex flex-col lg:flex-row items-center">
+                <div className="text-center px-2 lg:px-4">
+                  <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
+                    <div className="inline-flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-sm lg:text-xl mb-2 lg:mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                      {step.step}
+                    </div>
+                  </Link>
+                  <h3 className="font-heading text-sm lg:text-xl font-semibold text-foreground mb-1 lg:mb-3">
+                    {step.title}
+                  </h3>
                 </div>
-              ))}
-            </div>
+                {index < 3 && (
+                  <ChevronRight className="w-20 h-20 text-primary mx-4 hidden lg:block" />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
