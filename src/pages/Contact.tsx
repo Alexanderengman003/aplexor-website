@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
-import CtaBanner from "@/components/CtaBanner";
+
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -267,7 +267,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <CtaBanner />
+      
     </Layout>
   );
 };

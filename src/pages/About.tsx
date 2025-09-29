@@ -218,7 +218,7 @@ const About = () => {
         </div>
       </section>
 
-      <CtaBanner description="Let's discuss how our team can help accelerate your Physical Technology company's growth and market success in the Nordic region." />
+      <CtaBanner />
     </Layout>
   );
 };
