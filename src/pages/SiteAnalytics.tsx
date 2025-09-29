@@ -211,13 +211,23 @@ const SiteAnalytics = () => {
           percentage: Math.round((count / totalPageViews) * 100)
         }));
 
-      // Click statistics (mock data for demo)
-      const clickStatistics = [
-        { element: "Theme toggle button", clicks: Math.floor(totalPageViews * 0.15), percentage: 15 },
-        { element: "Navigation menu", clicks: Math.floor(totalPageViews * 0.25), percentage: 25 },
-        { element: "Contact button", clicks: Math.floor(totalPageViews * 0.08), percentage: 8 },
-        { element: "Logo", clicks: Math.floor(totalPageViews * 0.05), percentage: 5 }
-      ];
+      // Click statistics (from actual click events)
+      const clickEvents = events.filter(event => event.event_type === 'click');
+      const clickCount = clickEvents.reduce((acc, event) => {
+        const eventData = event.event_data as any;
+        const element = eventData?.element || 'Unknown';
+        acc[element] = (acc[element] || 0) + 1;
+        return acc;
+      }, {} as Record<string, number>);
+
+      const clickStatistics = Object.entries(clickCount)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 10)
+        .map(([element, clicks]) => ({
+          element,
+          clicks,
+          percentage: clickEvents.length > 0 ? Math.round((clicks / clickEvents.length) * 100) : 0
+        }));
 
       // Recent activity (last 10 page views)
       const recentActivity = pageViews
