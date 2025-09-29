@@ -61,7 +61,7 @@ const Home = () => {
     {
       icon: <Search className="w-6 h-6 text-primary" />,
       title: "Discovery",
-      description: "We analyze markets, map customers, partners and competitors, and validate the best opportunities."
+      description: "Comphrehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities."
     },
     {
       icon: <Target className="w-6 h-6 text-primary" />,
