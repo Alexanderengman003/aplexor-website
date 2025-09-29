@@ -31,7 +31,7 @@ const Discovery = () => {
     },
     {
       icon: <Search className="w-12 h-12 text-primary" />,
-      title: "Opportunity Scouting & Lead Qualification",
+      title: "Opportunity Assessment & Engagement",
       description: "Identify high-potential partners, distributors, and leads, and rank them for follow-up.",
       details: [
         "Prospect identification and database building",
@@ -42,7 +42,7 @@ const Discovery = () => {
     },
     {
       icon: <Eye className="w-12 h-12 text-primary" />,
-      title: "Early Engagement Analysis", 
+      title: "Market & Competition Insights", 
       description: "Evaluate initial interest and responsiveness from prospects to refine sales approach.",
       details: [
         "Engagement metrics tracking and analysis",
