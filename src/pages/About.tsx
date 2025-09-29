@@ -21,7 +21,7 @@ const About = () => {
     {
       icon: <Lightbulb className="w-8 h-8 text-primary" />,
       title: "Innovation",
-      description: "We embrace new technologies and methodologies to stay ahead in the rapidly evolving hardware industry."
+      description: "We embrace new technologies and methodologies to stay ahead in the rapidly evolving Physical Technology industry."
     }
   ];
 
@@ -30,7 +30,7 @@ const About = () => {
       name: "Alexander Engman",
       role: "Founder & CEO",
       email: "alexander.engman@aplexor.com",
-      description: "15+ years in hardware sales and business development. Former VP of Sales at leading tech hardware companies.",
+      description: "15+ years in Physical Technology sales and business development. Former VP of Sales at leading tech Physical Technology companies.",
       image: alexanderEngman
     }
   ];
@@ -54,7 +54,7 @@ const About = () => {
               About Aplexor
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              We're passionate about helping innovative hardware companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
+              We're passionate about helping innovative Physical Technology companies succeed in Nordic markets through expert sales representation and strategic partnerships tailored for the Nordic region.
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ const About = () => {
               Our Mission
             </h2>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              To bridge the gap between innovative hardware startups and Nordic market success by providing expert sales representation, strategic guidance, and access to established distribution networks across Sweden, Norway, Denmark, Finland, and Iceland. We believe that great technology deserves great market execution in the Nordic region.
+              To bridge the gap between innovative Physical Technology startups and Nordic market success by providing expert sales representation, strategic guidance, and access to established distribution networks across Sweden, Norway, Denmark, Finland, and Iceland. We believe that great technology deserves great market execution in the Nordic region.
             </p>
           </div>
         </div>
@@ -83,13 +83,13 @@ const About = () => {
             </h2>
             <div className="space-y-6 font-body text-lg text-muted-foreground leading-relaxed">
               <p>
-                Aplexor was founded in 2019 with a simple observation: too many brilliant hardware innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges.
+                Aplexor was founded in 2019 with a simple observation: too many brilliant Physical Technology innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges.
               </p>
               <p>
-                Our founders, having witnessed this pattern repeatedly across various hardware sectors, decided to create a specialized agency that could bridge this critical gap specifically for the Nordic markets. We combine deep technical understanding with proven Nordic sales expertise to help hardware startups navigate complex B2B sales processes and build sustainable growth in Sweden, Norway, Denmark, Finland, and Iceland.
+                Our founders, having witnessed this pattern repeatedly across various Physical Technology sectors, decided to create a specialized agency that could bridge this critical gap specifically for the Nordic markets. We combine deep technical understanding with proven Nordic sales expertise to help Physical Technology startups navigate complex B2B sales processes and build sustainable growth in Sweden, Norway, Denmark, Finland, and Iceland.
               </p>
               <p>
-                Today, we've helped dozens of hardware companies successfully enter Nordic markets, establish key regional partnerships, and achieve significant revenue growth across the Nordic region. Our approach remains focused on building long-term relationships and delivering measurable results for every client we serve in these markets.
+                Today, we've helped dozens of Physical Technology companies successfully enter Nordic markets, establish key regional partnerships, and achieve significant revenue growth across the Nordic region. Our approach remains focused on building long-term relationships and delivering measurable results for every client we serve in these markets.
               </p>
             </div>
           </div>
@@ -181,15 +181,15 @@ const About = () => {
               Frequently Asked Questions
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common questions about our hardware sales services and process.
+              Find answers to common questions about our Physical Technology sales services and process.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                question: "What types of hardware products do you work with?",
-                answer: "We work with a wide range of hardware products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
+                question: "What types of Physical Technology products do you work with?",
+                answer: "We work with a wide range of Physical Technology products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
               },
               {
                 question: "How do you charge for your services?",
@@ -201,7 +201,7 @@ const About = () => {
               },
                 {
                   question: "Do you work with international markets?",
-                  answer: "We specialize exclusively in Nordic markets (Sweden, Norway, Denmark, Finland, and Iceland). Our deep understanding of Nordic business culture, regulations, and distribution networks allows us to provide highly effective, localized support for hardware companies entering these markets."
+                  answer: "We specialize exclusively in Nordic markets (Sweden, Norway, Denmark, Finland, and Iceland). Our deep understanding of Nordic business culture, regulations, and distribution networks allows us to provide highly effective, localized support for Physical Technology companies entering these markets."
                 }
             ].map((faq, index) => (
               <Card key={index}>
@@ -226,7 +226,7 @@ const About = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+              Let's discuss how our team can help accelerate your Physical Technology company's growth and market success in the Nordic region.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>

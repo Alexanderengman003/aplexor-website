@@ -120,7 +120,7 @@ const Contact = () => {
               Let's Talk
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Ready to accelerate your hardware sales in the Nordic region? Get in touch with our team to discuss how we can help bring your products to Nordic markets.
+              Ready to accelerate your Physical Technology sales in the Nordic region? Get in touch with our team to discuss how we can help bring your products to Nordic markets.
             </p>
           </div>
         </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                   Submit Your Product
                 </CardTitle>
                 <p className="font-body text-muted-foreground">
-                  Tell us about your hardware product and how we can help you grow your Nordic market sales.
+                  Tell us about your Physical Technology product and how we can help you grow your Nordic market sales.
                 </p>
               </CardHeader>
               <CardContent>
@@ -199,7 +199,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       className="mt-1 min-h-32"
-                      placeholder="Tell us about your hardware product, target Nordic markets, and how we can help..."
+                      placeholder="Tell us about your Physical Technology product, target Nordic markets, and how we can help..."
                       required
                     />
                   </div>

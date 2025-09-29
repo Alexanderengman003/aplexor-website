@@ -153,7 +153,7 @@ const Services = () => {
               All Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Comprehensive sales solutions developed specifically for hardware SMEs established in Sweden and looking to expand internationally, and companies outside of Sweden who are looking to enter the market. We provide the expertise, network, and results you need to succeed with scaling your business.
+              Comprehensive sales solutions developed specifically for Physical Technology SMEs established in Sweden and looking to expand internationally, and companies outside of Sweden who are looking to enter the market. We provide the expertise, network, and results you need to succeed with scaling your business.
             </p>
           </div>
         </div>
@@ -208,7 +208,7 @@ const Services = () => {
               Industries Covered
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our expertise spans across key industries where hardware innovation drives growth and transformation.
+              Our expertise spans across key industries where Physical Technology innovation drives growth and transformation.
             </p>
           </div>
           
@@ -242,7 +242,7 @@ const Services = () => {
               {
                 icon: <Database className="w-12 h-12 text-primary" />,
                 title: "Enterprise",
-                description: "B2B hardware and enterprise solutions"
+                description: "B2B Physical Technology and enterprise solutions"
               },
               {
                 icon: <TrendingUp className="w-12 h-12 text-primary" />,
@@ -279,7 +279,7 @@ const Services = () => {
               Our Process
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              We follow a proven methodology to ensure successful outcomes for every hardware startup entering Nordic markets.
+              We follow a proven methodology to ensure successful outcomes for every Physical Technology startup entering Nordic markets.
             </p>
           </div>
           
@@ -341,7 +341,7 @@ const Services = () => {
             Ready to work with us?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
+              Let's discuss how our team can help accelerate your Physical Technology company's growth and market success in the Nordic region.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
             <Link to="/contact">Get In Touch</Link>

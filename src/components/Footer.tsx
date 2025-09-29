@@ -21,7 +21,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="font-body text-muted-foreground mb-4 max-w-md">
-              Aplexor helps Swedish hardware SMEs expand their business outside of Sweden, and international business to grow into the Swedish market.
+              Aplexor helps Swedish Physical Technology SMEs expand their business outside of Sweden, and international business to grow into the Swedish market.
             </p>
             <div className="flex space-x-4">
               <a 
