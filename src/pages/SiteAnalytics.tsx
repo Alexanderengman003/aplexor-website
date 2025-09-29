@@ -70,17 +70,17 @@ const SiteAnalytics = () => {
 
       // Get total page views and unique sessions
       const { data: pageViews } = await supabase
-        .from('analytics_page_views')
+        .from('aplexor_page_views')
         .select('*')
         .gte('created_at', startDate.toISOString());
 
       const { data: sessions } = await supabase
-        .from('analytics_sessions')
+        .from('aplexor_sessions')
         .select('*')
         .gte('first_visit_at', startDate.toISOString());
 
       const { data: events } = await supabase
-        .from('analytics_events')
+        .from('aplexor_events')
         .select('*')
         .gte('created_at', startDate.toISOString());
 

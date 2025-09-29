@@ -26,7 +26,7 @@ const AnalyticsTracker = () => {
 
         // Create or update session
         if (isNewSession) {
-          await supabase.from('analytics_sessions').insert({
+          await supabase.from('aplexor_sessions').insert({
             session_id: sessionId,
             country: 'Unknown',
             device_type: getDeviceType(),
@@ -36,7 +36,7 @@ const AnalyticsTracker = () => {
         }
 
         // Track page view
-        await supabase.from('analytics_page_views').insert({
+        await supabase.from('aplexor_page_views').insert({
           session_id: sessionId,
           page_path: location.pathname,
           page_title: document.title,
@@ -50,7 +50,7 @@ const AnalyticsTracker = () => {
         });
 
         // Track event
-        await supabase.from('analytics_events').insert({
+        await supabase.from('aplexor_events').insert({
           session_id: sessionId,
           event_type: 'page_view',
           page_path: location.pathname,

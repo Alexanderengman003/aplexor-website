@@ -75,27 +75,38 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        <div className="border-t border-border mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex flex-col md:flex-row items-center gap-4">
-              <p className="font-body text-muted-foreground text-sm">
-                © {new Date().getFullYear()} Aplexor. All rights reserved.
-              </p>
-              <div className="flex space-x-6">
+
+          {/* Legal */}
+          <div>
+            <h4 className="font-heading font-semibold text-foreground mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2">
+              <li>
                 <Link 
                   to="/privacy-policy" 
-                  className="font-body text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
                 >
                   Privacy Policy
                 </Link>
+              </li>
+              <li>
                 <Link 
                   to="/terms-of-service" 
-                  className="font-body text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
                 >
                   Terms of Service
                 </Link>
-              </div>
-            </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="font-body text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Aplexor. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
