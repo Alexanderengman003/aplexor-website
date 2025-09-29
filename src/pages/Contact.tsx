@@ -192,7 +192,7 @@ const Contact = () => {
 
                   <div>
                     <Label htmlFor="message" className="font-body font-medium">
-                      Message
+                      Message / Product Description *
                     </Label>
                     <Textarea
                       id="message"
