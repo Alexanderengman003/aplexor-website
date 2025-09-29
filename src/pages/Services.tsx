@@ -308,7 +308,7 @@ const Services = () => {
               },
               {
                 step: "04",
-                title: "Optimization",
+                title: "Support",
               }
             ].map((step, index) => (
               <div key={index} className="flex flex-col md:flex-col lg:flex-row items-center">
