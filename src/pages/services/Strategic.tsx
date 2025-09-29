@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import CtaBanner from "@/components/CtaBanner";
 import { Target, BarChart3, Globe, Shield, ArrowLeft } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -111,20 +111,7 @@ const Strategic = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to work with us?
-          </h2>
-            <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how our team can help accelerate your hardware company's growth and market success in the Nordic region.
-            </p>
-          <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
-            <Link to="/contact">Get In Touch</Link>
-          </Button>
-        </div>
-      </section>
+      <CtaBanner />
 
     </Layout>
   );
