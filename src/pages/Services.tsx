@@ -291,8 +291,8 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="flex items-center justify-center overflow-x-auto">
-            <div className="flex items-center gap-2 md:gap-4 lg:gap-8 min-w-max px-4">
+          <div className="flex items-center justify-center">
+            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-8">
               {[
                 {
                   step: "01",
@@ -311,19 +311,25 @@ const Services = () => {
                   title: "Optimization",
                 }
               ].map((step, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-center px-1 md:px-2 lg:px-4">
+                <div key={index} className="flex flex-col lg:flex-row items-center">
+                  <div className="text-center max-w-xs px-4">
                     <Link to={`/services/${["discovery", "strategic", "execution", "supporting"][index]}`}>
-                      <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-sm md:text-lg lg:text-xl mb-2 md:mb-3 lg:mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-xl mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
                         {step.step}
                       </div>
                     </Link>
-                    <h3 className="font-heading text-sm md:text-lg lg:text-xl font-semibold text-foreground whitespace-nowrap">
+                    <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
                       {step.title}
                     </h3>
+                    <p className="font-body text-sm text-muted-foreground mb-6 lg:mb-0">
+                      {step.description}
+                    </p>
                   </div>
                   {index < 3 && (
-                    <ChevronRight className="w-4 h-4 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary mx-1 md:mx-2 lg:mx-4 flex-shrink-0" />
+                    <>
+                      <ChevronRight className="w-20 h-20 text-primary mx-4 hidden lg:block" />
+                      <ChevronDown className="w-12 h-12 text-primary my-4 lg:hidden" />
+                    </>
                   )}
                 </div>
               ))}
