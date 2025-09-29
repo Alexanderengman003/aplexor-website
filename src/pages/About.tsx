@@ -26,7 +26,7 @@ const About = () => {
     {
       icon: <Lightbulb className="w-8 h-8 text-primary" />,
       title: "Innovation",
-      description: "We embrace new technologies and methodologies to stay ahead in the rapidly evolving Physical Technology industry."
+      description: "We embrace new technologies and methodologies and strive to stay up to date with the latest innovations on the market."
     }
   ];
 
@@ -35,7 +35,6 @@ const About = () => {
       name: "Alexander Engman",
       role: "Founder & CEO",
       email: "alexander.engman@aplexor.com",
-      description: "15+ years in Physical Technology sales and business development. Former VP of Sales at leading tech Physical Technology companies.",
       image: alexanderEngman
     }
   ];
