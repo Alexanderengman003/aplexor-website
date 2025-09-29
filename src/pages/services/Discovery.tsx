@@ -14,7 +14,7 @@ const Discovery = () => {
       details: [
         "In-depth customer interviews to surface pain points and unmet needs",
         "Quantitative surveys and data analysis to validate and size customer demand",
-        "Customer journey mapping to identify challenges and opportunities for improvement",
+        "Customer journey mapping to identify challenges and opportunities",
         "Competitive needs analysis to uncover market gaps"
       ]
     },
@@ -26,7 +26,7 @@ const Discovery = () => {
         "Market sizing and potential assessment to quantify opportunities",
         "Customer segmentation and profiling based on needs, behavior, and value",
         "Priority matrix development to guide market entry sequencing",
-        "Resource allocation recommendations to focus investments where they matter most"
+        "Recommendations on how to focus investments where they matter most"
       ]
     },
     {
