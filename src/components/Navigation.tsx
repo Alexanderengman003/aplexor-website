@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu, X, ChevronDown } from "lucide-react";
-import aplexorLogo from "@/assets/aplexor-logo-latest.png";
+import aplexorLogo from "@/assets/aplexor-logo-user.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
