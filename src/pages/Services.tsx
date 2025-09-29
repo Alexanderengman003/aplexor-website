@@ -18,6 +18,14 @@ import {
   Database, 
   Calculator,
   Search,
+  Heart,
+  Cpu,
+  Wifi,
+  Factory,
+  Smartphone,
+  Building,
+  Leaf,
+  ShieldCheck,
   UserSearch,
   Layers,
   Eye,
@@ -215,12 +223,12 @@ const Services = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <FirstAid className="w-12 h-12 text-primary" />,
+                icon: <Heart className="w-12 h-12 text-primary" />,
                 title: "Medical",
                 description: "Medical technology and devices"
               },
               {
-                icon: <Chip className="w-12 h-12 text-primary" />,
+                icon: <Cpu className="w-12 h-12 text-primary" />,
                 title: "Electronics",
                 description: "Consumer and industrial electronics"
               },
@@ -240,7 +248,7 @@ const Services = () => {
                 description: "Consumer electronics and lifestyle products"
               },
               {
-                icon: <BuildingOffice className="w-12 h-12 text-primary" />,
+                icon: <Building className="w-12 h-12 text-primary" />,
                 title: "Enterprise",
                 description: "B2B Physical Technology and enterprise solutions"
               },
