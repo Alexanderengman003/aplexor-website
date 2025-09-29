@@ -58,7 +58,7 @@ const Discovery = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative py-12 lg:py-16 overflow-hidden"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -80,7 +80,7 @@ const Discovery = () => {
       </section>
 
       {/* Services Detail */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
