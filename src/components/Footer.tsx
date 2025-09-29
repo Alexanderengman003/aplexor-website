@@ -9,9 +9,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="font-heading font-bold text-xl text-foreground mb-4">
-              Aplexor
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/favicon.png" 
+                alt="Aplexor Logo" 
+                className="w-10 h-10 rounded"
+                loading="lazy"
+              />
+              <h3 className="font-heading font-bold text-xl text-foreground">
+                Aplexor
+              </h3>
+            </div>
             <p className="font-body text-muted-foreground mb-4 max-w-md">
               Aplexor helps Swedish hardware SMEs expand their business outside of Sweden, and international business to grow into the Swedish market.
             </p>
