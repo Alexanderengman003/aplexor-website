@@ -96,11 +96,11 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Your Swedish Sales Partner for{" "}
-              <span className="text-primary">Hardware Startups</span>
+              Your Swedish Business Partner for{" "}
+              <span className="text-primary">Hardware SMEs</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Enabling business between Sweden and the world through expert sales representation, strategic partnerships, and market entry strategies adapter for the hardware domain.
+              Enabling business for hardware SMEs through expert sales representation, strategic partnerships, and market entry strategies adapter. We offer services tailored to the Swedish market, whether you are a Swedish company intending to expand, or if you want strategies to enter the Swedish markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold">
