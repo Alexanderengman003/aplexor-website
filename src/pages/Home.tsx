@@ -100,7 +100,7 @@ const Home = () => {
               <span className="text-primary">Hardware Startups</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              We help innovative hardware companies accelerate growth in the Nordic region through expert sales representation, strategic partnerships, and proven market entry strategies specifically tailored for Nordic markets.
+              Connecting Sweden with the world by serving as the bridge between Swedish companies seeking growth abroad and international companies entering Sweden through expert sales representation, strategic partnerships, and proven market entry strategies specifically tailored for Nordic markets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold">
