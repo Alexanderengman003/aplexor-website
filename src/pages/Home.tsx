@@ -220,13 +220,13 @@ const Home = () => {
       <section className="py-12 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to bring your hardware to market?
+            Ready to bring your product to market?
           </h2>
             <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can accelerate your growth and connect you with the right partners and customers in the Nordic region.
+              Let's discuss how we can accelerate your growth and connect you with the right partners and customers.
             </p>
           <Button asChild variant="secondary" size="lg" className="font-heading font-semibold">
-            <Link to="/contact">Let's Talk</Link>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </section>
