@@ -63,7 +63,7 @@ const About = () => {
               About Aplexor
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-             We are passionate about helping innovative physical technology companies succeed by providing expert sales support and creating strategic partnerships. As engineers at heart, we thrive on the complexity of physical products, from cutting-edge electronics to advanced medical devices. We are committed to guiding our partners every step of the way, turning their innovation into positive sales results.
+              Read more about us, who we are, and how we started here.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const About = () => {
               Our Mission
             </h2>
             <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-              To bridge the gap between innovative Physical Technology startups and Nordic market success by providing expert sales representation, strategic guidance, and access to established distribution networks across Sweden, Norway, Denmark, Finland, and Iceland. We believe that great technology deserves great market execution in the Nordic region.
+              Our mission at Aplexor is to act as a bridge between Sweden and the international market. We help Swedish companies scale abroad while enabling international companies to enter and grow in Sweden. By combining deep market knowledge with strong local networks, we provide expert sales representation and strategic guidance. Our focus is on ensuring that innovative technologies and solutions reach their full potential in the right markets. We believe that successful growth is built on strong partnerships, honesty, having a curious mind and delivering exceptional results.
             </p>
           </div>
         </div>
@@ -92,13 +92,10 @@ const About = () => {
             </h2>
             <div className="space-y-4 md:space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
-                Aplexor was founded in 2019 with a simple observation: too many brilliant Physical Technology innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges.
+                We are passionate about helping innovative physical technology companies succeed by providing expert sales support and creating strategic partnerships. As engineers at heart, we thrive on the complexity of physical products, from cutting-edge electronics to advanced medical devices. We are committed to guiding our partners every step of the way, turning their innovation into positive sales results.
               </p>
               <p>
-                Our founders, having witnessed this pattern repeatedly across various Physical Technology sectors, decided to create a specialized agency that could bridge this critical gap specifically for the Nordic markets. We combine deep technical understanding with proven Nordic sales expertise to help Physical Technology startups navigate complex B2B sales processes and build sustainable growth in Sweden, Norway, Denmark, Finland, and Iceland.
-              </p>
-              <p>
-                Today, we've helped dozens of Physical Technology companies successfully enter Nordic markets, establish key regional partnerships, and achieve significant revenue growth across the Nordic region. Our approach remains focused on building long-term relationships and delivering measurable results for every client we serve in these markets.
+                Founded in 2025, Aplexor was born from a vision to combine technical expertise with proven sales excellence. Having witnessed how brilliant innovations often struggle to reach their full market potential due to sales and distribution challenges, we decided to bridge this critical gap. Today, we focus on building long-term partnerships and delivering measurable results, helping companies navigate complex B2B sales processes and achieve sustainable growth in both Swedish and international markets.
               </p>
             </div>
           </div>
@@ -113,7 +110,7 @@ const About = () => {
               The Team
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Meet the experienced professionals who make Aplexor's success possible.
+              Meet the individuals who work on delivering exceptional services to our partners.
             </p>
           </div>
           
@@ -187,13 +184,21 @@ const About = () => {
               Frequently Asked Questions
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common questions about our Physical Technology sales services and process.
+              Have questions about our services or want to discuss a potential partnership? We'd love to hear from you.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               {[
+                {
+                  question: "How do you define Physical Technology?",
+                  answer: "Physical Technology refers to tangible, hardware-based products and solutions that combine engineering, electronics, and software. This includes everything from consumer electronics and IoT devices to industrial equipment, medical devices, and advanced manufacturing systems. Our expertise lies in understanding the unique challenges of selling physical products in today's market."
+                },
+                {
+                  question: "What are the deliverables of a project with Aplexor?",
+                  answer: "Project deliverables vary based on your specific needs but typically include comprehensive market analysis, sales strategy development, distributor and partner network establishment, lead generation and qualification, sales process management, and detailed performance reporting. We work closely with you to define clear milestones and measurable outcomes from day one."
+                },
                 {
                   question: "What types of Physical Technology products do you work with?",
                   answer: "We work with a wide range of Physical Technology products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
@@ -207,8 +212,12 @@ const About = () => {
                   answer: "We can typically begin initial discovery and strategy development within 1-2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
                 },
                 {
-                  question: "Do you work with international markets?",
-                  answer: "We specialize exclusively in Nordic markets (Sweden, Norway, Denmark, Finland, and Iceland). Our deep understanding of Nordic business culture, regulations, and distribution networks allows us to provide highly effective, localized support for Physical Technology companies entering these markets."
+                  question: "What markets do you serve?",
+                  answer: "We specialize in helping Swedish companies expand internationally and international companies enter the Swedish market. Our deep understanding of Swedish business culture, regulations, and distribution networks allows us to provide highly effective, localized support for companies looking to grow in or from Sweden."
+                },
+                {
+                  question: "What makes Aplexor different from other sales agencies?",
+                  answer: "As engineers at heart, we bring a unique combination of technical understanding and sales expertise. We don't just sell products—we deeply understand the technology behind them. This allows us to engage meaningfully with technical stakeholders, navigate complex B2B sales cycles, and build credibility with partners and customers in ways that traditional sales agencies cannot."
                 }
               ].map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg">
