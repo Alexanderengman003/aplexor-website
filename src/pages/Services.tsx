@@ -159,7 +159,7 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              All Services
+              Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
               Comprehensive sales solutions for Physical Technology companies looking to scale and expand internationally. We provide the expertise, network, and results you need to succeed.
@@ -184,20 +184,15 @@ const Services = () => {
                     </p>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                       {category.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="flex items-start gap-4 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200">
-                          <div className="flex-shrink-0 mt-1">
+                        <div key={serviceIndex} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200 text-center">
+                          <div className="flex-shrink-0">
                             {service.icon}
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
-                              {service.title}
-                            </h3>
-                            <p className="font-body text-sm text-muted-foreground">
-                              {service.description}
-                            </p>
-                          </div>
+                          <h3 className="font-heading text-lg font-semibold text-foreground">
+                            {service.title}
+                          </h3>
                         </div>
                       ))}
                     </div>
