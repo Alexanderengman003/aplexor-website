@@ -239,15 +239,19 @@ const SiteAnalytics = () => {
           percentage: clickEvents.length > 0 ? Math.round((clicks / clickEvents.length) * 100) : 0
         }));
 
-      // Recent activity (last 10 page views)
+      // Recent activity (all page views, sorted by most recent)
       const recentActivity = pageViews
-        .slice(-10)
-        .reverse()
+        .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
         .map(view => ({
           type: "Page view",
-          page: view.page_path === '/' ? 'Home' : view.page_path.replace('/', ''),
+          page: view.page_path === '/' ? 'Home' : view.page_path.replace(/^\//, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) || 'Home',
+          fullPagePath: view.page_path,
+          pageTitle: view.page_title,
           location: `${view.city || 'Unknown'}, ${view.country || 'Unknown'}`,
-          time: new Date(view.created_at).toLocaleString()
+          time: new Date(view.created_at).toLocaleString(),
+          deviceType: view.device_type || 'Unknown',
+          browser: view.browser || 'Unknown',
+          sessionId: view.session_id
         }));
 
       // Chart data aggregation based on time range
@@ -758,29 +762,39 @@ const SiteAnalytics = () => {
               </Card>
 
               {/* Recent Activity */}
-              <Card>
-                <CardHeader>
+              <Card className="flex flex-col">
+                <CardHeader className="flex-shrink-0">
                   <CardTitle>Recent Activity</CardTitle>
-                  <p className="text-sm text-muted-foreground">Latest visitor activity with detailed information</p>
+                  <p className="text-sm text-muted-foreground">
+                    All visitor activity ({analyticsData.recentActivity.length} total)
+                  </p>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 max-h-96 overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
-                    {analyticsData.recentActivity.map((activity, index) => (
-                      <div 
-                        key={index} 
-                        className="flex items-start gap-3 text-sm p-3 rounded-lg border border-border hover:bg-muted/50 cursor-pointer transition-colors"
-                        onClick={() => setSelectedActivity(activity)}
-                      >
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-medium">{activity.type}</div>
-                          <div className="text-muted-foreground truncate">{activity.page}</div>
-                          <div className="text-xs text-muted-foreground">
-                            {activity.location} • {activity.time}
+                <CardContent className="flex-1 overflow-hidden pb-2">
+                  <div className="space-y-2 h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent hover:scrollbar-thumb-muted-foreground/40">
+                    {analyticsData.recentActivity.length > 0 ? (
+                      analyticsData.recentActivity.map((activity, index) => (
+                        <div 
+                          key={index} 
+                          className="flex items-start gap-3 text-sm p-3 rounded-lg border border-border hover:bg-muted/50 cursor-pointer transition-colors"
+                          onClick={() => setSelectedActivity(activity)}
+                        >
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-medium">{activity.page}</div>
+                            <div className="text-xs text-muted-foreground mt-1">
+                              {activity.deviceType} • {activity.browser}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {activity.location} • {activity.time}
+                            </div>
                           </div>
                         </div>
+                      ))
+                    ) : (
+                      <div className="text-center text-muted-foreground py-8">
+                        No activity recorded yet
                       </div>
-                    ))}
+                    )}
                   </div>
                 </CardContent>
               </Card>
