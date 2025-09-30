@@ -22,6 +22,7 @@ const AnalyticsTracker = () => {
         if (!sessionId) {
           sessionId = crypto.randomUUID();
           sessionStorage.setItem('analytics_session_id', sessionId);
+          sessionStorage.setItem('session_start_time', Date.now().toString());
         }
 
         // Get geolocation data
@@ -34,8 +35,33 @@ const AnalyticsTracker = () => {
             country: locationData.country,
             device_type: getDeviceType(),
             browser: getBrowser(),
-            referrer: document.referrer || null
+            referrer: document.referrer || null,
+            page_views_count: 1,
+            bounce: true
           });
+        } else {
+          // Update existing session
+          const sessionStartTime = parseInt(sessionStorage.getItem('session_start_time') || Date.now().toString());
+          const durationSeconds = Math.floor((Date.now() - sessionStartTime) / 1000);
+          
+          // Get current page view count
+          const { data: currentSession } = await supabase
+            .from('aplexor_sessions')
+            .select('page_views_count')
+            .eq('session_id', sessionId)
+            .single();
+
+          const newPageViewCount = (currentSession?.page_views_count || 1) + 1;
+
+          await supabase
+            .from('aplexor_sessions')
+            .update({
+              last_activity_at: new Date().toISOString(),
+              page_views_count: newPageViewCount,
+              duration_seconds: durationSeconds,
+              bounce: false // If they visit a second page, it's not a bounce
+            })
+            .eq('session_id', sessionId);
         }
 
         // Track page view
