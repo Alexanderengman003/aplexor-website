@@ -55,9 +55,9 @@ const Contact = () => {
     }
 
     // EmailJS configuration
-    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
-    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
-    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS Public Key
+    const EMAILJS_SERVICE_ID = 'service_ks3cvz9';
+    const EMAILJS_TEMPLATE_ID = 'template_tzrxlox';
+    const EMAILJS_PUBLIC_KEY = 'WagP-Y3HRCNyL4Gj2';
 
     try {
       // Send email using EmailJS

@@ -14,19 +14,24 @@ import alexanderEngman from "@/assets/alexander-engman.jpg";
 const About = () => {
   const values = [
     {
-      icon: <Shield className="w-8 h-8 text-primary" />,
+      icon: <Shield className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Transparency",
       description: "We believe in clear communication, honest reporting, and building trust through transparency in every interaction."
     },
     {
-      icon: <Target className="w-8 h-8 text-primary" />,
+      icon: <Target className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Results",
       description: "Our focus is on delivering measurable outcomes that drive real business growth and market success for our clients."
     },
     {
-      icon: <Lightbulb className="w-8 h-8 text-primary" />,
+      icon: <Lightbulb className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Innovation",
       description: "We embrace new technologies and methodologies and strive to stay up to date with the latest innovations on the market."
+    },
+    {
+      icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      title: "Partnership",
+      description: "We build long-term relationships with our clients, acting as an extension of their team to achieve shared success."
     }
   ];
 
@@ -65,13 +70,13 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-muted">
+      <section className="py-12 md:py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-8">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
               Our Mission
             </h2>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed">
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
               To bridge the gap between innovative Physical Technology startups and Nordic market success by providing expert sales representation, strategic guidance, and access to established distribution networks across Sweden, Norway, Denmark, Finland, and Iceland. We believe that great technology deserves great market execution in the Nordic region.
             </p>
           </div>
@@ -79,13 +84,13 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8 text-center">
               Our Story
             </h2>
-            <div className="space-y-6 font-body text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-4 md:space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
               <p>
                 Aplexor was founded in 2019 with a simple observation: too many brilliant Physical Technology innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges.
               </p>
@@ -115,22 +120,22 @@ const About = () => {
           <div className="flex justify-center">
             <div className="max-w-sm">
               <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-4 md:p-8">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4 md:mb-6 overflow-hidden">
-                    <img 
+                <CardContent className="p-3 md:p-8">
+                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-6 overflow-hidden">
+                    <img
                       src={team[0].image as string}
                       alt={team[0].name}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="font-heading text-lg md:text-xl font-semibold text-foreground mb-2">
+                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1 md:mb-2">
                     {team[0].name}
                   </h3>
-                  <p className="font-body text-sm md:text-base text-primary font-medium mb-2">
+                  <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
                     {team[0].role}
                   </p>
-                  <p className="font-body text-xs md:text-sm text-muted-foreground mb-4">
+                  <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
                     <a href={`mailto:${team[0].email}`} className="hover:text-primary transition-colors">
                       {team[0].email}
                     </a>
@@ -145,7 +150,7 @@ const About = () => {
       {/* Values Section */}
       <section className="py-8 md:py-16">
         <div className="container mx-auto px-2 md:px-4">
-          <div className="text-center mb-6 md:mb-12">
+          <div className="text-center mb-4 md:mb-12">
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Our Values
             </h2>
@@ -154,17 +159,17 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex justify-center mb-3 md:mb-4">
+                <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px]">
+                  <div className="flex justify-center mb-2 md:mb-4">
                     {value.icon}
                   </div>
-                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-2 md:mb-3">
+                  <h3 className="font-heading text-sm md:text-base lg:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {value.title}
                   </h3>
-                  <p className="font-body text-sm md:text-base text-muted-foreground">
+                  <p className="font-body text-xs md:text-sm lg:text-base text-muted-foreground leading-snug">
                     {value.description}
                   </p>
                 </CardContent>
@@ -175,13 +180,13 @@ const About = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-muted to-muted/80 border-t border-border">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-muted to-muted/80 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
               Find answers to common questions about our Physical Technology sales services and process.
             </p>
           </div>

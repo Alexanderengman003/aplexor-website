@@ -9,17 +9,17 @@ import heroBackground from "@/assets/hero-background.jpg";
 const Home = () => {
   const pillars = [
     {
-      icon: <Users className="w-8 h-8 text-primary" />,
+      icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Expertise",
       description: "Aplexor is founded and run exclusively by engineers with deep industry knowledge across many engineering domains. We have experience from working in Physical Technology SMEs, and understand the unique challenges and opportunities of trying to grow."
     },
     {
-      icon: <Globe className="w-8 h-8 text-primary" />,
+      icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Network",
       description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business. Our established relationships enable us to accelerate market entry and increase sales."
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-primary" />,
+      icon: <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Results",
       description: "We provide measurable outcomes through strategic partnerships and data-driven sales approaches. We track crucial metrics to consistently track that our strategies are delivering real and tangible results. We do not succeed unless you succeed ."
     }
@@ -27,32 +27,32 @@ const Home = () => {
 
   const problems = [
     {
-      icon: <XCircle className="w-8 h-8 text-primary" />,
+      icon: <XCircle className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Market Validation",
       description: "Many products are innovative but not yet mature. Without an established product–market fit, it is challenging to convince customers, sales partners and distribution networks to accept your innovative solution."
     }, 
     {
-      icon: <Settings className="w-8 h-8 text-primary" />,
+      icon: <Settings className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Sales Volume",
       description: "Startups often lack certifications, scale, and volume. Distributors often want high-volume, low-risk products, out of reach for many SMEs that release innovative products."
     },
     {
-      icon: <UserMinus className="w-8 h-8 text-primary" />,
+      icon: <UserMinus className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Limited Sales Resources",
       description: "Sales often falls on the CEO or founders. With small teams and limited bandwidth dedicated to expansion, opportunities are missed, resources are blocked and growth slows."
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-primary" />,
+      icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Missing Sales Expertise",
       description: "Technical founders sometimes lack the B2B sales experience necessary to ensure sucessful sales activites, and often want to focus on core technology development."
     },
     {
-      icon: <MapPin className="w-8 h-8 text-primary" />,
+      icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Swedish Business Culture",
       description: "Success for business in Sweden and with Swedish companies requires a unique approach to business, based on trust, relationships, and consensus."
     },
     {
-      icon: <Clock className="w-8 h-8 text-primary" />,
+      icon: <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Expansion Barriers",
       description: "Expanding into and outside of Sweden requires networks and presence that SMEs struggle to build, and complex regulatory considerations are demanding."
     }
@@ -127,17 +127,17 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {problems.map((problem, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex justify-center mb-3 md:mb-4">
+                <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[180px] md:min-h-[220px]">
+                  <div className="flex justify-center mb-2 md:mb-4">
                     {problem.icon}
                   </div>
-                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-2 md:mb-3">
+                  <h3 className="font-heading text-sm md:text-base lg:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {problem.title}
                   </h3>
-                  <p className="font-body text-sm md:text-base text-muted-foreground">
+                  <p className="font-body text-xs md:text-sm lg:text-base text-muted-foreground leading-snug">
                     {problem.description}
                   </p>
                 </CardContent>
@@ -159,17 +159,17 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
             {pillars.map((pillar, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex justify-center mb-3 md:mb-4">
+                <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[200px] md:min-h-[240px]">
+                  <div className="flex justify-center mb-2 md:mb-4">
                     {pillar.icon}
                   </div>
-                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-2 md:mb-3">
+                  <h3 className="font-heading text-sm md:text-base lg:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {pillar.title}
                   </h3>
-                  <p className="font-body text-sm md:text-base text-muted-foreground">
+                  <p className="font-body text-xs md:text-sm lg:text-base text-muted-foreground leading-snug">
                     {pillar.description}
                   </p>
                 </CardContent>
@@ -191,17 +191,17 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-4 md:p-6">
+                <CardContent className="p-3 md:p-6 flex flex-col justify-center min-h-[120px] md:min-h-[140px]">
                   <div className="flex items-center mb-2 md:mb-3">
                     {service.icon}
-                    <h3 className="font-heading text-base md:text-lg font-semibold text-foreground ml-3">
+                    <h3 className="font-heading text-sm md:text-base lg:text-lg font-semibold text-foreground ml-2 md:ml-3">
                       {service.title}
                     </h3>
                   </div>
-                  <p className="font-body text-xs md:text-sm text-muted-foreground">
+                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-snug">
                     {service.description}
                   </p>
                 </CardContent>
