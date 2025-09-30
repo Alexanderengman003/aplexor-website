@@ -30,13 +30,13 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
   ];
 
   return (
-    <section className="py-16 bg-muted">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+    <section className="py-6 md:py-16 bg-muted">
+      <div className="container mx-auto px-2 md:px-4">
+        <div className="text-center mb-4 md:mb-12">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
             Our Process
           </h2>
-          <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             We follow a proven methodology to ensure successful outcomes for our partners. You can choose to let us handle the entire process for you, or we can deliver each step separately as a service.
           </p>
         </div>
