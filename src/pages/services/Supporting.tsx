@@ -11,45 +11,45 @@ const Supporting = () => {
     {
       icon: <FileText className="w-12 h-12 text-primary" />,
       title: "Sales Enablement",
-      description: "Create compelling sales decks, datasheets, and messaging that win customers and close deals.",
+      description: "Create the tools and content that help close deals.",
       details: [
-        "Sales deck design and messaging optimization to increase win rates",
-        "Product datasheets and technical documentation to support buyer decisions",
-        "Customer case studies and success stories to build credibility",
-        "Sales training materials and playbooks to enable consistent execution"
+        "Design impactful sales decks and refine messaging",
+        "Produce datasheets and documentation to support buyers",
+        "Develop case studies and success stories for credibility",
+        "Provide training materials and playbooks for consistency"
       ]
     },
     {
       icon: <TrendingUp className="w-12 h-12 text-primary" />,
       title: "Investor & Pitch Support",
-      description: "Tailor presentations and materials to secure funding and strategic partnerships.",
+      description: "Prepare to win funding and strategic partnerships.",
       details: [
-        "Investor pitch deck development tailored to funding goals",
-        "Financial modeling and projections to support business case",
-        "Due diligence preparation and support to streamline fundraising",
-        "Partnership proposal creation to secure strategic alliances"
+        "Develop investor pitch decks aligned with funding goals",
+        "Build financial models and projections to back the case",
+        "Support due diligence preparation to ease fundraising",
+        "Create partnership proposals to secure alliances"
       ]
     },
     {
       icon: <Database className="w-12 h-12 text-primary" />,
       title: "CRM & Sales Process Setup",
-      description: "Implement tools and workflows to keep sales organized and track performance effectively.",
+      description: "Implement tools and workflows for organized, effective sales.",
       details: [
-        "CRM system selection and implementation to fit business needs",
-        "Sales pipeline design and automation for efficiency",
-        "Performance tracking and analytics setup for data-driven insights",
-        "Team training and process documentation for adoption and consistency"
+        "Select and implement the right CRM system",
+        "Design sales pipeline and automate workflows",
+        "Set up tracking and analytics for data-driven insights",
+        "Train teams and document processes for adoption"
       ]
     },
     {
       icon: <Calculator className="w-12 h-12 text-primary" />,
       title: "Pricing & Packaging Advisory",
-      description: "Define pricing models, bundles, and offers that fit the market and maximize profitability.",
+      description: "Set pricing and offers that fit the market and maximize profit.",
       details: [
-        "Competitive pricing analysis to benchmark positioning",
-        "Value-based pricing model development to capture willingness-to-pay",
-        "Product packaging and bundling strategies to enhance appeal",
-        "Revenue optimization recommendations to improve profitability"
+        "Benchmark with competitive pricing analysis",
+        "Build value-based pricing models to capture demand",
+        "Design product packaging and bundles for appeal",
+        "Recommend strategies to optimize revenue"
       ]
     }
   ];

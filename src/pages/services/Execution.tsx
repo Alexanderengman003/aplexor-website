@@ -11,45 +11,45 @@ const Execution = () => {
     {
       icon: <Users className="w-12 h-12 text-primary" />,
       title: "Lead Generation",
-      description: "Build and qualify your sales pipeline with targeted prospect identification and outreach.",
+      description: "Build a strong and qualified sales pipeline.",
       details: [
-        "Targeted prospect identification and research to build a qualified pipeline",
-        "Multi-channel outreach campaigns (email, LinkedIn, events) to maximize reach",
-        "Lead qualification and scoring to focus on the best opportunities",
-        "Pipeline management and tracking to ensure consistent deal flow"
+        "Identify and research targeted prospects",
+        "Run outreach campaigns across email, LinkedIn, and events",
+        "Qualify and score leads to focus on top opportunities",
+        "Manage and track pipeline for consistent flow"
       ]
     },
     {
       icon: <Handshake className="w-12 h-12 text-primary" />,
       title: "Matchmaking",
-      description: "Connect with the right partners, distributors, and customers for your hardware solutions.",
+      description: "Connect with the right partners, distributors, and customers.",
       details: [
-        "Strategic partner identification aligned with business goals",
-        "Distributor network mapping to unlock market access",
-        "Customer-solution matching to accelerate adoption",
-        "Partnership facilitation and negotiation support to close deals"
+        "Identify strategic partners aligned with business goals",
+        "Map distributor networks for market access",
+        "Match solutions with customers to speed adoption",
+        "Support partnership facilitation and negotiation"
       ]
     },
     {
       icon: <User className="w-12 h-12 text-primary" />,
       title: "Sales Representation",
-      description: "Professional sales representation acting as your dedicated Nordic sales force.",
+      description: "Act as your dedicated Nordic sales force.",
       details: [
-        "Dedicated sales professional assignment for localized execution",
-        "Customer relationship development to build trust and loyalty",
-        "Sales process execution and management to drive conversions",
-        "Regular reporting and performance tracking for transparency"
+        "Assign a local sales professional for execution",
+        "Build customer relationships to establish trust",
+        "Manage and execute sales processes to drive deals",
+        "Provide regular reporting for transparency"
       ]
     },
     {
       icon: <Network className="w-12 h-12 text-primary" />,
-      title: "Channel Development & Business Development",
-      description: "Establish and manage distributor/reseller networks and nurture long-term relationships.",
+      title: "Channel & Business Development",
+      description: "Build and grow long-term channel partnerships.",
       details: [
-        "Channel partner recruitment and onboarding to expand market reach",
-        "Distributor relationship management for long-term success",
-        "Channel enablement and training to ensure partner effectiveness",
-        "Performance monitoring and optimization to maximize results"
+        "Recruit and onboard channel partners to expand reach",
+        "Manage distributor relationships for ongoing success",
+        "Provide enablement and training to improve performance",
+        "Monitor and optimize partner results"
       ]
     }
   ];

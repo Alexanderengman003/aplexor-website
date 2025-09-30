@@ -11,45 +11,45 @@ const Strategy = () => {
     {
       icon: <Target className="w-12 h-12 text-primary" />,
       title: "Go-to-Market Strategy",
-      description: "Define positioning, pricing, and market entry strategies tailored to Nordic markets.",
+      description: "Shape your positioning, pricing, and entry plan for the Nordic markets.",
       details: [
-        "Market positioning and value proposition development tailored to Nordic buyers",
-        "Pricing strategy and competitive analysis to establish a compelling offer",
-        "Channel strategy and partner selection to maximize local reach",
-        "Launch timeline and milestone planning for structured execution"
+        "Develop market positioning and value propositions tailored to Nordic buyers",
+        "Define pricing strategy and analyze competitors to create a strong offer",
+        "Build a channel strategy and select the right partners for local reach",
+        "Plan launch milestones and timelines for structured execution"
       ]
     },
     {
       icon: <BarChart3 className="w-12 h-12 text-primary" />,
       title: "Market Research & Insights",
-      description: "Identify opportunities, competitors, and customer needs to inform strategic decisions.",
+      description: "Understand the market, competitors, and customers to guide decisions.",
       details: [
-        "Comprehensive market analysis and sizing to guide investment decisions",
-        "Competitive landscape mapping to identify threats and opportunities",
-        "Customer behavior and preference studies to inform product design and messaging",
-        "Trend analysis and future market predictions to anticipate shifts"
+        "Conduct market analysis and sizing to support investments",
+        "Map the competitive landscape to spot opportunities and risks",
+        "Study customer behavior and preferences to inform design and messaging",
+        "Track trends and predict shifts to stay ahead"
       ]
     },
     {
       icon: <Globe className="w-12 h-12 text-primary" />,
       title: "Nordic Market Entry",
-      description: "Tailored expertise for entering and scaling in the Nordic markets.",
+      description: "Expert support for entering and scaling in the Nordics.",
       details: [
-        "Regulatory requirements and compliance guidance for Nordic markets",
-        "Cultural adaptation and localization strategies to increase adoption",
-        "Local partner identification and evaluation for faster scaling",
-        "Market entry risk assessment and mitigation strategies"
+        "Navigate regulatory and compliance requirements",
+        "Adapt messaging and approach for local culture and adoption",
+        "Identify and evaluate partners for faster growth",
+        "Assess and mitigate risks of market entry"
       ]
     },
     {
       icon: <Shield className="w-12 h-12 text-primary" />,
       title: "Commercial Readiness Assessment",
-      description: "Evaluate certifications, scalability, and sales readiness before engaging partners.",
+      description: "Check readiness before scaling and partnering.",
       details: [
-        "Product-market fit evaluation to validate readiness",
-        "Sales process optimization to shorten cycles and improve win rates",
-        "Certification and compliance audit to meet regulatory and partner requirements",
-        "Scalability assessment and recommendations to support sustainable growth"
+        "Validate product-market fit",
+        "Optimize sales processes to improve win rates",
+        "Audit certifications and compliance to meet requirements",
+        "Assess scalability and give recommendations for growth"
       ]
     }
   ];
