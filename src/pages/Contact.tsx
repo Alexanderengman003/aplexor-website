@@ -143,7 +143,7 @@ const Contact = () => {
               Contact
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Ready to accelerate your Physical Technology sales in the Nordic region? Get in touch with our team to discuss how we can help bring your products to Nordic markets.
+              Ready to accelerate your Physical Technology sales? Get in touch with us to discuss how we can help to expand your business and boost your market reach.
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ const Contact = () => {
                   Let's talk
                 </CardTitle>
                 <p className="font-body text-muted-foreground">
-                  Tell us about your business needs and how we can help you accelerate your growth.
+                  Tell us about your business needs and how we can help you grow.
                 </p>
               </CardHeader>
               <CardContent>
