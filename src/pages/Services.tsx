@@ -284,7 +284,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="flex flex-row md:flex-col lg:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-8 max-w-4xl mx-auto overflow-x-auto pb-2">
+          <div className="flex flex-row items-center justify-center gap-1 md:gap-3 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
                 step: "01",
@@ -303,23 +303,19 @@ const Services = () => {
                 title: "Support",
               }
             ].map((step, index) => (
-              <div key={index} className="flex flex-row md:flex-col lg:flex-row items-center flex-shrink-0">
-                <div className="text-center px-2 lg:px-4">
+              <div key={index} className="flex flex-row items-center">
+                <div className="text-center px-0.5 md:px-2 lg:px-4">
                   <Link to={`/services/${["discovery", "strategy", "execution", "supporting"][index]}`}>
-                    <div className="inline-flex items-center justify-center w-12 h-12 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-primary text-primary-foreground rounded-full font-heading font-bold text-sm lg:text-xl mb-1 md:mb-2 lg:mb-4 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <div className="inline-flex items-center justify-center w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full font-heading font-bold text-sm md:text-base lg:text-2xl mb-1 md:mb-2 lg:mb-4 transition-all duration-300 cursor-pointer bg-primary text-primary-foreground hover:scale-110 hover:shadow-lg">
                       {step.step}
                     </div>
                   </Link>
-                  <h3 className="font-heading text-xs md:text-base lg:text-xl font-semibold text-foreground whitespace-nowrap">
+                  <h3 className="font-heading text-xs md:text-base lg:text-2xl font-semibold text-foreground whitespace-nowrap">
                     {step.title}
                   </h3>
                 </div>
                 {index < 3 && (
-                  <>
-                    <ChevronRight className="w-6 h-6 text-primary mx-1 md:hidden" />
-                    <ChevronDown className="w-6 h-6 md:w-8 md:h-8 text-primary my-2 md:my-4 hidden md:block lg:hidden" />
-                    <ChevronRight className="w-12 h-12 text-primary mx-4 hidden lg:block" />
-                  </>
+                  <ChevronRight className="w-5 h-5 md:w-10 md:h-10 lg:w-14 lg:h-14 text-primary mx-0.5 md:mx-2 lg:mx-4" />
                 )}
               </div>
             ))}
