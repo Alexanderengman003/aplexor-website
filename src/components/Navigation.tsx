@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import aplexorLogo from "@/assets/aplexor-logo-latest.png";
 
 const Navigation = () => {
@@ -19,6 +19,13 @@ const Navigation = () => {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
+  ];
+
+  const serviceLinks = [
+    { href: "/services/discovery", label: "Discovery" },
+    { href: "/services/strategy", label: "Strategy" },
+    { href: "/services/execution", label: "Execution" },
+    { href: "/services/supporting", label: "Support" },
   ];
 
   return (
@@ -45,14 +52,29 @@ const Navigation = () => {
               Home
             </Link>
             
-            <Link
-              to="/services"
-              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
-              }`}
-            >
-              Services
-            </Link>
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <Link 
+                to="/services"
+                className={`font-body text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+                  location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+                }`}
+              >
+                Services
+                <ChevronDown className="w-4 h-4" />
+              </Link>
+              <div className="absolute top-full left-0 mt-1 w-56 bg-background border border-border shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                {serviceLinks.map((service) => (
+                  <Link 
+                    key={service.href} 
+                    to={service.href} 
+                    className="block px-4 py-3 text-sm hover:bg-muted transition-colors cursor-pointer"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             {navLinks.map((link) => (
               <Link
