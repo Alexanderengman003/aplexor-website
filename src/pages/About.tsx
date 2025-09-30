@@ -77,7 +77,7 @@ const About = () => {
               Our Mission
             </h2>
             <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-              Our mission at Aplexor is to act as a bridge between Sweden and the international market. We help Swedish companies scale abroad while enabling international companies to enter and grow in Sweden. By combining deep market knowledge with strong local networks, we provide expert sales representation and strategic guidance. Our focus is on ensuring that innovative technologies and solutions reach their full potential in the right markets. We believe that successful growth is built on strong partnerships, honesty, having a curious mind and delivering exceptional results.
+              Our mission at Aplexor is to act as a bridge between Sweden and the international market. We help Swedish companies scale abroad while enabling international companies to enter and grow in Sweden. Our focus is on ensuring that innovative technologies and solutions reach their full potential in the right markets. We believe that successful growth is built on strong partnerships, honesty, having a curious mind and delivering exceptional results.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ const About = () => {
                 We are passionate about helping innovative physical technology companies succeed by providing expert sales support and creating strategic partnerships. As engineers at heart, we thrive on the complexity of physical products, from cutting-edge electronics to advanced medical devices. We are committed to guiding our partners every step of the way, turning their innovation into positive sales results.
               </p>
               <p>
-                Aplexor was founded in 2025 with a clear vision: to bridge the gap between technical excellence and commercial success. Too many brilliant innovations were struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges. We decided to combine deep technical expertise with proven sales methodologies to help companies navigate complex B2B processes and build sustainable growth. Our approach focuses on building long-term partnerships and delivering measurable results across both Swedish and international markets.
+                Aplexor was founded in 2025 with the realization that too many brilliant innovations are struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges. We decided to combine technical expertise with sales methodologies to act as a one-stop-shop for sales development for SMEs developing physical products. Our approach focuses on building long-term partnerships and delivering measurable results across both Swedish and international markets.
               </p>
             </div>
           </div>
