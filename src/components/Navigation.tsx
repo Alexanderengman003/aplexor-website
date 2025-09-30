@@ -105,7 +105,7 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                className={`font-body text-base font-medium transition-colors hover:text-primary ${
                   isActive("/") ? "text-primary" : "text-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -113,21 +113,37 @@ const Navigation = () => {
                 Home
               </Link>
               
-              <Link
-                to="/services"
-                className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </Link>
+              <div>
+                <Link
+                  to="/services"
+                  className={`font-body text-base font-medium transition-colors hover:text-primary ${
+                    location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <div className="ml-4 mt-2 space-y-2">
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      to={service.href}
+                      className={`block font-body text-base transition-colors hover:text-primary ${
+                        isActive(service.href) ? "text-primary" : "text-muted-foreground"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
 
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+                  className={`font-body text-base font-medium transition-colors hover:text-primary ${
                     isActive(link.href) ? "text-primary" : "text-foreground"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
