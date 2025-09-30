@@ -166,7 +166,7 @@ const PrivacyPolicy = () => {
                   <div className="bg-secondary/20 p-4 rounded-lg">
                     <p><strong>Aplexor</strong></p>
                     <p>Email: info@aplexor.com</p>
-                    <p>LinkedIn: linkedin.com/in/alexander-engman</p>
+                    <p>LinkedIn: linkedin.com/company/aplexor</p>
                   </div>
                 </div>
               </AccordionContent>
