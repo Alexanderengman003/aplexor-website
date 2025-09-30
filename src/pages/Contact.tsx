@@ -128,9 +128,9 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="py-6 md:py-8">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
             {/* Contact Form */}
             <Card>
               <CardHeader>

@@ -205,65 +205,65 @@ const Services = () => {
       </section>
 
       {/* Markets Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Industries Covered
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Our expertise spans across key industries where Physical Technology innovation drives growth and transformation.
             </p>
           </div>
           
-          <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-8">
             {[
               {
-                icon: <Heart className="w-12 h-12 text-primary" />,
+                icon: <Heart className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Medical",
                 description: "Medical technology and devices"
               },
               {
-                icon: <Cpu className="w-12 h-12 text-primary" />,
+                icon: <Cpu className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Electronics",
                 description: "Consumer and industrial electronics"
               },
               {
-                icon: <Wifi className="w-12 h-12 text-primary" />,
+                icon: <Wifi className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "IoT & Connectivity",
                 description: "Smart devices and connected solutions"
               },
               {
-                icon: <Factory className="w-12 h-12 text-primary" />,
+                icon: <Factory className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Industrial",
                 description: "Manufacturing and automation equipment"
               },
               {
-                icon: <Smartphone className="w-12 h-12 text-primary" />,
+                icon: <Smartphone className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Consumer",
                 description: "Consumer electronics and lifestyle products"
               },
               {
-                icon: <Building className="w-12 h-12 text-primary" />,
+                icon: <Building className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Enterprise",
                 description: "B2B Physical Technology and enterprise solutions"
               },
               {
-                icon: <Leaf className="w-12 h-12 text-primary" />,
+                icon: <Leaf className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Cleantech",
                 description: "Environmental and sustainability technology"
               },
               {
-                icon: <ShieldCheck className="w-12 h-12 text-primary" />,
+                icon: <ShieldCheck className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Defense & Security",
                 description: "Security systems and defense technology"
               }
             ].map((market, index) => (
-              <div key={index} className="text-center p-6 rounded-lg bg-card border hover:shadow-lg transition-all duration-300">
-                <div className="flex justify-center mb-4">
+              <div key={index} className="text-center p-3 md:p-6 rounded-lg bg-card border hover:shadow-lg transition-all duration-300">
+                <div className="flex justify-center mb-2 md:mb-4">
                   {market.icon}
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-foreground">
+                <h3 className="font-heading text-xs md:text-base lg:text-lg font-semibold text-foreground leading-tight">
                   {market.title}
                 </h3>
               </div>
@@ -273,18 +273,18 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16 bg-muted">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Our Process
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               We follow a proven methodology to ensure successful outcomes for our partners. You can choose to let us handle the entire process for you, or we can deliver each step separately as a service.
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-3 md:gap-4 lg:gap-8 max-w-4xl mx-auto">
             {[
               {
                 step: "01",

@@ -101,13 +101,13 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16 bg-muted">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               The Team
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Meet the experienced professionals who make Aplexor's success possible.
             </p>
           </div>
@@ -115,8 +115,8 @@ const About = () => {
           <div className="flex justify-center">
             <div className="max-w-sm">
               <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                <CardContent className="p-4 md:p-8">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-4 md:mb-6 overflow-hidden">
                     <img 
                       src={team[0].image as string}
                       alt={team[0].name}
@@ -124,13 +124,13 @@ const About = () => {
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-2">
+                  <h3 className="font-heading text-lg md:text-xl font-semibold text-foreground mb-2">
                     {team[0].name}
                   </h3>
-                  <p className="font-body text-primary font-medium mb-2">
+                  <p className="font-body text-sm md:text-base text-primary font-medium mb-2">
                     {team[0].role}
                   </p>
-                  <p className="font-body text-sm text-muted-foreground mb-4">
+                  <p className="font-body text-xs md:text-sm text-muted-foreground mb-4">
                     <a href={`mailto:${team[0].email}`} className="hover:text-primary transition-colors">
                       {team[0].email}
                     </a>
@@ -143,28 +143,28 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Our Values
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               The principles that guide our approach to every client relationship and business decision.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {values.map((value, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="flex justify-center mb-4">
+                <CardContent className="p-4 md:p-8">
+                  <div className="flex justify-center mb-3 md:mb-4">
                     {value.icon}
                   </div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {value.title}
                   </h3>
-                  <p className="font-body text-muted-foreground">
+                  <p className="font-body text-sm md:text-base text-muted-foreground">
                     {value.description}
                   </p>
                 </CardContent>

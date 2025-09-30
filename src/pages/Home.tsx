@@ -116,28 +116,28 @@ const Home = () => {
       </section>
 
       {/* Problems We Solve Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16 bg-muted">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               The Challenge
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Physical Technology SMEs that are on a growth journey face unique challenges that can be lead to wasted time and unnecessary costs.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {problems.map((problem, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="flex justify-center mb-4">
+                <CardContent className="p-4 md:p-8">
+                  <div className="flex justify-center mb-3 md:mb-4">
                     {problem.icon}
                   </div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {problem.title}
                   </h3>
-                  <p className="font-body text-muted-foreground">
+                  <p className="font-body text-sm md:text-base text-muted-foreground">
                     {problem.description}
                   </p>
                 </CardContent>
@@ -148,28 +148,28 @@ const Home = () => {
       </section>
 
       {/* Why Aplexor Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Why Choose Aplexor?
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               We combine technical expertise with a wide network to deliver results and growth for Physical Technology SMEs. We can digest the fine technical details of your products and explain these to customers. We help you find the partners that fit your products and solutions.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {pillars.map((pillar, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="flex justify-center mb-4">
+                <CardContent className="p-4 md:p-8">
+                  <div className="flex justify-center mb-3 md:mb-4">
                     {pillar.icon}
                   </div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">
+                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                     {pillar.title}
                   </h3>
-                  <p className="font-body text-muted-foreground">
+                  <p className="font-body text-sm md:text-base text-muted-foreground">
                     {pillar.description}
                   </p>
                 </CardContent>
@@ -180,28 +180,28 @@ const Home = () => {
       </section>
 
       {/* Services Preview Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl lg:text-4xl font-bold text-foreground mb-4">
+      <section className="py-8 md:py-16 bg-muted">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Our Services
             </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Comprehensive sales solutions tailored specifically for Physical Technology SMEs that want to enter the Swedish market, or Swedish companies looking to grow abroad.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-3">
+                <CardContent className="p-4 md:p-6">
+                  <div className="flex items-center mb-2 md:mb-3">
                     {service.icon}
-                    <h3 className="font-heading text-lg font-semibold text-foreground ml-3">
+                    <h3 className="font-heading text-base md:text-lg font-semibold text-foreground ml-3">
                       {service.title}
                     </h3>
                   </div>
-                  <p className="font-body text-sm text-muted-foreground">
+                  <p className="font-body text-xs md:text-sm text-muted-foreground">
                     {service.description}
                   </p>
                 </CardContent>
