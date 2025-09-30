@@ -62,22 +62,26 @@ const Home = () => {
     {
       icon: <Search className="w-6 h-6 text-primary" />,
       title: "Discovery",
-      description: "Comphrehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities."
+      description: "Comphrehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities.",
+      route: "discovery"
     },
     {
       icon: <Target className="w-6 h-6 text-primary" />,
-      title: "Strategic",
-      description: "Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery."
+      title: "Strategy",
+      description: "Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery.",
+      route: "strategy"
     },
     {
       icon: <Zap className="w-6 h-6 text-primary" />,
       title: "Execution",
-      description: "Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites."
+      description: "Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites.",
+      route: "execution"
     },
     {
       icon: <CheckCircle className="w-6 h-6 text-primary" />,
-      title: "Supporting",
-      description: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration."
+      title: "Support",
+      description: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
+      route: "supporting"
     }
   ];
 
@@ -85,7 +89,7 @@ const Home = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-20 lg:py-32 overflow-hidden"
+        className="relative py-16 lg:py-24 overflow-hidden"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -193,19 +197,21 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-3 md:p-6 flex flex-col justify-center min-h-[120px] md:min-h-[140px]">
-                  <div className="flex items-center mb-2 md:mb-3">
-                    {service.icon}
-                    <h3 className="font-heading text-sm md:text-base lg:text-lg font-semibold text-foreground ml-2 md:ml-3">
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className="font-body text-xs md:text-sm text-muted-foreground leading-snug">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <Link key={index} to={`/services/${service.route}`}>
+                <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+                  <CardContent className="p-3 md:p-6 flex flex-col justify-center min-h-[120px] md:min-h-[140px]">
+                    <div className="flex items-center mb-2 md:mb-3">
+                      {service.icon}
+                      <h3 className="font-heading text-sm md:text-base lg:text-lg font-semibold text-foreground ml-2 md:ml-3">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="font-body text-xs md:text-sm text-muted-foreground leading-snug">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
           

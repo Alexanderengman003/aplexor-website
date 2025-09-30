@@ -38,7 +38,7 @@ const Navigation = () => {
             <img 
               src={aplexorLogo} 
               alt="Aplexor" 
-              className="h-8 md:h-12 w-auto"
+              className="h-6 md:h-12 w-auto"
             />
           </Link>
 
@@ -103,7 +103,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-3">
               <Link
                 to="/"
                 className={`font-body text-base font-medium transition-colors hover:text-primary ${
@@ -114,7 +114,7 @@ const Navigation = () => {
                 Home
               </Link>
               
-              <div>
+              <div className="space-y-3">
                 <div className="w-full flex items-center justify-between">
                   <Link
                     to="/services"
@@ -134,7 +134,7 @@ const Navigation = () => {
                   </button>
                 </div>
                 {isServicesOpen && (
-                  <div className="ml-4 mt-2 space-y-2">
+                  <div className="ml-4 space-y-2">
                     {serviceLinks.map((service) => (
                       <Link
                         key={service.href}
