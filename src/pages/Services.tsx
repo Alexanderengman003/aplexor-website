@@ -216,7 +216,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
             {[
               {
                 icon: <Heart className="w-12 h-12 text-primary" />,

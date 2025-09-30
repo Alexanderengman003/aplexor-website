@@ -115,15 +115,24 @@ const Navigation = () => {
               </Link>
               
               <div>
-                <button
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className={`w-full flex items-center justify-between font-body text-base font-medium transition-colors hover:text-primary ${
-                    location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
-                  }`}
-                >
-                  Services
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                </button>
+                <div className="w-full flex items-center justify-between">
+                  <Link
+                    to="/services"
+                    className={`font-body text-base font-medium transition-colors hover:text-primary ${
+                      location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Services
+                  </Link>
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="p-2"
+                    aria-label="Toggle services menu"
+                  >
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                </div>
                 {isServicesOpen && (
                   <div className="ml-4 mt-2 space-y-2">
                     {serviceLinks.map((service) => (
