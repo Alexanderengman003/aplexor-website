@@ -159,7 +159,7 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              All Services
+              Services
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
               Comprehensive sales solutions for Physical Technology companies looking to scale and expand internationally. We provide the expertise, network, and results you need to succeed.
@@ -179,9 +179,6 @@ const Services = () => {
                     <CardTitle className="font-heading text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {category.title}
                     </CardTitle>
-                    <p className="font-body text-muted-foreground">
-                      {category.subtitle}
-                    </p>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -191,12 +188,9 @@ const Services = () => {
                             {service.icon}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                            <h3 className="font-heading text-lg font-semibold text-foreground">
                               {service.title}
                             </h3>
-                            <p className="font-body text-sm text-muted-foreground">
-                              {service.description}
-                            </p>
                           </div>
                         </div>
                       ))}
