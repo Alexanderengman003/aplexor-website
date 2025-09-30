@@ -139,13 +139,27 @@ const getLocationData = async (): Promise<{country: string, city: string}> => {
     }
   } catch (_e) {}
 
+  // Check if geolocation has failed multiple times
+  try {
+    const failureCount = parseInt(localStorage.getItem('analytics_geo_failures') || '0');
+    if (failureCount >= 3) {
+      // Skip API call if it's repeatedly failing
+      const fallback = { country: 'Unknown', city: 'Unknown' };
+      try { sessionStorage.setItem('analytics_geo', JSON.stringify(fallback)); } catch (_e) {}
+      return fallback;
+    }
+  } catch (_e) {}
+
   // Use ipwho.is (CORS-friendly, no auth) with a short timeout
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 2500);
     const response = await fetch('https://ipwho.is/?fields=country,city,success', {
       signal: controller.signal,
-      cache: 'no-store'
+      cache: 'no-store',
+      mode: 'cors',
+      // Suppress console errors
+      keepalive: false
     });
     clearTimeout(timeout);
 
@@ -155,11 +169,25 @@ const getLocationData = async (): Promise<{country: string, city: string}> => {
         country: (data && (data.success === true || data.success === undefined) && data.country) || 'Unknown',
         city: (data && (data.success === true || data.success === undefined) && data.city) || 'Unknown'
       };
-      try { sessionStorage.setItem('analytics_geo', JSON.stringify(result)); } catch (_e) {}
+      // Reset failure count on success
+      try { 
+        localStorage.removeItem('analytics_geo_failures');
+        sessionStorage.setItem('analytics_geo', JSON.stringify(result)); 
+      } catch (_e) {}
       return result;
+    } else {
+      // Increment failure count
+      try {
+        const failureCount = parseInt(localStorage.getItem('analytics_geo_failures') || '0');
+        localStorage.setItem('analytics_geo_failures', (failureCount + 1).toString());
+      } catch (_e) {}
     }
   } catch (error) {
-    console.debug('Geolocation error:', error);
+    // Silently handle errors and increment failure count
+    try {
+      const failureCount = parseInt(localStorage.getItem('analytics_geo_failures') || '0');
+      localStorage.setItem('analytics_geo_failures', (failureCount + 1).toString());
+    } catch (_e) {}
   }
 
   const fallback = { country: 'Unknown', city: 'Unknown' };
