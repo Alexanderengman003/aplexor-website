@@ -61,7 +61,7 @@ const Contact = () => {
 
     try {
       // Send email using EmailJS
-      await emailjs.send(
+      const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
@@ -74,18 +74,23 @@ const Contact = () => {
         EMAILJS_PUBLIC_KEY
       );
       
-      toast({
-        title: "Message sent successfully!",
-        description: "We will get back to you within 24 hours."
-      });
-      
-      // Reset form
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        message: ""
-      });
+      // Only show success if email was actually sent
+      if (result.status === 200) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We will get back to you within 24 hours."
+        });
+        
+        // Reset form only on success
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Email send failed with status: ' + result.status);
+      }
     } catch (error) {
       console.error('EmailJS error:', error);
       toast({
@@ -146,7 +151,7 @@ const Contact = () => {
 
       {/* Contact Form and Info */}
       <section className="py-6 md:py-8">
-        <div className="container mx-auto px-2 md:px-4">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
             {/* Contact Form */}
             <Card>

@@ -41,12 +41,12 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
           </p>
         </div>
         
-        <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-row md:flex-row lg:flex-row items-center justify-center gap-2 md:gap-4 lg:gap-8 max-w-4xl mx-auto overflow-x-auto pb-4">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col md:flex-col lg:flex-row items-center">
-              <div className="text-center px-2 lg:px-4">
+            <div key={index} className="flex flex-row md:flex-row lg:flex-row items-center flex-shrink-0">
+              <div className="text-center px-1 md:px-2 lg:px-4">
                 <Link to={`/services/${step.route}`}>
-                  <div className={`inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full font-heading font-bold text-sm lg:text-xl mb-2 lg:mb-4 transition-all duration-300 cursor-pointer ${
+                  <div className={`inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full font-heading font-bold text-sm lg:text-xl mb-1 md:mb-2 lg:mb-4 transition-all duration-300 cursor-pointer ${
                     currentStep === step.route 
                       ? "bg-primary text-primary-foreground scale-110 shadow-lg ring-4 ring-primary/30" 
                       : "bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-110 hover:shadow-lg"
@@ -54,17 +54,14 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
                     {step.step}
                   </div>
                 </Link>
-                <h3 className={`font-heading text-sm md:text-base lg:text-xl font-semibold mb-1 lg:mb-3 ${
+                <h3 className={`font-heading text-xs md:text-sm lg:text-xl font-semibold mb-1 lg:mb-3 whitespace-nowrap ${
                   currentStep === step.route ? "text-primary" : "text-foreground"
                 }`}>
                   {step.title}
                 </h3>
               </div>
               {index < 3 && (
-                <>
-                  <ChevronDown className="w-6 h-6 md:w-8 md:h-8 text-primary my-2 md:my-4 lg:hidden" />
-                  <ChevronRight className="w-12 h-12 text-primary mx-4 hidden lg:block" />
-                </>
+                <ChevronRight className="w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 text-primary mx-1 md:mx-2 lg:mx-4 flex-shrink-0" />
               )}
             </div>
           ))}

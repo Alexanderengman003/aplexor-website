@@ -84,8 +84,8 @@ const Discovery = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="pb-6">
+              <Card key={index} className="p-4 hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
                     {service.icon}
                     <CardTitle className="font-heading text-2xl font-bold text-foreground">
