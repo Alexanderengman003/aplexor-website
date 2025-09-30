@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Users, Target, Shield, Lightbulb } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 import alexanderEngman from "@/assets/alexander-engman.jpg";
 
@@ -197,19 +198,51 @@ const About = () => {
                 },
                 {
                   question: "What are the deliverables of a project with Aplexor?",
-                  answer: "Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Support. The outcome will depending on which activity is relevant for you. We always discuss expectations before any collaboration."
+                  answer: (
+                    <>
+                      Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Support. The outcome will depending on which activity is relevant for you. We always discuss expectations before any collaboration. Learn more about{" "}
+                      <Link to="/services" className="text-primary hover:underline font-semibold">
+                        our process
+                      </Link>
+                      .
+                    </>
+                  )
                 },
                 {
                   question: "What types of Physical Technology products do you work with?",
-                  answer: "We work with a wide range of Physical Technology products. Our team has experience across multiple sectors including electronics, medical devices, novel materials, mechantronics and more. We also have a network expert available for other areas."
+                  answer: (
+                    <>
+                      We work with a wide range of Physical Technology products. Our team has experience across multiple sectors including electronics, medical devices, novel materials, mechantronics and more. We also have a network expert available for other areas. View{" "}
+                      <Link to="/services" className="text-primary hover:underline font-semibold">
+                        industries covered
+                      </Link>
+                      .
+                    </>
+                  )
                 },
                 {
                   question: "How do you charge for your services?",
-                  answer: "Our pricing structure varies depending on the scope of work and client needs. Contact us to discuss the best approach for your specific situation."
+                  answer: (
+                    <>
+                      Our pricing structure varies depending on the scope of work and client needs.{" "}
+                      <Link to="/contact" className="text-primary hover:underline font-semibold">
+                        Contact us
+                      </Link>
+                      {" "}to discuss the best approach for your specific situation.
+                    </>
+                  )
                 },
                 {
                   question: "How quickly can you start working on my project?",
-                  answer: "We can typically begin initial discovery and strategy development within 2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
+                  answer: (
+                    <>
+                      We can typically begin initial discovery and strategy development within 2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity.{" "}
+                      <Link to="/contact" className="text-primary hover:underline font-semibold">
+                        Contact us
+                      </Link>
+                      {" "}to discuss your project timeline.
+                    </>
+                  )
                 },
                 {
                   question: "What markets do you serve?",
@@ -225,7 +258,7 @@ const About = () => {
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 font-body text-muted-foreground">
-                    {faq.answer}
+                    {typeof faq.answer === 'string' ? faq.answer : faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
