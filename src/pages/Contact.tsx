@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import linkedinIcon from "@/assets/linkedin-icon.png";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +33,17 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Track the button click
+    const sessionId = sessionStorage.getItem('analytics_session_id');
+    if (sessionId) {
+      await supabase.from('aplexor_events').insert({
+        session_id: sessionId,
+        event_type: 'button_click',
+        page_path: window.location.pathname,
+        event_data: { button: 'send_message' }
+      });
+    }
 
     // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {

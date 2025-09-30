@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const CalendlyWidget = () => {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false);
@@ -17,9 +18,20 @@ const CalendlyWidget = () => {
     checkCalendly();
   }, []);
 
-  const openCalendly = () => {
+  const openCalendly = async () => {
     if (calendlyLoaded && (window as any).Calendly) {
       (window as any).Calendly.initPopupWidget({url: 'https://calendly.com/alexander-engman-aplexor/30min'});
+      
+      // Track the button click
+      const sessionId = sessionStorage.getItem('analytics_session_id');
+      if (sessionId) {
+        await supabase.from('aplexor_events').insert({
+          session_id: sessionId,
+          event_type: 'button_click',
+          page_path: window.location.pathname,
+          event_data: { button: 'book_meeting' }
+        });
+      }
     } else {
       console.warn('Calendly not loaded yet');
     }
