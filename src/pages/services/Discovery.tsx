@@ -84,24 +84,24 @@ const Discovery = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="p-4 hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4 mb-4">
+              <Card key={index} className="p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
                     {service.icon}
-                    <CardTitle className="font-heading text-2xl font-bold text-foreground">
+                    <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground">
                       {service.title}
                     </CardTitle>
                   </div>
-                  <p className="font-body text-muted-foreground">
+                  <p className="font-body text-sm md:text-base text-muted-foreground">
                     {service.description}
                   </p>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
+                <CardContent className="pt-0">
+                  <ul className="space-y-2">
                     {service.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="font-body text-sm text-muted-foreground">{detail}</span>
+                      <li key={detailIndex} className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                        <span className="font-body text-xs md:text-sm text-muted-foreground">{detail}</span>
                       </li>
                     ))}
                   </ul>
