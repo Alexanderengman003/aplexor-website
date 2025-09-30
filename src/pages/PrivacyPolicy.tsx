@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 1. Information We Collect
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 2. How We Use Your Information
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -67,7 +67,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 3. Information Sharing and Disclosure
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 4. Data Security
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -101,7 +101,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-5" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 5. Your Rights and Choices
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-6" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 6. Cookies and Tracking
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -142,7 +142,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-7" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 7. Changes to This Policy
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -155,7 +155,7 @@ const PrivacyPolicy = () => {
             </AccordionItem>
 
             <AccordionItem value="item-8" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 8. Contact Us
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">

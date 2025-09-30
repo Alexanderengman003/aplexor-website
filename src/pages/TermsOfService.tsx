@@ -27,7 +27,7 @@ const TermsOfService = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <Accordion type="single" collapsible className="space-y-4">
             <AccordionItem value="item-1" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 1. Acceptance of Terms
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -43,7 +43,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 2. Description of Services
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -65,7 +65,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 3. Client Responsibilities
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -83,7 +83,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 4. Payment Terms
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -102,7 +102,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-5" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 5. Intellectual Property
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -121,7 +121,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-6" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 6. Confidentiality
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -140,7 +140,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-7" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 7. Limitation of Liability
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -156,7 +156,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-8" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 8. Termination
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -175,7 +175,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-9" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 9. Governing Law
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -188,7 +188,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-10" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 10. Changes to Terms
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -204,7 +204,7 @@ const TermsOfService = () => {
             </AccordionItem>
 
             <AccordionItem value="item-11" className="border rounded-lg">
-              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-primary hover:no-underline">
+              <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
                 11. Contact Information
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">

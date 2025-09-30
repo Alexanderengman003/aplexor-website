@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
-
+import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -54,9 +54,25 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
+    // EmailJS configuration
+    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
+    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS Public Key
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          to_email: 'info@aplexor.com', // Your email address
+        },
+        EMAILJS_PUBLIC_KEY
+      );
       
       toast({
         title: "Message sent successfully!",
@@ -71,6 +87,7 @@ const Contact = () => {
         message: ""
       });
     } catch (error) {
+      console.error('EmailJS error:', error);
       toast({
         title: "Failed to send message",
         description: "Please try again or contact us directly.",
@@ -135,10 +152,10 @@ const Contact = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="font-heading text-2xl font-bold text-foreground">
-                  Submit Your Product
+                  Get Started
                 </CardTitle>
                 <p className="font-body text-muted-foreground">
-                  Tell us about your Physical Technology product and how we can help you grow your Nordic market sales.
+                  Tell us about your business and how we can help you accelerate your growth in Nordic markets.
                 </p>
               </CardHeader>
               <CardContent>
