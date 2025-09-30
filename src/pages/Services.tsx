@@ -116,7 +116,7 @@ const Services = () => {
       ]
     },
     {
-      title: "Supporting",
+      title: "Support",
       subtitle: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
       services: [
         {
