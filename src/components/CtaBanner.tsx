@@ -6,13 +6,13 @@ interface CtaBannerProps {
 }
 
 const CtaBanner = ({ 
-  description = "Tell us about your business needs and how we can help you accelerate your growth."
+  description = "Let's discuss how Aplexor can help accelerate your company's growth and market success. We want to hear from you!"
 }: CtaBannerProps) => {
   return (
     <section className="py-16 bg-primary">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-          Let's talk
+          Ready to level up your business?
         </h2>
         <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
           {description}
