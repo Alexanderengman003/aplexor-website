@@ -157,10 +157,10 @@ const Contact = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="font-heading text-2xl font-bold text-foreground">
-                  Get Started
+                  Let's talk
                 </CardTitle>
                 <p className="font-body text-muted-foreground">
-                  Tell us about your business and how we can help you accelerate your growth in Nordic markets.
+                  Tell us about your business needs and how we can help you accelerate your growth.
                 </p>
               </CardHeader>
               <CardContent>
@@ -245,7 +245,7 @@ const Contact = () => {
                   Get In Touch
                 </h2>
                 <p className="font-body text-muted-foreground mb-6">
-                  Have questions about our Nordic market services or want to discuss a potential partnership? We'd love to hear from you.
+                  Have questions about our services or want to discuss a potential partnership? We'd love to hear from you.
                 </p>
               </div>
 
