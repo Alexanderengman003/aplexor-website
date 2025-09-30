@@ -193,7 +193,7 @@ const About = () => {
               {[
                 {
                   question: "How do you define Physical Technology?",
-                  answer: "Physical Technology refers to physical products built on engineering. We do not work with purely software products. This includes, but is not limited to, electronics, medical technology, novel materials, biotechnology, mechanical devices, or any other area with a physical implementation."
+                  answer: "Physical Technology refers to physical products built on engineering. This includes, but is not limited to, electronics, medical technology, novel materials, biotechnology, mechanical devices, or any other area with a physical implementation. We do not work with purely software products."
                 },
                 {
                   question: "What are the deliverables of a project with Aplexor?",
