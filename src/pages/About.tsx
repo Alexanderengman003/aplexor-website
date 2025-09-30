@@ -193,27 +193,27 @@ const About = () => {
               {[
                 {
                   question: "How do you define Physical Technology?",
-                  answer: "Physical Technology refers to tangible, hardware-based products that combine engineering, electronics, and often software components. This includes consumer electronics, IoT devices, medical devices, industrial equipment, robotics, sensors, and other hardware innovations that solve real-world problems through physical implementation."
+                  answer: "Physical Technology refers to physical products built on engineering. We do not work with purely software products. This includes, but is not limited to, electronics, medical technology, novel materials, biotechnology, mechanical devices, or any other area with a physical implementation."
                 },
                 {
                   question: "What are the deliverables of a project with Aplexor?",
-                  answer: "Our deliverables vary based on the engagement model but typically include market analysis reports, sales strategy documentation, lead generation activities, partnership introductions, sales meetings and presentations, regular progress reports, and measurable sales results. We tailor our deliverables to meet your specific business objectives and growth targets."
+                  answer: "Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Support. The outcome will depending on which activity is relevant for you. We always discuss expectations before any collaboration."
                 },
                 {
                   question: "What types of Physical Technology products do you work with?",
-                  answer: "We work with a wide range of Physical Technology products, from consumer electronics to industrial equipment. Our team has experience across multiple sectors including IoT devices, medical devices, manufacturing equipment, and more."
+                  answer: "We work with a wide range of Physical Technology products. Our team has experience across multiple sectors including electronics, medical devices, novel materials, mechantronics and more. We also have a network expert available for other areas."
                 },
                 {
                   question: "How do you charge for your services?",
-                  answer: "Our pricing structure varies depending on the scope of work and client needs. We offer both commission-based and retainer-based models. Contact us to discuss the best approach for your specific situation."
+                  answer: "Our pricing structure varies depending on the scope of work and client needs. Contact us to discuss the best approach for your specific situation."
                 },
                 {
                   question: "How quickly can you start working on my project?",
-                  answer: "We can typically begin initial discovery and strategy development within 1-2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
+                  answer: "We can typically begin initial discovery and strategy development within 2 weeks of signing an agreement. The timeline depends on project complexity and our current capacity."
                 },
                 {
                   question: "What markets do you serve?",
-                  answer: "We primarily focus on the Swedish market with strong capabilities for both helping Swedish companies expand internationally and assisting international companies enter Sweden. Our deep understanding of Swedish business culture, regulations, and distribution networks allows us to provide highly effective, localized support."
+                  answer: "We primarily focus on the Swedish market with strong capabilities for both helping Swedish companies expand internationally and assisting international companies enter Sweden. Our understanding of Swedish business culture allows us to provide localized support."
                 },
                 {
                   question: "What makes Aplexor different from other sales agencies?",
