@@ -230,7 +230,7 @@ const Services = () => {
               },
               {
                 icon: <Wifi className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
-                title: "IoT & Connectivity",
+                title: "IoT",
                 description: "Smart devices and connected solutions"
               },
               {
@@ -255,7 +255,7 @@ const Services = () => {
               },
               {
                 icon: <ShieldCheck className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
-                title: "Defense & Security",
+                title: "Defense",
                 description: "Security systems and defense technology"
               }
             ].map((market, index) => (
