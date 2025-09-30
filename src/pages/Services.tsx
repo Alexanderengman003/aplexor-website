@@ -169,11 +169,11 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="container mx-auto px-2 md:px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {serviceCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="p-4 md:p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer min-h-[580px] flex flex-col">
+              <Card key={categoryIndex} className="p-4 md:p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer flex flex-col h-full">
                 <Link to={`/services/${category.title.toLowerCase().split(' ')[0]}`} className="block flex-1 flex flex-col">
                   <CardHeader className="pb-4 md:pb-6">
                     <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
