@@ -12,7 +12,7 @@ const CtaBanner = ({
     <section className="py-16 bg-primary">
       <div className="container mx-auto px-4 text-center">
         <h2 className="font-heading text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-          Ready to bring your product to market?
+          Ready to level up your business?
         </h2>
         <p className="font-body text-lg text-primary-foreground mb-8 max-w-2xl mx-auto">
           {description}
