@@ -281,7 +281,7 @@ const Contact = () => {
                   Response Time
                 </h3>
                 <p className="font-body text-muted-foreground">
-                  We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly.
+                  We typically respond to all inquiries within 24 hours during business days.
                 </p>
               </div>
             </div>
