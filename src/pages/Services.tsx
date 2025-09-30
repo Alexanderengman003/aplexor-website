@@ -170,27 +170,27 @@ const Services = () => {
 
       {/* Services Grid */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="container mx-auto px-2 md:px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {serviceCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer">
-                <Link to={`/services/${category.title.toLowerCase().split(' ')[0]}`} className="block">
-                  <CardHeader className="pb-6">
-                    <CardTitle className="font-heading text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <Card key={categoryIndex} className="p-4 md:p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer min-h-[580px] flex flex-col">
+                <Link to={`/services/${category.title.toLowerCase().split(' ')[0]}`} className="block flex-1 flex flex-col">
+                  <CardHeader className="pb-4 md:pb-6">
+                    <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {category.title}
                     </CardTitle>
-                    <p className="font-body text-muted-foreground">
+                    <p className="font-body text-sm md:text-base text-muted-foreground">
                       {category.subtitle}
                     </p>
                   </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-4">
+                  <CardContent className="flex-1">
+                    <div className="grid grid-cols-2 gap-3 md:gap-4">
                       {category.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200 text-center">
+                        <div key={serviceIndex} className="flex flex-col items-center gap-2 md:gap-3 p-3 md:p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200 text-center">
                           <div className="flex-shrink-0">
                             {service.icon}
                           </div>
-                          <h3 className="font-heading text-lg font-semibold text-foreground">
+                          <h3 className="font-heading text-sm md:text-base font-semibold text-foreground leading-tight">
                             {service.title}
                           </h3>
                         </div>
