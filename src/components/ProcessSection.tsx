@@ -41,12 +41,12 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
           </p>
         </div>
         
-        <div className="flex flex-row items-center justify-center gap-1 md:gap-3 lg:gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-row items-center justify-center gap-1 md:gap-3 lg:gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-row items-center">
               <div className="text-center px-0.5 md:px-2 lg:px-4">
                 <Link to={`/services/${step.route}`}>
-                  <div className={`inline-flex items-center justify-center w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 rounded-full font-heading font-bold text-xs md:text-sm lg:text-xl mb-1 md:mb-2 lg:mb-4 transition-all duration-300 cursor-pointer ${
+                  <div className={`inline-flex items-center justify-center w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full font-heading font-bold text-sm md:text-base lg:text-2xl mb-1 md:mb-2 lg:mb-4 transition-all duration-300 cursor-pointer ${
                     currentStep === step.route 
                       ? "bg-primary text-primary-foreground scale-110 shadow-lg ring-2 md:ring-4 ring-primary/30" 
                       : "bg-primary/20 text-primary hover:bg-primary hover:text-primary-foreground hover:scale-110 hover:shadow-lg"
@@ -54,14 +54,14 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
                     {step.step}
                   </div>
                 </Link>
-                <h3 className={`font-heading text-[10px] md:text-sm lg:text-xl font-semibold mb-1 lg:mb-3 whitespace-nowrap ${
+                <h3 className={`font-heading text-xs md:text-base lg:text-2xl font-semibold mb-1 lg:mb-3 whitespace-nowrap ${
                   currentStep === step.route ? "text-primary" : "text-foreground"
                 }`}>
                   {step.title}
                 </h3>
               </div>
               {index < 3 && (
-                <ChevronRight className="w-4 h-4 md:w-8 md:h-8 lg:w-12 lg:h-12 text-primary mx-0.5 md:mx-2 lg:mx-4" />
+                <ChevronRight className="w-5 h-5 md:w-10 md:h-10 lg:w-14 lg:h-14 text-primary mx-0.5 md:mx-2 lg:mx-4" />
               )}
             </div>
           ))}
