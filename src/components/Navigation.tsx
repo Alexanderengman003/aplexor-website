@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import aplexorLogo from "@/assets/aplexor-logo-latest.png";
 
 const Navigation = () => {
@@ -26,13 +19,6 @@ const Navigation = () => {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
-  ];
-
-  const serviceLinks = [
-    { href: "/services/discovery", label: "Discovery" },
-    { href: "/services/strategy", label: "Strategy" },
-    { href: "/services/execution", label: "Execution" },
-    { href: "/services/supporting", label: "Support" },
   ];
 
   return (
@@ -59,29 +45,14 @@ const Navigation = () => {
               Home
             </Link>
             
-            {/* Services Dropdown */}
-            <div className="relative group">
-              <button className={`font-body text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+            <Link
+              to="/services"
+              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
                 location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
-              }`}>
-                Services
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="absolute top-full left-0 mt-1 w-56 bg-background border border-border shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <Link to="/services" className="block px-4 py-3 text-sm hover:bg-muted transition-colors cursor-pointer border-b border-border">
-                  All Services
-                </Link>
-                {serviceLinks.map((service) => (
-                  <Link 
-                    key={service.href} 
-                    to={service.href} 
-                    className="block px-4 py-3 text-sm hover:bg-muted transition-colors cursor-pointer"
-                  >
-                    {service.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+              }`}
+            >
+              Services
+            </Link>
 
             {navLinks.map((link) => (
               <Link
@@ -129,19 +100,6 @@ const Navigation = () => {
               >
                 Services
               </Link>
-
-              {serviceLinks.map((service) => (
-                <Link
-                  key={service.href}
-                  to={service.href}
-                  className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(service.href) ? "text-primary" : "text-foreground"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {service.label}
-                </Link>
-              ))}
 
               {navLinks.map((link) => (
                 <Link

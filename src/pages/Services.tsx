@@ -171,7 +171,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {serviceCategories.map((category, categoryIndex) => (
               <Card key={categoryIndex} className="p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer">
                 <Link to={`/services/${category.title.toLowerCase().split(' ')[0]}`} className="block">
