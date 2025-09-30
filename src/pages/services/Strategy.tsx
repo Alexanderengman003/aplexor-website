@@ -32,8 +32,8 @@ const Strategy = () => {
     },
     {
       icon: <Globe className="w-12 h-12 text-primary" />,
-      title: "Nordic Market Entry",
-      description: "Expert support for entering and scaling in the Nordics.",
+      title: "Market Entry",
+      description: "Expert support for Swedish market actors",
       details: [
         "Navigate regulatory and compliance requirements",
         "Adapt messaging and approach for local culture and adoption",

@@ -26,7 +26,7 @@ const Supporting = () => {
       details: [
         "Develop investor pitch decks aligned with funding goals",
         "Build financial models and projections to back the case",
-        "Support due diligence preparation to ease fundraising",
+        "Help to find soft-funding",
         "Create partnership proposals to secure alliances"
       ]
     },
@@ -36,7 +36,7 @@ const Supporting = () => {
       description: "Implement tools and workflows for organized, effective sales.",
       details: [
         "Select and implement the right CRM system",
-        "Design sales pipeline and automate workflows",
+        "Custom CRM system available for implementation",
         "Set up tracking and analytics for data-driven insights",
         "Train teams and document processes for adoption"
       ]
