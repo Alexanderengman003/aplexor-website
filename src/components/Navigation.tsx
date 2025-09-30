@@ -5,6 +5,7 @@ import aplexorLogo from "@/assets/aplexor-logo-latest.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -114,29 +115,31 @@ const Navigation = () => {
               </Link>
               
               <div>
-                <Link
-                  to="/services"
-                  className={`font-body text-base font-medium transition-colors hover:text-primary ${
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className={`w-full flex items-center justify-between font-body text-base font-medium transition-colors hover:text-primary ${
                     location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   Services
-                </Link>
-                <div className="ml-4 mt-2 space-y-2">
-                  {serviceLinks.map((service) => (
-                    <Link
-                      key={service.href}
-                      to={service.href}
-                      className={`block font-body text-base transition-colors hover:text-primary ${
-                        isActive(service.href) ? "text-primary" : "text-muted-foreground"
-                      }`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {service.label}
-                    </Link>
-                  ))}
-                </div>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isServicesOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.href}
+                        to={service.href}
+                        className={`block font-body text-base transition-colors hover:text-primary ${
+                          isActive(service.href) ? "text-primary" : "text-muted-foreground"
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {navLinks.map((link) => (

@@ -263,12 +263,9 @@ const Services = () => {
                 <div className="flex justify-center mb-4">
                   {market.icon}
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+                <h3 className="font-heading text-lg font-semibold text-foreground">
                   {market.title}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground">
-                  {market.description}
-                </p>
               </div>
             ))}
           </div>
