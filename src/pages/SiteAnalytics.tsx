@@ -259,23 +259,31 @@ const SiteAnalytics = () => {
       const dailyViews = [];
       
       if (timeRangeInt === 1) {
-        // 24H - one data point (today's total)
-        const today = new Date();
-        const todayStr = today.toISOString().split('T')[0];
-        
-        const todayViews = pageViews.filter(view => 
-          view.created_at.startsWith(todayStr)
-        ).length;
+        // 24H - hourly breakdown (24 data points)
+        for (let i = 23; i >= 0; i--) {
+          const date = new Date();
+          date.setHours(date.getHours() - i);
+          const hour = date.getHours();
+          const dateStr = date.toISOString().split('T')[0];
+          
+          const hourViews = pageViews.filter(view => {
+            const viewDate = new Date(view.created_at);
+            return viewDate.toISOString().split('T')[0] === dateStr && 
+                   viewDate.getHours() === hour;
+          }).length;
 
-        const todayVisitors = sessions.filter(session => 
-          session.first_visit_at.startsWith(todayStr)
-        ).length;
-        
-        dailyViews.push({
-          date: "Today",
-          views: todayViews,
-          uniqueVisitors: todayVisitors
-        });
+          const hourVisitors = sessions.filter(session => {
+            const sessionDate = new Date(session.first_visit_at);
+            return sessionDate.toISOString().split('T')[0] === dateStr && 
+                   sessionDate.getHours() === hour;
+          }).length;
+          
+          dailyViews.push({
+            date: `${hour}:00`,
+            views: hourViews,
+            uniqueVisitors: hourVisitors
+          });
+        }
       } else if (timeRangeInt === 7) {
         // 7 days - 7 data points, one per day
         for (let i = 6; i >= 0; i--) {
@@ -292,7 +300,7 @@ const SiteAnalytics = () => {
           ).length;
           
           const formattedDate = date.toLocaleDateString('en-US', { 
-            weekday: 'short', 
+            month: 'short',
             day: 'numeric' 
           });
           
@@ -303,29 +311,32 @@ const SiteAnalytics = () => {
           });
         }
       } else if (timeRangeInt === 30) {
-        // 30 days - 30 data points, one per day
-        for (let i = 29; i >= 0; i--) {
-          const date = new Date();
-          date.setDate(date.getDate() - i);
-          const dateStr = date.toISOString().split('T')[0];
+        // 30 days - 15 data points (every 2 days)
+        for (let i = 14; i >= 0; i--) {
+          const endDate = new Date();
+          endDate.setDate(endDate.getDate() - (i * 2));
+          const startDate = new Date(endDate);
+          startDate.setDate(startDate.getDate() - 1);
           
-          const dayViews = pageViews.filter(view => 
-            view.created_at.startsWith(dateStr)
-          ).length;
+          const rangeViews = pageViews.filter(view => {
+            const viewDate = new Date(view.created_at);
+            return viewDate >= startDate && viewDate <= endDate;
+          }).length;
 
-          const dayVisitors = sessions.filter(session => 
-            session.first_visit_at.startsWith(dateStr)
-          ).length;
+          const rangeVisitors = sessions.filter(session => {
+            const sessionDate = new Date(session.first_visit_at);
+            return sessionDate >= startDate && sessionDate <= endDate;
+          }).length;
           
-          const formattedDate = date.toLocaleDateString('en-US', { 
+          const formattedDate = endDate.toLocaleDateString('en-US', { 
             month: 'short', 
             day: 'numeric' 
           });
           
           dailyViews.push({
             date: formattedDate,
-            views: dayViews,
-            uniqueVisitors: dayVisitors
+            views: rangeViews,
+            uniqueVisitors: rangeVisitors
           });
         }
       } else if (timeRangeInt === 90) {
@@ -376,7 +387,8 @@ const SiteAnalytics = () => {
           }).length;
           
           const formattedDate = date.toLocaleDateString('en-US', { 
-            month: 'short' 
+            month: 'short',
+            year: '2-digit'
           });
           
           dailyViews.push({
@@ -684,50 +696,65 @@ const SiteAnalytics = () => {
                   <LineChart className="h-5 w-5" />
                   Traffic Overview
                 </CardTitle>
-                <p className="text-sm text-muted-foreground">Daily page views and unique visitors trend</p>
+                <p className="text-sm text-muted-foreground">
+                  {timeRange === "1" ? "Hourly breakdown" : 
+                   timeRange === "7" ? "Daily page views" :
+                   timeRange === "30" ? "Page views every 2 days" :
+                   timeRange === "90" ? "Weekly page views" :
+                   "Monthly page views"}
+                </p>
               </CardHeader>
               <CardContent>
                 <div className="h-80">
                   <ResponsiveContainer width="100%" height="100%">
                     <RechartsLineChart 
                       data={analyticsData.dailyViews}
-                      margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                      margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
                     >
-                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                      <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
                       <XAxis 
                         dataKey="date" 
                         stroke="hsl(var(--muted-foreground))"
-                        fontSize={12}
+                        fontSize={11}
+                        angle={-45}
+                        textAnchor="end"
+                        height={80}
+                        interval={timeRange === "1" ? Math.floor(analyticsData.dailyViews.length / 12) : 0}
                       />
                       <YAxis 
                         stroke="hsl(var(--muted-foreground))"
                         fontSize={12}
+                        width={50}
                       />
                       <Tooltip 
                         contentStyle={{
                           backgroundColor: 'hsl(var(--popover))',
                           border: '1px solid hsl(var(--border))',
                           borderRadius: '8px',
-                          color: 'hsl(var(--popover-foreground))'
+                          color: 'hsl(var(--popover-foreground))',
+                          fontSize: '12px'
                         }}
                       />
-                      <Legend />
+                      <Legend 
+                        wrapperStyle={{ paddingTop: '20px' }}
+                        iconType="line"
+                      />
                       <Line 
                         type="monotone" 
                         dataKey="views" 
                         stroke="hsl(var(--primary))" 
-                        strokeWidth={3}
+                        strokeWidth={2}
                         name="Page Views"
-                        dot={{ fill: 'hsl(var(--primary))', strokeWidth: 2, r: 4 }}
+                        dot={analyticsData.dailyViews.length <= 15 ? { fill: 'hsl(var(--primary))', strokeWidth: 2, r: 4 } : false}
                         activeDot={{ r: 6, stroke: 'hsl(var(--primary))', strokeWidth: 2 }}
                       />
                       <Line 
                         type="monotone" 
                         dataKey="uniqueVisitors" 
                         stroke="hsl(var(--secondary))" 
-                        strokeWidth={3}
+                        strokeWidth={2}
                         name="Unique Visitors"
-                        dot={{ fill: 'hsl(var(--secondary))', strokeWidth: 2, r: 4 }}
+                        dot={analyticsData.dailyViews.length <= 15 ? { fill: 'hsl(var(--secondary))', strokeWidth: 2, r: 4 } : false}
                         activeDot={{ r: 6, stroke: 'hsl(var(--secondary))', strokeWidth: 2 }}
                       />
                     </RechartsLineChart>
