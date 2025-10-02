@@ -248,6 +248,40 @@ const Contact = () => {
                     We typically respond to all inquiries within 24 hours during business days.
                   </p>
                 </div>
+
+                {/* Contact Information */}
+                <div className="mt-6 pt-6 border-t border-border">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                      <a 
+                        href="mailto:info@aplexor.com" 
+                        className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        info@aplexor.com
+                      </a>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5 flex-shrink-0" />
+                      <a 
+                        href="https://linkedin.com/company/aplexor" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                    
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="font-body text-sm text-muted-foreground">
+                        Stockholm, Sweden
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 

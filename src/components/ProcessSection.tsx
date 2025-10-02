@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, ChevronDown } from "lucide-react";
 
 interface ProcessSectionProps {
-  currentStep: "discovery" | "strategy" | "execution" | "supporting";
+  currentStep?: "discovery" | "strategy" | "execution" | "supporting";
 }
 
 const ProcessSection = ({ currentStep }: ProcessSectionProps) => {

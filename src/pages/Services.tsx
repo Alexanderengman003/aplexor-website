@@ -280,7 +280,7 @@ const Services = () => {
         </div>
       </section>
 
-      <ProcessSection currentStep="discovery" />
+      <ProcessSection />
 
       <CtaBanner />
     </Layout>
