@@ -49,7 +49,7 @@ const About = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative h-80 lg:h-96 overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -63,91 +63,140 @@ const About = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               About Aplexor
             </h1>
-            <p className="font-body text-xl text-muted-foreground mb-8">
+            <p className="font-body text-xl text-muted-foreground">
               Read more about us, who we are, and how we started here.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Mission Section - Text Left, Image Right */}
       <section className="py-12 md:py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
-              Our Mission
-            </h2>
-            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-              Our mission at Aplexor is to act as a bridge between Sweden and the international market. We help Swedish companies scale abroad while enabling international companies to enter and grow in Sweden. Our focus is on ensuring that innovative technologies and solutions reach their full potential in the right markets. We believe that successful growth is built on strong partnerships, honesty, having a curious mind and delivering exceptional results.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:px-8">
+              {/* Mission Text - Left Side */}
+              <div className="text-left">
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                  Our Mission
+                </h2>
+                <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Our mission at Aplexor is to act as a bridge between Sweden and the international market. We help Swedish companies scale abroad while enabling international companies to enter and grow in Sweden. Our focus is on ensuring that innovative technologies and solutions reach their full potential in the right markets. We believe that successful growth is built on strong partnerships, honesty, having a curious mind and delivering exceptional results.
+                </p>
+              </div>
+              
+              {/* Mission Image - Right Side */}
+              <div className="hidden lg:flex justify-center lg:justify-end">
+                <div className="w-full max-w-sm lg:max-w-md">
+                  <img
+                    src="/mission.jpg"
+                    alt="Our Mission"
+                    className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* Story Section - Text Right, Image Left */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8 text-center">
-              Our Story
-            </h2>
-            <div className="space-y-4 md:space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-              <p>
-                We are passionate about helping innovative physical technology companies succeed by providing expert sales support and creating strategic partnerships. As engineers at heart, we thrive on the complexity of physical products, from cutting-edge electronics to advanced medical devices. We are committed to guiding our partners every step of the way, turning their innovation into positive sales results.
-              </p>
-              <p>
-                Aplexor was founded in 2025 with the realization that too many brilliant innovations are struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges. We decided to combine technical expertise with sales methodologies to act as a one-stop-shop for sales development for SMEs developing physical products. Our approach focuses on building long-term partnerships and delivering measurable results across both Swedish and international markets.
-              </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:px-8">
+              {/* Story Image - Left Side */}
+              <div className="hidden lg:flex justify-center lg:justify-start order-2 lg:order-1">
+                <div className="w-full max-w-sm lg:max-w-md">
+                  <img
+                    src="/story.jpg"
+                    alt="Our Story"
+                    className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              
+              {/* Story Text - Right Side */}
+              <div className="text-left order-1 lg:order-2 lg:pl-16 lg:-mt-2">
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                  Our Story
+                </h2>
+                <div className="space-y-4 md:space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    Aplexor was founded in 2025 with the realization that too many brilliant innovations are struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges. We decided to combine technical expertise with sales methodologies to act as a one-stop-shop for sales development for SMEs developing physical products. Our approach focuses on building long-term partnerships and delivering measurable results across both Swedish and international markets.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="py-8 md:py-16 bg-muted">
+      <section className="py-8 md:py-16 bg-muted hidden">
         <div className="container mx-auto px-2 md:px-4">
-          <div className="text-center mb-6 md:mb-12">
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
-              The Team
-            </h2>
-            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Meet the individuals who work on delivering exceptional services to our partners.
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <div className="max-w-sm">
-              <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-3 md:p-8">
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-6 overflow-hidden">
-                    <img
-                      src={team[0].image as string}
-                      alt={team[0].name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1 md:mb-2">
-                    {team[0].name}
-                  </h3>
-                  <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
-                    {team[0].role}
-                  </p>
-                  <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
-                    <a href={`mailto:${team[0].email}`} className="hover:text-primary transition-colors">
-                      {team[0].email}
-                    </a>
-                  </p>
-                </CardContent>
-              </Card>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:px-8">
+              {/* Team Text and Card - Left Side */}
+              <div className="text-left">
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                  Our People
+                </h2>
+                <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground mb-6 md:mb-8">
+                  Meet the individuals who work on delivering exceptional services to our partners.
+                </p>
+                
+                <div className="max-w-sm">
+                  <Card className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
+                    <CardContent className="p-3 md:p-8">
+                      <div className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-6 overflow-hidden">
+                        <img
+                          src={team[0].image as string}
+                          alt={team[0].name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1 md:mb-2">
+                        {team[0].name}
+                      </h3>
+                      <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
+                        {team[0].role}
+                      </p>
+                      <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
+                        <a href={`mailto:${team[0].email}`} className="hover:text-primary transition-colors">
+                          {team[0].email}
+                        </a>
+                      </p>
+                      <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
+                        Alexander has a master's degree in nanotechnology and has worked in SMEs spanning disciplines such as semiconductors, medical technology and electronics. He has professional experience from both sales and hands-on engineering work.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+              
+              {/* Team Image - Right Side */}
+              <div className="hidden lg:flex justify-center lg:justify-end">
+                <div className="w-full max-w-sm lg:max-w-md">
+                  <img
+                    src="/team.jpg"
+                    alt="Our People"
+                    className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-8 md:py-16">
-        <div className="container mx-auto px-2 md:px-4">
+      <section className="py-8 md:py-16 bg-gradient-to-br from-muted to-muted/80 border-t border-border">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-4 md:mb-12">
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
               Our Values
@@ -159,7 +208,7 @@ const About = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
                 <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px]">
                   <div className="flex justify-center mb-2 md:mb-4">
                     {value.icon}
@@ -178,7 +227,7 @@ const About = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-br from-muted to-muted/80 border-t border-border">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">

@@ -21,7 +21,8 @@ import {
   Users,
   Settings as SettingsIcon,
   Save,
-  Trash2
+  Trash2,
+  Edit
 } from "lucide-react";
 import {
   Select,
@@ -419,7 +420,10 @@ export function Settings() {
                       {user.status}
                     </Badge>
                     <div className="flex gap-1">
-                      <Button variant="outline" size="sm">Edit</Button>
+                      <Button variant="outline" size="sm" className="flex items-center gap-1">
+                        <Edit className="w-3 h-3" />
+                        Edit
+                      </Button>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button variant="outline" size="sm">
@@ -631,15 +635,24 @@ export function Settings() {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between p-2 border border-border rounded">
                     <span className="text-sm text-foreground">Prospecting → Qualified</span>
-                    <Button variant="outline" size="sm">Edit</Button>
+                    <Button variant="outline" size="sm" className="flex items-center gap-1">
+                      <Edit className="w-3 h-3" />
+                      Edit
+                    </Button>
                   </div>
                   <div className="flex items-center justify-between p-2 border border-border rounded">
                     <span className="text-sm text-foreground">Qualified → Proposal</span>
-                    <Button variant="outline" size="sm">Edit</Button>
+                    <Button variant="outline" size="sm" className="flex items-center gap-1">
+                      <Edit className="w-3 h-3" />
+                      Edit
+                    </Button>
                   </div>
                   <div className="flex items-center justify-between p-2 border border-border rounded">
                     <span className="text-sm text-foreground">Proposal → Negotiation</span>
-                    <Button variant="outline" size="sm">Edit</Button>
+                    <Button variant="outline" size="sm" className="flex items-center gap-1">
+                      <Edit className="w-3 h-3" />
+                      Edit
+                    </Button>
                   </div>
                 </div>
               </div>

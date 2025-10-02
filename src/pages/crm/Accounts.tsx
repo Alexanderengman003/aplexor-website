@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, Plus, MapPin, Users, DollarSign, Calendar, Loader2, Database } from "lucide-react";
+import { Search, Plus, MapPin, Users, DollarSign, Calendar, Loader2, Database, ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
@@ -185,10 +185,11 @@ export default function Accounts() {
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="w-full"
+                      className="w-full flex items-center gap-2"
                       onClick={() => handleViewContacts(selectedCompany.company)}
                     >
-                      View All Contacts
+                      View all contacts
+                      <ArrowRight className="w-3 h-3" />
                     </Button>
                   </div>
                 </CardContent>

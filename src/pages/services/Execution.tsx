@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
 import ProcessSection from "@/components/ProcessSection";
+import ServiceCard from "@/components/ServiceCard";
 import { Users, Handshake, User, Network, ArrowLeft } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Execution = () => {
   const services = [
     {
-      icon: <Users className="w-12 h-12 text-primary" />,
+      icon: <Users className="w-6 h-6 text-primary" />,
       title: "Lead Generation",
       description: "Build a strong and qualified sales pipeline.",
       details: [
@@ -20,7 +20,7 @@ const Execution = () => {
       ]
     },
     {
-      icon: <Handshake className="w-12 h-12 text-primary" />,
+      icon: <Handshake className="w-6 h-6 text-primary" />,
       title: "Matchmaking",
       description: "Connect with the right partners, distributors, and customers.",
       details: [
@@ -31,7 +31,7 @@ const Execution = () => {
       ]
     },
     {
-      icon: <User className="w-12 h-12 text-primary" />,
+      icon: <User className="w-6 h-6 text-primary" />,
       title: "Sales Representation",
       description: "Act as your dedicated Nordic sales force.",
       details: [
@@ -42,7 +42,7 @@ const Execution = () => {
       ]
     },
     {
-      icon: <Network className="w-12 h-12 text-primary" />,
+      icon: <Network className="w-6 h-6 text-primary" />,
       title: "Channel & Business Development",
       description: "Build and grow long-term channel partnerships.",
       details: [
@@ -58,7 +58,7 @@ const Execution = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative h-80 lg:h-96 overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -72,7 +72,7 @@ const Execution = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Execution
             </h1>
-            <p className="font-body text-xl text-muted-foreground mb-8">
+            <p className="font-body text-xl text-muted-foreground">
               Hands-on execution to convert strategy into immediate and sustainable revenue.
             </p>
           </div>
@@ -84,29 +84,13 @@ const Execution = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3 mb-2">
-                    {service.icon}
-                    <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                  <p className="font-body text-sm md:text-base text-muted-foreground">
-                    {service.description}
-                  </p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="space-y-2">
-                    {service.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                        <span className="font-body text-xs md:text-sm text-muted-foreground">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                details={service.details}
+              />
             ))}
           </div>
         </div>

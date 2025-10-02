@@ -13,7 +13,7 @@ const TermsOfService = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-background via-background to-secondary/20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             Terms of Service
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -228,7 +228,7 @@ const TermsOfService = () => {
       <section className="py-8 bg-background border-t">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-muted-foreground">
-            Last updated: September 25, 2024
+            Last updated: September 25, 2025
           </p>
         </div>
       </section>

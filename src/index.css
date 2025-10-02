@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Aplexor Brand Colors */
-    --primary: 86 44% 63%;            /* #A0C878 - Dark green */
+    --primary: 86 44% 48%;            /* #7BA05A - Darker green */
     --primary-foreground: 0 0% 100%;  /* White text on green */
     --primary-hover: 73 69% 76%;      /* #DDEB9D - Light green for hover */
     
@@ -29,9 +29,13 @@ All colors MUST be HSL.
     --accent: 73 69% 76%;             /* #DDEB9D - Light green accent */
     --accent-foreground: 0 0% 18%;    /* Dark text on light green */
     
+    /* Custom Dark Beige Colors for Navigation */
+    --nav-selected: 45 35% 85%;       /* #E8DFCA - Selected beige */
+    --nav-hover: 45 35% 85%;          /* #E8DFCA - Hover beige */
+    
     --border: 48 67% 88%;             /* Light cream borders */
     --input: 48 67% 94%;              /* Light cream input backgrounds */
-    --ring: 86 44% 63%;               /* Dark green focus rings */
+    --ring: 86 44% 48%;               /* Darker green focus rings */
     
     /* Shadows and Effects */
     --shadow-card: 0px 4px 12px rgba(0, 0, 0, 0.05);
@@ -74,7 +78,7 @@ All colors MUST be HSL.
     --popover: 50 100% 98%;
     --popover-foreground: 0 0% 18%;
 
-    --primary: 86 44% 63%;
+    --primary: 86 44% 48%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 73 69% 76%;
 

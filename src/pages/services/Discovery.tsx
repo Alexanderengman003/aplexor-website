@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
 import ProcessSection from "@/components/ProcessSection";
+import ServiceCard from "@/components/ServiceCard";
 import { UserSearch, Layers, Search, Eye, ArrowLeft } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Discovery = () => {
   const services = [
     {
-      icon: <UserSearch className="w-12 h-12 text-primary" />,
+      icon: <UserSearch className="w-6 h-6 text-primary" />,
       title: "Customer Discovery & Research",
-      description: "Understand what customers really want to shape product design and market strategy.",
+      description: "Understand what customers really want to shape market strategy.",
       details: [
         "Conduct interviews to uncover pain points and unmet needs",
         "Use surveys and data to confirm and measure demand",
@@ -20,7 +20,7 @@ const Discovery = () => {
       ]
     },
     {
-      icon: <Layers className="w-12 h-12 text-primary" />,
+      icon: <Layers className="w-6 h-6 text-primary" />,
       title: "Market Segmentation & Prioritization",
       description: "Focus on the customer groups that create the most value.",
       details: [
@@ -31,7 +31,7 @@ const Discovery = () => {
       ]
     },
     {
-      icon: <Search className="w-12 h-12 text-primary" />,
+      icon: <Search className="w-6 h-6 text-primary" />,
       title: "Opportunity Assessment & Engagement",
       description: "Identify and rank the best prospects for growth.",
       details: [
@@ -42,7 +42,7 @@ const Discovery = () => {
       ]
     },
     {
-      icon: <Eye className="w-12 h-12 text-primary" />,
+      icon: <Eye className="w-6 h-6 text-primary" />,
       title: "Market & Competition Insights", 
       description: "Learn from early sales interactions to improve results.",
       details: [
@@ -58,7 +58,7 @@ const Discovery = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative h-80 lg:h-96 overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -72,7 +72,7 @@ const Discovery = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Discovery
             </h1>
-            <p className="font-body text-xl text-muted-foreground mb-8">
+            <p className="font-body text-xl text-muted-foreground">
               The discovery phase aims to analyze markets, map customers, partners and competitors, and validate the best opportunities.
             </p>
           </div>
@@ -84,29 +84,13 @@ const Discovery = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3 mb-2">
-                    {service.icon}
-                    <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                  <p className="font-body text-sm md:text-base text-muted-foreground">
-                    {service.description}
-                  </p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="space-y-2">
-                    {service.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                        <span className="font-body text-xs md:text-sm text-muted-foreground">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                details={service.details}
+              />
             ))}
           </div>
         </div>

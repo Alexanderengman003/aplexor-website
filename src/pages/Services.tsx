@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
+import ProcessSection from "@/components/ProcessSection";
 import { 
   Handshake, 
   Target, 
@@ -30,8 +31,10 @@ import {
   UserSearch,
   Layers,
   Eye,
-  ChevronRight,
-  ChevronDown
+  Search as SearchIcon,
+  Lightbulb,
+  Rocket,
+  Headphones
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -39,6 +42,7 @@ const Services = () => {
   const serviceCategories = [
     {
       title: "Discovery",
+      icon: <SearchIcon className="w-6 h-6 text-primary" />,
       subtitle: "The discovery phase aims to analyze markets, map customers, partners and competitors, and validate the best opportunities.",
       services: [
         {
@@ -65,6 +69,7 @@ const Services = () => {
     },
     {
       title: "Strategy",
+      icon: <Lightbulb className="w-6 h-6 text-primary" />,
       subtitle: "Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery.",
       services: [
         {
@@ -91,6 +96,7 @@ const Services = () => {
     },
     {
       title: "Execution",
+      icon: <Rocket className="w-6 h-6 text-primary" />,
       subtitle: "Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites.",
       services: [
         {
@@ -117,6 +123,7 @@ const Services = () => {
     },
     {
       title: "Support",
+      icon: <Headphones className="w-6 h-6 text-primary" />,
       subtitle: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
       services: [
         {
@@ -147,7 +154,7 @@ const Services = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative h-80 lg:h-96 overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -161,7 +168,7 @@ const Services = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Services
             </h1>
-            <p className="font-body text-xl text-muted-foreground mb-8">
+            <p className="font-body text-xl text-muted-foreground">
               Comprehensive sales solutions for Physical Technology companies looking to scale and expand internationally. We provide the expertise, network, and results you need to succeed.
             </p>
           </div>
@@ -173,10 +180,11 @@ const Services = () => {
         <div className="container mx-auto px-2 md:px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
             {serviceCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="p-3 md:p-6 hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer flex flex-col h-full">
-                <Link to={`/services/${category.title.toLowerCase().split(' ')[0]}`} className="block flex-1 flex flex-col">
+              <Card key={categoryIndex} className="p-3 md:p-6 lg:hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer flex flex-col h-full">
+                <Link to={`/services/${category.title.toLowerCase() === 'support' ? 'supporting' : category.title.toLowerCase().split(' ')[0]}`} className="block flex-1 flex flex-col">
                   <CardHeader className="pb-3 md:pb-6">
-                    <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
+                      {category.icon}
                       {category.title}
                     </CardTitle>
                     <p className="font-body text-sm md:text-base text-muted-foreground leading-snug">
@@ -186,7 +194,7 @@ const Services = () => {
                   <CardContent className="flex-1 flex items-center">
                     <div className="grid grid-cols-2 gap-2 md:gap-4 w-full">
                       {category.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="flex flex-col items-center justify-center gap-2 p-2 md:p-4 rounded-lg bg-background/80 border hover:bg-background transition-colors duration-200 text-center min-h-[80px] md:min-h-[120px]">
+                        <div key={serviceIndex} className="flex flex-col items-center justify-center gap-2 p-2 md:p-4 rounded-lg bg-background/80 border-2 lg:hover:bg-background transition-colors duration-200 text-center min-h-[80px] md:min-h-[120px]">
                           <div className="flex-shrink-0">
                             {service.icon}
                           </div>
@@ -259,7 +267,7 @@ const Services = () => {
                 description: "Security systems and defense technology"
               }
             ].map((market, index) => (
-              <div key={index} className="text-center p-2 md:p-6 rounded-lg bg-card border hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center min-h-[80px] md:min-h-0">
+              <div key={index} className="text-center p-2 md:p-6 rounded-lg bg-card border lg:hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center min-h-[80px] md:min-h-0">
                 <div className="flex justify-center mb-1 md:mb-4">
                   {market.icon}
                 </div>
@@ -272,56 +280,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-8 md:py-16 bg-muted">
-        <div className="container mx-auto px-2 md:px-4">
-          <div className="text-center mb-4 md:mb-12">
-            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
-              Our Process
-            </h2>
-            <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              We follow a proven methodology to ensure successful outcomes for our partners. You can choose to let us handle the entire process for you, or we can deliver each step separately as a service.
-            </p>
-          </div>
-          
-          <div className="flex flex-row items-center justify-center gap-1 md:gap-3 lg:gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-              },
-              {
-                step: "02",
-                title: "Strategy",
-              },
-              {
-                step: "03",
-                title: "Execution",
-              },
-              {
-                step: "04",
-                title: "Support",
-              }
-            ].map((step, index) => (
-              <div key={index} className="flex flex-row items-center">
-                <div className="text-center px-0.5 md:px-2 lg:px-4">
-                  <Link to={`/services/${["discovery", "strategy", "execution", "supporting"][index]}`}>
-                    <div className="inline-flex items-center justify-center w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full font-heading font-bold text-sm md:text-base lg:text-2xl mb-1 md:mb-2 lg:mb-4 transition-all duration-300 cursor-pointer bg-primary text-primary-foreground hover:scale-110 hover:shadow-lg">
-                      {step.step}
-                    </div>
-                  </Link>
-                  <h3 className="font-heading text-xs md:text-base lg:text-2xl font-semibold text-foreground whitespace-nowrap">
-                    {step.title}
-                  </h3>
-                </div>
-                {index < 3 && (
-                  <ChevronRight className="w-5 h-5 md:w-10 md:h-10 lg:w-14 lg:h-14 text-primary mx-0.5 md:mx-2 lg:mx-4" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection currentStep="discovery" />
 
       <CtaBanner />
     </Layout>

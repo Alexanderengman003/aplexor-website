@@ -516,7 +516,7 @@ const SiteAnalytics = () => {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md border-2">
           <CardHeader className="text-center">
             <CardTitle className="font-heading text-2xl font-bold text-foreground">
               Analytics Access
@@ -648,7 +648,7 @@ const SiteAnalytics = () => {
           <div className="space-y-6">
             {/* Key Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Card>
+              <Card className="border-2">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Total Page Views</CardTitle>
                   <MousePointer className="h-4 w-4 text-muted-foreground" />
@@ -658,7 +658,7 @@ const SiteAnalytics = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-2">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Unique Visitors</CardTitle>
                   <Users className="h-4 w-4 text-muted-foreground" />
@@ -668,7 +668,7 @@ const SiteAnalytics = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-2">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Avg. Session</CardTitle>
                   <Clock className="h-4 w-4 text-muted-foreground" />
@@ -678,7 +678,7 @@ const SiteAnalytics = () => {
                 </CardContent>
               </Card>
 
-              <Card>
+              <Card className="border-2">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Bounce Rate</CardTitle>
                   <Globe className="h-4 w-4 text-muted-foreground" />
@@ -690,7 +690,7 @@ const SiteAnalytics = () => {
             </div>
 
             {/* Traffic Overview Chart */}
-            <Card>
+            <Card className="border-2">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <LineChart className="h-5 w-5" />
@@ -765,7 +765,7 @@ const SiteAnalytics = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Top Pages */}
-              <Card>
+              <Card className="border-2">
                 <CardHeader>
                   <CardTitle>Top Pages</CardTitle>
                   <p className="text-sm text-muted-foreground">Most visited pages on the website</p>
@@ -789,7 +789,7 @@ const SiteAnalytics = () => {
               </Card>
 
               {/* Recent Activity */}
-              <Card className="flex flex-col">
+              <Card className="flex flex-col border-2">
                 <CardHeader className="flex-shrink-0">
                   <CardTitle>Recent Activity</CardTitle>
                   <p className="text-sm text-muted-foreground">
@@ -827,7 +827,7 @@ const SiteAnalytics = () => {
               </Card>
 
               {/* Countries */}
-              <Card>
+              <Card className="border-2">
                 <CardHeader>
                   <CardTitle>Countries</CardTitle>
                   <p className="text-sm text-muted-foreground">All countries with visitors</p>
@@ -851,7 +851,7 @@ const SiteAnalytics = () => {
               </Card>
 
               {/* Cities */}
-              <Card>
+              <Card className="border-2">
                 <CardHeader>
                   <CardTitle>Cities</CardTitle>
                   <p className="text-sm text-muted-foreground">All cities with visitors</p>

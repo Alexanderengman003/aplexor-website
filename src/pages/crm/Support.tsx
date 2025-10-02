@@ -17,7 +17,9 @@ import {
   Building2,
   Tag,
   Calendar,
-  MessageSquare
+  MessageSquare,
+  Settings,
+  ArrowUp
 } from "lucide-react";
 import {
   Dialog,
@@ -534,9 +536,18 @@ export function Support() {
               </div>
               
               <div className="pt-4 border-t border-border space-y-2">
-                <Button className="w-full">Update Status</Button>
-                <Button variant="outline" className="w-full">Add Comment</Button>
-                <Button variant="outline" className="w-full">Escalate</Button>
+                <Button className="w-full flex items-center gap-2">
+                  <Settings className="w-4 h-4" />
+                  Update status
+                </Button>
+                <Button variant="outline" className="w-full flex items-center gap-2">
+                  <MessageSquare className="w-4 h-4" />
+                  Add comment
+                </Button>
+                <Button variant="outline" className="w-full flex items-center gap-2">
+                  <ArrowUp className="w-4 h-4" />
+                  Escalate
+                </Button>
               </div>
             </div>
           </Card>

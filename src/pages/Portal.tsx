@@ -123,7 +123,7 @@ const Portal = () => {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-md mx-auto">
-            <Card>
+            <Card className="border-2">
               <CardHeader className="text-center">
                 <CardTitle className="font-heading text-2xl font-bold text-foreground">
                   Welcome Back

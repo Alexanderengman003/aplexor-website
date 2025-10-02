@@ -15,7 +15,8 @@ import {
   FileText,
   Clock,
   User,
-  Building2
+  Building2,
+  Edit
 } from "lucide-react";
 import {
   Dialog,
@@ -413,8 +414,14 @@ export function Activities() {
               </div>
               
               <div className="pt-4 border-t border-border">
-                <Button className="w-full mb-2">Edit Activity</Button>
-                <Button variant="outline" className="w-full">Create Follow-up</Button>
+                <Button className="w-full mb-2 flex items-center gap-2">
+                  <Edit className="w-4 h-4" />
+                  Edit activity
+                </Button>
+                <Button variant="outline" className="w-full flex items-center gap-2">
+                  <Plus className="w-4 h-4" />
+                  Create follow-up
+                </Button>
               </div>
             </div>
           </Card>

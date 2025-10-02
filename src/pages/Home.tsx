@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
-import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle } from "lucide-react";
+import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle, ArrowRight, Mail } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
@@ -108,11 +108,17 @@ const Home = () => {
               Aplexor offers sales and business development support for hardware SMEs. Whether you are a Swedish company intending to grow into global markets, or if you want strategies to enter the Swedish markets, we can offer services tailored for your business needs. 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="font-heading font-semibold">
-                <Link to="/services">Our Services</Link>
+              <Button asChild size="lg" className="font-heading font-semibold hover:bg-primary/90">
+                <Link to="/services" className="flex items-center gap-2">
+                  Our services
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="font-heading font-semibold">
-                <Link to="/contact">Contact Us</Link>
+              <Button asChild size="lg" className="font-heading font-semibold hover:bg-primary/90">
+                <Link to="/contact" className="flex items-center gap-2">
+                  Contact us
+                  <Mail className="w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -133,7 +139,7 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {problems.map((problem, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
                 <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[180px] md:min-h-[220px]">
                   <div className="flex justify-center mb-2 md:mb-4">
                     {problem.icon}
@@ -165,7 +171,7 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
             {pillars.map((pillar, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
                 <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[200px] md:min-h-[240px]">
                   <div className="flex justify-center mb-2 md:mb-4">
                     {pillar.icon}
@@ -198,7 +204,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
             {services.map((service, index) => (
               <Link key={index} to={`/services/${service.route}`}>
-                <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+                <Card className="lg:hover:shadow-lg transition-shadow duration-300 h-full border-2">
                   <CardContent className="p-3 md:p-6 flex flex-col justify-center min-h-[120px] md:min-h-[140px]">
                     <div className="flex items-center mb-2 md:mb-3">
                       {service.icon}
@@ -217,7 +223,10 @@ const Home = () => {
           
           <div className="text-center">
             <Button asChild variant="outline" size="lg" className="font-heading font-semibold">
-              <Link to="/services">View All Services</Link>
+              <Link to="/services" className="flex items-center gap-2">
+                View all services
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
         </div>

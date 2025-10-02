@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Plus, Search, Filter, MoreHorizontal } from "lucide-react";
+import { Plus, Search, Filter, MoreHorizontal, ArrowRight } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -301,8 +301,14 @@ export function Pipeline() {
               </div>
               
               <div className="pt-4 border-t border-border">
-                <Button className="w-full mb-2">Move to Next Stage</Button>
-                <Button variant="outline" className="w-full">Add Activity</Button>
+                <Button className="w-full mb-2 flex items-center gap-2">
+                  <ArrowRight className="w-4 h-4" />
+                  Move to next stage
+                </Button>
+                <Button variant="outline" className="w-full flex items-center gap-2">
+                  <Plus className="w-4 h-4" />
+                  Add activity
+                </Button>
               </div>
             </div>
           </Card>

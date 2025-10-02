@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-background via-background to-secondary/20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
             Privacy Policy
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -114,7 +114,7 @@ const PrivacyPolicy = () => {
                     <li>Request a copy of the information we have about you</li>
                   </ul>
                   <p>
-                    To exercise these rights, please contact us using the information provided in the "Contact Us" section below.
+                    To exercise these rights, please contact us using the information provided in the "Contact us" section below.
                   </p>
                 </div>
               </AccordionContent>
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
 
             <AccordionItem value="item-8" className="border rounded-lg">
               <AccordionTrigger className="px-6 py-4 text-left text-xl font-semibold text-foreground hover:no-underline">
-                8. Contact Us
+                8. Contact us
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
                 <div className="space-y-4 text-muted-foreground">
@@ -179,7 +179,7 @@ const PrivacyPolicy = () => {
       <section className="py-8 bg-background border-t">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-muted-foreground">
-            Last updated: September 25, 2024
+            Last updated: September 25, 2025
           </p>
         </div>
       </section>

@@ -140,7 +140,7 @@ const Contact = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative h-80 lg:h-96 overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -154,7 +154,7 @@ const Contact = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Contact
             </h1>
-            <p className="font-body text-xl text-muted-foreground mb-8">
+            <p className="font-body text-xl text-muted-foreground">
               Ready to accelerate your Physical Technology sales? Get in touch with us to discuss how we can help to expand your business and boost your market reach.
             </p>
           </div>
@@ -164,18 +164,10 @@ const Contact = () => {
       {/* Contact Form and Info */}
       <section className="py-6 md:py-8">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-heading text-2xl font-bold text-foreground">
-                  Let's talk
-                </CardTitle>
-                <p className="font-body text-muted-foreground">
-                  Tell us about your business needs and how we can help you grow.
-                </p>
-              </CardHeader>
-              <CardContent>
+            <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="pt-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Label htmlFor="name" className="font-body font-medium">
@@ -226,7 +218,7 @@ const Contact = () => {
 
                   <div>
                     <Label htmlFor="message" className="font-body font-medium">
-                      Message / Product Description *
+                      Message *
                     </Label>
                     <Textarea
                       id="message"
@@ -241,62 +233,24 @@ const Contact = () => {
 
                   <Button 
                     type="submit" 
-                    className="w-full font-heading font-semibold" 
+                    className="w-full font-heading font-semibold hover:bg-primary/90" 
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
+
+                <div className="mt-8 p-6 bg-muted rounded-lg">
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                    Response Time
+                  </h3>
+                  <p className="font-body text-muted-foreground">
+                    We typically respond to all inquiries within 24 hours during business days.
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
-            <div className="lg:pl-8">
-              <div className="mb-8">
-                <h2 className="font-heading text-2xl font-bold text-foreground mb-4">
-                  Get In Touch
-                </h2>
-                <p className="font-body text-muted-foreground mb-6">
-                  Have questions about our services or want to discuss a potential partnership? We'd love to hear from you.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-center">
-                    {item.icon}
-                    <div className="ml-4">
-                      <p className="font-body font-medium text-foreground">
-                        {item.label}
-                      </p>
-                      {item.link ? (
-                        <a 
-                          href={item.link}
-                          className="font-body text-muted-foreground hover:text-primary transition-colors"
-                          target={item.link.startsWith('http') ? '_blank' : undefined}
-                          rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="font-body text-muted-foreground">
-                          {item.value}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 p-6 bg-muted rounded-lg">
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
-                  Response Time
-                </h3>
-                <p className="font-body text-muted-foreground">
-                  We typically respond to all inquiries within 24 hours during business days.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -38,7 +38,7 @@ const Navigation = () => {
             <img 
               src={aplexorLogo} 
               alt="Aplexor" 
-              className="h-6 md:h-12 w-auto"
+              className="h-4 md:h-6 w-auto"
             />
           </Link>
 
@@ -46,8 +46,10 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/") ? "text-primary" : "text-foreground"
+              className={`font-body text-sm font-medium transition-all duration-200 px-4 py-2.5 rounded-md ${
+                isActive("/") 
+                  ? "bg-nav-selected text-foreground font-semibold" 
+                  : "text-foreground hover:bg-nav-hover hover:text-foreground"
               }`}
             >
               Home
@@ -57,8 +59,10 @@ const Navigation = () => {
             <div className="relative group">
               <Link 
                 to="/services"
-                className={`font-body text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
-                  location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+                className={`font-body text-sm font-medium transition-all duration-200 px-4 py-2.5 rounded-md flex items-center gap-1 ${
+                  location.pathname.startsWith("/services") 
+                    ? "bg-nav-selected text-foreground font-semibold" 
+                    : "text-foreground hover:bg-nav-hover hover:text-foreground group-hover:bg-nav-hover"
                 }`}
               >
                 Services
@@ -69,7 +73,11 @@ const Navigation = () => {
                   <Link 
                     key={service.href} 
                     to={service.href} 
-                    className="block px-4 py-3 text-sm hover:bg-muted transition-colors cursor-pointer"
+                    className={`block px-4 py-3 text-sm transition-all duration-200 ${
+                      isActive(service.href) 
+                        ? "bg-nav-selected text-foreground font-semibold" 
+                        : "text-foreground hover:bg-nav-hover hover:text-foreground"
+                    }`}
                   >
                     {service.label}
                   </Link>
@@ -81,8 +89,10 @@ const Navigation = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-body text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.href) ? "text-primary" : "text-foreground"
+                className={`font-body text-sm font-medium transition-all duration-200 px-4 py-2.5 rounded-md ${
+                  isActive(link.href) 
+                    ? "bg-nav-selected text-foreground font-semibold" 
+                    : "text-foreground hover:bg-nav-hover hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -106,8 +116,10 @@ const Navigation = () => {
             <div className="flex flex-col space-y-3">
               <Link
                 to="/"
-                className={`font-body text-base font-medium transition-colors hover:text-primary ${
-                  isActive("/") ? "text-primary" : "text-foreground"
+                className={`font-body text-base font-medium transition-all duration-200 px-4 py-3 rounded-md ${
+                  isActive("/") 
+                    ? "bg-nav-selected text-foreground font-semibold" 
+                    : "text-foreground hover:bg-nav-hover hover:text-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -118,8 +130,10 @@ const Navigation = () => {
                 <div className="w-full flex items-center justify-between">
                   <Link
                     to="/services"
-                    className={`font-body text-base font-medium transition-colors hover:text-primary ${
-                      location.pathname.startsWith("/services") ? "text-primary" : "text-foreground"
+                    className={`font-body text-base font-medium transition-all duration-200 px-4 py-3 rounded-md flex-1 ${
+                      location.pathname.startsWith("/services") 
+                        ? "bg-nav-selected text-foreground font-semibold" 
+                        : "text-foreground hover:bg-nav-hover hover:text-foreground"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -139,8 +153,10 @@ const Navigation = () => {
                       <Link
                         key={service.href}
                         to={service.href}
-                        className={`block font-body text-base transition-colors hover:text-primary ${
-                          isActive(service.href) ? "text-primary" : "text-muted-foreground"
+                        className={`block font-body text-base transition-all duration-200 px-4 py-3 ${
+                          isActive(service.href) 
+                            ? "bg-nav-selected text-foreground font-semibold" 
+                            : "text-muted-foreground hover:bg-nav-hover hover:text-foreground"
                         }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -155,8 +171,10 @@ const Navigation = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`font-body text-base font-medium transition-colors hover:text-primary ${
-                    isActive(link.href) ? "text-primary" : "text-foreground"
+                  className={`font-body text-base font-medium transition-all duration-200 px-4 py-3 rounded-md ${
+                    isActive(link.href) 
+                      ? "bg-nav-selected text-foreground font-semibold" 
+                      : "text-foreground hover:bg-nav-hover hover:text-foreground"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
