@@ -135,7 +135,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-8 md:py-16 bg-muted hidden">
+      <section className="py-8 md:py-16 bg-muted">
         <div className="container mx-auto px-2 md:px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:px-8">
