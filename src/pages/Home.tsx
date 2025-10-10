@@ -89,7 +89,7 @@ const Home = () => {
     <Layout>
       {/* Hero Section */}
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative py-24 lg:py-40 overflow-hidden"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
