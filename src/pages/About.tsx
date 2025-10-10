@@ -11,6 +11,7 @@ import { Users, Target, Shield, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 import alexanderEngman from "@/assets/alexander-engman.jpg";
+import granitZymberi from "@/assets/granit-zymberi.jpeg";
 
 const About = () => {
   const values = [
@@ -41,7 +42,15 @@ const About = () => {
       name: "Alexander Engman",
       role: "Founder & CEO",
       email: "alexander.engman@aplexor.com",
-      image: alexanderEngman
+      image: alexanderEngman,
+      bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as semiconductors, medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
+    },
+    {
+      name: "Granit Zymberi",
+      role: "Consultant",
+      email: "granit.zymberi@aplexor.com",
+      image: granitZymberi,
+      bio: "Granit has a master's degree in technical design from KTH in Stockholm and has worked for over 10 years in mechanical engineering spanning disciplines such as aerospace, medical technology and industrial sectors. He completed his master thesis at Microsoft and has extensive hands-on engineering experience."
     }
   ];
 
@@ -138,57 +147,44 @@ const About = () => {
       <section className="py-8 md:py-16 bg-muted">
         <div className="container mx-auto px-2 md:px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:px-8">
-              {/* Team Text and Card - Left Side */}
-              <div className="text-left">
-                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
-                  Our People
-                </h2>
-                <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground mb-6 md:mb-8">
-                  Meet the individuals who work on delivering exceptional services to our partners.
-                </p>
-                
-                <div className="max-w-sm">
-                  <Card className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
-                    <CardContent className="p-3 md:p-8">
-                      <div className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-6 overflow-hidden">
-                        <img
-                          src={team[0].image as string}
-                          alt={team[0].name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                      <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1 md:mb-2">
-                        {team[0].name}
-                      </h3>
-                      <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
-                        {team[0].role}
-                      </p>
-                      <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
-                        <a href={`mailto:${team[0].email}`} className="hover:text-primary transition-colors">
-                          {team[0].email}
-                        </a>
-                      </p>
-                      <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
-                        Alexander has a master's degree in nanotechnology and has worked in SMEs spanning disciplines such as semiconductors, medical technology and electronics. He has professional experience from both sales and hands-on engineering work.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-              
-              {/* Team Image - Right Side */}
-              <div className="hidden lg:flex justify-center lg:justify-end">
-                <div className="w-full max-w-sm lg:max-w-md">
-                  <img
-                    src="/team.jpg"
-                    alt="Our People"
-                    className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+            <div className="text-center mb-6 md:mb-12">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
+                Our People
+              </h2>
+              <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+                Meet the individuals who work on delivering exceptional services to our partners.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+              {team.map((member, index) => (
+                <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
+                  <CardContent className="p-3 md:p-8">
+                    <div className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-6 overflow-hidden">
+                      <img
+                        src={member.image as string}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1 md:mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
+                      {member.role}
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
+                      <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">
+                        {member.email}
+                      </a>
+                    </p>
+                    <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
