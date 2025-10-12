@@ -185,22 +185,22 @@ const About = () => {
                     </p>
                     
                     <div className="mt-4 pt-4 border-t border-border">
-                      <h4 className="font-heading text-xs md:text-sm font-semibold text-primary mb-2">
-                        Business area
+                      <h4 className="font-heading text-xs font-semibold text-primary mb-2">
+                        Business areas
                       </h4>
                       <div className="flex flex-wrap gap-1 justify-center">
                         {member.name === "Alexander Engman" ? (
                           <>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Semiconductors</Badge>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Electronics</Badge>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Medical</Badge>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Materials</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Semiconductors</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Electronics</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Materials</Badge>
                           </>
                         ) : (
                           <>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Mechanical</Badge>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Medical</Badge>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Aerospace</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Mechanical</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Aerospace</Badge>
                           </>
                         )}
                       </div>
