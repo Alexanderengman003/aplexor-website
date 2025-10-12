@@ -201,6 +201,7 @@ const About = () => {
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Mechanical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Aerospace</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Industrial</Badge>
                           </>
                         )}
                       </div>
