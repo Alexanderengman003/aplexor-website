@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Users, Target, Shield, Lightbulb } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 import alexanderEngman from "@/assets/alexander-engman.jpg";
@@ -40,7 +41,7 @@ const About = () => {
   const team = [
     {
       name: "Alexander Engman",
-      role: "Founder & CEO",
+      role: "Consultant",
       email: "alexander.engman@aplexor.com",
       image: alexanderEngman,
       bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as semiconductors, medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
@@ -182,6 +183,28 @@ const About = () => {
                     <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
                       {member.bio}
                     </p>
+                    
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <h4 className="font-heading text-xs md:text-sm font-semibold text-primary mb-2">
+                        Business area
+                      </h4>
+                      <div className="flex flex-wrap gap-1 justify-center">
+                        {member.name === "Alexander Engman" ? (
+                          <>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Semiconductors</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Electronics</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Medical</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Materials</Badge>
+                          </>
+                        ) : (
+                          <>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Mechanical</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Medical</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300">Aerospace</Badge>
+                          </>
+                        )}
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
