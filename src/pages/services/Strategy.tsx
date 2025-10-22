@@ -26,7 +26,7 @@ const Strategy = () => {
       details: [
         "Conduct market analysis and sizing to support investments",
         "Map the competitive landscape to spot opportunities and risks",
-        "Study customer behavior and preferences to inform design and messaging",
+        "Study customer behavior and preferences to build strategy",
         "Track trends and predict shifts to stay ahead"
       ]
     },
