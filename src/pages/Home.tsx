@@ -105,7 +105,7 @@ const Home = () => {
               <span className="text-primary">Physical Technology SMEs</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Aplexor offers sales and business development support for hardware SMEs. Whether you are a Swedish company intending to grow into global markets, or if you want strategies to enter the Swedish markets, we can offer services tailored for your business needs. 
+              Aplexor offers sales and business development support for physical technology SMEs. Whether you are a Swedish company intending to grow into global markets, or if you want strategies to enter the Swedish markets, we can offer services tailored for your business needs. 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold hover:bg-primary/90">
