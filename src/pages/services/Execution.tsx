@@ -73,7 +73,7 @@ const Execution = () => {
               Execution
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              Hands-on execution to convert strategy into immediate and sustainable revenue.
+              Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites.
             </p>
           </div>
         </div>

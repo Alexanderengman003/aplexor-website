@@ -73,7 +73,7 @@ const Strategy = () => {
               Strategy
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              Define where to go and how to win. Our strategic services help you develop comprehensive plans for successful market entry and sustainable growth in Nordic markets.
+              Shaping the roadmap with clear choices on markets, positioning, and paths to growth based on findings in discovery.
             </p>
           </div>
         </div>

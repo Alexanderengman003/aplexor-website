@@ -73,7 +73,7 @@ const Supporting = () => {
               Support
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              Tools, processes, and materials that close deals. Our supporting services provide the foundation and resources your sales team needs to succeed consistently.
+              We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.
             </p>
           </div>
         </div>
