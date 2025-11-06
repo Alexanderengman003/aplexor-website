@@ -99,7 +99,7 @@ const Portal = () => {
   return (
     <Layout>
       <section 
-        className="relative py-16 lg:py-24 overflow-hidden"
+        className="relative h-80 lg:h-96 overflow-hidden flex items-center"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -113,7 +113,7 @@ const Portal = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Aplexor Portal
             </h1>
-            <p className="font-body text-xl text-muted-foreground mb-8">
+            <p className="font-body text-xl text-muted-foreground">
               Access your dashboard and manage your clients in the Aplexor CRM
             </p>
           </div>
