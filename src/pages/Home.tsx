@@ -7,6 +7,7 @@ import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, Us
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
+  // Home page component
   const pillars = [
     {
       icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
