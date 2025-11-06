@@ -8,6 +8,7 @@ import { Eye, EyeOff, Users, MousePointer, Clock, Globe, RefreshCw, LineChart } 
 import { LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import type { User } from "@supabase/supabase-js";
 
 interface AnalyticsData {
   totalPageViews: number;
@@ -34,15 +35,55 @@ interface AnalyticsData {
 }
 
 const SiteAnalytics = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [timeRange, setTimeRange] = useState("7");
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        setUser(session.user);
+        await checkAdminRole(session.user.id);
+      }
+      setIsLoading(false);
+    };
+
+    checkAuth();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      setUser(session?.user ?? null);
+      if (session?.user) {
+        await checkAdminRole(session.user.id);
+      } else {
+        setIsAdmin(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const checkAdminRole = async (userId: string) => {
+    const { data } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', userId)
+      .eq('role', 'admin')
+      .maybeSingle();
+    
+    const hasAdminRole = !!data;
+    setIsAdmin(hasAdminRole);
+    if (hasAdminRole) {
+      await loadAnalyticsData();
+    }
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -53,22 +94,41 @@ const SiteAnalytics = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Use same credentials as portal
-    if (formData.email === "alexander.engman@aplexor.com" && formData.password === "Alexander1234") {
-      setIsAuthenticated(true);
-      toast({
-        title: "Access granted",
-        description: "Welcome to Aplexor Analytics"
-      });
-      loadAnalyticsData();
-    } else {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: formData.email,
+      password: formData.password
+    });
+
+    if (error) {
       toast({
         title: "Access denied",
-        description: "Invalid credentials",
+        description: error.message,
         variant: "destructive"
       });
+    } else if (data.user) {
+      await checkAdminRole(data.user.id);
+      if (!isAdmin) {
+        toast({
+          title: "Access Denied",
+          description: "You do not have admin privileges",
+          variant: "destructive"
+        });
+        await supabase.auth.signOut();
+      } else {
+        toast({
+          title: "Access granted",
+          description: "Welcome to Aplexor Analytics"
+        });
+      }
     }
+    
     setIsSubmitting(false);
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setIsAdmin(false);
+    setAnalyticsData(null);
   };
 
   const loadAnalyticsData = async () => {
@@ -513,7 +573,15 @@ const SiteAnalytics = () => {
     }
   };
 
-  if (!isAuthenticated) {
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  if (!user || !isAdmin) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md border-2">
@@ -606,7 +674,7 @@ const SiteAnalytics = () => {
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => setIsAuthenticated(false)}
+              onClick={handleLogout}
               className="font-body"
             >
               Logout

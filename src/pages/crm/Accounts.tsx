@@ -35,8 +35,10 @@ interface Account {
   city: string | null;
   country: string | null;
   phone: string | null;
+  email: string | null;
   status: string;
-  notes: string | null;
+  annual_revenue: number | null;
+  employee_count: number | null;
   created_at: string;
   updated_at: string;
 }

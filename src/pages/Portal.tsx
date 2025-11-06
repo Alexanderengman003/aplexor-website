@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,8 @@ import { CrmLayout } from "@/components/CrmLayout";
 import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import { supabase } from "@/integrations/supabase/client";
+import type { User } from "@supabase/supabase-js";
 import Contacts from "./crm/Contacts";
 import Accounts from "./crm/Accounts";
 import Products from "./crm/Products";
@@ -24,20 +26,54 @@ import { Settings } from "./crm/Settings";
 type AuthMode = "login" | "signup" | "forgot";
 
 const Portal = () => {
-  const [authMode, setAuthMode] = useState<AuthMode>("login");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [userType, setUserType] = useState<"admin" | "customer" | "supplier">("admin");
-  const [userName, setUserName] = useState("Alexander");
+  const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [formData, setFormData] = useState({
-    name: "",
-    company: "",
     email: "",
-    password: "",
-    confirmPassword: ""
+    password: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check for existing session
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        setUser(session.user);
+        await checkAdminRole(session.user.id);
+      }
+      setIsLoading(false);
+    };
+
+    checkAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      setUser(session?.user ?? null);
+      if (session?.user) {
+        await checkAdminRole(session.user.id);
+      } else {
+        setIsAdmin(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const checkAdminRole = async (userId: string) => {
+    const { data } = await supabase
+      .from('user_roles')
+      .select('role')
+      .eq('user_id', userId)
+      .eq('role', 'admin')
+      .maybeSingle();
+    
+    setIsAdmin(!!data);
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -51,32 +87,60 @@ const Portal = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Check for hardcoded admin credentials
-    if (formData.email === "alexander.engman@aplexor.com" && formData.password === "Alexander1234") {
-      setIsAuthenticated(true);
-      setUserType("admin");
-      setUserName("Alexander");
-      toast({
-        title: "Login successful!",
-        description: "Welcome to the Aplexor CRM, Alexander."
-      });
-    } else {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: formData.email,
+      password: formData.password
+    });
+
+    if (error) {
       toast({
         title: "Invalid credentials",
-        description: "Please check your email and password",
+        description: error.message,
         variant: "destructive"
       });
+    } else if (data.user) {
+      await checkAdminRole(data.user.id);
+      if (!isAdmin) {
+        toast({
+          title: "Access Denied",
+          description: "You do not have admin privileges",
+          variant: "destructive"
+        });
+        await supabase.auth.signOut();
+      } else {
+        toast({
+          title: "Login successful!",
+          description: "Welcome to the Aplexor CRM."
+        });
+      }
     }
+    
     setIsSubmitting(false);
   };
 
-  // Show CRM Layout when authenticated
-  if (isAuthenticated) {
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setIsAdmin(false);
+    navigate('/portal');
+  };
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-16 text-center">
+          <p>Loading...</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  // Show CRM Layout when authenticated as admin
+  if (user && isAdmin) {
     return (
       <CrmLayout 
-        onLogout={() => setIsAuthenticated(false)}
-        userType={userType}
-        userName={userName}
+        onLogout={handleLogout}
+        userType="admin"
+        userName={user.email?.split('@')[0] || "Admin"}
       >
         <Routes>
           <Route path="/" element={<Navigate to="/portal/dashboard" replace />} />
@@ -138,16 +202,16 @@ const Portal = () => {
                     <Label htmlFor="email" className="font-body font-medium">
                       Email Address *
                     </Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="mt-1"
-                        placeholder="Enter email"
-                        required
-                      />
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="mt-1"
+                      placeholder="admin@example.com"
+                      required
+                    />
                   </div>
 
                   <div>
