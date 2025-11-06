@@ -17,6 +17,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Portal from "./pages/Portal";
 import SiteAnalytics from "./pages/SiteAnalytics";
+import AdminMigration from "./pages/AdminMigration";
 import { Dashboard } from "./pages/crm/Dashboard";
 import Contacts from "./pages/crm/Contacts";
 import Accounts from "./pages/crm/Accounts";
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/portal/*" element={<Portal />} />
           <Route path="/analytics" element={<SiteAnalytics />} />
+          <Route path="/admin/migration" element={<AdminMigration />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

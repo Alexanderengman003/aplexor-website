@@ -114,7 +114,7 @@ const Portal = () => {
               Aplexor Portal
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8">
-              Access your partner dashboard and manage your Nordic market presence
+              Access your dashboard and manage your clients in the Aplexor CRM
             </p>
           </div>
         </div>

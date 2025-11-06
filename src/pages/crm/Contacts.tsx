@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Plus, Mail, Phone, Building2, Loader2, Edit, Trash2 } from "lucide-react";
+import { Search, Plus, Mail, Phone, Building2, Loader2, Edit, Power, PowerOff } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -180,29 +180,36 @@ export default function Contacts() {
     }
   };
 
-  const deleteContact = async (contactId: string) => {
+  const toggleContactStatus = async (contact: Contact) => {
+    const newStatus = contact.status === 'inactive' ? 'active' : 'inactive';
+    
     try {
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('contacts')
-        .delete()
-        .eq('id', contactId);
+        .update({ status: newStatus })
+        .eq('id', contact.id)
+        .select();
 
       if (error) throw error;
 
-      setContacts(prev => prev.filter(contact => contact.id !== contactId));
-      
-      if (selectedContact?.id === contactId) {
-        setSelectedContact(null);
+      if (data) {
+        setContacts(prev => prev.map(c => 
+          c.id === contact.id ? { ...c, status: newStatus } : c
+        ));
+        
+        if (selectedContact?.id === contact.id) {
+          setSelectedContact({ ...selectedContact, status: newStatus });
+        }
+        
+        toast({
+          title: `Contact ${newStatus === 'active' ? 'activated' : 'deactivated'}`,
+          description: `${contact.first_name} ${contact.last_name} is now ${newStatus}`
+        });
       }
-      
-      toast({
-        title: "Contact deleted",
-        description: "The contact has been removed"
-      });
     } catch (error) {
       toast({
-        title: "Error deleting contact",
-        description: "Could not delete the contact",
+        title: "Error updating contact",
+        description: "Could not update the contact status",
         variant: "destructive"
       });
     }
@@ -595,13 +602,22 @@ export default function Contacts() {
                     Edit Contact
                   </Button>
                   <Button 
-                    variant="outline" 
+                    variant={selectedContact.status === 'inactive' ? "default" : "outline"}
                     size="sm" 
                     className="w-full"
-                    onClick={() => deleteContact(selectedContact.id)}
+                    onClick={() => toggleContactStatus(selectedContact)}
                   >
-                    <Trash2 className="mr-2 h-4 w-4" />
-                    Delete Contact
+                    {selectedContact.status === 'inactive' ? (
+                      <>
+                        <Power className="mr-2 h-4 w-4" />
+                        Activate Contact
+                      </>
+                    ) : (
+                      <>
+                        <PowerOff className="mr-2 h-4 w-4" />
+                        Deactivate Contact
+                      </>
+                    )}
                   </Button>
                   <Button 
                     variant="outline" 
@@ -624,6 +640,7 @@ export default function Contacts() {
           </div>
         )}
       </div>
+
     </div>
   );
 }
