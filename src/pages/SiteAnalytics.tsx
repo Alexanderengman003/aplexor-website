@@ -58,10 +58,10 @@ const SiteAnalytics = () => {
 
     checkAuth();
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null);
       if (session?.user) {
-        await checkAdminRole(session.user.id);
+        setTimeout(() => { checkAdminRole(session.user!.id); }, 0);
       } else {
         setIsAdmin(false);
       }
@@ -83,6 +83,7 @@ const SiteAnalytics = () => {
     if (hasAdminRole) {
       await loadAnalyticsData();
     }
+    return hasAdminRole;
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -106,8 +107,8 @@ const SiteAnalytics = () => {
         variant: "destructive"
       });
     } else if (data.user) {
-      await checkAdminRole(data.user.id);
-      if (!isAdmin) {
+      const hasRole = await checkAdminRole(data.user.id);
+      if (!hasRole) {
         toast({
           title: "Access Denied",
           description: "You do not have admin privileges",
