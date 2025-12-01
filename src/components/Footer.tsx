@@ -104,9 +104,12 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             <p className="font-body text-muted-foreground text-sm">
               © {new Date().getFullYear()} Aplexor. All rights reserved.
+            </p>
+            <p className="font-body text-muted-foreground text-sm">
+              Org. nr: 559558-5745
             </p>
           </div>
         </div>
