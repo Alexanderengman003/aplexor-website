@@ -20,7 +20,6 @@ const Navigation = () => {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
-    { href: "/portal", label: "Portal" },
   ];
 
   const serviceLinks = [
