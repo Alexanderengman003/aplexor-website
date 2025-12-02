@@ -262,10 +262,6 @@ const About = () => {
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  question: "How do you define Deeptech?",
-                  answer: "Deeptech refers to physical products built on engineering. This includes, but is not limited to, electronics, medical technology, novel materials, biotechnology, mechanical devices, or any other area with a physical implementation. We do not work with purely software products."
-                },
-                {
                   question: "What are the deliverables of a project with Aplexor?",
                   answer: (
                     <>
