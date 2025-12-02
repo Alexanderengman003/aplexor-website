@@ -155,7 +155,7 @@ const Contact = () => {
               Contact
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              Ready to accelerate your Physical Technology sales? Get in touch with us to discuss how we can help to expand your business and boost your market reach.
+              Ready to scale your Deeptech company? Get in touch with us to discuss how we can help to expand your business and boost your market reach.
             </p>
           </div>
         </div>
