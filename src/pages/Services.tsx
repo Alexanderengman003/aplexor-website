@@ -169,7 +169,7 @@ const Services = () => {
               Services
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              Comprehensive sales solutions for Physical Technology companies looking to scale and expand internationally. We provide the expertise, network, and results you need to succeed.
+              Comprehensive sales solutions for Deeptech companies looking to scale and expand internationally. We provide the expertise, network, and results you need to succeed.
             </p>
           </div>
         </div>
@@ -220,7 +220,7 @@ const Services = () => {
               Industries Covered
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Our expertise spans across key industries where Physical Technology innovation drives growth and transformation.
+              Our expertise spans across key industries where Deeptech innovation drives growth and transformation.
             </p>
           </div>
           
@@ -254,7 +254,7 @@ const Services = () => {
               {
                 icon: <Building className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Enterprise",
-                description: "B2B Physical Technology and enterprise solutions"
+                description: "B2B Deeptech and enterprise solutions"
               },
               {
                 icon: <Leaf className="w-6 h-6 md:w-12 md:h-12 text-primary" />,

@@ -262,8 +262,8 @@ const About = () => {
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  question: "How do you define Physical Technology?",
-                  answer: "Physical Technology refers to physical products built on engineering. This includes, but is not limited to, electronics, medical technology, novel materials, biotechnology, mechanical devices, or any other area with a physical implementation. We do not work with purely software products."
+                  question: "How do you define Deeptech?",
+                  answer: "Deeptech refers to physical products built on engineering. This includes, but is not limited to, electronics, medical technology, novel materials, biotechnology, mechanical devices, or any other area with a physical implementation. We do not work with purely software products."
                 },
                 {
                   question: "What are the deliverables of a project with Aplexor?",
@@ -278,10 +278,10 @@ const About = () => {
                   )
                 },
                 {
-                  question: "What types of Physical Technology products do you work with?",
+                  question: "What types of Deeptech products do you work with?",
                   answer: (
                     <>
-                      We work with a wide range of Physical Technology products. Our team has experience across multiple sectors including electronics, medical devices, novel materials, mechantronics and more. We also have a network expert available for other areas. View{" "}
+                      We work with a wide range of Deeptech products. Our team has experience across multiple sectors including electronics, medical devices, novel materials, mechantronics and more. We also have a network expert available for other areas. View{" "}
                       <Link to="/services" className="text-primary hover:underline font-semibold">
                         industries covered
                       </Link>
@@ -319,7 +319,7 @@ const About = () => {
                 },
                 {
                   question: "What makes Aplexor different from other sales agencies?",
-                  answer: "Our unique combination of technical engineering expertise and proven sales capabilities sets us apart. As engineers at heart, we understand the complexity of physical technology products, which allows us to effectively communicate their value and navigate technical sales processes. We focus on building long-term partnerships and delivering measurable results, not just generating leads."
+                  answer: "Our unique combination of technical engineering expertise and proven sales capabilities sets us apart. As engineers at heart, we understand the complexity of deeptech products, which allows us to effectively communicate their value and navigate technical sales processes. We focus on building long-term partnerships and delivering measurable results, not just generating leads."
                 }
               ].map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg">
