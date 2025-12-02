@@ -12,7 +12,7 @@ const Home = () => {
     {
       icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Expertise",
-      description: "Aplexor is founded and run exclusively by engineers with deep industry knowledge across many engineering domains. We have experience from working in Physical Technology SMEs, and understand the unique challenges and opportunities of trying to grow."
+      description: "Aplexor is founded and run exclusively by engineers with deep industry knowledge across many engineering domains. We have experience from working in Deeptech SMEs, and understand the unique challenges and opportunities of trying to grow."
     },
     {
       icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
@@ -103,10 +103,10 @@ const Home = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-heading text-4xl lg:text-6xl font-bold text-foreground mb-6">
               Swedish Business Partner for{" "}
-              <span className="text-primary">Physical Technology SMEs</span>
+              <span className="text-primary">Deeptech SMEs</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Aplexor offers sales and business development support for physical technology SMEs. Whether you are a Swedish company intending to grow into global markets, or if you want strategies to enter the Swedish markets, we can offer services tailored for your business needs. 
+              Aplexor offers sales and business development support for deeptech SMEs. Whether you are a Swedish company intending to grow into global markets, or if you want strategies to enter the Swedish markets, we can offer services tailored for your business needs. 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold hover:bg-primary/90">
@@ -134,7 +134,7 @@ const Home = () => {
               The Challenge
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Physical Technology SMEs that are on a growth journey face unique challenges that can be lead to wasted time and unnecessary costs.
+              Deeptech SMEs that are on a growth journey face unique challenges that can be lead to wasted time and unnecessary costs.
             </p>
           </div>
           
@@ -166,7 +166,7 @@ const Home = () => {
               Why Choose Aplexor?
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              We combine technical expertise with a wide network to deliver results and growth for Physical Technology SMEs. We can digest the fine technical details of your products and explain these to customers. We help you find the partners that fit your products and solutions.
+              We combine technical expertise with a wide network to deliver results and growth for Deeptech SMEs. We can digest the fine technical details of your products and explain these to customers. We help you find the partners that fit your products and solutions.
             </p>
           </div>
           
@@ -198,7 +198,7 @@ const Home = () => {
               Our Services
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Comprehensive sales solutions tailored specifically for Physical Technology SMEs that want to enter the Swedish market, or Swedish companies looking to grow abroad.
+              Comprehensive sales solutions tailored specifically for Deeptech SMEs that want to enter the Swedish market, or Swedish companies looking to grow abroad.
             </p>
           </div>
           
