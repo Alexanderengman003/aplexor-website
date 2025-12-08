@@ -9,47 +9,31 @@ import heroBackground from "@/assets/hero-background.jpg";
 const Supporting = () => {
   const services = [
     {
-      icon: <FileText className="w-6 h-6 text-primary" />,
-      title: "Sales Enablement",
-      description: "",
-      details: [
-        "Design sales decks and refine messaging",
-        "Produce datasheets and buyer-ready documentation",
-        "Develop case studies for credibility and trust",
-        "Provide training materials and playbooks for consistency"
-      ]
-    },
-    {
       icon: <TrendingUp className="w-6 h-6 text-primary" />,
-      title: "Funding Support",
+      title: "Sales Scaling",
       description: "",
-      details: [
-        "Develop investor pitch decks aligned with funding goals",
-        "Build financial models and projections to support the case",
-        "Identify grants and soft-funding opportunities",
-        "Create partnership proposals to secure alliances"
-      ]
+      details: []
     },
     {
       icon: <Database className="w-6 h-6 text-primary" />,
-      title: "CRM Setup",
+      title: "Operational Scaling",
+      description: "",
+      details: []
+    },
+    {
+      icon: <FileText className="w-6 h-6 text-primary" />,
+      title: "Funding & Partnerships",
       description: "",
       details: [
-        "Select and implement the right CRM system",
-        "Set up tracking and analytics for data-driven insights",
-        "Train teams and document processes for adoption"
+        "Build growth-stage investor decks and financial models",
+        "Identify strategic partnerships and grant opportunities"
       ]
     },
     {
       icon: <Calculator className="w-6 h-6 text-primary" />,
-      title: "Pricing Advisory",
+      title: "Market Expansion",
       description: "",
-      details: [
-        "Benchmark against competitive pricing",
-        "Develop value-based pricing models",
-        "Design packaging and bundles for market appeal",
-        "Recommend strategies to optimize revenue"
-      ]
+      details: []
     }
   ];
 
@@ -72,7 +56,7 @@ const Supporting = () => {
               Scale
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.
+              We help you grow efficiently, expanding your reach, capacity, and impact without breaking your business.
             </p>
           </div>
         </div>
