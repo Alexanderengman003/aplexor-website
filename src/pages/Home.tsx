@@ -22,12 +22,12 @@ const Home = () => {
     {
       icon: <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Commercial Support",
-      description: "Hands-on B2B sales expertise supplements small teams, letting founders focus on technology while leads are qualified, meetings are scheduled, and deals are progressed efficiently."
+      description: "Hands-on B2B sales expertise supplements small teams, letting founders focus on technology while driving sales and business development efforts without using vital company resources."
     },
     {
       icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Local Insight",
-      description: "Commercial strategies are tailored to Swedish and Nordic business norms, building trust, credibility, and consensus with key decision-makers to secure long-term partnerships."
+      description: "Commercial strategies are tailored to Swedish and Nordic business norms, building trust, credibility, and consensus with key decision-makers to secure partnerships."
     }
   ];
 
