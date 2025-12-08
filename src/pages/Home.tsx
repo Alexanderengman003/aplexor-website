@@ -22,7 +22,7 @@ const Home = () => {
     {
       icon: <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Commercial Support",
-      description: "Hands-on B2B sales expertise supplements small teams, letting founders focus on technology while driving sales and business development efforts without using vital company resources."
+      description: "Hands-on B2B sales expertise supplements small teams, letting founders focus on technology while driving sales and business development efforts."
     },
     {
       icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
