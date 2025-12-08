@@ -21,7 +21,7 @@ const Supporting = () => {
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-primary" />,
-      title: "Investor & Pitch Support",
+      title: "Funding Support",
       description: "",
       details: [
         "Develop investor pitch decks aligned with funding goals",
@@ -32,7 +32,7 @@ const Supporting = () => {
     },
     {
       icon: <Database className="w-6 h-6 text-primary" />,
-      title: "CRM & Sales Process Setup",
+      title: "CRM Setup",
       description: "",
       details: [
         "Select and implement the right CRM system",
@@ -42,7 +42,7 @@ const Supporting = () => {
     },
     {
       icon: <Calculator className="w-6 h-6 text-primary" />,
-      title: "Pricing & Packaging Advisory",
+      title: "Pricing Advisory",
       description: "",
       details: [
         "Benchmark against competitive pricing",
