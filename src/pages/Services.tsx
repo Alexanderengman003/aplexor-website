@@ -22,10 +22,10 @@ import {
   Search,
   Heart,
   Cpu,
-  Wifi,
+  Boxes,
   Factory,
   Smartphone,
-  Building,
+  Plane,
   Leaf,
   ShieldCheck,
   UserSearch,
@@ -237,9 +237,9 @@ const Services = () => {
                 description: "Consumer and industrial electronics"
               },
               {
-                icon: <Wifi className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
-                title: "IoT",
-                description: "Smart devices and connected solutions"
+                icon: <Boxes className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
+                title: "Materials",
+                description: "Advanced materials and composites"
               },
               {
                 icon: <Factory className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
@@ -252,9 +252,9 @@ const Services = () => {
                 description: "Consumer electronics and lifestyle products"
               },
               {
-                icon: <Building className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
-                title: "Enterprise",
-                description: "B2B Deeptech and enterprise solutions"
+                icon: <Plane className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
+                title: "Aerospace",
+                description: "Aviation and space technology"
               },
               {
                 icon: <Leaf className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
