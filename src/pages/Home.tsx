@@ -171,7 +171,7 @@ const Home = () => {
               The Solution
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              We combine technical expertise with a wide network to deliver results and growth for Deeptech SMEs. We can digest the fine technical details of your products and explain these to customers. We help you find the partners that fit your products and solutions.
+              Aplexor combines technical expertise with a wide network to deliver measurable growth for Deeptech SMEs.
             </p>
           </div>
           
