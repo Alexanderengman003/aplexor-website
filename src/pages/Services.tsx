@@ -34,7 +34,9 @@ import {
   Search as SearchIcon,
   Lightbulb,
   Rocket,
-  Headphones
+  Headphones,
+  Briefcase,
+  MessageCircle
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -110,13 +112,13 @@ const Services = () => {
           description: "Connect with the right partners, distributors, and customers to maximize opportunities. We leverage our technical expertise to understand customer needs."
         },
         {
-          icon: <User className="w-8 h-8 text-primary" />,
+          icon: <MessageCircle className="w-8 h-8 text-primary" />,
           title: "Sales Representation",
           description: "Act as your outsourced sales team to drive growth and close deals."
         },
         {
-          icon: <Network className="w-8 h-8 text-primary" />,
-          title: "Channel & Business Development",
+          icon: <Briefcase className="w-8 h-8 text-primary" />,
+          title: "Business Development",
           description: "Establish and manage distributor/reseller networks while nurturing long-term business relationships."
         }
       ]
