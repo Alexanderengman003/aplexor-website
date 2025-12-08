@@ -79,7 +79,7 @@ const Services = () => {
         },
         {
           icon: <BarChart3 className="w-8 h-8 text-primary" />,
-          title: "Market Research & Insights",
+          title: "Market Research",
           description: "Identify opportunities, competitors, and customer needs to guide strategic decisions."
         },
         {
@@ -89,7 +89,7 @@ const Services = () => {
         },
         {
           icon: <Shield className="w-8 h-8 text-primary" />,
-          title: "Commercial Readiness Assessment",
+          title: "Commercial Readiness",
           description: "Evaluate certifications, scalability, and sales readiness to ensure successful partner engagement."
         }
       ]
