@@ -265,7 +265,7 @@ const About = () => {
                   question: "What are the deliverables of a project with Aplexor?",
                   answer: (
                     <>
-                      Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Support. The outcome will depending on which activity is relevant for you. We always discuss expectations before any collaboration. Learn more about{" "}
+                      Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Scale. The outcome will depending on which activity is relevant for you. We always discuss expectations before any collaboration. Learn more about{" "}
                       <Link to="/services" className="text-primary hover:underline font-semibold">
                         our process
                       </Link>

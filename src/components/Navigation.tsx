@@ -26,7 +26,7 @@ const Navigation = () => {
     { href: "/services/discovery", label: "Discovery" },
     { href: "/services/strategy", label: "Strategy" },
     { href: "/services/execution", label: "Execution" },
-    { href: "/services/supporting", label: "Support" },
+    { href: "/services/supporting", label: "Scale" },
   ];
 
   return (

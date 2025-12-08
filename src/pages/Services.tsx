@@ -122,7 +122,7 @@ const Services = () => {
       ]
     },
     {
-      title: "Support",
+      title: "Scale",
       icon: <Headphones className="w-6 h-6 text-primary" />,
       subtitle: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
       services: [
