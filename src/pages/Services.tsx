@@ -47,7 +47,7 @@ const Services = () => {
       services: [
         {
           icon: <UserSearch className="w-8 h-8 text-primary" />,
-          title: "Customer Needs Mapping",
+          title: "Customer Discovery",
           description: "Conduct structured interviews and surveys to uncover unmet needs, pain points, and buying behaviors."
         },
         {
