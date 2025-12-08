@@ -21,7 +21,7 @@ const Home = () => {
     },
     {
       icon: <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Commercial Execution Support",
+      title: "Commercial Support",
       description: "Hands-on B2B sales expertise supplements small teams, letting founders focus on technology while leads are qualified, meetings are scheduled, and deals are progressed efficiently."
     },
     {
