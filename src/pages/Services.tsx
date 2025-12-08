@@ -133,17 +133,17 @@ const Services = () => {
         },
         {
           icon: <TrendingUp className="w-8 h-8 text-primary" />,
-          title: "Funding Support",
+          title: "Investor & Pitch Support",
           description: "Craft tailored presentations and materials to secure funding and strategic partnerships."
         },
         {
           icon: <Database className="w-8 h-8 text-primary" />,
-          title: "CRM Setup",
-          description: "Set up CRM tools and workflows to streamline and track your sales process, with data-driven insights. We offer customized CRM solutions for your specific needs."
+          title: "CRM & Sales Process Setup",
+          description: "Set up CRM tools and workflows to streamline and track your sales process, with data-driven insights."
         },
         {
           icon: <Calculator className="w-8 h-8 text-primary" />,
-          title: "Pricing Advisory",
+          title: "Pricing & Packaging Advisory",
           description: "Design pricing models, bundles, and offers that resonate with your target market."
         }
       ]
