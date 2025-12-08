@@ -35,32 +35,32 @@ const Home = () => {
     {
       icon: <XCircle className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Market Validation",
-      description: "Many products are innovative but not yet mature. Without an established product–market fit, it is challenging to convince customers, sales partners and distribution networks to accept your innovative solution."
+      description: "Innovative products are often not yet fully mature. Without clear product–market fit, it is difficult to convince customers, partners, or distributors to engage."
     }, 
     {
       icon: <Settings className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Sales Volume",
-      description: "SMEs often lack scale and volume. Distributors often want high-volume, low-risk products, out of reach for many SMEs that release innovative products."
+      title: "Positioning & Communication",
+      description: "Technical products can be difficult for customers and partners to understand. Poorly communicated value propositions can limit adoption and slow partner engagement."
+    },
+    {
+      icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      title: "Access to Partners & Customers",
+      description: "SMEs struggle to reach the right distributors, integrators, and decision-makers. Without established networks, opportunities are delayed or lost."
     },
     {
       icon: <UserMinus className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Limited Sales Resources",
-      description: "Sales often falls on the CEO or founders. With small teams and limited bandwidth dedicated to expansion, opportunities are missed, resources are blocked and growth slows."
+      title: "Limited Sales Capacity",
+      description: "Sales responsibility often falls on founders. Small teams with limited bandwidth miss opportunities and slow growth."
     },
     {
       icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Missing Sales Experience",
-      description: "Technical founders sometimes lack the B2B sales experience necessary to ensure sucessful sales activites, and often want to focus on core technology development."
+      title: "Missing Sales Expertise",
+      description: "Technical founders may lack B2B sales experience and prefer focusing on technology, making structured commercial engagement challenging."
     },
     {
       icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Swedish Business Culture",
-      description: "Success for business in Sweden and with Swedish companies requires a unique approach to business, based on trust, relationships, and consensus."
-    },
-    {
-      icon: <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Expansion Barriers",
-      description: "Expanding into and outside of Sweden requires networks and presence that SMEs struggle to build, and complex regulatory considerations are demanding."
+      title: "Local & International Market Readiness",
+      description: "Success in Sweden and internationally requires relationship-driven business approaches, local presence, and knowledge of market norms and regulatory expectations that SMEs often lack."
     }
   ];
 
