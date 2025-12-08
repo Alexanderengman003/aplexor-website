@@ -12,28 +12,45 @@ const Supporting = () => {
       icon: <TrendingUp className="w-6 h-6 text-primary" />,
       title: "Sales Scaling",
       description: "",
-      details: []
+      details: [
+        "Automate lead generation and outreach for higher efficiency",
+        "Optimize sales processes to handle increased volume",
+        "Expand into new channels and customer segments",
+        "Implement retention, upsell, and cross-sell programs"
+      ]
     },
     {
       icon: <Database className="w-6 h-6 text-primary" />,
       title: "Operational Scaling",
       description: "",
-      details: []
+      details: [
+        "Standardize workflows and processes for consistent execution",
+        "Implement analytics and dashboards to monitor growth KPIs",
+        "Train teams to operate efficiently at higher capacity",
+        "Introduce automation tools to reduce manual work and errors"
+      ]
     },
     {
       icon: <FileText className="w-6 h-6 text-primary" />,
       title: "Funding & Partnerships",
       description: "",
       details: [
-        "Build growth-stage investor decks and financial models",
-        "Identify strategic partnerships and grant opportunities"
+        "Build investor decks and financial models aligned with growth goals",
+        "Identify and secure strategic partnerships and alliances",
+        "Explore grants and soft-funding opportunities for expansion",
+        "Support funding strategy to enable sustainable scaling"
       ]
     },
     {
       icon: <Calculator className="w-6 h-6 text-primary" />,
       title: "Market Expansion",
       description: "",
-      details: []
+      details: [
+        "Adapt offerings for new markets and customer segments",
+        "Test scalable business models and product packages",
+        "Conduct market research to validate expansion opportunities",
+        "Develop go-to-market plans for new regions or channels"
+      ]
     }
   ];
 
