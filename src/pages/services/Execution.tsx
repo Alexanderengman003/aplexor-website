@@ -33,7 +33,7 @@ const Execution = () => {
     {
       icon: <User className="w-6 h-6 text-primary" />,
       title: "Sales Representation",
-      description: "Act as your dedicated Nordic sales presence.",
+      description: "",
       details: [
         "Provide a local sales professional for on-the-ground execution",
         "Build customer relationships to establish trust",
