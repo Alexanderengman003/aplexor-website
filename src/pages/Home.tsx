@@ -146,7 +146,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {problems.map((problem, index) => (
               <Card key={index} className="text-left lg:hover:shadow-lg transition-shadow duration-300 border-2">
-                <CardContent className="p-3 md:p-6 flex flex-col items-start justify-start min-h-[180px] md:min-h-[220px]">
+                <CardContent className="p-3 md:p-6 flex flex-col items-start justify-start md:min-h-[220px]">
                   <div className="flex justify-start mb-2 md:mb-4">
                     {problem.icon}
                   </div>
@@ -178,7 +178,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {pillars.map((pillar, index) => (
               <Card key={index} className="text-left lg:hover:shadow-lg transition-shadow duration-300 border-2">
-                <CardContent className="p-3 md:p-6 flex flex-col items-start justify-start min-h-[200px] md:min-h-[240px]">
+                <CardContent className="p-3 md:p-6 flex flex-col items-start justify-start md:min-h-[240px]">
                   <div className="flex justify-start mb-2 md:mb-4">
                     {pillar.icon}
                   </div>
