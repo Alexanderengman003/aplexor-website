@@ -139,7 +139,7 @@ const Home = () => {
               The Problem
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Deeptech SMEs that are on a growth journey face unique challenges that can be lead to wasted time and unnecessary costs.
+              Deeptech SMEs that are on a growth journey face unique challenges that can lead to difficulties turning breakthrough technology into commercial success.
             </p>
           </div>
           
