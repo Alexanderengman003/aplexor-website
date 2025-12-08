@@ -12,7 +12,7 @@ const Home = () => {
     {
       icon: <Cpu className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Technical Understanding",
-      description: "Built by engineers who have delivered deeptech products, Aplexor quickly grasps your technology, assesses market fit, and communicates its value clearly to customers, partners, and distributors."
+      description: "Built by engineers who have delivered deeptech products, Aplexor quickly grasps your technology, assesses market fit, and communicates its value clearly."
     },
     {
       icon: <Network className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
