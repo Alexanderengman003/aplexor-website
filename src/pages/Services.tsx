@@ -124,27 +124,27 @@ const Services = () => {
     {
       title: "Scale",
       icon: <Headphones className="w-6 h-6 text-primary" />,
-      subtitle: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
+      subtitle: "We help you grow efficiently, expanding your reach, capacity, and impact without breaking your business.",
       services: [
         {
-          icon: <FileText className="w-8 h-8 text-primary" />,
-          title: "Sales Enablement",
-          description: "Develop decks, datasheets, and messaging that help you win more customers"
-        },
-        {
           icon: <TrendingUp className="w-8 h-8 text-primary" />,
-          title: "Funding Support",
-          description: "Craft tailored presentations and materials to secure funding and strategic partnerships."
+          title: "Sales Scaling",
+          description: ""
         },
         {
           icon: <Database className="w-8 h-8 text-primary" />,
-          title: "CRM Setup",
-          description: "Set up CRM tools and workflows to streamline and track your sales process, with data-driven insights."
+          title: "Operational Scaling",
+          description: ""
         },
         {
-          icon: <Calculator className="w-8 h-8 text-primary" />,
-          title: "Pricing Advisory",
-          description: "Design pricing models, bundles, and offers that resonate with your target market."
+          icon: <FileText className="w-8 h-8 text-primary" />,
+          title: "Funding & Partnerships",
+          description: ""
+        },
+        {
+          icon: <Globe className="w-8 h-8 text-primary" />,
+          title: "Market Expansion",
+          description: ""
         }
       ]
     }
