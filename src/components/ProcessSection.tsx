@@ -24,7 +24,7 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
     },
     {
       step: "04",
-      title: "Support",
+      title: "Scale",
       route: "supporting"
     }
   ];
