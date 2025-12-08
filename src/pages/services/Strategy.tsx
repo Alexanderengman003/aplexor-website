@@ -11,45 +11,41 @@ const Strategy = () => {
     {
       icon: <Target className="w-6 h-6 text-primary" />,
       title: "Go-to-Market Strategy",
-      description: "Shape your positioning, pricing, and entry plan for the Nordic markets.",
       details: [
-        "Develop market positioning and value propositions tailored to Nordic buyers",
-        "Define pricing strategy and analyze competitors to create a strong offer",
-        "Build a channel strategy and select the right partners for local reach",
-        "Plan launch milestones and timelines for structured execution"
+        "Develop positioning and value propositions for potential customers",
+        "Define pricing strategy and benchmark against competitors",
+        "Build channel strategy and select partners for local reach",
+        "Define the actions and resources needed for market introduction"
       ]
     },
     {
       icon: <BarChart3 className="w-6 h-6 text-primary" />,
-      title: "Market Research & Insights",
-      description: "Understand the market, competitors, and customers to guide decisions.",
+      title: "Market Research",
       details: [
         "Conduct market analysis and sizing to support investments",
-        "Map the competitive landscape to spot opportunities and risks",
-        "Study customer behavior and preferences to build strategy",
-        "Track trends and predict shifts to stay ahead"
+        "Map the competitive landscape to identify opportunities and risks",
+        "Study customer behaviors and preferences to inform strategy",
+        "Track trends and forecast shifts to stay ahead"
       ]
     },
     {
       icon: <Globe className="w-6 h-6 text-primary" />,
       title: "Market Entry",
-      description: "Expert support for Swedish market actors",
       details: [
         "Navigate regulatory and compliance requirements",
-        "Adapt messaging and approach for local culture and adoption",
-        "Identify and evaluate partners for faster growth",
-        "Assess and mitigate risks of market entry"
+        "Adapt messaging and approach to local culture and adoption",
+        "Identify and assess partners for faster growth",
+        "Evaluate and mitigate market-entry risks"
       ]
     },
     {
       icon: <Shield className="w-6 h-6 text-primary" />,
-      title: "Commercial Readiness Assessment",
-      description: "Check readiness before scaling and partnering.",
+      title: "Commercial Readiness",
       details: [
         "Validate product-market fit",
         "Optimize sales processes to improve win rates",
-        "Audit certifications and compliance to meet requirements",
-        "Assess scalability and give recommendations for growth"
+        "Audit certifications and compliance requirements",
+        "Assess scalability and provide growth recommendations"
       ]
     }
   ];
@@ -88,7 +84,6 @@ const Strategy = () => {
                 key={index}
                 icon={service.icon}
                 title={service.title}
-                description={service.description}
                 details={service.details}
               />
             ))}
