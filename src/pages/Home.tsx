@@ -39,12 +39,12 @@ const Home = () => {
     }, 
     {
       icon: <Settings className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Positioning & Communication",
+      title: "Technical Communication",
       description: "Technical products can be difficult for customers and partners to understand. Poorly communicated value propositions can limit adoption and slow partner engagement."
     },
     {
       icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Access to Partners & Customers",
+      title: "Market Access",
       description: "SMEs struggle to reach the right distributors, integrators, and decision-makers. Without established networks, opportunities are delayed or lost."
     },
     {
@@ -54,12 +54,12 @@ const Home = () => {
     },
     {
       icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Missing Sales Expertise",
+      title: "Missing Sales Experience",
       description: "Technical founders may lack B2B sales experience and prefer focusing on technology, making structured commercial engagement challenging."
     },
     {
       icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Local & International Market Readiness",
+      title: "Local Market Knowledge",
       description: "Success in Sweden and internationally requires relationship-driven business approaches, local presence, and knowledge of market norms and regulatory expectations that SMEs often lack."
     }
   ];
@@ -136,7 +136,7 @@ const Home = () => {
         <div className="container mx-auto px-2 md:px-4">
           <div className="text-center mb-6 md:mb-12">
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
-              The Challenge
+              The Problem
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Deeptech SMEs that are on a growth journey face unique challenges that can be lead to wasted time and unnecessary costs.
