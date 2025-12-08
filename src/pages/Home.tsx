@@ -3,26 +3,31 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
-import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle, ArrowRight, Mail } from "lucide-react";
+import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle, ArrowRight, Mail, Cpu, Network, Briefcase } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
   // Home page component
   const pillars = [
     {
-      icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Expertise",
-      description: "Aplexor is founded and run exclusively by engineers with deep industry knowledge across many engineering domains. We have experience from working in Deeptech SMEs, and understand the unique challenges and opportunities of trying to grow."
+      icon: <Cpu className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      title: "Technical Understanding",
+      description: "Built by engineers who have delivered deeptech products, Aplexor quickly grasps your technology, assesses market fit, and communicates its value clearly to customers, partners, and distributors."
     },
     {
-      icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Network",
-      description: "We have a wide network of partners, including extensive connections with distributors, retailers, and key decision makers, which we can leverage to grow your business. Our established relationships enable us to accelerate market entry and increase sales."
+      icon: <Network className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      title: "Market & Partner Access",
+      description: "Your product is connected to relevant partners and customers through our industry network, accelerating adoption and reducing commercial barriers."
     },
     {
-      icon: <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Results",
-      description: "We provide measurable outcomes through strategic partnerships and data-driven sales approaches. We track crucial metrics to consistently track that our strategies are delivering real and tangible results. We do not succeed unless you succeed ."
+      icon: <Briefcase className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      title: "Commercial Execution Support",
+      description: "Hands-on B2B sales expertise supplements small teams, letting founders focus on technology while leads are qualified, meetings are scheduled, and deals are progressed efficiently."
+    },
+    {
+      icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      title: "Local & Cultural Insight",
+      description: "Commercial strategies are tailored to Swedish and Nordic business norms, building trust, credibility, and consensus with key decision-makers to secure long-term partnerships."
     }
   ];
 
@@ -170,7 +175,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {pillars.map((pillar, index) => (
               <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
                 <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[200px] md:min-h-[240px]">
