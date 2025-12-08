@@ -54,7 +54,7 @@ const Home = () => {
     },
     {
       icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Missing Sales Experience",
+      title: "Missing Experience",
       description: "Technical founders may lack B2B sales experience and prefer focusing on technology, making structured commercial engagement challenging. This can lead to ineffective business development."
     },
     {
