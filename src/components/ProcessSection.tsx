@@ -30,7 +30,7 @@ const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
   ];
 
   return (
-    <section className="py-8 md:py-16 bg-muted">
+    <section id="process" className="py-8 md:py-16 bg-muted">
       <div className="container mx-auto px-2 md:px-4">
         <div className="text-center mb-4 md:mb-12">
           <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">

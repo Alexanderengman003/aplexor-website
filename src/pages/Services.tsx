@@ -213,7 +213,7 @@ const Services = () => {
       </section>
 
       {/* Markets Section */}
-      <section className="py-8 md:py-16">
+      <section id="industries" className="py-8 md:py-16">
         <div className="container mx-auto px-2 md:px-4">
           <div className="text-center mb-4 md:mb-12">
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
