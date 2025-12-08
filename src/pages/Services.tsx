@@ -34,9 +34,7 @@ import {
   Search as SearchIcon,
   Lightbulb,
   Rocket,
-  Headphones,
-  Briefcase,
-  MessageCircle
+  Headphones
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -112,13 +110,13 @@ const Services = () => {
           description: "Connect with the right partners, distributors, and customers to maximize opportunities. We leverage our technical expertise to understand customer needs."
         },
         {
-          icon: <MessageCircle className="w-8 h-8 text-primary" />,
+          icon: <User className="w-8 h-8 text-primary" />,
           title: "Sales Representation",
           description: "Act as your outsourced sales team to drive growth and close deals."
         },
         {
-          icon: <Briefcase className="w-8 h-8 text-primary" />,
-          title: "Business Development",
+          icon: <Network className="w-8 h-8 text-primary" />,
+          title: "Channel & Business Development",
           description: "Establish and manage distributor/reseller networks while nurturing long-term business relationships."
         }
       ]
@@ -135,17 +133,17 @@ const Services = () => {
         },
         {
           icon: <TrendingUp className="w-8 h-8 text-primary" />,
-          title: "Investor & Pitch Support",
+          title: "Funding Support",
           description: "Craft tailored presentations and materials to secure funding and strategic partnerships."
         },
         {
           icon: <Database className="w-8 h-8 text-primary" />,
-          title: "CRM & Sales Process Setup",
+          title: "CRM Setup",
           description: "Set up CRM tools and workflows to streamline and track your sales process, with data-driven insights. We offer customized CRM solutions for your specific needs."
         },
         {
           icon: <Calculator className="w-8 h-8 text-primary" />,
-          title: "Pricing & Packaging Advisory",
+          title: "Pricing Advisory",
           description: "Design pricing models, bundles, and offers that resonate with your target market."
         }
       ]
