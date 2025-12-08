@@ -49,7 +49,7 @@ const Home = () => {
     },
     {
       icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Limited Sales Capacity",
+      title: "Limited Capacity",
       description: "Founders often handle sales themselves and small teams need to prioritize other tasks, leading to overlooked prospects, slower growth and missed commercial opportunities."
     },
     {
