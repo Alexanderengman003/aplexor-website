@@ -10,46 +10,41 @@ const Discovery = () => {
   const services = [
     {
       icon: <UserSearch className="w-6 h-6 text-primary" />,
-      title: "Customer Discovery & Research",
-      description: "Understand what customers really want to shape market strategy.",
+      title: "Customer Discovery",
       details: [
         "Conduct interviews to uncover pain points and unmet needs",
-        "Use surveys and data to confirm and measure demand",
-        "Map the customer journey to find challenges and opportunities",
-        "Analyze competitors to spot gaps in the market"
+        "Use surveys & data to validate demand and market potential",
+        "Map customer journeys to identify challenges and opportunities",
+        "Analyze competitors to reveal market gaps"
       ]
     },
     {
       icon: <Layers className="w-6 h-6 text-primary" />,
       title: "Market Segmentation & Prioritization",
-      description: "Focus on the customer groups that create the most value.",
       details: [
-        "Estimate market size and potential to define opportunities",
         "Segment and profile customers by needs, behavior, and value",
-        "Create a priority matrix to guide market entry",
-        "Recommend where to focus resources for the best return"
+        "Estimate market size to prioritize opportunities",
+        "Create a priority matrix to guide resource allocation"
       ]
     },
     {
       icon: <Search className="w-6 h-6 text-primary" />,
       title: "Opportunity Assessment & Engagement",
-      description: "Identify and rank the best prospects for growth.",
       details: [
         "Map and profile high-value prospects",
-        "Assess and rank opportunities objectively",
-        "Evaluate potential partners and distributors for fit",
-        "Prioritize prospects to sharpen sales efforts"
+        "Rank opportunities objectively for best ROI",
+        "Evaluate potential partners and distributors",
+        "Prioritize prospects to focus sales efforts"
       ]
     },
     {
       icon: <Eye className="w-6 h-6 text-primary" />,
-      title: "Market & Competition Insights", 
-      description: "Learn from early sales interactions to improve results.",
+      title: "Market & Competition Insights",
       details: [
-        "Track and analyze engagement metrics",
-        "Identify response patterns to understand customer behavior",
-        "Adjust sales approach based on real-time insights",
-        "Review the sales funnel to find and fix weak points"
+        "Track engagement metrics to assess early results",
+        "Identify patterns in customer responses",
+        "Adjust sales approach using real-time insights",
+        "Review funnel to detect and fix weak points"
       ]
     }
   ];
@@ -88,7 +83,6 @@ const Discovery = () => {
                 key={index}
                 icon={service.icon}
                 title={service.title}
-                description={service.description}
                 details={service.details}
               />
             ))}
