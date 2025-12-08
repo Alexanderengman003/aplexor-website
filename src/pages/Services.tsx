@@ -52,17 +52,17 @@ const Services = () => {
         },
         {
           icon: <Layers className="w-8 h-8 text-primary" />,
-          title: "Market Segmentation & Prioritization",
+          title: "Market Segmentation",
           description: "Categorize target markets and segments to focus efforts where they matter most."
         },
         {
           icon: <Search className="w-8 h-8 text-primary" />,
-          title: "Opportunity Assessment & Engagement",
+          title: "Opportunity Assessment",
           description: "Identify high-potential partners, distributors, and leads. We rank them for follow-up and evaluate initial responsiveness."
         },
         {
           icon: <Eye className="w-8 h-8 text-primary" />,
-          title: "Market & Competition Insights",
+          title: "Market Insights",
           description: "Analyze competitors, market trends, and ecosystem dynamics to validate opportunity attractiveness and strategic positioning."
         }
       ]
