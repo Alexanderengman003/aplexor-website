@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
-  description: string;
+  description?: string;
   details: string[];
 }
 
@@ -22,9 +22,11 @@ const ServiceCard = ({ icon, title, description, details }: ServiceCardProps) =>
       </CardHeader>
       <CardContent className="pt-0">
         <div className="ml-9">
-          <p className="font-body text-sm md:text-base text-muted-foreground mb-4">
-            {description}
-          </p>
+          {description && (
+            <p className="font-body text-sm md:text-base text-muted-foreground mb-4">
+              {description}
+            </p>
+          )}
           <ul className="space-y-2">
             {details.map((detail, detailIndex) => (
               <li key={detailIndex} className="flex items-start gap-2">
