@@ -50,12 +50,12 @@ const Home = () => {
     {
       icon: <UserMinus className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Limited Sales Capacity",
-      description: "Founders often handle sales themselves and small teams often need to prioritize other tasks, leading to overlooked prospects and slower growth. Balancing sales with product development stretches resources and limits the team's ability to scale effectively."
+      description: "Founders often handle sales themselves and small teams need to prioritize other tasks, leading to overlooked prospects, slower growth and missed commercial opportunities."
     },
     {
       icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Missing Sales Experience",
-      description: "Technical founders may lack B2B sales experience and prefer focusing on technology, making structured commercial engagement challenging. This can lead to ineffective business development or difficulty convincing partners and customers."
+      description: "Technical founders may lack B2B sales experience and prefer focusing on technology, making structured commercial engagement challenging. This can lead to ineffective business development."
     },
     {
       icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
