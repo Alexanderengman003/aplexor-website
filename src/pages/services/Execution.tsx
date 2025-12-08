@@ -14,7 +14,7 @@ const Execution = () => {
       description: "",
       details: [
         "Identify and research targeted prospects",
-        "Run outreach across email, LinkedIn, and events",
+        "Run outreach and participate in networking events",
         "Qualify and score leads to prioritize top opportunities",
         "Track and manage pipeline for consistent flow"
       ]
