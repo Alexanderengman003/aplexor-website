@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
-import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, Settings, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle, ArrowRight, Mail, Cpu, Network, Briefcase } from "lucide-react";
+import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, MessageSquare, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle, ArrowRight, Mail, Cpu, Network, Briefcase } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
@@ -33,12 +33,12 @@ const Home = () => {
 
   const problems = [
     {
-      icon: <XCircle className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      icon: <Search className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Market Validation",
       description: "Innovative products are often not yet fully mature. Without clear product–market fit, it is difficult to convince customers, partners, or distributors to engage."
     }, 
     {
-      icon: <Settings className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      icon: <MessageSquare className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Technical Communication",
       description: "Technical products can be difficult for customers and partners to understand. Poorly communicated value propositions can limit adoption and slow partner engagement."
     },
@@ -48,7 +48,7 @@ const Home = () => {
       description: "SMEs struggle to reach the right distributors, integrators, and decision-makers. Without established networks, opportunities are delayed or lost."
     },
     {
-      icon: <UserMinus className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      icon: <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Limited Sales Capacity",
       description: "Founders often handle sales themselves and small teams need to prioritize other tasks, leading to overlooked prospects, slower growth and missed commercial opportunities."
     },
