@@ -20,7 +20,7 @@ const Discovery = () => {
     },
     {
       icon: <Layers className="w-6 h-6 text-primary" />,
-      title: "Market Segmentation & Prioritization",
+      title: "Market Segmentation",
       details: [
         "Segment and profile customers by needs, behavior, and value",
         "Estimate market size to prioritize opportunities",
@@ -29,7 +29,7 @@ const Discovery = () => {
     },
     {
       icon: <Search className="w-6 h-6 text-primary" />,
-      title: "Opportunity Assessment & Engagement",
+      title: "Opportunity Assessment",
       details: [
         "Map and profile high-value prospects",
         "Rank opportunities objectively for best ROI",
@@ -39,7 +39,7 @@ const Discovery = () => {
     },
     {
       icon: <Eye className="w-6 h-6 text-primary" />,
-      title: "Market & Competition Insights",
+      title: "Market Insights",
       details: [
         "Track engagement metrics to assess early results",
         "Identify patterns in customer responses",
