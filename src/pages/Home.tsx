@@ -35,7 +35,7 @@ const Home = () => {
     {
       icon: <Settings className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Sales Volume",
-      description: "Startups often lack certifications, scale, and volume. Distributors often want high-volume, low-risk products, out of reach for many SMEs that release innovative products."
+      description: "SMEs often lack scale and volume. Distributors often want high-volume, low-risk products, out of reach for many SMEs that release innovative products."
     },
     {
       icon: <UserMinus className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
