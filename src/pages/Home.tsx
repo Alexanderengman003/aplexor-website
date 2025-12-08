@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import CtaBanner from "@/components/CtaBanner";
-import { Users, Target, TrendingUp, Handshake, Zap, Globe, XCircle, MessageSquare, UserMinus, BarChart3, MapPin, Clock, Search, CheckCircle, ArrowRight, Mail, Cpu, Network, Briefcase } from "lucide-react";
+import { Users, Target, TrendingUp, Handshake, Rocket, Globe, XCircle, MessageSquare, UserMinus, BarChart3, MapPin, Clock, Search, LifeBuoy, ArrowRight, Mail, Cpu, Network, Briefcase } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
@@ -48,7 +48,7 @@ const Home = () => {
       description: "SMEs struggle to reach the right distributors, integrators, and decision-makers. Without established networks, opportunities are delayed or lost."
     },
     {
-      icon: <Clock className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
+      icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Limited Sales Capacity",
       description: "Founders often handle sales themselves and small teams need to prioritize other tasks, leading to overlooked prospects, slower growth and missed commercial opportunities."
     },
@@ -78,13 +78,13 @@ const Home = () => {
       route: "strategy"
     },
     {
-      icon: <Zap className="w-6 h-6 text-primary" />,
+      icon: <Rocket className="w-6 h-6 text-primary" />,
       title: "Execution",
       description: "Direct sales activity and growth through prospecting, lead generation, partnerships, and other business development activites.",
       route: "execution"
     },
     {
-      icon: <CheckCircle className="w-6 h-6 text-primary" />,
+      icon: <LifeBuoy className="w-6 h-6 text-primary" />,
       title: "Support",
       description: "We provide you with tools, processes, insights and materials that allow you to continue growing beyond our collaboration.",
       route: "supporting"
