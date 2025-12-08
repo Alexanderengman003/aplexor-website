@@ -44,14 +44,14 @@ const About = () => {
       role: "Consultant",
       email: "alexander.engman@aplexor.com",
       image: alexanderEngman,
-      bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as semiconductors, medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
+      bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
     },
     {
       name: "Granit Zymberi",
       role: "Consultant",
       email: "granit.zymberi@aplexor.com",
       image: granitZymberi,
-      bio: "Granit has a master's degree in technical design from KTH in Stockholm and has worked for over 10 years in mechanical engineering spanning disciplines such as aerospace, medical technology and industrial sectors. He completed his master thesis at Microsoft and has extensive hands-on engineering experience."
+      bio: "Granit has a master's degree in technical design from KTH in Stockholm and has worked for over 10 years in engineering spanning disciplines such as aerospace, medical technology and industrial sectors. He completed his master thesis at Microsoft and has extensive hands-on engineering experience."
     }
   ];
 
@@ -191,14 +191,12 @@ const About = () => {
                       <div className="flex flex-wrap gap-1 justify-center">
                         {member.name === "Alexander Engman" ? (
                           <>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Semiconductors</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Electronics</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Materials</Badge>
                           </>
                         ) : (
                           <>
-                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Mechanical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Aerospace</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Industrial</Badge>
@@ -265,7 +263,7 @@ const About = () => {
                   question: "What are the deliverables of a project with Aplexor?",
                   answer: (
                     <>
-                      Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Scale. The outcome will depending on which activity is relevant for you. We always discuss expectations before any collaboration. Learn more about{" "}
+                      Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Scale. The outcome will depend on which activity is relevant for you. We always discuss expectations before any collaboration. Learn more about{" "}
                       <Link to="/services" className="text-primary hover:underline font-semibold">
                         our process
                       </Link>
