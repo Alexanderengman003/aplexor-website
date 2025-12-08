@@ -22,7 +22,7 @@ import {
   Search,
   Heart,
   Cpu,
-  Boxes,
+  Atom,
   Factory,
   Smartphone,
   Plane,
@@ -237,7 +237,7 @@ const Services = () => {
                 description: "Consumer and industrial electronics"
               },
               {
-                icon: <Boxes className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
+                icon: <Atom className="w-6 h-6 md:w-12 md:h-12 text-primary" />,
                 title: "Materials",
                 description: "Advanced materials and composites"
               },
