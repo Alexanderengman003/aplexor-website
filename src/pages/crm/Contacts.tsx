@@ -10,6 +10,19 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, Plus, Mail, Phone, Building2, Loader2, Edit, Power, PowerOff } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+// Validation schema for contact data
+const contactSchema = z.object({
+  first_name: z.string().trim().min(1, "First name is required").max(100, "First name must be less than 100 characters"),
+  last_name: z.string().trim().max(100, "Last name must be less than 100 characters").optional().or(z.literal("")),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional().or(z.literal("")),
+  company: z.string().trim().max(200, "Company must be less than 200 characters").optional().or(z.literal("")),
+  position: z.string().trim().max(100, "Position must be less than 100 characters").optional().or(z.literal("")),
+  status: z.enum(["active", "prospect", "inactive"]).optional(),
+  tags: z.array(z.string()).optional()
+});
 
 interface Contact {
   id: string;
@@ -79,27 +92,33 @@ export default function Contacts() {
   };
 
   const createContact = async () => {
-    if (!newContact.first_name || !newContact.email) {
+    // Validate input data
+    const validationResult = contactSchema.safeParse(newContact);
+    
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
       toast({
-        title: "Missing required fields",
-        description: "First name and email are required",
+        title: "Validation Error",
+        description: firstError.message,
         variant: "destructive"
       });
       return;
     }
 
+    const validatedData = validationResult.data;
+
     try {
       const { data, error } = await supabase
         .from('contacts')
         .insert([{
-          first_name: newContact.first_name,
-          last_name: newContact.last_name,
-          email: newContact.email,
-          phone: newContact.phone,
-          company: newContact.company,
-          position: newContact.position,
-          status: newContact.status,
-          tags: newContact.tags
+          first_name: validatedData.first_name,
+          last_name: validatedData.last_name || null,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          company: validatedData.company || null,
+          position: validatedData.position || null,
+          status: validatedData.status || "prospect",
+          tags: validatedData.tags || []
         }])
         .select();
 
@@ -109,7 +128,7 @@ export default function Contacts() {
         setContacts(prev => [data[0], ...prev]);
         toast({
           title: "Contact created",
-          description: `${newContact.first_name} ${newContact.last_name} has been added`
+          description: `${validatedData.first_name} ${validatedData.last_name || ""} has been added`
         });
         
         setNewContact({
@@ -136,18 +155,42 @@ export default function Contacts() {
   const updateContact = async () => {
     if (!editingContact) return;
 
+    // Validate input data
+    const validationResult = contactSchema.safeParse({
+      first_name: editingContact.first_name || "",
+      last_name: editingContact.last_name || "",
+      email: editingContact.email || "",
+      phone: editingContact.phone || "",
+      company: editingContact.company || "",
+      position: editingContact.position || "",
+      status: editingContact.status || "prospect",
+      tags: editingContact.tags || []
+    });
+
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
+      toast({
+        title: "Validation Error",
+        description: firstError.message,
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const validatedData = validationResult.data;
+
     try {
       const { data, error } = await supabase
         .from('contacts')
         .update({
-          first_name: editingContact.first_name,
-          last_name: editingContact.last_name,
-          email: editingContact.email,
-          phone: editingContact.phone,
-          company: editingContact.company,
-          position: editingContact.position,
-          status: editingContact.status,
-          tags: editingContact.tags
+          first_name: validatedData.first_name,
+          last_name: validatedData.last_name || null,
+          email: validatedData.email,
+          phone: validatedData.phone || null,
+          company: validatedData.company || null,
+          position: validatedData.position || null,
+          status: validatedData.status,
+          tags: validatedData.tags
         })
         .eq('id', editingContact.id)
         .select();
@@ -165,7 +208,7 @@ export default function Contacts() {
         
         toast({
           title: "Contact updated",
-          description: `${editingContact.first_name} ${editingContact.last_name} has been updated`
+          description: `${validatedData.first_name} ${validatedData.last_name || ""} has been updated`
         });
         
         setEditingContact(null);
