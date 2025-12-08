@@ -11,44 +11,44 @@ const Execution = () => {
     {
       icon: <Users className="w-6 h-6 text-primary" />,
       title: "Lead Generation",
-      description: "Build a strong and qualified sales pipeline.",
+      description: "",
       details: [
         "Identify and research targeted prospects",
-        "Run outreach campaigns across email, LinkedIn, and events",
-        "Qualify and score leads to focus on top opportunities",
-        "Manage and track pipeline for consistent flow"
+        "Run outreach across email, LinkedIn, and events",
+        "Qualify and score leads to prioritize top opportunities",
+        "Track and manage pipeline for consistent flow"
       ]
     },
     {
       icon: <Handshake className="w-6 h-6 text-primary" />,
       title: "Matchmaking",
-      description: "Connect with the right partners, distributors, and customers.",
+      description: "",
       details: [
-        "Identify strategic partners aligned with business goals",
+        "Identify strategic partners aligned with goals",
         "Map distributor networks for market access",
-        "Match solutions with customers to speed adoption",
-        "Support partnership facilitation and negotiation"
+        "Match solutions with suitable customers",
+        "Facilitate introductions and partnership discussions"
       ]
     },
     {
       icon: <User className="w-6 h-6 text-primary" />,
       title: "Sales Representation",
-      description: "Act as your dedicated Nordic sales force.",
+      description: "Act as your dedicated Nordic sales presence.",
       details: [
-        "Assign a local sales professional for execution",
+        "Provide a local sales professional for on-the-ground execution",
         "Build customer relationships to establish trust",
-        "Manage and execute sales processes to drive deals",
-        "Provide regular reporting for transparency"
+        "Run the sales process from outreach to closing",
+        "Deliver regular reporting for transparency"
       ]
     },
     {
       icon: <Network className="w-6 h-6 text-primary" />,
       title: "Channel & Business Development",
-      description: "Build and grow long-term channel partnerships.",
+      description: "",
       details: [
-        "Recruit and onboard channel partners to expand reach",
-        "Manage distributor relationships for ongoing success",
-        "Provide enablement and training to improve performance",
+        "Recruit and onboard channel partners",
+        "Manage distributor relationships for long-term success",
+        "Enable and train partners to improve performance",
         "Monitor and optimize partner results"
       ]
     }
