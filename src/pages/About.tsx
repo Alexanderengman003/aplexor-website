@@ -194,12 +194,15 @@ const About = () => {
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Electronics</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Materials</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Cleantech</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Consumer</Badge>
                           </>
                         ) : (
                           <>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Medical</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Aerospace</Badge>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Industrial</Badge>
+                            <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Defense</Badge>
                           </>
                         )}
                       </div>
