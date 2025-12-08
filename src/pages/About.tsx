@@ -264,7 +264,7 @@ const About = () => {
                   answer: (
                     <>
                       Our deliverables vary based on the engagement model. We tailor our deliverables to meet your specific business objectives and growth targets. Our process involves Discovery, Strategy, Execution and Scale. The outcome will depend on which activity is relevant for you. We always discuss expectations before any collaboration. Learn more about{" "}
-                      <Link to="/services" className="text-primary hover:underline font-semibold">
+                      <Link to="/services#process" className="text-primary hover:underline font-semibold">
                         our process
                       </Link>
                       .
@@ -276,7 +276,7 @@ const About = () => {
                   answer: (
                     <>
                       We work with a wide range of Deeptech products. Our team has experience across multiple sectors including electronics, medical devices, novel materials, mechantronics and more. We also have a network expert available for other areas. View{" "}
-                      <Link to="/services" className="text-primary hover:underline font-semibold">
+                      <Link to="/services#industries" className="text-primary hover:underline font-semibold">
                         industries covered
                       </Link>
                       .
