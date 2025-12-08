@@ -16,7 +16,7 @@ const Home = () => {
     },
     {
       icon: <Network className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Market & Partner Access",
+      title: "Market Access",
       description: "Your product is connected to relevant partners and customers through our industry network, accelerating adoption and reducing commercial barriers."
     },
     {
@@ -26,7 +26,7 @@ const Home = () => {
     },
     {
       icon: <MapPin className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Local & Cultural Insight",
+      title: "Local Insight",
       description: "Commercial strategies are tailored to Swedish and Nordic business norms, building trust, credibility, and consensus with key decision-makers to secure long-term partnerships."
     }
   ];
