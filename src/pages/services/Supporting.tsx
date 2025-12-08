@@ -11,44 +11,43 @@ const Supporting = () => {
     {
       icon: <FileText className="w-6 h-6 text-primary" />,
       title: "Sales Enablement",
-      description: "Create the tools and content that help close deals.",
+      description: "",
       details: [
-        "Design impactful sales decks and refine messaging",
-        "Produce datasheets and documentation to support buyers",
-        "Develop case studies and success stories for credibility",
+        "Design sales decks and refine messaging",
+        "Produce datasheets and buyer-ready documentation",
+        "Develop case studies for credibility and trust",
         "Provide training materials and playbooks for consistency"
       ]
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-primary" />,
-      title: "Funding Support",
-      description: "Prepare to win funding and strategic partnerships.",
+      title: "Investor & Pitch Support",
+      description: "",
       details: [
         "Develop investor pitch decks aligned with funding goals",
-        "Build financial models and projections to back the case",
-        "Help to find soft-funding",
+        "Build financial models and projections to support the case",
+        "Identify grants and soft-funding opportunities",
         "Create partnership proposals to secure alliances"
       ]
     },
     {
       icon: <Database className="w-6 h-6 text-primary" />,
-      title: "CRM Setup",
-      description: "Implement tools and workflows for organized, effective sales.",
+      title: "CRM & Sales Process Setup",
+      description: "",
       details: [
         "Select and implement the right CRM system",
-        "Custom CRM system available for implementation",
         "Set up tracking and analytics for data-driven insights",
         "Train teams and document processes for adoption"
       ]
     },
     {
       icon: <Calculator className="w-6 h-6 text-primary" />,
-      title: "Pricing Advisory",
-      description: "Set pricing and offers that fit the market and maximize profit.",
+      title: "Pricing & Packaging Advisory",
+      description: "",
       details: [
-        "Benchmark with competitive pricing analysis",
-        "Build value-based pricing models to capture demand",
-        "Design product packaging and bundles for appeal",
+        "Benchmark against competitive pricing",
+        "Develop value-based pricing models",
+        "Design packaging and bundles for market appeal",
         "Recommend strategies to optimize revenue"
       ]
     }
