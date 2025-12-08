@@ -68,7 +68,7 @@ const Home = () => {
     {
       icon: <Search className="w-6 h-6 text-primary" />,
       title: "Discovery",
-      description: "Comphrehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities.",
+      description: "Comprehensive analysis of markets, mapping of potential customers, partners and competitors, and validate the best opportunities.",
       route: "discovery"
     },
     {
