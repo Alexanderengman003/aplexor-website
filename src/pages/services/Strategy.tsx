@@ -42,10 +42,10 @@ const Strategy = () => {
       icon: <Shield className="w-6 h-6 text-primary" />,
       title: "Commercial Readiness",
       details: [
-        "Validate product-market fit",
-        "Optimize sales processes to improve win rates",
-        "Audit certifications and compliance requirements",
-        "Assess scalability and provide growth recommendations"
+        "Validate product–market fit and buyer expectations",
+        "Review sales messaging, materials, and processes for readiness",
+        "Check compliance and required certifications for the market",
+        "Identify operational gaps that could slow launch or scaling"
       ]
     }
   ];
