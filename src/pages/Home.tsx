@@ -44,7 +44,7 @@ const Home = () => {
     },
     {
       icon: <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
-      title: "Missing Sales Expertise",
+      title: "Missing Sales Experience",
       description: "Technical founders sometimes lack the B2B sales experience necessary to ensure sucessful sales activites, and often want to focus on core technology development."
     },
     {
@@ -163,7 +163,7 @@ const Home = () => {
         <div className="container mx-auto px-2 md:px-4">
           <div className="text-center mb-6 md:mb-12">
             <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
-              Why Choose Aplexor?
+              The Solution
             </h2>
             <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               We combine technical expertise with a wide network to deliver results and growth for Deeptech SMEs. We can digest the fine technical details of your products and explain these to customers. We help you find the partners that fit your products and solutions.
