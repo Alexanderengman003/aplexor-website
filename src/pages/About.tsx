@@ -200,7 +200,7 @@ const About = () => {
                       {member.bio}
                     </p>
                     
-                    <div className="pt-4 border-t border-border text-left mt-auto">
+                    <div className="pt-4 border-t border-border text-left">
                       <h4 className="font-heading text-xs font-semibold text-primary mb-2">
                         Business areas
                       </h4>
