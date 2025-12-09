@@ -233,7 +233,7 @@ const About = () => {
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-muted-foreground hover:bg-foreground transition-colors"
                         >
-                          <Globe className="w-4 h-4 text-white" />
+                          <Globe className="w-5 h-5 text-white" />
                         </a>
                       )}
                     </div>
