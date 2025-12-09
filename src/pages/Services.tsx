@@ -139,7 +139,7 @@ const Services = () => {
     },
     {
       title: "Scale",
-      icon: <Headphones className="w-6 h-6 text-primary" />,
+      icon: <BarChart3 className="w-6 h-6 text-primary" />,
       subtitle: "We help you grow efficiently, expanding your reach, capacity, and impact without breaking your business.",
       services: [
         {
@@ -197,7 +197,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
             {serviceCategories.map((category, categoryIndex) => (
               <Card key={categoryIndex} className="p-3 md:p-6 lg:hover:shadow-lg transition-shadow duration-300 bg-card/50 border-2 group cursor-pointer flex flex-col h-full">
-                <Link to={`/services/${category.title.toLowerCase() === 'support' ? 'supporting' : category.title.toLowerCase().split(' ')[0]}`} className="block flex-1 flex flex-col">
+                <Link to={`/services/${category.title.toLowerCase() === 'scale' ? 'supporting' : category.title.toLowerCase().split(' ')[0]}`} className="block flex-1 flex flex-col">
                   <CardHeader className="pb-3 md:pb-6">
                     <CardTitle className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
                       {category.icon}
