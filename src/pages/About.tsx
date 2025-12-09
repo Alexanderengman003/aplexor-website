@@ -231,9 +231,9 @@ const About = () => {
                           href={member.website} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-muted-foreground hover:bg-foreground transition-colors"
+                          className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-primary hover:bg-primary/80 transition-colors"
                         >
-                          <Globe className="w-5 h-5 text-white" />
+                          <Globe className="w-4 h-4 text-primary-foreground" />
                         </a>
                       )}
                     </div>
