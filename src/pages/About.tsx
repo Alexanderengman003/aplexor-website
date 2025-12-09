@@ -30,7 +30,7 @@ const About = () => {
     {
       icon: <Lightbulb className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
       title: "Innovation",
-      description: "We embrace new technologies and methodologies and strive to stay up to date with the latest innovations on the market."
+      description: "We embrace new technologies and methodologies and strive to stay up to date with the latest innovations."
     },
     {
       icon: <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />,
@@ -162,9 +162,17 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
               {team.map((member, index) => (
-                <Card key={index} className="lg:hover:shadow-lg transition-shadow duration-300 border-2">
+                <Card key={index} className="lg:hover:shadow-lg transition-shadow duration-300 border-2 relative">
                   <CardContent className="p-3 md:p-8 flex flex-col h-full">
-                    <div className="flex items-start gap-4 mb-3 md:mb-4">
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="absolute top-3 right-3 md:top-4 md:right-4 inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-md overflow-hidden hover:opacity-80 transition-opacity"
+                    >
+                      <img src={linkedinLogo} alt="LinkedIn" className="w-full h-full object-cover" />
+                    </a>
+                    <div className="flex items-start gap-4 mb-3 md:mb-4 pr-10">
                       <div className="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden flex-shrink-0">
                         <img
                           src={member.image as string}
@@ -192,7 +200,7 @@ const About = () => {
                       {member.bio}
                     </p>
                     
-                    <div className="pt-4 border-t border-border text-left">
+                    <div className="pt-4 border-t border-border text-left mt-auto">
                       <h4 className="font-heading text-xs font-semibold text-primary mb-2">
                         Business areas
                       </h4>
@@ -214,27 +222,6 @@ const About = () => {
                           </>
                         )}
                       </div>
-                    </div>
-                    
-                    <div className="mt-auto pt-4 flex gap-2">
-                      <a 
-                        href={member.linkedin} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-8 h-8 rounded-md overflow-hidden hover:opacity-80 transition-opacity"
-                      >
-                        <img src={linkedinLogo} alt="LinkedIn" className="w-full h-full object-cover" />
-                      </a>
-                      {'website' in member && (member as { website?: string }).website && (
-                        <a 
-                          href={(member as { website?: string }).website} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-primary hover:bg-primary/80 transition-colors"
-                        >
-                          <Globe className="w-4 h-4 text-primary-foreground" />
-                        </a>
-                      )}
                     </div>
                   </CardContent>
                 </Card>
