@@ -46,7 +46,6 @@ const About = () => {
       email: "alexander.engman@aplexor.com",
       image: alexanderEngman,
       linkedin: "https://www.linkedin.com/in/alexanderengman",
-      website: "https://www.alexanderengman.com",
       bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
     },
     {
@@ -226,9 +225,9 @@ const About = () => {
                       >
                         <img src={linkedinLogo} alt="LinkedIn" className="w-full h-full object-cover" />
                       </a>
-                      {'website' in member && member.website && (
+                      {'website' in member && (member as { website?: string }).website && (
                         <a 
-                          href={member.website} 
+                          href={(member as { website?: string }).website} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-primary hover:bg-primary/80 transition-colors"
@@ -260,7 +259,7 @@ const About = () => {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 max-w-6xl mx-auto">
             {values.map((value, index) => (
               <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
-                <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px]">
+                <CardContent className="p-3 md:p-6 flex flex-col items-center justify-center">
                   <div className="flex justify-center mb-2 md:mb-4">
                     {value.icon}
                   </div>
