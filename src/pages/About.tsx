@@ -46,7 +46,7 @@ const About = () => {
       email: "alexander.engman@aplexor.com",
       image: alexanderEngman,
       linkedin: "https://www.linkedin.com/in/alexanderengman",
-      bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in several deeptech companies spanning disciplines such as medical technology and consumer electronics. He has 6 years of professional experience from both business development and hands-on engineering work for SMEs."
+      bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in several deeptech companies spanning disciplines such as medical technology and consumer electronics. He has 6 years of professional experience from both business development and hands-on engineering work."
     },
     {
       name: "Granit Zymberi",
