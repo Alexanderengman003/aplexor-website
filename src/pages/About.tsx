@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Users, Target, Shield, Lightbulb } from "lucide-react";
+import { Users, Target, Shield, Lightbulb, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -44,6 +44,7 @@ const About = () => {
       role: "Consultant",
       email: "alexander.engman@aplexor.com",
       image: alexanderEngman,
+      linkedin: "https://www.linkedin.com/in/alexanderengman",
       bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
     },
     {
@@ -51,6 +52,7 @@ const About = () => {
       role: "Consultant",
       email: "granit.zymberi@aplexor.com",
       image: granitZymberi,
+      linkedin: "https://www.linkedin.com/in/granitzymberi",
       bio: "Granit has a master's degree in technical design from KTH in Stockholm and has worked for over 10 years in engineering spanning disciplines such as aerospace, medical technology and industrial sectors. He completed his master thesis at Microsoft and has extensive hands-on engineering experience."
     }
   ];
@@ -175,11 +177,19 @@ const About = () => {
                     <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
                       {member.role}
                     </p>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
+                    <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">
                       <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">
                         {member.email}
                       </a>
                     </p>
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] transition-colors mb-3"
+                    >
+                      <Linkedin className="w-4 h-4 text-white" />
+                    </a>
                     <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
                       {member.bio}
                     </p>
