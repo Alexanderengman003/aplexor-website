@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Users, Target, Shield, Lightbulb, Linkedin } from "lucide-react";
+import { Users, Target, Shield, Lightbulb, Linkedin, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -45,6 +45,7 @@ const About = () => {
       email: "alexander.engman@aplexor.com",
       image: alexanderEngman,
       linkedin: "https://www.linkedin.com/in/alexanderengman",
+      website: "https://www.alexanderengman.com",
       bio: "Alexander has a master's degree in nanotechnology from KTH in Stockholm and has worked in SMEs spanning disciplines such as medical technology and electronics. He has 6 years of professional experience from both sales and hands-on engineering work."
     },
     {
@@ -161,44 +162,41 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
               {team.map((member, index) => (
-                <Card key={index} className="text-center lg:hover:shadow-lg transition-shadow duration-300 border-2">
-                  <CardContent className="p-3 md:p-8">
-                    <div className="w-20 h-20 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-6 overflow-hidden">
-                      <img
-                        src={member.image as string}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                <Card key={index} className="lg:hover:shadow-lg transition-shadow duration-300 border-2">
+                  <CardContent className="p-3 md:p-8 flex flex-col h-full">
+                    <div className="flex items-start gap-4 mb-3 md:mb-4">
+                      <div className="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden flex-shrink-0">
+                        <img
+                          src={member.image as string}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="font-body text-sm md:text-base text-primary font-medium mb-1">
+                          {member.role}
+                        </p>
+                        <p className="font-body text-xs md:text-sm text-muted-foreground">
+                          <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">
+                            {member.email}
+                          </a>
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="font-heading text-base md:text-xl font-semibold text-foreground mb-1 md:mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="font-body text-sm md:text-base text-primary font-medium mb-1 md:mb-2">
-                      {member.role}
-                    </p>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">
-                      <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">
-                        {member.email}
-                      </a>
-                    </p>
-                    <a 
-                      href={member.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] transition-colors mb-3"
-                    >
-                      <Linkedin className="w-4 h-4 text-white" />
-                    </a>
-                    <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed">
+                    
+                    <p className="font-body text-xs md:text-sm text-muted-foreground leading-relaxed text-left mb-4">
                       {member.bio}
                     </p>
                     
-                    <div className="mt-4 pt-4 border-t border-border">
+                    <div className="pt-4 border-t border-border text-left">
                       <h4 className="font-heading text-xs font-semibold text-primary mb-2">
                         Business areas
                       </h4>
-                      <div className="flex flex-wrap gap-1 justify-center">
+                      <div className="flex flex-wrap gap-1">
                         {member.name === "Alexander Engman" ? (
                           <>
                             <Badge variant="outline" className="text-xs bg-white text-black border-gray-300 font-normal">Electronics</Badge>
@@ -216,6 +214,27 @@ const About = () => {
                           </>
                         )}
                       </div>
+                    </div>
+                    
+                    <div className="mt-auto pt-4 flex gap-2">
+                      <a 
+                        href={member.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] transition-colors"
+                      >
+                        <Linkedin className="w-4 h-4 text-white" />
+                      </a>
+                      {'website' in member && member.website && (
+                        <a 
+                          href={member.website} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-muted-foreground hover:bg-foreground transition-colors"
+                        >
+                          <Globe className="w-4 h-4 text-white" />
+                        </a>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
