@@ -7,12 +7,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Users, Target, Shield, Lightbulb, Linkedin, Globe } from "lucide-react";
+import { Users, Target, Shield, Lightbulb, Globe } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-background.jpg";
 import alexanderEngman from "@/assets/alexander-engman.jpg";
 import granitZymberi from "@/assets/granit-zymberi.jpeg";
+import linkedinLogo from "@/assets/linkedin-logo.png";
 
 const About = () => {
   const values = [
@@ -221,16 +222,16 @@ const About = () => {
                         href={member.linkedin} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2] hover:bg-[#004182] transition-colors"
+                        className="inline-flex items-center justify-center w-8 h-8 rounded-md overflow-hidden hover:opacity-80 transition-opacity"
                       >
-                        <Linkedin className="w-4 h-4 text-white" />
+                        <img src={linkedinLogo} alt="LinkedIn" className="w-full h-full object-cover" />
                       </a>
                       {'website' in member && member.website && (
                         <a 
                           href={member.website} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-muted-foreground hover:bg-foreground transition-colors"
+                          className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-muted-foreground hover:bg-foreground transition-colors"
                         >
                           <Globe className="w-4 h-4 text-white" />
                         </a>
