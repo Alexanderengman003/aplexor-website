@@ -8,10 +8,10 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Aplexor Brand Colors - Business Blue */
-    --primary: 215 70% 45%;           /* Professional blue */
+    /* Aplexor Brand Colors - Business Blue #308bbc */
+    --primary: 201 59% 46%;           /* #308bbc */
     --primary-foreground: 0 0% 100%;  /* White text on blue */
-    --primary-hover: 215 70% 55%;     /* Lighter blue for hover */
+    --primary-hover: 201 59% 56%;     /* Lighter blue for hover */
     
     --secondary: 215 25% 90%;         /* Light blue-grey */
     --secondary-foreground: 215 25% 25%; /* Dark text on secondary */
@@ -35,7 +35,7 @@ All colors MUST be HSL.
     
     --border: 215 15% 90%;            /* Light grey borders */
     --input: 215 15% 97%;             /* Very light input backgrounds */
-    --ring: 215 70% 45%;              /* Blue focus rings */
+    --ring: 201 59% 46%;              /* Blue focus rings */
     
     /* Shadows and Effects */
     --shadow-card: 0px 4px 12px rgba(0, 0, 0, 0.05);
@@ -52,7 +52,7 @@ All colors MUST be HSL.
 
     --sidebar-background: 0 0% 99%;
     --sidebar-foreground: 215 25% 30%;
-    --sidebar-primary: 215 70% 45%;
+    --sidebar-primary: 201 59% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 215 15% 96%;
     --sidebar-accent-foreground: 215 25% 20%;
@@ -71,9 +71,9 @@ All colors MUST be HSL.
     --popover: 215 25% 12%;
     --popover-foreground: 215 15% 95%;
 
-    --primary: 215 70% 50%;
+    --primary: 201 59% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 215 70% 60%;
+    --primary-hover: 201 59% 60%;
 
     --secondary: 215 25% 20%;
     --secondary-foreground: 215 15% 90%;
@@ -93,7 +93,7 @@ All colors MUST be HSL.
     
     --sidebar-background: 215 25% 10%;
     --sidebar-foreground: 215 15% 90%;
-    --sidebar-primary: 215 70% 50%;
+    --sidebar-primary: 201 59% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 215 25% 18%;
     --sidebar-accent-foreground: 215 15% 95%;
