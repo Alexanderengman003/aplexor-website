@@ -8,103 +8,97 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Aplexor Brand Colors */
-    --primary: 86 44% 48%;            /* #7BA05A - Darker green */
-    --primary-foreground: 0 0% 100%;  /* White text on green */
-    --primary-hover: 73 69% 76%;      /* #DDEB9D - Light green for hover */
+    /* Aplexor Brand Colors - Business Blue */
+    --primary: 215 70% 45%;           /* Professional blue */
+    --primary-foreground: 0 0% 100%;  /* White text on blue */
+    --primary-hover: 215 70% 55%;     /* Lighter blue for hover */
     
-    --secondary: 73 69% 76%;          /* #DDEB9D - Light green */
-    --secondary-foreground: 0 0% 18%; /* Dark text on light green */
+    --secondary: 215 25% 90%;         /* Light blue-grey */
+    --secondary-foreground: 215 25% 25%; /* Dark text on secondary */
     
     /* Base Colors */
-    --background: 50 100% 98%;        /* #FFFDF6 - Very light cream */
-    --foreground: 0 0% 18%;           /* #2E2E2E - Dark grey for text */
+    --background: 0 0% 100%;          /* Pure white */
+    --foreground: 215 25% 20%;        /* Dark blue-grey for text */
     
-    --card: 50 100% 98%;              /* Very light cream cards */
-    --card-foreground: 0 0% 18%;      /* Dark text on cards */
+    --card: 0 0% 100%;                /* White cards */
+    --card-foreground: 215 25% 20%;   /* Dark text on cards */
     
-    --muted: 48 67% 94%;              /* #FAF6E9 - Light cream backgrounds */
-    --muted-foreground: 0 0% 45%;     /* Medium grey for subtle text */
+    --muted: 215 15% 96%;             /* Very light grey */
+    --muted-foreground: 215 15% 45%;  /* Medium grey for subtle text */
     
-    --accent: 73 69% 76%;             /* #DDEB9D - Light green accent */
-    --accent-foreground: 0 0% 18%;    /* Dark text on light green */
+    --accent: 215 60% 92%;            /* Light blue accent */
+    --accent-foreground: 215 70% 35%; /* Dark blue text on accent */
     
-    /* Custom Dark Beige Colors for Navigation */
-    --nav-selected: 45 35% 85%;       /* #E8DFCA - Selected beige */
-    --nav-hover: 45 35% 85%;          /* #E8DFCA - Hover beige */
+    /* Navigation Colors */
+    --nav-selected: 215 25% 92%;      /* Light blue-grey selected */
+    --nav-hover: 215 20% 95%;         /* Very light hover */
     
-    --border: 48 67% 88%;             /* Light cream borders */
-    --input: 48 67% 94%;              /* Light cream input backgrounds */
-    --ring: 86 44% 48%;               /* Darker green focus rings */
+    --border: 215 15% 90%;            /* Light grey borders */
+    --input: 215 15% 97%;             /* Very light input backgrounds */
+    --ring: 215 70% 45%;              /* Blue focus rings */
     
     /* Shadows and Effects */
     --shadow-card: 0px 4px 12px rgba(0, 0, 0, 0.05);
     --shadow-card-hover: 0px 8px 24px rgba(0, 0, 0, 0.1);
-    --shadow-hero: 0px 20px 40px rgba(168, 230, 161, 0.2);
+    --shadow-hero: 0px 20px 40px rgba(59, 130, 246, 0.15);
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     
-    --popover: 50 100% 98%;           /* Very light cream popover */
-    --popover-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;             /* White popover */
+    --popover-foreground: 215 25% 20%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 215 25% 30%;
+    --sidebar-primary: 215 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 15% 96%;
+    --sidebar-accent-foreground: 215 25% 20%;
+    --sidebar-border: 215 15% 90%;
+    --sidebar-ring: 215 70% 50%;
   }
 
   .dark {
-    /* Aplexor maintains light theme for professional appearance */
-    --background: 50 100% 98%;
-    --foreground: 0 0% 18%;
+    /* Dark mode - Professional blue theme */
+    --background: 215 25% 10%;
+    --foreground: 215 15% 95%;
 
-    --card: 50 100% 98%;
-    --card-foreground: 0 0% 18%;
+    --card: 215 25% 12%;
+    --card-foreground: 215 15% 95%;
 
-    --popover: 50 100% 98%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 215 15% 95%;
 
-    --primary: 86 44% 48%;
+    --primary: 215 70% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 73 69% 76%;
+    --primary-hover: 215 70% 60%;
 
-    --secondary: 73 69% 76%;
-    --secondary-foreground: 0 0% 18%;
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 215 15% 90%;
 
-    --muted: 48 67% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 15% 60%;
 
-    --accent: 73 69% 76%;
-    --accent-foreground: 0 0% 18%;
+    --accent: 215 40% 25%;
+    --accent-foreground: 215 15% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 48 67% 88%;
-    --input: 48 67% 94%;
-    --ring: 86 44% 63%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 215 20% 22%;
+    --input: 215 20% 18%;
+    --ring: 215 70% 55%;
+    
+    --sidebar-background: 215 25% 10%;
+    --sidebar-foreground: 215 15% 90%;
+    --sidebar-primary: 215 70% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 215 25% 18%;
+    --sidebar-accent-foreground: 215 15% 95%;
+    --sidebar-border: 215 20% 22%;
+    --sidebar-ring: 215 70% 55%;
   }
 }
 
