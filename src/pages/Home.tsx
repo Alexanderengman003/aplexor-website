@@ -143,7 +143,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {problems.map((problem, index) => (
               <Card key={index} className="text-left lg:hover:shadow-lg transition-shadow duration-300 border-2">
                 <CardContent className="p-3 md:p-6 flex flex-col items-start justify-start md:min-h-[220px]">
@@ -175,7 +175,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {pillars.map((pillar, index) => (
               <Card key={index} className="text-left lg:hover:shadow-lg transition-shadow duration-300 border-2">
                 <CardContent className="p-3 md:p-6 flex flex-col items-start justify-start md:min-h-[240px]">
@@ -207,7 +207,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8">
             {services.map((service, index) => (
               <Link key={index} to={`/services/${service.route}`}>
                 <Card className="lg:hover:shadow-lg transition-shadow duration-300 h-full border-2">

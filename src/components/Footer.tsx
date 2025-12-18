@@ -14,12 +14,9 @@ const Footer = () => {
               <img 
                 src={aplexorLogo} 
                 alt="Aplexor Logo" 
-                className="h-10 w-auto"
+                className="h-8 md:h-10 w-auto"
                 loading="lazy"
               />
-              <h3 className="font-heading font-bold text-xl text-foreground">
-                Aplexor
-              </h3>
             </div>
             <p className="font-body text-muted-foreground mb-4 max-w-md">
               Aplexor helps Swedish Deeptech SMEs expand their business outside of Sweden, and international business to grow into the Swedish market.
