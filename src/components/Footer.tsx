@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src={aplexorLogo} 
                 alt="Aplexor Logo" 
-                className="w-10 h-10"
+                className="h-10 w-auto"
                 loading="lazy"
               />
               <h3 className="font-heading font-bold text-xl text-foreground">
