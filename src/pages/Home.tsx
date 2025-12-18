@@ -113,7 +113,7 @@ const Home = () => {
             <p className="font-body text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Aplexor offers sales and business development support for Swedish deeptech SMEs. Whether you are a Swedish company intending to grow into global markets, or if you want strategies to enter the Swedish markets, we can offer services tailored to your business needs. 
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-2 sm:gap-4 justify-center">
               <Button asChild size="lg" className="font-heading font-semibold hover:bg-primary/90">
                 <Link to="/services" className="flex items-center gap-2">
                   Our services
