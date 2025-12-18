@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src={aplexorLogo} 
                 alt="Aplexor Logo" 
-                className="h-8 md:h-10 w-auto"
+                className="h-[18px] md:h-6 w-auto"
                 loading="lazy"
               />
             </div>
