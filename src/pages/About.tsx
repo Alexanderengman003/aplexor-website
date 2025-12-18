@@ -145,7 +145,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 md:space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Aplexor was founded in 2025 with the realization that too many brilliant innovations are struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges. We decided to combine technical expertise with sales methodologies to act as a one-stop-shop for sales development for Deeptech SMEs. Our approach focuses on building long-term partnerships and delivering measurable results across both Swedish and international markets.
+                    Aplexor was founded with the realization that too many brilliant innovations are struggling to reach their market potential, not because of product limitations, but due to sales and distribution challenges. We decided to combine technical expertise with sales methodologies to act as a one-stop-shop for sales development for Deeptech SMEs. Our approach focuses on building long-term partnerships and delivering measurable results across both Swedish and international markets.
                   </p>
                 </div>
               </div>
