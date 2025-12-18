@@ -88,13 +88,20 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:px-8">
-              {/* Mission Text - Left Side */}
+              {/* Mission & Vision Text - Left Side */}
               <div className="text-left">
-                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 md:mb-8">
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">
                   Our Mission
                 </h2>
+                <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-8 md:mb-10">
+                  Our mission is to help deeptech SMEs grow through sales and business development in Sweden and global markets.
+                </p>
+                
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">
+                  Our Vision
+                </h2>
                 <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Our mission at Aplexor is to act as a bridge between Sweden and the international market. We help Swedish companies scale abroad while enabling international companies to enter and grow in Sweden. Our focus is on ensuring that innovative technologies and solutions reach their full potential in the right markets. We believe that successful growth is built on strong partnerships, honesty, having a curious mind and delivering exceptional results.
+                  To unlock the full global potential of Sweden's deeptech innovators.
                 </p>
               </div>
               
