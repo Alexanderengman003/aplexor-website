@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import linkedinIcon from "@/assets/linkedin-icon.png";
-import aplexorLogo from "@/assets/aplexor-logo-new-footer.png";
+import aplexorLogo from "@/assets/aplexor-logo-latest.png";
 
 const Footer = () => {
   return (
