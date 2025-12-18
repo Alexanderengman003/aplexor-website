@@ -8,22 +8,22 @@ interface ProcessSectionProps {
 const ProcessSection = ({ currentStep }: ProcessSectionProps) => {
   const steps = [
     {
-      step: "01",
+      step: "1",
       title: "Discovery",
       route: "discovery"
     },
     {
-      step: "02", 
+      step: "2", 
       title: "Strategy",
       route: "strategy"
     },
     {
-      step: "03",
+      step: "3",
       title: "Execution", 
       route: "execution"
     },
     {
-      step: "04",
+      step: "4",
       title: "Scale",
       route: "supporting"
     }

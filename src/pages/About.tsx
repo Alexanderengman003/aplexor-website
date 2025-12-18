@@ -158,11 +158,11 @@ const About = () => {
       <section className="py-8 md:py-16 bg-muted">
         <div className="container mx-auto px-2 md:px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-left mb-6 md:mb-12">
+            <div className="text-center mb-6 md:mb-12">
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4">
                 Our People
               </h2>
-              <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl">
+              <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
                 Meet the individuals who work on delivering exceptional services to our partners.
               </p>
             </div>
